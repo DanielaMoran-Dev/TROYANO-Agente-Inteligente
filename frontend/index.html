@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LINEAL IBM // CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Material Symbols (Google Maps iconography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <!-- Google Maps JS API loaded dynamically in app.js -->
+    <link rel="stylesheet" href="style.css?v=7" />
+  </head>
+  <body>
+
+    <!-- ── TOP NAV BAR ───────────────────────────────────────── -->
+    <header>
+      <div class="header-left">
+        <span class="logo">LINEAL<em> IBM</em></span>
+        <span class="nav-sep">//</span>
+        <span class="header-breadcrumb">CORE</span>
+      </div>
+      <div class="header-right">
+        <!-- PDF Actions in header -->
+        <input type="file" id="pdf-file-input" accept=".pdf" multiple style="display:none" />
+        <button class="header-action-btn" id="import-pdf-btn" title="Importar PDFs de normativa">
+          <span class="material-symbols-outlined">upload_file</span>
+          <span>Importar PDFs</span>
+          <span id="pdf-badge" class="pdf-badge hidden">0</span>
+        </button>
+        <button class="header-action-btn" id="export-btn" title="Exportar informe como PDF">
+          <span class="material-symbols-outlined">picture_as_pdf</span>
+          <span>Exportar PDF</span>
+        </button>
+        <div class="header-divider"></div>
+        <span class="header-tag">watsonx.ai</span>
+        <span class="header-tag">LangGraph</span>
+        <div class="header-status" id="api-status">
+          <span class="material-symbols-outlined">fiber_manual_record</span>
+          CONNECTING...
+        </div>
+        <div class="user-chip">DP</div>
+      </div>
+    </header>
+
+    <!-- ── WORKSPACE ─────────────────────────────────────────── -->
+    <div class="workspace">
+
+      <!-- ACTIVITY BAR -->
+      <nav class="activity-bar">
+        <button class="activity-btn active" id="sidebar-toggle-btn" title="Workspace Inspector">
+          <span class="material-symbols-outlined">space_dashboard</span>
+        </button>
+      </nav>
+
+      <!-- WORKSPACE INSPECTOR -->
+      <aside id="sidebar">
+        <div class="inspector-header">
+          <span class="inspector-label">WORKSPACE_INSPECTOR</span>
+        </div>
+
+        <!-- SYSTEM_ARCH -->
+        <details class="accordion" open>
+          <summary class="accordion-header">
+            <span class="material-symbols-outlined accordion-icon">chevron_right</span>
+            <span class="accordion-title">SYSTEM_ARCH</span>
+            <span class="status-badge badge-active">ACTU</span>
+          </summary>
+          <div class="accordion-body">
+            <div class="field-row">
+              <span class="field-key">CIUDAD</span>
+              <span class="field-val" id="session-city">— buscar ciudad</span>
+            </div>
+            <div class="field-row">
+              <span class="field-key">PIPELINE</span>
+              <span class="field-val">watsonx.ai · LangGraph</span>
+            </div>
+            <div class="field-row">
+              <span class="field-key">DOCUMENTOS</span>
+              <span class="field-val"><span id="pdf-count-display">0</span> PDFs cargados</span>
+            </div>
+            <div class="field-row">
+              <span class="field-key">ESTADO</span>
+              <span class="field-val" id="system-estado">LISTO</span>
+            </div>
+            <div class="field-divider"></div>
+            <div class="scenario-chips">
+              <button class="chip" data-prompt="Simulate high-density residential towers with integrated parks and smart mobility corridors to improve urban density and quality of life.">
+                <span class="material-symbols-outlined">apartment</span>RENOVACIÓN
+              </button>
+              <button class="chip" data-prompt="Identify traffic congestion hotspots and propose BRT corridors, bike lanes, and pedestrian infrastructure to reduce emissions and improve mobility.">
+                <span class="material-symbols-outlined">directions_bus</span>MOVILIDAD
+              </button>
+              <button class="chip" data-prompt="Design a flood resilience plan with retention basins, permeable pavements, elevated construction zones, and green drainage corridors.">
+                <span class="material-symbols-outlined">water_drop</span>RESILIENCIA
+              </button>
+              <button class="chip" data-prompt="Propose a sustainable urban district with solar microgrids, green roofs, waste management infrastructure, and water recycling systems.">
+                <span class="material-symbols-outlined">solar_power</span>RECURSOS
+              </button>
+            </div>
+          </div>
+        </details>
+
+        <!-- CONSTRUCCIÓN -->
+        <details class="accordion">
+          <summary class="accordion-header">
+            <span class="material-symbols-outlined accordion-icon">chevron_right</span>
+            <span class="accordion-title">CONSTRUCCIÓN</span>
+            <span id="proposed-count" class="accordion-count">—</span>
+          </summary>
+          <div class="accordion-body">
+            <div id="proposed-list" class="action-list">
+              <div class="empty-state">
+                <span class="material-symbols-outlined">construction</span>
+                Sin datos · Ejecuta una simulación
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- FACTIBILIDAD -->
+        <details class="accordion">
+          <summary class="accordion-header">
+            <span class="material-symbols-outlined accordion-icon">chevron_right</span>
+            <span class="accordion-title">FACTIBILIDAD</span>
+            <span id="feasible-count" class="status-badge badge-stable">STABLE</span>
+          </summary>
+          <div class="accordion-body">
+            <div id="validated-list" class="action-list">
+              <div class="empty-state">
+                <span class="material-symbols-outlined">policy</span>
+                Pendiente de análisis regulatorio
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- EVALUACIÓN -->
+        <details class="accordion">
+          <summary class="accordion-header">
+            <span class="material-symbols-outlined accordion-icon">chevron_right</span>
+            <span class="accordion-title">EVALUACIÓN</span>
+          </summary>
+          <div class="accordion-body">
+            <div id="analyzer-report" class="analyzer-report-box">
+              <div class="empty-state">
+                <span class="material-symbols-outlined">analytics</span>
+                Esperando síntesis final del AI
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- LAYER_VISIBILITY_CONTROL -->
+        <details class="accordion" open>
+          <summary class="accordion-header">
+            <span class="material-symbols-outlined accordion-icon">chevron_right</span>
+            <span class="accordion-title">LAYER_VISIBILITY_CONTROL</span>
+          </summary>
+          <div class="accordion-body">
+
+            <!-- Capas SIIMP / ArcGIS -->
+            <div class="layer-group-label">
+              SIIMP · ArcGIS
+              <span id="siimp-status" class="layer-status">—</span>
+            </div>
+
+            <label class="toggle-row" title="Vialidades existentes">
+              <input type="checkbox" class="carbon-checkbox" id="toggle-siimp-vialidades" disabled
+                onchange="toggleSiimpLayer('vialidades', this.checked)" />
+              <span class="layer-swatch" style="background:#4a4e56"></span>
+              <span class="toggle-label">Vialidades</span>
+            </label>
+
+            <label class="toggle-row" title="Polígono de contención urbana">
+              <input type="checkbox" class="carbon-checkbox" id="toggle-siimp-contencion_urbana" disabled
+                onchange="toggleSiimpLayer('contencion_urbana', this.checked)" />
+              <span class="layer-swatch" style="background:#5a606a"></span>
+              <span class="toggle-label">Contención Urbana</span>
+            </label>
+
+            <label class="toggle-row" title="Zonas de urbanización futura ordenada">
+              <input type="checkbox" class="carbon-checkbox" id="toggle-siimp-zufos" disabled
+                onchange="toggleSiimpLayer('zufos', this.checked)" />
+              <span class="layer-swatch" style="background:#6b5a30"></span>
+              <span class="toggle-label">ZUFOs</span>
+            </label>
+
+            <label class="toggle-row" title="Zonas de dinámica especial">
+              <input type="checkbox" class="carbon-checkbox" id="toggle-siimp-zonas_dinamica_especial" disabled
+                onchange="toggleSiimpLayer('zonas_dinamica_especial', this.checked)" />
+              <span class="layer-swatch" style="background:#2e6048"></span>
+              <span class="toggle-label">Dinámica Especial</span>
+            </label>
+
+            <label class="toggle-row" title="Zonas de extracción de materiales pétreos">
+              <input type="checkbox" class="carbon-checkbox" id="toggle-siimp-materiales_petreos" disabled
+                onchange="toggleSiimpLayer('materiales_petreos', this.checked)" />
+              <span class="layer-swatch" style="background:#6b4428"></span>
+              <span class="toggle-label">Materiales Pétreos</span>
+            </label>
+
+            <div class="layer-group-label" style="margin-top:0.6rem">
+              Simulación IA
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider-header">
+                <span class="slider-label">OPACIDAD_OVERLAY</span>
+              </div>
+              <input type="range" id="slider-blend" min="0" max="100" value="100" class="tech-slider" />
+            </div>
+          </div>
+        </details>
+
+        <!-- PRODUCTION_OUTPUT -->
+        <div class="production-section">
+          <div class="section-label">PRODUCTION_OUTPUT</div>
+          <div class="output-grid">
+            <div class="output-metric">
+              <div id="metric-overall" class="big-metric">—</div>
+              <div class="metric-sublabel">EFICIENCIA</div>
+            </div>
+            <div class="output-metric">
+              <div id="metric-resilience" class="big-metric">—</div>
+              <div class="metric-sublabel">RESILIENCIA</div>
+            </div>
+            <div class="output-metric">
+              <div id="metric-population" class="big-metric">—</div>
+              <div class="metric-sublabel">HABITANTES</div>
+            </div>
+            <div class="output-metric">
+              <div id="metric-co2" class="big-metric">—</div>
+              <div class="metric-sublabel">CO₂_OFFSET</div>
+            </div>
+            <div class="output-metric">
+              <div id="metric-cost" class="big-metric">—</div>
+              <div class="metric-sublabel">INVERSIÓN</div>
+            </div>
+            <div class="output-metric">
+              <div id="metric-timeline" class="big-metric">—</div>
+              <div class="metric-sublabel">EJECUCIÓN</div>
+            </div>
+          </div>
+          <div id="recommendation-box" class="recommendation-box">
+            <span class="rec-label">DIAGNÓSTICO</span>
+            <p>Sistema listo. Inicializa el pipeline para ver resultados.</p>
+          </div>
+        </div>
+
+        <!-- ACCESSIBILITY_ANALYSIS -->
+        <div class="production-section">
+          <div class="section-label">ACCESIBILIDAD_VIAL <span style="font-size:0.65rem;opacity:0.5">· Google Maps Routes</span></div>
+          <div id="accessibility-panel" class="access-panel">
+            <div class="empty-state">Inicializa el pipeline para ver accesibilidad del predio.</div>
+          </div>
+        </div>
+
+        <!-- CHANNEL_LEGEND -->
+        <div id="sim-legend" class="channel-legend">
+          <div class="section-label">CHANNEL_LEGEND</div>
+          <div class="legend-empty-msg">Ejecuta una simulación para ver la leyenda</div>
+        </div>
+
+      </aside>
+
+      <!-- MAP AREA (full) -->
+      <div class="map-wrap">
+
+        <div id="map-container">
+          <div id="sim-badge" class="sim-badge hidden"></div>
+          <div class="map-loading">
+            <span class="material-symbols-outlined">public</span>
+            INICIALIZANDO MOTOR ESPACIAL...
+          </div>
+
+          <!-- Floating search HUD (top-left) -->
+          <div class="search-hud">
+            <span class="material-symbols-outlined search-ico">search</span>
+            <input type="text" id="map-search-input" placeholder="Buscar ciudad o dirección..." />
+            <button id="map-search-btn">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+
+          <!-- Map tool buttons (top-right) -->
+          <div class="map-tools">
+            <button id="view-toggle-mode" class="map-tool-btn" title="Cambiar vista">
+              <span class="material-symbols-outlined">visibility</span>
+              <span class="tool-label">Propuesta</span>
+            </button>
+            <button id="draw-btn" class="map-tool-btn" title="Dibujar zona de análisis">
+              <span class="material-symbols-outlined">draw</span>
+              <span class="tool-label">Dibujar</span>
+            </button>
+            <button id="view-toggle" class="map-tool-btn" title="Alternar 3D / 2D">
+              <span class="material-symbols-outlined">view_in_ar</span>
+              <span class="tool-label">3D</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Floating chat panel (bottom of map) -->
+        <div class="chat-panel">
+          <div class="chat-panel-inner">
+            <textarea
+              id="prompt"
+              placeholder="Describe tu objetivo de planificación urbana... Ej: Reducir inundaciones y crear corredores verdes en la zona norte."
+            ></textarea>
+            <button id="generate-btn" class="btn-execute" title="Ejecutar pipeline multi-agente">
+              <span class="material-symbols-outlined">send</span>
+              <span id="btn-text">EJECUTAR_RUN</span>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /map-wrap -->
+    </div><!-- /workspace -->
+
+    <!-- ── TOOLTIP ───────────────────────────────────────────── -->
+    <div id="map-tooltip" class="map-tooltip hidden"></div>
+
+    <!-- ── SPINNER ───────────────────────────────────────────── -->
+    <div id="spinner">
+      <div class="spinner-ring"></div>
+      <div class="spinner-title">Procesando Simulación Multi-Agente</div>
+      <div class="pipeline-steps">
+        <div class="pipeline-step" id="step-1">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <span class="step-name">Agente Generativo</span>
+            <span class="step-desc">Diseñando intervenciones urbanas con IA...</span>
+          </div>
+        </div>
+        <div class="pipeline-step" id="step-2">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <span class="step-name">Agente de Viabilidad</span>
+            <span class="step-desc">Validando contra normativa y documentos PDF...</span>
+          </div>
+        </div>
+        <div class="pipeline-step" id="step-3">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <span class="step-name">Agente de Evaluación</span>
+            <span class="step-desc">Calculando impacto climático y social...</span>
+          </div>
+        </div>
+        <div class="pipeline-step" id="step-4">
+          <div class="step-dot"></div>
+          <div class="step-content">
+            <span class="step-name">Analista de Ciudad</span>
+            <span class="step-desc">Generando informe técnico holístico...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <script src="https://unpkg.com/deck.gl@9.0.35/dist.min.js"></script>
+    <script src="https://unpkg.com/@deck.gl/google-maps@9.0.35/dist.min.js"></script>
+    <script src="app.js?v=7"></script>
+  </body>
+</html>

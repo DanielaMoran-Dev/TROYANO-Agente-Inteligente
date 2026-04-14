@@ -1,0 +1,213 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Lineal — Smart Urban Planning API",
+    "description": "Multi-agent urban planning system powered by IBM watsonx.ai. This manifest exposes Lineal's capabilities as Skills for Watson Orchestrate.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Lineal Team"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://lineal-api.{region}.codeengine.appdomain.cloud",
+      "description": "IBM Cloud Code Engine (Production)",
+      "variables": {
+        "region": {
+          "default": "us-south"
+        }
+      }
+    },
+    {
+      "url": "http://localhost:8000",
+      "description": "Local Development"
+    }
+  ],
+  "paths": {
+    "/generate-plan": {
+      "post": {
+        "operationId": "generateUrbanPlan",
+        "summary": "Generate Urban Development Plan",
+        "description": "Runs a full multi-agent pipeline (Construction → Feasibility → Evaluation → Analysis) to produce a comprehensive urban development proposal for a selected zone.",
+        "x-ibm-skill": {
+          "display-name": "Generate Urban Plan",
+          "category": "Urban Planning"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlanRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully generated urban plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/geo/layers": {
+      "get": {
+        "operationId": "listGeoLayers",
+        "summary": "List Available SIIMP Layers",
+        "description": "Returns the list of available geographic data layers from the SIIMP/ArcGIS system.",
+        "x-ibm-skill": {
+          "display-name": "List Geographic Layers",
+          "category": "Geodata"
+        },
+        "responses": {
+          "200": {
+            "description": "List of layer names",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "layers": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/geo/layer/{layer_name}": {
+      "get": {
+        "operationId": "getGeoLayer",
+        "summary": "Fetch Geographic Layer",
+        "description": "Downloads a GeoJSON FeatureCollection for the specified SIIMP layer (vialidades, contencion_urbana, zufos, etc.).",
+        "x-ibm-skill": {
+          "display-name": "Fetch Geographic Data",
+          "category": "Geodata"
+        },
+        "parameters": [
+          {
+            "name": "layer_name",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Name of the layer: vialidades, contencion_urbana, zufos, zonas_dinamica_especial, materiales_petreos"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GeoJSON FeatureCollection"
+          }
+        }
+      }
+    },
+    "/discovery/query": {
+      "post": {
+        "operationId": "queryRegulations",
+        "summary": "Query Urban Regulations (RAG)",
+        "description": "Searches regulatory documents (PDFs, building codes, zoning laws) using Watson Discovery RAG to find relevant passages for urban planning decisions.",
+        "x-ibm-skill": {
+          "display-name": "Query Regulations",
+          "category": "Knowledge Base"
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveryQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Matching regulatory passages"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PlanRequest": {
+        "type": "object",
+        "required": ["prompt"],
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "Natural language description of the desired urban intervention"
+          },
+          "zone": {
+            "type": "object",
+            "description": "GeoJSON Polygon geometry defining the area of interest"
+          },
+          "center": {
+            "type": "object",
+            "properties": {
+              "lat": { "type": "number" },
+              "lng": { "type": "number" }
+            }
+          },
+          "climate_priority": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 50
+          },
+          "urban_density": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 50
+          }
+        }
+      },
+      "PlanResponse": {
+        "type": "object",
+        "properties": {
+          "prompt": { "type": "string" },
+          "proposed_actions": {
+            "type": "array",
+            "items": { "type": "object" }
+          },
+          "validated_actions": {
+            "type": "array",
+            "items": { "type": "object" }
+          },
+          "impact_metrics": { "type": "object" },
+          "final_analysis": { "type": "string" }
+        }
+      },
+      "DiscoveryQuery": {
+        "type": "object",
+        "required": ["question"],
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "Natural language question about regulations or building codes"
+          },
+          "topics": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional topic filter tags"
+          },
+          "max_results": {
+            "type": "integer",
+            "default": 3
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+# Entornos Virtuales
+../.venv/
+.venv/
+.venv311/
+venv/
+ENV/
+env/
+
+# Variables de Entorno (SEGURIDAD)
+.env
+.env.local
+.env.*.local
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Datos temporales
+backend/data/restricted_zones.geojson
+
+# Illustrator files
+*.ai
+
+*.ipynb
+
+cache/
