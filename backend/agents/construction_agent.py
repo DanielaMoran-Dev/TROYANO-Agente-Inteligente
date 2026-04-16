@@ -102,7 +102,7 @@ def run(
         f"=== USER REQUIREMENTS ===\n"
         f"{prompt}{budget_hint}\n\n"
         f"=== TASK ===\n"
-        f"Generate 4–6 interventions of ONLY these types: {types_str}\n"
+        f"Generate exactly {max(1, len(types_filter or []) * 1)}–{max(2, len(types_filter or []) * 2)} interventions of ONLY these types: {types_str}\n"
         f"ALL interventions must be INSIDE the zone polygon AND compatible with its land use status.\n"
         f"Coordinates must be realistic Aguascalientes values near lat={lat:.4f}, lng={lng:.4f}.\n"
         f"Respect all regulatory constraints listed above.\n"
@@ -461,12 +461,14 @@ def _build_fallback_actions(
         h = (max(zone_lats) - min(zone_lats)) * 111_320
         zone_area_m2 = w * h * 0.70  # polygon rarely fills its full bbox
 
-    # Build one or two actions per requested type (max 8 total)
-    # With 1-3 types: 2 variants each (rich detail)
-    # With 4+ types: 1-2 variants, capped at 8 total
+    # Build actions per requested type (max 8 total)
+    # 1 type  → 1 action  (user asked for one thing, give them one)
+    # 2-4 types → 2 each  (rich multi-type portfolio)
+    # 5+ types → 1 each   (cap total)
     plan: list[tuple[str, int]] = []  # (type, variant_index)
     max_actions = 8
-    variants_per_type = 2 if len(intent_tags) <= 3 else 1
+    n = len(intent_tags)
+    variants_per_type = 1 if n == 1 else (2 if n <= 4 else 1)
     for t in intent_tags:
         variants = _VISUAL.get(t, [{}])
         for v in range(min(len(variants), variants_per_type)):
