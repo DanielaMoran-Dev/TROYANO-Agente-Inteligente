@@ -552,7 +552,10 @@ def _mock_chat(session: dict, session_id: str) -> dict:
     # turn 5+: user confirmed — generate brief
     user_msgs = [m["content"] for m in session["history"] if m["role"] == "user"]
     last_user = user_msgs[-1].lower() if user_msgs else ""
-    if any(w in last_user for w in ["sí", "si", "yes", "ok", "confirmo", "correcto", "adelante", "listo", "bien"]):
+    import re as _re
+    _CONFIRM_WORDS = [r"\bsí\b", r"\bsi\b", r"\byes\b", r"\bok\b", r"\bconfirmo\b",
+                      r"\bcorrecto\b", r"\badelante\b", r"\blisto\b", r"\bbien\b"]
+    if any(_re.search(p, last_user) for p in _CONFIRM_WORDS):
         brief = session.get("_brief_preview") or _infer_brief_from_answers(
             _parse_answers(session["history"]), session_id
         )

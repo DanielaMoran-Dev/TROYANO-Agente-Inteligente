@@ -1490,8 +1490,31 @@ function renderLayers(data) {
 // Build a styled "concept map" image from the deck.gl canvas.
 // Uses a dark dot-grid background so the result looks intentional, not like a broken screenshot.
 function _buildConceptMap(targetAR) {
-  const dc = deckOverlay?.deck?.canvas;
+  // Try every known path to the deck.gl WebGL canvas
   const container = document.getElementById("map-container");
+  let dc = deckOverlay?.deck?.canvas          // deck.gl v9 public getter
+        || deckOverlay?._deck?.canvas         // deck.gl internal property
+        || deckOverlay?.deck?.getCanvas?.()   // older getCanvas() API
+        || deckOverlay?._deck?.getCanvas?.();
+
+  // Last resort: find it in the DOM — deck.gl appends its WebGL canvas to the map container.
+  // Key: deck.gl uses a WebGL context; Google Maps tile canvases use 2D context (and are CORS-tainted).
+  if (!dc || dc.width < 10) {
+    const canvases = Array.from(container?.querySelectorAll("canvas") || []);
+    // Prefer a canvas that already has a WebGL context (that's deck.gl, not Google Maps tiles)
+    dc = canvases.find(c => {
+      try {
+        return !!(c.getContext("webgl2") || c.getContext("webgl"));
+      } catch (_) { return false; }
+    });
+    // If still nothing, fall back to largest (last resort)
+    if (!dc) {
+      dc = canvases.reduce((best, c) =>
+        (c.width * c.height > (best?.width || 0) * (best?.height || 0)) ? c : best, null);
+    }
+  }
+
+  console.log("[PDF] deck.gl canvas:", dc?.tagName, dc?.width, dc?.height);
   const srcW = (dc && dc.width  > 100) ? dc.width  : (container ? container.offsetWidth  * 2 : 1200);
   const srcH = (dc && dc.height > 100) ? dc.height : (container ? container.offsetHeight * 2 : 800);
 
@@ -1525,7 +1548,14 @@ function _buildConceptMap(targetAR) {
   ctx.fillRect(0, 0, srcW, srcH);
 
   // Deck.gl intervention overlay (always readable — preserveDrawingBuffer: true)
-  if (dc) { try { ctx.drawImage(dc, 0, 0, srcW, srcH); } catch (_) {} }
+  if (dc) {
+    try {
+      ctx.drawImage(dc, 0, 0, srcW, srcH);
+      console.log("[PDF] drawImage OK");
+    } catch (e) {
+      console.warn("[PDF] drawImage failed (tainted canvas?):", e.message);
+    }
+  }
 
   // ── Crop to target aspect ratio ─────────────────────────────
   const canvasAR = srcW / srcH;

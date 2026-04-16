@@ -42,7 +42,7 @@ LAYER_CATALOG = {
         "SIIMP_DINAMICA_ID", "f77c54918844465eaab349127455f256"
     ),
     "materiales_petreos": os.getenv(
-        "SIIMP_PETREOS_ID", "eb0567fce7ac4f048d8c3bc93db71691"
+        "SIIMP_PETREOS_ID", "128350523f3c4ff99eb7515961fb55f4"
     ),
 }
 
