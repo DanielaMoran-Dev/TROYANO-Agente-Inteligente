@@ -35,7 +35,7 @@ def _get_watsonx_model():
         return None
 
 
-def _build_fallback_metrics(validated_actions: list) -> dict:
+def _build_fallback_metrics(validated_actions: list, brief: dict = None) -> dict:
     """Generate deterministic fallback metrics based on action properties."""
     feasible = [a for a in validated_actions if a.get("feasible", True)]
     total_cost = sum(a.get("cost_usd", 0) for a in validated_actions)
@@ -64,6 +64,28 @@ def _build_fallback_metrics(validated_actions: list) -> dict:
         for i, a in enumerate(validated_actions)
     ]
 
+    # Build a recommendation that reflects the client's actual brief
+    if brief:
+        proj_desc    = brief.get("project_description", "")
+        budget_usd   = brief.get("budget_usd")
+        timeline_yrs = brief.get("timeline_years", 5)
+        budget_str   = f" Inversión total del cliente: ${budget_usd:,} USD." if budget_usd else ""
+        rec = (
+            f"De las {len(validated_actions)} intervenciones propuestas, "
+            f"{len(feasible)} son factibles según las restricciones normativas del PMDU 2017 y las capas SIIMP. "
+            f"El portafolio responde al brief: «{proj_desc[:120]}».{budget_str} "
+            f"Implementación recomendada en fases a lo largo de {timeline_yrs} años. "
+            f"Reducción estimada de CO₂: {co2_reduction:,} t/año."
+        )
+    else:
+        priority = "resiliencia ecológica" if len(green_actions) > len(transport_actions) else "optimización de movilidad"
+        rec = (
+            f"Plan incluye {len(feasible)} intervenciones factibles de {len(validated_actions)} propuestas. "
+            f"Prioridad: {priority}. "
+            f"Reducción estimada: {co2_reduction:,} t CO₂/año. "
+            f"Implementación recomendada en fases a lo largo de {timeline} meses."
+        )
+
     return {
         "impact_metrics": {
             "overall_score": overall,
@@ -74,24 +96,20 @@ def _build_fallback_metrics(validated_actions: list) -> dict:
             "implementation_timeline_months": timeline,
             "estimated_total_cost_usd": total_cost,
             "feasibility_rate_percent": feasibility_rate,
-            "recommendation": (
-                f"Plan includes {len(feasible)} feasible interventions out of {len(validated_actions)} proposed. "
-                f"Priority: {'ecological resilience' if len(green_actions) > len(transport_actions) else 'mobility optimization'}. "    
-                f"Estimated {co2_reduction:,} tons CO2/yr reduction. Phased implementation recommended over {timeline} months."       
-            ),
+            "recommendation": rec,
         },
         "per_action_metrics": per_action,
     }
 
 
-def run(validated_actions: list) -> dict:
+def run(validated_actions: list, brief: dict = None) -> dict:
     if not validated_actions:
-        return _build_fallback_metrics([])
+        return _build_fallback_metrics([], brief)
 
     model = _get_watsonx_model()
     if not model:
         logger.warning("Evaluation Agent: no model available, using deterministic fallback.")
-        return _build_fallback_metrics(validated_actions)
+        return _build_fallback_metrics(validated_actions, brief)
 
     # Compact action summary to reduce token usage
     actions_summary = [

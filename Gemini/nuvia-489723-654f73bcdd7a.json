@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "nuvia-489723",
+  "private_key_id": "654f73bcdd7adc32d00ff8975f9d826aec175199",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDu3FtVZz8+a3pt\n1grEKlzHbk9st8Ldx5Ihf678KUu4uVavXsilqUi4tVwGfzgWkbsetO/890AAXnEd\nLF3MCMUNbg177jf4TBz0sABAdDEr2pyzw8KqWfx1wdiGKfBVzeCjXeHZXOOPvdof\nyRp9lOHg+nxy142axdpR7lw4ef5HsUzlJ0nDaKsuDwAY1CwZ2LByOg9sibq8ra75\neNhZWEprZQNlHiC0cJSLBveEOz4OCP2zTzCqMeWHuG0XyHYDMUzbCSDeWUp30nSx\n5TDwY+DbD0gnFptyCfWZb8tThsMAj38ZelnYb0eWGWbMp2gD3ng3rdceYYpDpGEv\nGJxJvsCLAgMBAAECggEABz9XZBl8YUP4lIGUlQwmAYUW0tkmh/0osWyC3jLQkdvJ\nxgttsh0XUEdsceQFSyYD0/Qwfe/wmLJE41o3xFuVwwkOTq7VMur4S/JVJ59+6HI7\nI/cyHmIZl2cYz0VRfgD/qmVMV4CKhQ+BIUrES4ArdFyVTxS8PrB3JdpCIRKOhRVM\nmuxVSLJd+7eGL29IE0QuJ0Ubbld0nq+dV6jduzXpH5pqeEPA2O8P71SnDMONdKfN\nCNRbUl7yP4npZdAALSS6W6Tk3QvSoBx4cvLA/KntEoHeqGKl/BGI4j1yKHr9ZD/j\nede8t3G/6SXBbHgMiojRm0twiiXdf+Kx9Gh0PGZxDQKBgQD3lw2jEASaUaz+6J+t\nYRO/BtZ521oIFv2wDzVOCPAuc0ysMKPvKy02JVE7RABYgxMk9nn7lU7HQGB5oyAP\nDI3vPReixgPRLT69cOHdRkuKIBvDURAT2CcXSpxFKPnxF+U3JhBozkXoPVWf2U/Z\n/+s4CSwN5E5YLIbNn0ANsunInwKBgQD2+WWlR9+Rp5kutAoS5UfRXpw0PwARo6lt\nJVQpbVre0NMBLumrCvsImw+9fBTC4oj45+kUB8kY8Bn4gxb91BVt60imE5xjOIqA\nzqpgKbAX2Wfg+zEo0gO0C7XMVtFThPvwDksJSKtaua9MXGXHfLoB69BGSWhGJDjT\nVuPeGuWElQKBgQCe/svtGU47Y5P6ppxUFPE/TT7SRkDMzSbgtwN+N1M2ISjtstaz\nskB4cwJ1Urf+Hz5eEEJJg5pxbjAGLPFbeK51IgBZsVumKq4Nrb3+ATRlYTUy+o2e\nkMKZvHoaF7RaVQQHpFQJWd2exDSGUGFtF2GQPKOj0CdXjFCNH2Vc5rYm9QKBgED0\nDnuNj4rrHSpfR1b43g5+Z26GMypwdJqz+pJ6pC99lED3aZUGakc1IMqg24T1tzhf\nJbmS4pygaPQm5eET6h7ihlTHS5X8xNBjigOIczuSffN5nNAzi63KdqGrI5pnmyrj\nV3C1n/tYYnYextXUQ8dFkZ0qqTXpSNisPXmocTyRAoGAdTSA+N6/wHDbhvxs3dGa\nlEQdCEKH/b160gbTw0mVCOmqtgkdo/KLxnaDEXG/kllDa7Ghtfv0FuObE7PQW4VA\nc69ylY4lQ/pvbDAf/Z9OTOHMMF9jhfeHFQmyKAZ/G75WzzuAc2zsqkdAinh9UWAR\nAsPoa39gKRrmutgZoP+TgaA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "agente-gemini@nuvia-489723.iam.gserviceaccount.com",
+  "client_id": "104802024081806806076",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/agente-gemini%40nuvia-489723.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

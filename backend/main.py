@@ -21,7 +21,8 @@ load_dotenv()
 # Ensure the backend directory is on the path so agents are importable
 sys.path.insert(0, os.path.dirname(__file__))
 
-import orchestrator 
+import orchestrator
+from agents import orchestrator_agent
 
 # ---------------------------------------------------------------------------
 # App setup
@@ -74,6 +75,7 @@ class PlanRequest(BaseModel):
     prompt: str = Field(..., min_length=5, max_length=3000)
     zone: Optional[dict] = None
     center: Optional[dict] = None
+    brief: Optional[dict] = None   # full orchestrator_brief from chat interview
 
 
 # ---------------------------------------------------------------------------
@@ -103,6 +105,7 @@ async def generate_plan(body: PlanRequest):
             body.prompt,
             zone=body.zone,
             center=body.center,
+            brief=body.brief,
         )
         return result
     except Exception as exc:
@@ -345,3 +348,52 @@ async def get_orchestrate_manifest():
             return _json.load(f)
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail="Orchestrate manifest not found.")
+
+
+# ---------------------------------------------------------------------------
+# Orchestrator Chat — Agent 0 (multi-turn interview)
+# ---------------------------------------------------------------------------
+
+
+class OrchestratorChatRequest(BaseModel):
+    session_id: Optional[str] = None
+    message: str = Field(..., min_length=1, max_length=2000)
+
+
+class OrchestratorResetRequest(BaseModel):
+    session_id: str
+
+
+@app.post("/orchestrator/start", tags=["orchestrator"])
+async def orchestrator_start():
+    """Create a new interview session and return the opening message."""
+    session_id = orchestrator_agent.start_session()
+    return {
+        "session_id": session_id,
+        "reply": orchestrator_agent.get_opening_message(),
+        "done": False,
+        "brief": None,
+    }
+
+
+@app.post("/orchestrator/chat", tags=["orchestrator"])
+async def orchestrator_chat(body: OrchestratorChatRequest):
+    """
+    Send one message in the interview.
+    If session_id is omitted a new session is auto-created.
+    Returns: { session_id, reply, done, brief? }
+    """
+    session_id = body.session_id or orchestrator_agent.start_session()
+    try:
+        result = orchestrator_agent.chat(session_id, body.message)
+        return {"session_id": session_id, **result}
+    except Exception as exc:
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Orchestrator error: {exc}") from exc
+
+
+@app.post("/orchestrator/reset", tags=["orchestrator"])
+async def orchestrator_reset(body: OrchestratorResetRequest):
+    """Clear an interview session."""
+    orchestrator_agent.reset_session(body.session_id)
+    return {"ok": True}
