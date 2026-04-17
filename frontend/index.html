@@ -3,68 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LINEAL // CORE</title>
+    <title>MedConnect — Encuentra tu médico</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=24" />
+    <link rel="stylesheet" href="style.css?v=1" />
   </head>
   <body>
 
     <!-- ── TOP NAV BAR ───────────────────────────────────────── -->
     <header>
       <div class="header-left">
-        <span class="logo">LINEAL</span>
+        <span class="logo">MedConnect</span>
         <span class="nav-sep">//</span>
-        <span class="header-breadcrumb">CORE</span>
+        <span class="header-breadcrumb">Plataforma Médica Inteligente</span>
       </div>
       <div class="header-right">
-        <input type="file" id="pdf-file-input" accept=".pdf" multiple style="display:none" />
-        <button class="header-action-btn" id="import-pdf-btn">
-          <span class="material-symbols-outlined">upload_file</span>
-          <span data-i18n="import_pdfs">Importar PDFs</span>
-          <span id="pdf-badge" class="pdf-badge hidden">0</span>
-        </button>
-        <button class="header-action-btn" id="export-btn">
-          <span class="material-symbols-outlined">picture_as_pdf</span>
-          <span data-i18n="export_pdf">Exportar PDF</span>
-        </button>
-        <div class="header-divider"></div>
-        <span class="header-tag" data-i18n="header_tag">Multi-Agente</span>
+        <span class="header-tag">IA + Gemini</span>
         <div class="header-status" id="api-status">
           <span class="material-symbols-outlined">fiber_manual_record</span>
-          <span data-i18n="connecting">CONECTANDO...</span>
+          <span>CONECTANDO...</span>
         </div>
-        <button class="header-action-btn" id="lang-btn" title="Switch language / Cambiar idioma">ES → EN</button>
-        <div class="user-chip">DP</div>
+        <div class="user-chip" id="user-chip">P</div>
       </div>
     </header>
 
     <!-- ── WORKSPACE ─────────────────────────────────────────── -->
     <div class="workspace">
 
-      <!-- ── PERMANENT CHAT LEFT PANEL ───────────────────────── -->
+      <!-- ── LEFT PANEL — Symptoms + Form ───────────────────── -->
       <div class="chat-left">
         <div class="chat-left-header">
           <div class="chat-left-title">
-            <span class="material-symbols-outlined">smart_toy</span>
-            <span data-i18n="chat_title">Consultor</span>
+            <span class="material-symbols-outlined">medical_services</span>
+            <span>Consulta</span>
           </div>
-          <span class="status-badge badge-active" id="chat-mode-badge">DEMO</span>
+          <span class="status-badge badge-active" id="chat-mode-badge">TRIAJE IA</span>
         </div>
+
+        <!-- Messages area -->
         <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-zone-row">
-          <button id="draw-zone-btn" class="draw-zone-btn" title="Dibuja un polígono en el mapa para delimitar el área de proyecto">
-            <span class="material-symbols-outlined">polyline</span>
-            <span class="dz-label" data-i18n="draw_zone">Marcar zona</span>
-          </button>
-          <span class="zone-status" id="zone-status-label"></span>
+
+        <!-- Patient form (shown before first consult) -->
+        <div id="patient-form">
+          <div class="form-group">
+            <label>Seguro médico</label>
+            <select id="insurance-select">
+              <option value="imss">IMSS</option>
+              <option value="issste">ISSSTE</option>
+              <option value="seguro_popular">Seguro Popular</option>
+              <option value="ninguno" selected>Sin seguro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Presupuesto</label>
+            <div class="budget-selector">
+              <button class="budget-btn" data-val="$">$</button>
+              <button class="budget-btn active" data-val="$$">$$</button>
+              <button class="budget-btn" data-val="$$$">$$$</button>
+            </div>
+          </div>
         </div>
+
+        <!-- Chat input -->
         <div class="chat-input-row">
           <input type="text" id="chat-input" class="chat-input"
-            data-i18n-placeholder="chat_placeholder"
-            placeholder="Escribe tu respuesta..." autocomplete="off" />
+            placeholder="Describe tus síntomas..." autocomplete="off" />
           <button id="chat-send-btn" class="chat-send-btn">
             <span class="material-symbols-outlined">send</span>
           </button>
@@ -74,111 +79,66 @@
       <!-- ── MAP AREA ─────────────────────────────────────────── -->
       <div class="map-wrap">
 
-        <!-- The map fills this container; Google Maps canvas goes here -->
         <div id="map-container">
-          <div id="sim-badge" class="sim-badge hidden"></div>
           <div class="map-loading" id="map-loading">
-            <span class="material-symbols-outlined">public</span>
-            <span data-i18n="map_init">INICIALIZANDO MOTOR ESPACIAL...</span>
+            <span class="material-symbols-outlined">local_hospital</span>
+            <span>BUSCANDO CLÍNICAS CERCANAS...</span>
           </div>
         </div>
 
-        <!-- ── FLOATING CONTROLS — siblings of map-container so they
-             always render above the Google Maps canvas ─────────── -->
-
-        <!-- Search HUD (top-left) -->
+        <!-- Search HUD -->
         <div class="search-hud">
-          <span class="material-symbols-outlined search-ico">search</span>
+          <span class="material-symbols-outlined search-ico">my_location</span>
           <input type="text" id="map-search-input"
-            data-i18n-placeholder="search_placeholder"
-            placeholder="Buscar ciudad o dirección..." />
+            placeholder="Tu ubicación actual..." />
           <button id="map-search-btn">
             <span class="material-symbols-outlined">arrow_forward</span>
           </button>
         </div>
 
-        <!-- Sim-mode badge (top-center) -->
-
-        <!-- Layer visibility toggles (right-center) -->
-        <div class="layer-toggles" id="layer-toggles">
-          <button class="lt-btn active" data-layer="housing"        title="Desarrollo Habitacional"><span class="lt-dot" style="background:#4285f4"></span></button>
-          <button class="lt-btn active" data-layer="green_space"    title="Espacios Verdes"        ><span class="lt-dot" style="background:#34a853"></span></button>
-          <button class="lt-btn active" data-layer="transport"      title="Movilidad"              ><span class="lt-dot" style="background:#8ab4f8"></span></button>
-          <button class="lt-btn active" data-layer="flood"          title="Gestión Hídrica"        ><span class="lt-dot" style="background:#9aa0a6"></span></button>
-          <button class="lt-btn active" data-layer="infrastructure" title="Infraestructura"        ><span class="lt-dot" style="background:#1e88e5"></span></button>
-          <button class="lt-btn active" data-layer="blocked"        title="Bloqueadas"             ><span class="lt-dot" style="background:#f28b82"></span></button>
-          <div class="lt-sep"></div>
-          <button class="lt-btn lt-siimp lt-loading" data-siimp="vialidades"              title="Vialidades"              ><span class="lt-dot" style="background:#4a4e56"></span></button>
-          <button class="lt-btn lt-siimp lt-loading" data-siimp="contencion_urbana"       title="Contención Urbana"       ><span class="lt-dot" style="background:#5a606a"></span></button>
-          <button class="lt-btn lt-siimp lt-loading" data-siimp="zufos"                   title="ZUFOs"                   ><span class="lt-dot" style="background:#6b5a30"></span></button>
-          <button class="lt-btn lt-siimp lt-loading" data-siimp="zonas_dinamica_especial" title="Zonas Dinámica Especial" ><span class="lt-dot" style="background:#2e6048"></span></button>
-          <button class="lt-btn lt-siimp lt-loading" data-siimp="materiales_petreos"      title="Materiales Pétreos"      ><span class="lt-dot" style="background:#6b4428"></span></button>
-        </div>
-
-        <!-- Legend (bottom-right) -->
-        <div class="map-legend" id="map-legend">
-          <div class="legend-hdr" id="legend-hdr">
-            <span class="legend-hdr-title" id="legend-title" data-i18n="legend_title">Simbología</span>
-            <span class="material-symbols-outlined legend-hdr-chevron">expand_more</span>
+        <!-- Recommendations panel (bottom overlay) -->
+        <div id="recommendations-panel" class="recommendations-panel hidden">
+          <div class="rec-header">
+            <span class="material-symbols-outlined">recommend</span>
+            <span id="rec-header-text">Opciones recomendadas</span>
+            <button id="rec-close-btn" class="icon-btn">
+              <span class="material-symbols-outlined">close</span>
+            </button>
           </div>
-          <div class="legend-body" id="legend-body"></div>
-        </div>
-
-        <!-- Hidden DOM refs kept for JS compatibility -->
-        <div style="display:none">
-          <button id="view-toggle-mode"></button>
-          <button id="draw-btn"></button>
-          <button id="view-toggle"></button>
-        </div>
-
-        <!-- Hidden controls kept in DOM for JS compatibility -->
-        <div style="display:none">
-          <textarea id="prompt"></textarea>
-          <button id="generate-btn"><span id="btn-text">EJECUTAR_RUN</span></button>
-          <input type="range" id="slider-blend" min="0" max="100" value="100" />
+          <div id="rec-cards" class="rec-cards"></div>
         </div>
 
       </div><!-- /map-wrap -->
 
-      <!-- Hidden sidebar — DOM elements preserved for JS refs -->
-      <aside id="sidebar" style="display:none">
-        <span id="session-city"></span>
-        <span id="pdf-count-display">0</span>
-        <span id="system-estado">LISTO</span>
-        <span id="proposed-count"></span>
-        <span id="feasible-count"></span>
-        <span id="siimp-status"></span>
-        <div id="proposed-list"></div>
-        <div id="validated-list"></div>
-        <div id="analyzer-report"></div>
-        <div id="metric-overall"></div>
-        <div id="metric-resilience"></div>
-        <div id="metric-population"></div>
-        <div id="metric-co2"></div>
-        <div id="metric-cost"></div>
-        <div id="metric-timeline"></div>
-        <div id="recommendation-box"></div>
-        <div id="gemini-panel"></div>
-        <div id="accessibility-panel"></div>
-        <div id="sim-legend"></div>
-      </aside>
-
     </div><!-- /workspace -->
 
-    <!-- ── TOOLTIP ───────────────────────────────────────────── -->
-    <div id="map-tooltip" class="map-tooltip hidden"></div>
-
-    <!-- ── SPINNER ───────────────────────────────────────────── -->
-    <div id="spinner">
-      <div class="spinner-ring"></div>
-      <div class="spinner-title" data-i18n="spinner">Analizando ciudad con IA...</div>
+    <!-- ── DOCTOR CHAT MODAL ─────────────────────────────────── -->
+    <div id="chat-modal" class="modal hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <span class="material-symbols-outlined">chat</span>
+          <span id="modal-doctor-name">Chat con el Doctor</span>
+          <button id="modal-close-btn" class="icon-btn">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div class="modal-messages" id="modal-messages"></div>
+        <div class="chat-input-row">
+          <input type="text" id="modal-input" class="chat-input"
+            placeholder="Escribe un mensaje..." autocomplete="off" />
+          <button id="modal-send-btn" class="chat-send-btn">
+            <span class="material-symbols-outlined">send</span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
-    <script src="https://unpkg.com/deck.gl@9.0.35/dist.min.js"></script>
-    <script src="https://unpkg.com/@deck.gl/google-maps@9.0.35/dist.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="app.js?v=31"></script>
+    <!-- ── SPINNER ───────────────────────────────────────────── -->
+    <div id="spinner" class="hidden">
+      <div class="spinner-ring"></div>
+      <div class="spinner-title">Analizando con IA...</div>
+    </div>
+
+    <script src="app.js?v=1"></script>
   </body>
 </html>

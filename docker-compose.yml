@@ -1,12 +1,11 @@
-# Lineal — Local Development Stack
-# Production: Deploy to IBM Cloud Code Engine via `ibmcloud ce app create`
+# MedConnect — Local Development Stack
 
 services:
-  lineal-api:
+  api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lineal-local
+    container_name: medconnect-api
     ports:
       - "8000:8000"
     env_file:
@@ -14,10 +13,29 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
     volumes:
-      # Hot-reload for local development
       - ./backend:/app/backend
       - ./frontend:/app/frontend
-      # Credenciales Gemini (service account JSON)
-      - ./Gemini:/app/Gemini:ro
     command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "--log-level", "debug"]
+    depends_on:
+      - mongo
+      - redis
     restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    container_name: medconnect-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: medconnect-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+volumes:
+  mongo_data:

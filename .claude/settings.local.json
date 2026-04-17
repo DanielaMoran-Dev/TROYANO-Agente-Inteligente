@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm backend/agents/construction_agent.py backend/agents/analyzer_agent.py backend/agents/evaluation_agent.py backend/agents/feasibility_agent.py backend/agents/gemini_ranker.py)",
+      "Bash(rm backend/services/geodata_service.py backend/services/discovery_service.py backend/services/intent_router.py backend/services/zone_analyzer.py)",
+      "Bash(rm backend/schema/response_schema.json)",
+      "Bash(rm backend/data/urban_rules.json)",
+      "Bash(rm backend/orchestrate_manifest.json backend/orchestrator.py)",
+      "Bash(.venv/Scripts/pip show *)",
+      "Bash(python -c \"import urllib3.exceptions; print\\('OK'\\)\")",
+      "Bash(python -c \"import urllib3; print\\(urllib3.__file__\\)\")",
+      "Bash(.venv/Scripts/python -c \"import urllib3.exceptions; print\\('OK'\\)\")",
+      "Bash(.venv/Scripts/python -c \"import urllib3; print\\(urllib3.__file__\\)\")",
+      "Bash(.venv/Scripts/pip install *)",
+      "Bash(.venv/Scripts/python -c \"import urllib3.exceptions; print\\('urllib3 OK'\\)\")",
+      "Bash(.venv/Scripts/python *)",
+      "Bash(../.venv/Scripts/python -c \"import main\")",
+      "Bash(.venv/Scripts/pip list *)",
+      "Bash(.venv/Scripts/pip.exe list *)",
+      "Bash(.venv/Scripts/pip.exe install *)",
+      "Bash(../.venv/Scripts/python.exe -c \"import main; print\\('main.py OK'\\)\")",
+      "Bash(.venv/Scripts/pip.exe show *)",
+      "Bash(../.venv/Scripts/uvicorn.exe main:app --host 127.0.0.1 --port 8000 --timeout-keep-alive 1)",
+      "Bash(curl -s http://127.0.0.1:8000/)",
+      "Bash(kill %1)",
+      "Bash(python -c \"import ast; [ast.parse\\(open\\(f, encoding='utf-8'\\).read\\(\\)\\) for f in ['agents/chat_agent.py','services/gemini_service.py','routers/patient.py']]; print\\('OK'\\)\")",
+      "Bash(python *)"
+    ]
+  }
+}

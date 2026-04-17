@@ -1,19 +1,12 @@
-# Lineal — Smart Urban Planning Platform
-# Containerized for IBM Cloud Code Engine
+# MedConnect — Medical Platform Backend
 # ─────────────────────────────────────────────────────────────
 
 FROM python:3.11-slim
 
-# Metadata
-LABEL maintainer="Lineal Team"
-LABEL description="Multi-agent urban planning backend — IBM watsonx.ai"
+LABEL maintainer="MedConnect Team"
+LABEL description="Medical platform backend — Gemini AI + MongoDB + Redis"
 
-# System deps for geospatial (GDAL, GEOS, PROJ) — required by geopandas/shapely
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgdal-dev \
-    libgeos-dev \
-    libproj-dev \
-    gdal-bin \
     curl \
     && rm -rf /var/lib/apt/lists/*
 

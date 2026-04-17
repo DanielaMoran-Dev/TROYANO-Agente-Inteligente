@@ -31,3 +31,5 @@ backend/data/restricted_zones.geojson
 *.ipynb
 
 cache/
+
+CONTEXT_FOR_CLAUDE_CODE.md
