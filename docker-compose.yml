@@ -17,5 +17,7 @@ services:
       # Hot-reload for local development
       - ./backend:/app/backend
       - ./frontend:/app/frontend
+      # Credenciales Gemini (service account JSON)
+      - ./Gemini:/app/Gemini:ro
     command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload", "--log-level", "debug"]
     restart: unless-stopped

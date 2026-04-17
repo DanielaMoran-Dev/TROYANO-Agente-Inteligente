@@ -21,8 +21,8 @@ load_dotenv()
 # Ensure the backend directory is on the path so agents are importable
 sys.path.insert(0, os.path.dirname(__file__))
 
-import orchestrator
 from agents import orchestrator_agent
+# import orchestrator  # Agentes comentados temporalmente
 
 # ---------------------------------------------------------------------------
 # App setup
@@ -86,34 +86,25 @@ class PlanRequest(BaseModel):
 @app.get("/", tags=["health"])
 async def health_check():
     """Health check endpoint."""
-    watsonx_configured = bool(os.getenv("WATSONX_API_KEY"))
     return {
         "status": "ok",
-        "service": "Lineal Smart City Planner",
+        "service": "TROYANO",
         "version": "1.0.0",
-        "mode": "watsonx" if watsonx_configured else "mock",
+        "mode": "gemini",
     }
 
 
-@app.post("/generate-plan", tags=["planning"])
-async def generate_plan(body: PlanRequest):
-    """
-    Run the full multi-agent urban planning pipeline.
-    """
-    try:
-        result = orchestrator.run_pipeline(
-            body.prompt,
-            zone=body.zone,
-            center=body.center,
-            brief=body.brief,
-        )
-        return result
-    except Exception as exc:
-        traceback.print_exc()
-        raise HTTPException(
-            status_code=500,
-            detail=f"Pipeline error: {exc}",
-        ) from exc
+# @app.post("/generate-plan", tags=["planning"])
+# async def generate_plan(body: PlanRequest):
+#     """Run the full multi-agent urban planning pipeline."""
+#     try:
+#         result = orchestrator.run_pipeline(
+#             body.prompt, zone=body.zone, center=body.center, brief=body.brief,
+#         )
+#         return result
+#     except Exception as exc:
+#         traceback.print_exc()
+#         raise HTTPException(status_code=500, detail=f"Pipeline error: {exc}") from exc
 
 
 # ---------------------------------------------------------------------------
