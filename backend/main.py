@@ -2,16 +2,15 @@
 FastAPI backend — Medical Platform (triaje, ruteo, recomendación de clínicas).
 """
 
+import logging
 import os
 import sys
-import logging
+from contextlib import asynccontextmanager
 
-logger = logging.getLogger(__name__)
-
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from dotenv import load_dotenv
 
 # Always load from services/.env (user's location), then allow cwd/.env to override
 _services_env = os.path.join(os.path.dirname(__file__), "services", ".env")
@@ -20,12 +19,43 @@ load_dotenv(override=False)  # also pick up backend/.env if it exists
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-from routers import patient, doctor, chat
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
+    datefmt="%H:%M:%S",
+)
+logger = logging.getLogger(__name__)
+
+from routers import chat, doctor, patient  # noqa: E402  (import after env load)
+from services import mongo_service  # noqa: E402
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup: ping Mongo para fallar rápido si la conexión no funciona
+    try:
+        client = mongo_service.get_client()
+        await client.admin.command("ping")
+        logger.info("MongoDB OK (db=%s)", mongo_service.MONGO_DB_NAME)
+    except Exception as exc:
+        logger.error("No se pudo conectar a MongoDB: %s", exc)
+        raise
+
+    yield
+
+    # Shutdown
+    try:
+        mongo_service.get_client().close()
+        logger.info("MongoDB client cerrado.")
+    except Exception:
+        pass
+
 
 app = FastAPI(
     title="MedConnect — Plataforma Médica Inteligente",
     description="Triaje con IA, ruteo a clínicas y mensajería doctor-paciente.",
     version="2.0.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(

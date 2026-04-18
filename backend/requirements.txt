@@ -25,3 +25,6 @@ caldav
 
 # BSON for ObjectId
 pymongo
+
+# Password hashing
+bcrypt

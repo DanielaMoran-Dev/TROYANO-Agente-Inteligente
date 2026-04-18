@@ -1,11 +1,16 @@
 """
-Recommendation Agent — generates empathetic, structured recommendations using Gemini Pro + LLM Wiki.
-Identifies which clinics have doctors in the network and routes accordingly.
+Recommendation Agent — genera recomendaciones empáticas con Gemini + LLM Wiki.
+
+Relación de red (según DATABASE_SCHEMA.md):
+  - `clinics.doctor_id` apunta a `doctors._id`.
+  - Una clínica está "en red" cuando su doctor está activo, is_network=True.
 """
 
 import json
 import logging
 import os
+
+from bson import ObjectId
 
 from services import gemini_service, mongo_service
 
@@ -32,44 +37,79 @@ Responde ÚNICAMENTE con un JSON válido sin texto adicional.
 """
 
 
+async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, dict]:
+    """
+    Devuelve {clinic_id: {doctor_id, name, specialty}} para las clínicas
+    cuyo doctor_id referencia a un doctor activo en red.
+    """
+    doctor_ids: list[ObjectId] = []
+    clinic_to_doctor: dict[str, ObjectId] = {}
+
+    for c in clinic_candidates:
+        did = c.get("doctor_id")
+        cid = c.get("clinic_id")
+        if did and cid:
+            try:
+                obj_id = did if isinstance(did, ObjectId) else ObjectId(str(did))
+                doctor_ids.append(obj_id)
+                clinic_to_doctor[cid] = obj_id
+            except Exception:
+                continue
+
+    if not doctor_ids:
+        return {}
+
+    try:
+        cursor = mongo_service.doctors().find(
+            {"_id": {"$in": doctor_ids}, "is_active": True, "is_network": True},
+            {"_id": 1, "name": 1, "last_name": 1, "specialty": 1},
+        )
+        active_doctors: dict[ObjectId, dict] = {doc["_id"]: doc async for doc in cursor}
+    except Exception as e:
+        logger.warning("Could not query doctors collection: %s", e)
+        return {}
+
+    network_map: dict[str, dict] = {}
+    for clinic_id, obj_id in clinic_to_doctor.items():
+        doc = active_doctors.get(obj_id)
+        if doc:
+            full_name = " ".join(filter(None, [doc.get("name"), doc.get("last_name")]))
+            network_map[clinic_id] = {
+                "doctor_id": str(obj_id),
+                "name": full_name.strip(),
+                "specialty": doc.get("specialty"),
+            }
+    return network_map
+
+
 async def run(routing: list[dict], triage: dict) -> dict:
     """
     Args:
-        routing: ranked clinic list from routing_agent.run()
-        triage:  output from triage_agent.run()
+        routing: lista rankeada del routing_agent.run()
+        triage:  output del triage_agent.run()
 
     Returns:
-        dict with recommendations list and optional urgent_message.
+        dict con `recommendations` y opcional `urgent_message`.
     """
     urgency = triage.get("urgency_level", "medium")
     specialty = triage.get("specialty", "")
 
-    # Identify which clinics have doctors in our network
     top_clinics = routing[:5]
-    clinic_ids = [c.get("clinic_id", "") for c in top_clinics]
+    network_map = await _identify_network_doctors(top_clinics)
 
-    network_doctor_map: dict[str, dict] = {}
-    try:
-        cursor = mongo_service.doctors().find(
-            {"clinic_id": {"$in": clinic_ids}, "is_active": True},
-            {"_id": 0, "doctor_id": {"$toString": "$_id"}, "name": 1, "clinic_id": 1},
-        )
-        async for doc in cursor:
-            network_doctor_map[doc["clinic_id"]] = doc
-    except Exception as e:
-        logger.warning("Could not query doctors collection: %s", e)
-
-    # Build context for the LLM
+    # Contexto para el LLM — sólo datos que el modelo usa para redactar
     clinics_context = json.dumps(
         [
             {
+                "clinic_id": c.get("clinic_id"),
                 "name": c.get("name"),
                 "specialty": c.get("specialty"),
-                "budget_level": c.get("budget_level"),
+                "price_level": c.get("price_level"),
+                "insurances": c.get("insurances") or [],
                 "travel_time_min": c.get("travel_time_min"),
                 "phone": c.get("phone"),
                 "address": c.get("address"),
-                "is_network": c.get("clinic_id", "") in network_doctor_map,
+                "is_network": c.get("clinic_id") in network_map,
             }
             for c in top_clinics
         ],
@@ -108,47 +148,56 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
 }}"""
 
     try:
-        raw = gemini_service.generate(prompt, system=system, model="gemini-1.5-pro")
+        raw = gemini_service.generate(prompt, system=system)
         raw = raw.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
         result = json.loads(raw)
     except Exception as e:
         logger.error("Recommendation agent error: %s", e)
-        result = _fallback_recommendations(top_clinics, network_doctor_map, urgency)
+        result = _fallback_recommendations(top_clinics, network_map, urgency)
 
-    # Enrich with real doctor_ids and coords from our data
+    # Enriquecer con datos reales — la verdad viene de Mongo, no del LLM
     for rec in result.get("recommendations", []):
         clinic_id = rec.get("clinic_id", "")
         source = next((c for c in top_clinics if c.get("clinic_id") == clinic_id), {})
-        if source.get("coords"):
-            rec["coords"] = source["coords"]
+
+        if source.get("lat") is not None and source.get("lng") is not None:
+            rec["coords"] = {"lat": source["lat"], "lng": source["lng"]}
         if not rec.get("travel_time_min") and source.get("travel_time_min"):
             rec["travel_time_min"] = source["travel_time_min"]
-        if clinic_id in network_doctor_map:
+
+        contact = rec.setdefault("contact", {})
+        if clinic_id in network_map:
             rec["is_network"] = True
-            rec.setdefault("contact", {})["doctor_id"] = network_doctor_map[clinic_id].get("doctor_id")
-            rec["contact"]["type"] = "chat"
+            contact["type"] = "chat"
+            contact["doctor_id"] = network_map[clinic_id]["doctor_id"]
+        else:
+            rec["is_network"] = False
+            contact["type"] = "info"
+            contact["doctor_id"] = None
+            contact["phone"] = source.get("phone")
+            contact["address"] = source.get("address")
 
     return result
 
 
-def _fallback_recommendations(clinics, doctor_map, urgency) -> dict:
-    """Minimal fallback when Gemini is unavailable."""
+def _fallback_recommendations(clinics: list[dict], network_map: dict, urgency: str) -> dict:
+    """Recomendaciones mínimas cuando Gemini falla."""
     recs = []
     for i, c in enumerate(clinics[:3], start=1):
         cid = c.get("clinic_id", "")
-        is_net = cid in doctor_map
+        is_net = cid in network_map
         recs.append({
             "clinic_id": cid,
-            "justification": f"Opción recomendada según tu especialidad y ubicación.",
+            "justification": "Opción recomendada según tu especialidad y ubicación.",
             "is_network": is_net,
             "priority": i,
             "contact": {
                 "type": "chat" if is_net else "info",
-                "doctor_id": doctor_map[cid].get("doctor_id") if is_net else None,
+                "doctor_id": network_map[cid]["doctor_id"] if is_net else None,
                 "phone": c.get("phone"),
                 "address": c.get("address"),
             },
-            "coords": c.get("coords", {}),
+            "coords": {"lat": c.get("lat"), "lng": c.get("lng")} if c.get("lat") else {},
             "travel_time_min": c.get("travel_time_min"),
         })
     return {

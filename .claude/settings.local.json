@@ -24,7 +24,12 @@
       "Bash(curl -s http://127.0.0.1:8000/)",
       "Bash(kill %1)",
       "Bash(python -c \"import ast; [ast.parse\\(open\\(f, encoding='utf-8'\\).read\\(\\)\\) for f in ['agents/chat_agent.py','services/gemini_service.py','routers/patient.py']]; print\\('OK'\\)\")",
-      "Bash(python *)"
+      "Bash(python *)",
+      "Bash(./.venv/Scripts/python.exe -m scripts.init_db)",
+      "Bash(./.venv/Scripts/python.exe -m scripts.verify_db)",
+      "Bash(./.venv/Scripts/python.exe -m scripts.test_vector_search)",
+      "Bash(./.venv/Scripts/python.exe -m pip install bcrypt)",
+      "Bash(./.venv/Scripts/python.exe -m scripts.smoke_test)"
     ]
   }
 }
