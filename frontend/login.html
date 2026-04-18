@@ -6,221 +6,494 @@
   <title>MedConnect — Acceso</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=1" />
   <style>
-    /* ── LOGIN PAGE ── */
-    html, body { height: 100%; overflow: auto; }
-
-    .login-bg {
-      min-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg);
-      position: relative;
-      padding: 2rem 1rem;
+    :root {
+      --bg:          #0d1117;
+      --surface:     #161d27;
+      --surface-2:   #1c2535;
+      --surface-3:   #243040;
+      --border:      #2c3d50;
+      --text:        #eaf0f6;
+      --text-2:      #9eb3c6;
+      --muted:       #6b8499;
+      --disabled:    #3f5668;
+      --accent:      #22D3EE;
+      --accent-dim:  rgba(34,211,238,0.10);
+      --accent-border: rgba(34,211,238,0.30);
+      --blue:        #60A5FA;
+      --blue-btn:    #3B82F6;
+      --blue-btn-h:  #2563EB;
+      --red:         #F87171;
+      --green:       #34D399;
+      --mono:    "IBM Plex Mono", monospace;
+      --sans:    "DM Sans", system-ui, sans-serif;
+      --display: "Sora", "DM Sans", sans-serif;
     }
-    .login-bg::before {
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .material-symbols-outlined {
+      font-size: 18px;
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* ── LAYOUT: LEFT BRAND + RIGHT FORM ── */
+    .login-shell {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ── LEFT PANEL ── */
+    .login-brand {
+      flex: 0 0 42%;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-brand::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 20% 40%, rgba(26,115,232,0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 80% 70%, rgba(120,217,236,0.04) 0%, transparent 70%);
+        radial-gradient(ellipse 80% 60% at 10% 90%, rgba(34,211,238,0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 90% 10%, rgba(96,165,250,0.05) 0%, transparent 60%);
       pointer-events: none;
     }
 
+    /* decorative grid */
+    .login-brand::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(44,61,80,0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(44,61,80,0.4) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .brand-top { position: relative; z-index: 1; }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .brand-logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .brand-logo-mark .material-symbols-outlined { font-size: 22px; color: #001824; font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+    .brand-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+      line-height: 1;
+    }
+    .brand-tagline {
+      font-family: var(--mono);
+      font-size: 0.52rem;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .brand-headline {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+    }
+    .brand-headline em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .brand-desc {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      max-width: 340px;
+      margin-bottom: 2.5rem;
+    }
+
+    .brand-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .brand-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .brand-feature-ico {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .brand-feature-ico .material-symbols-outlined { font-size: 16px; color: var(--accent); }
+    .brand-feature-body { display: flex; flex-direction: column; gap: 0.15rem; }
+    .brand-feature-title { font-size: 0.83rem; font-weight: 600; color: var(--text); }
+    .brand-feature-sub   { font-size: 0.73rem; color: var(--muted); line-height: 1.4; }
+
+    .brand-bottom {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .brand-pill {
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      color: var(--disabled);
+      letter-spacing: 0.6px;
+      background: var(--surface-2);
+    }
+
+    /* ── RIGHT PANEL ── */
+    .login-form-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem;
+      overflow-y: auto;
+    }
+
     .login-card {
-      width: 440px;
+      width: 420px;
       max-width: 100%;
+    }
+
+    .lc-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .lc-title {
+      font-family: var(--display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .lc-sub {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    /* Role tabs */
+    .role-tabs {
+      display: flex;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-      position: relative;
-      z-index: 1;
-    }
-
-    .login-header {
-      padding: 1.6rem 2rem 1.1rem;
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-    .login-logo {
-      font-family: var(--mono);
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 6px;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-    .login-sub {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      color: var(--muted);
-      letter-spacing: 2px;
-    }
-
-    /* Role selector tabs */
-    .role-tabs {
-      display: flex;
-      border-bottom: 1px solid var(--border);
+      padding: 4px;
+      margin-bottom: 1.5rem;
+      gap: 4px;
     }
     .role-tab {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 0.9rem;
+      gap: 0.45rem;
+      padding: 0.65rem;
       background: transparent;
       border: none;
       color: var(--muted);
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 1px;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
       cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: color 0.15s, border-color 0.15s, background 0.15s;
+      border-radius: 9px;
+      transition: color 0.15s, background 0.15s;
     }
-    .role-tab .material-symbols-outlined { font-size: 18px; }
+    .role-tab .material-symbols-outlined { font-size: 17px; }
     .role-tab:hover { color: var(--text-2); background: var(--surface-2); }
-    .role-tab.active { color: var(--blue); border-bottom-color: var(--blue); background: rgba(138,180,248,0.05); }
+    .role-tab.active {
+      color: var(--text);
+      background: var(--surface-2);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+    .role-tab.active .material-symbols-outlined { color: var(--accent); }
 
-    .login-body { padding: 1.3rem 2rem 1.7rem; }
-
-    /* Mode sub-tabs (Iniciar sesión / Registrarse) */
+    /* Mode sub-tabs */
     .mode-tabs {
       display: flex;
-      background: var(--bg);
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 3px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
+      gap: 3px;
     }
     .mode-tab {
       flex: 1;
-      padding: 0.45rem;
+      padding: 0.48rem;
       background: transparent;
       border: none;
       color: var(--muted);
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 1px;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 6px;
       transition: background 0.12s, color 0.12s;
     }
-    .mode-tab.active { background: var(--surface-2); color: var(--text); }
+    .mode-tab.active {
+      background: var(--surface-2);
+      color: var(--text);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    }
 
-    .mode-panel { display: none; flex-direction: column; gap: 0.8rem; }
+    .mode-panel { display: none; flex-direction: column; gap: 0.9rem; }
     .mode-panel.active { display: flex; }
 
-    .login-field { display: flex; flex-direction: column; gap: 0.3rem; }
-    .login-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    /* Form fields */
+    .login-field { display: flex; flex-direction: column; gap: 0.35rem; }
+    .login-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+
     .login-field label {
       font-family: var(--mono);
-      font-size: 0.58rem;
+      font-size: 0.55rem;
       color: var(--muted);
-      letter-spacing: 1.5px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
     }
+
     .login-field input,
     .login-field select {
-      background: var(--bg);
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
       color: var(--text);
       font-family: var(--sans);
-      font-size: 0.85rem;
-      padding: 0.55rem 0.7rem;
+      font-size: 0.88rem;
+      padding: 0.6rem 0.8rem;
       outline: none;
-      transition: border-color 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      appearance: none;
     }
     .login-field input:focus,
-    .login-field select:focus { border-color: var(--blue); }
+    .login-field select:focus {
+      border-color: var(--accent-border);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
     .login-field input::placeholder { color: var(--disabled); }
+
+    .login-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b8499' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      padding-right: 2.2rem;
+    }
 
     .btn-login {
       width: 100%;
-      padding: 0.7rem;
-      background: var(--blue-btn);
+      padding: 0.75rem;
+      background: var(--accent);
       border: none;
-      border-radius: 6px;
-      color: #fff;
+      border-radius: 9px;
+      color: #001824;
       font-family: var(--sans);
-      font-size: 0.82rem;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 700;
       cursor: pointer;
-      letter-spacing: 0.5px;
-      transition: background 0.12s, opacity 0.12s;
+      letter-spacing: 0.2px;
+      transition: opacity 0.12s, box-shadow 0.15s;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      margin-top: 0.4rem;
+      gap: 0.45rem;
+      margin-top: 0.3rem;
+      box-shadow: 0 2px 12px rgba(34,211,238,0.28);
     }
-    .btn-login:hover:not(:disabled) { background: var(--blue-btn-h); }
-    .btn-login:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-login:hover:not(:disabled) {
+      opacity: 0.9;
+      box-shadow: 0 4px 20px rgba(34,211,238,0.4);
+    }
+    .btn-login:disabled { opacity: 0.45; cursor: not-allowed; }
     .btn-login .material-symbols-outlined { font-size: 18px; }
 
     .login-msg {
       font-family: var(--mono);
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       text-align: center;
       min-height: 1rem;
       letter-spacing: 0.5px;
-      margin-top: 0.2rem;
+      margin-top: 0.15rem;
+      padding: 0.5rem;
+      border-radius: 6px;
     }
-    .login-msg.err { color: var(--red); }
-    .login-msg.ok  { color: #34a853; }
+    .login-msg.err {
+      color: var(--red);
+      background: rgba(248,113,113,0.08);
+      border: 1px solid rgba(248,113,113,0.2);
+    }
+    .login-msg.ok {
+      color: var(--green);
+      background: rgba(52,211,153,0.08);
+      border: 1px solid rgba(52,211,153,0.2);
+    }
 
-    .login-footer {
-      padding: 0.8rem 2rem;
+    .login-footer-note {
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
       border-top: 1px solid var(--border);
       font-family: var(--mono);
-      font-size: 0.55rem;
+      font-size: 0.52rem;
       color: var(--disabled);
       text-align: center;
       letter-spacing: 0.5px;
+      line-height: 1.7;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 800px) {
+      .login-brand { display: none; }
+      .login-form-panel { padding: 2rem 1.2rem; }
+      .login-card { width: 100%; }
     }
   </style>
 </head>
 <body>
-<div class="login-bg">
-  <div class="login-card">
+<div class="login-shell">
 
-    <!-- Header -->
-    <div class="login-header">
-      <div class="login-logo">MEDCONNECT</div>
-      <div class="login-sub">PLATAFORMA MÉDICA INTELIGENTE</div>
-    </div>
-
-    <!-- Role tabs -->
-    <div class="role-tabs">
-      <button class="role-tab active" id="tab-patient" onclick="switchRole('patient')">
-        <span class="material-symbols-outlined">person</span>
-        PACIENTE
-      </button>
-      <button class="role-tab" id="tab-doctor" onclick="switchRole('doctor')">
-        <span class="material-symbols-outlined">stethoscope</span>
-        MÉDICO
-      </button>
-    </div>
-
-    <!-- Body -->
-    <div class="login-body">
-
-      <!-- Mode sub-tabs (login / register) -->
-      <div class="mode-tabs">
-        <button class="mode-tab active" id="mt-login" onclick="switchMode('login')">INICIAR SESIÓN</button>
-        <button class="mode-tab" id="mt-register" onclick="switchMode('register')">REGISTRARSE</button>
+  <!-- ── LEFT BRAND PANEL ── -->
+  <aside class="login-brand">
+    <div class="brand-top">
+      <div class="brand-logo">
+        <div class="brand-logo-mark">
+          <span class="material-symbols-outlined">ecg_heart</span>
+        </div>
+        <div class="brand-logo-text">
+          <span class="brand-name">MedConnect</span>
+          <span class="brand-tagline">Plataforma Médica Inteligente</span>
+        </div>
       </div>
 
-      <!-- ───── PATIENT · LOGIN ───── -->
+      <div class="brand-headline">
+        Atención médica<br>
+        <em>inteligente y cercana</em>
+      </div>
+
+      <p class="brand-desc">
+        Conecta con el médico adecuado en minutos. Nuestro agente de IA analiza tus síntomas y te guía hacia la mejor opción según tu ubicación, seguro y presupuesto.
+      </p>
+
+      <div class="brand-features">
+        <div class="brand-feature">
+          <div class="brand-feature-ico">
+            <span class="material-symbols-outlined">smart_toy</span>
+          </div>
+          <div class="brand-feature-body">
+            <span class="brand-feature-title">Triage con IA</span>
+            <span class="brand-feature-sub">Análisis de síntomas en tiempo real con Gemini 2.5</span>
+          </div>
+        </div>
+        <div class="brand-feature">
+          <div class="brand-feature-ico">
+            <span class="material-symbols-outlined">map</span>
+          </div>
+          <div class="brand-feature-body">
+            <span class="brand-feature-title">Clínicas cercanas</span>
+            <span class="brand-feature-sub">Recomendaciones según tu ubicación y necesidades</span>
+          </div>
+        </div>
+        <div class="brand-feature">
+          <div class="brand-feature-ico">
+            <span class="material-symbols-outlined">calendar_month</span>
+          </div>
+          <div class="brand-feature-body">
+            <span class="brand-feature-title">Citas al instante</span>
+            <span class="brand-feature-sub">Agenda directamente con el doctor, sin intermediarios</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="brand-bottom">
+      <span class="brand-pill">IA + Gemini</span>
+      <span class="brand-pill">Google Maps</span>
+      <span class="brand-pill">MongoDB</span>
+    </div>
+  </aside>
+
+  <!-- ── RIGHT FORM PANEL ── -->
+  <main class="login-form-panel">
+    <div class="login-card">
+
+      <div class="lc-header">
+        <div class="lc-title">Bienvenido de vuelta</div>
+        <div class="lc-sub">Selecciona tu perfil e ingresa a la plataforma</div>
+      </div>
+
+      <!-- Role tabs -->
+      <div class="role-tabs">
+        <button class="role-tab active" id="tab-patient" onclick="switchRole('patient')">
+          <span class="material-symbols-outlined">person</span>
+          Soy Paciente
+        </button>
+        <button class="role-tab" id="tab-doctor" onclick="switchRole('doctor')">
+          <span class="material-symbols-outlined">stethoscope</span>
+          Soy Médico
+        </button>
+      </div>
+
+      <!-- Mode sub-tabs -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" id="mt-login" onclick="switchMode('login')">Iniciar sesión</button>
+        <button class="mode-tab" id="mt-register" onclick="switchMode('register')">Crear cuenta</button>
+      </div>
+
+      <!-- ── PATIENT · LOGIN ── -->
       <form id="form-patient-login" class="mode-panel active" onsubmit="event.preventDefault(); patientLogin();">
         <div class="login-field">
           <label>Correo electrónico</label>
@@ -232,11 +505,11 @@
         </div>
         <button type="submit" class="btn-login" id="btn-pl">
           <span class="material-symbols-outlined">login</span>
-          ENTRAR
+          Entrar
         </button>
       </form>
 
-      <!-- ───── PATIENT · REGISTER ───── -->
+      <!-- ── PATIENT · REGISTER ── -->
       <form id="form-patient-register" class="mode-panel" onsubmit="event.preventDefault(); patientRegister();">
         <div class="login-row">
           <div class="login-field">
@@ -253,7 +526,7 @@
           <input type="email" id="pr-email" placeholder="tucorreo@ejemplo.com" autocomplete="email" required />
         </div>
         <div class="login-field">
-          <label>Contraseña (mínimo 6)</label>
+          <label>Contraseña (mínimo 6 caracteres)</label>
           <input type="password" id="pr-password" placeholder="••••••••" autocomplete="new-password" minlength="6" required />
         </div>
         <div class="login-row">
@@ -262,7 +535,7 @@
             <input type="number" id="pr-age" min="0" max="120" placeholder="30" />
           </div>
           <div class="login-field">
-            <label>Seguro</label>
+            <label>Seguro médico</label>
             <select id="pr-insurance">
               <option value="ninguno" selected>Sin seguro</option>
               <option value="imss">IMSS</option>
@@ -273,14 +546,14 @@
         </div>
         <button type="submit" class="btn-login" id="btn-pr">
           <span class="material-symbols-outlined">person_add</span>
-          CREAR CUENTA
+          Crear cuenta
         </button>
       </form>
 
-      <!-- ───── DOCTOR · LOGIN ───── -->
+      <!-- ── DOCTOR · LOGIN ── -->
       <form id="form-doctor-login" class="mode-panel" onsubmit="event.preventDefault(); doctorLogin();">
         <div class="login-field">
-          <label>Correo electrónico</label>
+          <label>Correo profesional</label>
           <input type="email" id="dl-email" placeholder="doctor@medconnect.mx" autocomplete="email" required />
         </div>
         <div class="login-field">
@@ -289,11 +562,11 @@
         </div>
         <button type="submit" class="btn-login" id="btn-dl">
           <span class="material-symbols-outlined">login</span>
-          INICIAR SESIÓN
+          Iniciar sesión
         </button>
       </form>
 
-      <!-- ───── DOCTOR · REGISTER ───── -->
+      <!-- ── DOCTOR · REGISTER ── -->
       <form id="form-doctor-register" class="mode-panel" onsubmit="event.preventDefault(); doctorRegister();">
         <div class="login-row">
           <div class="login-field">
@@ -310,7 +583,7 @@
           <input type="email" id="dr-email" placeholder="doctor@medconnect.mx" autocomplete="email" required />
         </div>
         <div class="login-field">
-          <label>Contraseña (mínimo 6)</label>
+          <label>Contraseña (mínimo 6 caracteres)</label>
           <input type="password" id="dr-password" placeholder="••••••••" autocomplete="new-password" minlength="6" required />
         </div>
         <div class="login-row">
@@ -344,7 +617,7 @@
             <label>Nivel de precio</label>
             <select id="dr-price">
               <option value="1">$ — Público</option>
-              <option value="2" selected>$$ — Privado bajo</option>
+              <option value="2" selected>$$ — Privado</option>
               <option value="3">$$$ — Premium</option>
             </select>
           </div>
@@ -355,24 +628,25 @@
         </div>
         <button type="submit" class="btn-login" id="btn-dr">
           <span class="material-symbols-outlined">person_add</span>
-          REGISTRARME
+          Registrarme
         </button>
       </form>
 
       <div class="login-msg" id="login-msg"></div>
 
-    </div>
+      <div class="login-footer-note">
+        Al ingresar, aceptas el uso de tus datos únicamente para fines médicos.<br>
+        MedConnect · IA + Gemini 2.5 Flash · Privacidad garantizada
+      </div>
 
-    <div class="login-footer">IA + Gemini 2.5 Flash · Google Maps · MongoDB</div>
-  </div>
+    </div>
+  </main>
 </div>
 
 <script>
-  // ── State ──────────────────────────────────────────────────────────────
-  let currentRole = "patient";  // "patient" | "doctor"
-  let currentMode = "login";    // "login" | "register"
+  let currentRole = "patient";
+  let currentMode = "login";
 
-  // Si ya hay sesión válida, redirige de una vez
   (function autoRedirect() {
     const doctor = sessionStorage.getItem("medconnect_doctor");
     const user   = sessionStorage.getItem("medconnect_user");
@@ -380,13 +654,22 @@
     if (user)   { window.location.replace("index.html");  return; }
   })();
 
-  // ── UI switching ───────────────────────────────────────────────────────
   function switchRole(role) {
     currentRole = role;
     document.getElementById("tab-patient").classList.toggle("active", role === "patient");
     document.getElementById("tab-doctor").classList.toggle("active", role === "doctor");
     renderPanels();
     setMsg("", "");
+    // Update headline based on role
+    const lcTitle = document.querySelector(".lc-title");
+    const lcSub   = document.querySelector(".lc-sub");
+    if (role === "doctor") {
+      lcTitle.textContent = currentMode === "login" ? "Panel médico" : "Registro médico";
+      lcSub.textContent = "Accede a tu dashboard de pacientes y citas";
+    } else {
+      lcTitle.textContent = currentMode === "login" ? "Bienvenido de vuelta" : "Crear cuenta";
+      lcSub.textContent = "Selecciona tu perfil e ingresa a la plataforma";
+    }
   }
 
   function switchMode(mode) {
@@ -395,6 +678,7 @@
     document.getElementById("mt-register").classList.toggle("active", mode === "register");
     renderPanels();
     setMsg("", "");
+    switchRole(currentRole); // refresh title
   }
 
   function renderPanels() {
@@ -416,7 +700,6 @@
     el.className = "login-msg" + (kind ? " " + kind : "");
   }
 
-  // ── API helper ─────────────────────────────────────────────────────────
   async function apiCall(path, body) {
     const res = await fetch(path, {
       method: "POST",
@@ -442,9 +725,7 @@
     };
   }
 
-  // ── Session storage ────────────────────────────────────────────────────
   function saveUserSession(user) {
-    // user = backend response (UserPublic)
     sessionStorage.setItem("medconnect_user", JSON.stringify({
       user_id:    user.user_id,
       email:      user.email,
@@ -460,24 +741,23 @@
   }
 
   function saveDoctorSession(doctor) {
-    // doctor = backend response (DoctorPublic)
-    const fullName   = `Dr. ${doctor.name} ${doctor.last_name}`.trim();
-    const specialty  = titleCase((doctor.specialty || "").replaceAll("_", " "));
+    const fullName  = `Dr. ${doctor.name} ${doctor.last_name}`.trim();
+    const specialty = titleCase((doctor.specialty || "").replaceAll("_", " "));
     sessionStorage.setItem("medconnect_doctor", JSON.stringify({
-      doctor_id:       doctor.doctor_id,
-      id:              doctor.doctor_id,      // alias legacy
-      email:           doctor.email,
-      first_name:      doctor.name,
-      last_name:       doctor.last_name,
-      name:            fullName,              // display name para doctor.js
-      specialty:       specialty,             // display (Title Case)
-      specialty_raw:   doctor.specialty,      // para filtros/API
-      license:         doctor.license_number, // alias legacy
-      license_number:  doctor.license_number,
-      price_level:     doctor.price_level,
-      insurances:      doctor.insurances || [],
-      is_network:      !!doctor.is_network,
-      is_active:       !!doctor.is_active,
+      doctor_id:          doctor.doctor_id,
+      id:                 doctor.doctor_id,
+      email:              doctor.email,
+      first_name:         doctor.name,
+      last_name:          doctor.last_name,
+      name:               fullName,
+      specialty:          specialty,
+      specialty_raw:      doctor.specialty,
+      license:            doctor.license_number,
+      license_number:     doctor.license_number,
+      price_level:        doctor.price_level,
+      insurances:         doctor.insurances || [],
+      is_network:         !!doctor.is_network,
+      is_active:          !!doctor.is_active,
       calendar_connected: !!doctor.calendar_connected,
     }));
     sessionStorage.removeItem("medconnect_user");
@@ -487,7 +767,6 @@
     return (s || "").split(" ").map(w => w ? w[0].toUpperCase() + w.slice(1) : "").join(" ");
   }
 
-  // ── Handlers ───────────────────────────────────────────────────────────
   const patientLogin = withBusy("btn-pl", async () => {
     const email    = document.getElementById("pl-email").value.trim().toLowerCase();
     const password = document.getElementById("pl-password").value;
@@ -499,15 +778,14 @@
 
   const patientRegister = withBusy("btn-pr", async () => {
     const payload = {
-      name:       document.getElementById("pr-name").value.trim(),
-      last_name:  document.getElementById("pr-last").value.trim(),
-      email:      document.getElementById("pr-email").value.trim().toLowerCase(),
-      password:   document.getElementById("pr-password").value,
-      insurance:  document.getElementById("pr-insurance").value,
+      name:      document.getElementById("pr-name").value.trim(),
+      last_name: document.getElementById("pr-last").value.trim(),
+      email:     document.getElementById("pr-email").value.trim().toLowerCase(),
+      password:  document.getElementById("pr-password").value,
+      insurance: document.getElementById("pr-insurance").value,
     };
     const ageVal = document.getElementById("pr-age").value;
     if (ageVal) payload.age = parseInt(ageVal, 10);
-
     const user = await apiCall("/users/register", payload);
     saveUserSession(user);
     setMsg("Cuenta creada. Redirigiendo...", "ok");
@@ -532,18 +810,15 @@
       license_number: document.getElementById("dr-license").value.trim(),
       specialty:      document.getElementById("dr-specialty").value,
       price_level:    parseInt(document.getElementById("dr-price").value, 10),
-      is_network:     true,  // por defecto; el admin puede cambiarlo después
+      is_network:     true,
     };
     const phone = document.getElementById("dr-phone").value.trim();
     if (phone) payload.phone = phone;
-
     const doctor = await apiCall("/doctors/register", payload);
     saveDoctorSession(doctor);
     setMsg("Cuenta creada. Redirigiendo...", "ok");
     window.location.replace("doctor.html");
   });
-
-  // Enter-key support: el submit nativo del form ya lo maneja (onsubmit).
 </script>
 </body>
 </html>

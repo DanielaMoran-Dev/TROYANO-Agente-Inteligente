@@ -281,7 +281,13 @@ function showAnalyzingMessage(text) {
   return div;
 }
 
+function dismissWelcome() {
+  const w = document.getElementById("chat-welcome");
+  if (w) w.remove();
+}
+
 function addBotMessage(text) {
+  dismissWelcome();
   const div = document.createElement("div");
   div.className = "chat-msg bot";
   div.innerHTML = `
@@ -299,6 +305,7 @@ function addBotMessage(text) {
 }
 
 function addUserMessage(text) {
+  dismissWelcome();
   const div = document.createElement("div");
   div.className = "chat-msg user";
   div.innerHTML = `<div class="msg-bubble">${escapeHtml(text)}</div>`;

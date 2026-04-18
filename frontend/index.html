@@ -6,18 +6,88 @@
     <title>MedConnect — Encuentra tu médico</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="style.css?v=3" />
+    <style>
+      /* ── PATIENT WELCOME STATE ── */
+      .chat-welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        gap: 1.2rem;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        animation: msg-in 0.4s ease;
+      }
+      .chat-welcome-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 0 6px rgba(34,211,238,0.06);
+      }
+      .chat-welcome-icon .material-symbols-outlined {
+        font-size: 30px;
+        color: var(--accent);
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 32;
+      }
+      .chat-welcome h2 {
+        font-family: var(--display);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.3;
+      }
+      .chat-welcome p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        max-width: 340px;
+        line-height: 1.65;
+      }
+      .chat-welcome-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        max-width: 400px;
+      }
+      .chat-welcome-chip {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.42rem 0.8rem;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        color: var(--text-2);
+        font-size: 0.78rem;
+        cursor: pointer;
+        transition: border-color 0.15s, color 0.15s, background 0.15s;
+        user-select: none;
+      }
+      .chat-welcome-chip:hover {
+        border-color: var(--accent-border);
+        color: var(--accent);
+        background: var(--accent-dim);
+      }
+      .chat-welcome-chip .material-symbols-outlined { font-size: 15px; }
+    </style>
   </head>
   <body>
 
     <!-- ── HEADER ─────────────────────────────────────────────── -->
     <header>
       <div class="header-left">
-        <span class="logo">MedConnect</span>
-        <span class="nav-sep">//</span>
-        <span class="header-breadcrumb">Plataforma Médica Inteligente</span>
+        <span class="logo">Med<span>Connect</span></span>
+        <span class="nav-sep">/</span>
+        <span class="header-breadcrumb">Asistente Médico</span>
       </div>
       <div class="header-right">
         <span class="header-tag">IA + Gemini</span>
@@ -25,7 +95,7 @@
           <span class="material-symbols-outlined">fiber_manual_record</span>
           <span>CONECTANDO...</span>
         </div>
-        <div class="user-chip" id="user-chip">P</div>
+        <div class="user-chip" id="user-chip" title="Cerrar sesión">P</div>
       </div>
     </header>
 
@@ -45,11 +115,11 @@
         </button>
       </nav>
 
-      <!-- ── HISTORY PANEL (conversations) ──────────────────────── -->
+      <!-- ── HISTORY PANEL ── -->
       <div id="history-panel" class="side-panel hidden">
         <div class="side-panel-header">
           <span class="material-symbols-outlined">forum</span>
-          <span>Mis Chats</span>
+          <span>Mis Consultas</span>
           <button class="icon-btn" onclick="closeSidePanel()">
             <span class="material-symbols-outlined">close</span>
           </button>
@@ -57,7 +127,7 @@
         <div id="conv-list" class="side-panel-body"></div>
       </div>
 
-      <!-- ── APPOINTMENTS PANEL ──────────────────────────────────── -->
+      <!-- ── APPOINTMENTS PANEL ── -->
       <div id="appt-panel" class="side-panel hidden">
         <div class="side-panel-header">
           <span class="material-symbols-outlined">event_note</span>
@@ -72,7 +142,7 @@
       <!-- ── CHAT PANEL ─────────────────────────────────────────── -->
       <div class="chat-left">
 
-        <!-- Triage summary (visible in split mode, replaces chat view) -->
+        <!-- Triage summary (visible in split mode) -->
         <div id="triage-summary" class="hidden">
           <div id="triage-pills" class="triage-pills"></div>
           <p id="triage-text" class="triage-text"></p>
@@ -83,9 +153,40 @@
         </div>
 
         <!-- Message history -->
-        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-messages" id="chat-messages">
+          <!-- Welcome state — shown before first message, hidden by JS on chat start -->
+          <div class="chat-welcome" id="chat-welcome">
+            <div class="chat-welcome-icon">
+              <span class="material-symbols-outlined">ecg_heart</span>
+            </div>
+            <h2>¿Cómo te puedo ayudar hoy?</h2>
+            <p>Describe tus síntomas y te orientaré hacia el especialista adecuado según tu ubicación y seguro médico.</p>
+            <div class="chat-welcome-chips">
+              <span class="chat-welcome-chip" onclick="fillSuggestion('Tengo dolor de cabeza y fiebre desde ayer')">
+                <span class="material-symbols-outlined">thermostat</span>
+                Fiebre y dolor de cabeza
+              </span>
+              <span class="chat-welcome-chip" onclick="fillSuggestion('Siento dolor en el pecho al respirar')">
+                <span class="material-symbols-outlined">favorite</span>
+                Dolor en el pecho
+              </span>
+              <span class="chat-welcome-chip" onclick="fillSuggestion('Tengo tos persistente hace una semana')">
+                <span class="material-symbols-outlined">air</span>
+                Tos persistente
+              </span>
+              <span class="chat-welcome-chip" onclick="fillSuggestion('Me duele el estómago y tengo náuseas')">
+                <span class="material-symbols-outlined">sick</span>
+                Malestar estomacal
+              </span>
+              <span class="chat-welcome-chip" onclick="fillSuggestion('Quiero agendar una revisión general')">
+                <span class="material-symbols-outlined">medical_services</span>
+                Chequeo general
+              </span>
+            </div>
+          </div>
+        </div>
 
-        <!-- Recommendations (appear here in split mode) -->
+        <!-- Recommendations panel -->
         <div id="recommendations-panel" class="recommendations-panel hidden">
           <div class="rec-header">
             <span class="material-symbols-outlined">recommend</span>
@@ -126,7 +227,7 @@
             <span class="material-symbols-outlined">add</span>
           </button>
           <input type="text" id="chat-input" class="chat-input"
-            placeholder="Describe tus síntomas..." autocomplete="off" />
+            placeholder="Describe tus síntomas o haz una pregunta..." autocomplete="off" />
           <button id="chat-send-btn" class="chat-send-btn">
             <span class="material-symbols-outlined">send</span>
           </button>
@@ -134,7 +235,7 @@
 
       </div><!-- /chat-left -->
 
-      <!-- ── MAP PANEL (hidden until split mode) ─────────────────── -->
+      <!-- ── MAP PANEL ─────────────────────────────────────────── -->
       <div class="map-wrap">
 
         <div id="map-container">
@@ -180,47 +281,48 @@
 
     <!-- ── APPOINTMENT MODAL ──────────────────────────────────── -->
     <div id="appt-overlay" class="modal hidden">
-      <div class="modal-card" style="max-width:420px">
+      <div class="modal-card" style="max-width:440px; height:auto; padding-bottom:0">
         <div class="modal-header">
-          <span class="material-symbols-outlined">event</span>
+          <span class="material-symbols-outlined">event_add</span>
           <span>Agendar cita</span>
           <button class="icon-btn" onclick="closeAppointmentModal()">
             <span class="material-symbols-outlined">close</span>
           </button>
         </div>
-        <div style="padding:1.1rem 1.3rem;display:flex;flex-direction:column;gap:0.75rem">
-          <div style="font-size:0.78rem;color:var(--muted, #aaa);line-height:1.4">
-            Solicitarás una cita con el doctor en red de
-            <strong id="appt-clinic-name" style="color:var(--text, #fff)">—</strong>.
-            El doctor confirmará tu cita desde su panel.
+        <div style="padding:1.2rem 1.4rem; display:flex; flex-direction:column; gap:0.85rem;">
+          <p style="font-size:0.83rem; color:var(--muted); line-height:1.55;">
+            Solicitas una cita con el doctor en
+            <strong id="appt-clinic-name" style="color:var(--text);">—</strong>.
+            El médico confirmará desde su panel.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:0.3rem;">
+            <label style="font-family:var(--mono); font-size:0.54rem; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);">Fecha</label>
+            <input type="date" id="appt-date" class="chat-input" style="border-radius:8px; padding:0.55rem 0.75rem;" />
           </div>
-          <div style="display:flex;flex-direction:column;gap:0.25rem">
-            <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Fecha</label>
-            <input type="date" id="appt-date" class="chat-input" style="padding:0.5rem 0.7rem" />
-          </div>
-          <div style="display:flex;gap:0.6rem">
-            <div style="flex:1;display:flex;flex-direction:column;gap:0.25rem">
-              <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Hora</label>
-              <input type="time" id="appt-time" class="chat-input" step="900" style="padding:0.5rem 0.7rem" />
+          <div style="display:flex; gap:0.7rem;">
+            <div style="flex:1; display:flex; flex-direction:column; gap:0.3rem;">
+              <label style="font-family:var(--mono); font-size:0.54rem; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);">Hora</label>
+              <input type="time" id="appt-time" class="chat-input" step="900" style="border-radius:8px; padding:0.55rem 0.75rem;" />
             </div>
-            <div style="flex:1;display:flex;flex-direction:column;gap:0.25rem">
-              <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Duración</label>
-              <select id="appt-duration" class="chat-input" style="padding:0.5rem 0.7rem">
+            <div style="flex:1; display:flex; flex-direction:column; gap:0.3rem;">
+              <label style="font-family:var(--mono); font-size:0.54rem; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);">Duración</label>
+              <select id="appt-duration" class="chat-input" style="border-radius:8px; padding:0.55rem 0.75rem; appearance:none; background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%228%22 viewBox=%220 0 12 8%22%3E%3Cpath fill=%226b8499%22 d=%22M0 0l6 8 6-8z%22/%3E%3C/svg%3E'); background-repeat:no-repeat; background-position:right 0.75rem center; padding-right:2rem;">
                 <option value="30">30 min</option>
                 <option value="60">1 hora</option>
                 <option value="90">1 h 30 min</option>
               </select>
             </div>
           </div>
-          <div style="display:flex;flex-direction:column;gap:0.25rem">
-            <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Motivo / Notas (opcional)</label>
-            <input type="text" id="appt-notes" class="chat-input" placeholder="Primera consulta, seguimiento..." style="padding:0.5rem 0.7rem" />
+          <div style="display:flex; flex-direction:column; gap:0.3rem;">
+            <label style="font-family:var(--mono); font-size:0.54rem; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);">Motivo / Notas (opcional)</label>
+            <input type="text" id="appt-notes" class="chat-input" placeholder="Primera consulta, seguimiento..." style="border-radius:8px; padding:0.55rem 0.75rem;" />
           </div>
-          <div id="appt-error" style="font-family:var(--mono, monospace);font-size:0.62rem;color:#f28b82;min-height:0.9rem"></div>
-          <div style="display:flex;gap:0.5rem">
-            <button class="rec-action-btn" style="flex:1" onclick="closeAppointmentModal()">Cancelar</button>
+          <div id="appt-error" style="font-family:var(--mono); font-size:0.6rem; color:var(--red); min-height:0.9rem;"></div>
+          <div style="display:flex; gap:0.55rem; padding-bottom:1.2rem;">
+            <button class="rec-action-btn btn-info" style="flex:1" onclick="closeAppointmentModal()">Cancelar</button>
             <button id="appt-submit-btn" class="rec-action-btn btn-chat" style="flex:2" onclick="submitAppointment()">
-              <span class="material-symbols-outlined">check</span> Confirmar solicitud
+              <span class="material-symbols-outlined">check</span>
+              Confirmar solicitud
             </button>
           </div>
         </div>
@@ -233,6 +335,16 @@
       <div class="spinner-title">Analizando con IA...</div>
     </div>
 
-    <script src="app.js?v=2"></script>
+    <script>
+      // Fill input from welcome chip
+      function fillSuggestion(text) {
+        const input = document.getElementById("chat-input");
+        if (input) {
+          input.value = text;
+          input.focus();
+        }
+      }
+    </script>
+    <script src="app.js?v=3"></script>
   </body>
 </html>
