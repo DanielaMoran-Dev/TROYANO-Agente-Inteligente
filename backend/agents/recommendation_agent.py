@@ -134,6 +134,7 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
       "justification": "texto empático y claro en español",
       "is_network": true | false,
       "priority": 1,
+      "match_score": 85,
       "contact": {{
         "type": "chat | info",
         "doctor_id": "... (solo si is_network)",
@@ -145,7 +146,9 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
     }}
   ],
   "urgent_message": "texto urgente si urgency=critical, sino null"
-}}"""
+}}
+
+match_score es un número entero de 0 a 100 que representa qué tan bien se adapta la clínica al caso del paciente, considerando: especialidad requerida, nivel de urgencia, tiempo de traslado, cobertura de seguro y disponibilidad de doctor en red."""
 
     try:
         raw = gemini_service.generate(prompt, system=system)
@@ -160,6 +163,7 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
         clinic_id = rec.get("clinic_id", "")
         source = next((c for c in top_clinics if c.get("clinic_id") == clinic_id), {})
 
+        rec["name"] = source.get("name") or rec.get("name")
         if source.get("lat") is not None and source.get("lng") is not None:
             rec["coords"] = {"lat": source["lat"], "lng": source["lng"]}
         if not rec.get("travel_time_min") and source.get("travel_time_min"):
@@ -188,9 +192,11 @@ def _fallback_recommendations(clinics: list[dict], network_map: dict, urgency: s
         is_net = cid in network_map
         recs.append({
             "clinic_id": cid,
+            "name": c.get("name"),
             "justification": "Opción recomendada según tu especialidad y ubicación.",
             "is_network": is_net,
             "priority": i,
+            "match_score": 90 - (i - 1) * 15,
             "contact": {
                 "type": "chat" if is_net else "info",
                 "doctor_id": network_map[cid]["doctor_id"] if is_net else None,

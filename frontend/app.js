@@ -134,6 +134,7 @@ async function handleUserMessage() {
 
 async function sendToChatAgent(message) {
   showSpinner();
+  const typingEl = showTypingIndicator();
   try {
     const resp = await fetch(`${API}/chat/message`, {
       method: "POST",
@@ -147,6 +148,7 @@ async function sendToChatAgent(message) {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const turn = await resp.json();
 
+    hideTypingIndicator(typingEl);
     if (turn.reply) addBotMessage(turn.reply);
     collectedData = { ...collectedData, ...(turn.data || {}) };
 
@@ -154,6 +156,7 @@ async function sendToChatAgent(message) {
       await triggerConsult(turn.emergency);
     }
   } catch (e) {
+    hideTypingIndicator(typingEl);
     addBotMessage(`No pude procesar tu mensaje: ${e.message}`);
     console.error(e);
   } finally {
@@ -200,6 +203,28 @@ async function triggerConsult(emergency) {
   }
 }
 
+function showTypingIndicator() {
+  const div = document.createElement("div");
+  div.className = "chat-msg bot typing-indicator";
+  div.innerHTML = `<span class="material-symbols-outlined msg-icon">smart_toy</span><div class="msg-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>`;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
+function hideTypingIndicator(el) {
+  if (el && el.parentNode) el.parentNode.removeChild(el);
+}
+
+function showAnalyzingMessage(text) {
+  const div = document.createElement("div");
+  div.className = "chat-msg bot typing-indicator";
+  div.innerHTML = `<span class="material-symbols-outlined msg-icon">smart_toy</span><div class="msg-bubble"><span class="analyzing-text">${escapeHtml(text)}</span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>`;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  return div;
+}
+
 function addBotMessage(text) {
   const div = document.createElement("div");
   div.className = "chat-msg bot";
@@ -237,7 +262,7 @@ async function runConsult(symptoms) {
   const insurance = document.getElementById("insurance-select").value;
 
   showSpinner();
-  addBotMessage("Analizando tus síntomas con IA...");
+  const analyzingEl = showAnalyzingMessage("Analizando tus síntomas con IA...");
 
   try {
     const resp = await fetch(`${API}/consult`, {
@@ -264,8 +289,10 @@ async function runConsult(symptoms) {
     }
     const data = await resp.json();
 
+    hideTypingIndicator(analyzingEl);
     handleConsultResponse(data);
   } catch (e) {
+    hideTypingIndicator(analyzingEl);
     addBotMessage(`Error al procesar tu consulta: ${e.message}. Intenta de nuevo.`);
     console.error(e);
   } finally {
@@ -312,7 +339,20 @@ function showRecommendations(recs) {
       : `<span class="badge badge-external">Externo</span>`;
 
     const travelTime = rec.travel_time_min
-      ? `<span class="rec-travel"><span class="material-symbols-outlined">directions_car</span>${rec.travel_time_min} min</span>`
+      ? `<span class="rec-travel"><span class="material-symbols-outlined">directions_car</span>${Math.round(rec.travel_time_min)} min</span>`
+      : "";
+
+    const scoreHtml = rec.match_score != null ? (() => {
+      const s = rec.match_score;
+      const color = s >= 80 ? "#34a853" : s >= 60 ? "#fbbc04" : "#ea4335";
+      return `<div class="rec-score">
+        <div class="rec-score-bar"><div class="rec-score-fill" style="width:${s}%;background:${color}"></div></div>
+        <span class="rec-score-label" style="color:${color}">${s}%</span>
+      </div>`;
+    })() : "";
+
+    const clinicName = rec.name
+      ? `<div class="rec-name">${escapeHtml(rec.name)}</div>`
       : "";
 
     const actionBtn = rec.is_network
@@ -329,6 +369,8 @@ function showRecommendations(recs) {
         ${networkBadge}
         ${travelTime}
       </div>
+      ${clinicName}
+      ${scoreHtml}
       <div class="rec-justification">${escapeHtml(rec.justification)}</div>
       <div class="rec-card-footer">
         ${actionBtn}
@@ -394,14 +436,42 @@ function plotClinicsOnMap(recs) {
   clinicMarkers.forEach(m => m.setMap(null));
   clinicMarkers = [];
 
+  const infoWindow = new google.maps.InfoWindow();
+
   recs.forEach((rec, i) => {
     if (!rec.coords || !map) return;
     const marker = new google.maps.Marker({
       position: { lat: rec.coords.lat, lng: rec.coords.lng },
       map,
       label: String(i + 1),
-      title: rec.justification,
+      title: rec.name || rec.justification,
     });
+
+    const scoreColor = rec.match_score >= 80 ? "#34a853" : rec.match_score >= 60 ? "#fbbc04" : "#ea4335";
+    const scoreHtml = rec.match_score != null
+      ? `<span style="color:${scoreColor};font-weight:700">${rec.match_score}% compatibilidad</span>`
+      : "";
+    const contactLine = rec.is_network
+      ? `<span style="color:#34a853">&#10003; Doctor en red disponible</span>`
+      : [rec.contact?.phone ? `Tel: ${rec.contact.phone}` : "", rec.contact?.address ? `${rec.contact.address}` : ""].filter(Boolean).join("<br>");
+    const travelLine = rec.travel_time_min
+      ? `<span style="color:#8ab4f8">&#128664; ${Math.round(rec.travel_time_min)} min</span>`
+      : "";
+
+    const content = `
+      <div style="font-family:sans-serif;font-size:13px;max-width:220px;line-height:1.5">
+        <div style="font-weight:700;margin-bottom:4px">${escapeHtml(rec.name || `Opción ${i + 1}`)}</div>
+        ${scoreHtml ? `<div>${scoreHtml}</div>` : ""}
+        ${travelLine ? `<div>${travelLine}</div>` : ""}
+        <div style="margin-top:4px;color:#666;font-size:12px">${contactLine}</div>
+      </div>`;
+
+    marker.addListener("mouseover", () => {
+      infoWindow.setContent(content);
+      infoWindow.open(map, marker);
+    });
+    marker.addListener("mouseout", () => infoWindow.close());
+
     clinicMarkers.push(marker);
   });
 

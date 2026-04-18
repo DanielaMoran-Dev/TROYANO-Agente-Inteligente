@@ -1084,6 +1084,33 @@ header {
 }
 .chat-msg strong { font-weight: 600; color: var(--blue); }
 
+/* Typing indicator dots */
+.typing-indicator .msg-bubble {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.55rem 0.9rem;
+  min-width: 52px;
+}
+.typing-indicator .analyzing-text {
+  margin-right: 4px;
+}
+.typing-indicator .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0.4;
+  animation: typing-bounce 1.2s infinite ease-in-out;
+}
+.typing-indicator .dot:nth-child(1) { animation-delay: 0s; }
+.typing-indicator .dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator .dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%            { transform: translateY(-6px); opacity: 1; }
+}
+
 /* Group spacing: extra gap before a switch of sender */
 .chat-row + .chat-row.bot-row  { margin-top: 0.55rem; }
 .chat-row + .chat-row.user-row { margin-top: 0.55rem; }
@@ -1681,6 +1708,37 @@ header {
   color: var(--muted);
 }
 .rec-travel .material-symbols-outlined { font-size: 14px; }
+.rec-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rec-score {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.rec-score-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.rec-score-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+.rec-score-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
 .rec-justification {
   font-size: 0.72rem;
   color: var(--text-2);
