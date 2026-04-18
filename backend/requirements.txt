@@ -26,5 +26,8 @@ caldav
 # BSON for ObjectId
 pymongo
 
+# TLS certificates for MongoDB Atlas (Python 3.14 SSL compat)
+certifi
+
 # Password hashing
 bcrypt

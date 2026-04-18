@@ -22,9 +22,11 @@ class Contact(BaseModel):
 
 class Recommendation(BaseModel):
     clinic_id: str
+    name: Optional[str] = None
     justification: str
     is_network: bool
     priority: int
+    match_score: Optional[int] = None
     contact: Contact
     coords: Optional[dict] = None
     travel_time_min: Optional[float] = None

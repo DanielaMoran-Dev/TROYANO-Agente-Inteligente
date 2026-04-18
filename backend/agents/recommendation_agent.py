@@ -1,9 +1,10 @@
 """
 Recommendation Agent — genera recomendaciones empáticas con Gemini + LLM Wiki.
 
-Relación de red (según DATABASE_SCHEMA.md):
-  - `clinics.doctor_id` apunta a `doctors._id`.
-  - Una clínica está "en red" cuando su doctor está activo, is_network=True.
+Relación de red (1:N — una clínica tiene varios doctores):
+  - `clinics.doctor_ids[]` apunta a `doctors._id` (array).
+  - Compat: si un doc legacy trae `doctor_id` singular, se trata como [doctor_id].
+  - Una clínica está "en red" si al menos uno de sus doctores es activo e is_network=True.
 """
 
 import json
@@ -39,29 +40,82 @@ Responde ÚNICAMENTE con un JSON válido sin texto adicional.
 
 async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, dict]:
     """
-    Devuelve {clinic_id: {doctor_id, name, specialty}} para las clínicas
-    cuyo doctor_id referencia a un doctor activo en red.
+    Devuelve {clinic_id: {doctor_id, name, specialty, real_clinic_id}} para las
+    clínicas con al menos un doctor activo en red.
+
+    Los candidatos que vienen de Google Places traen `clinic_id == place_id` y
+    no tienen `doctor_ids`. Para detectar si un doctor se registró en ese lugar,
+    buscamos en la colección `clinics` por `maps_place_id`. Si hay match, se
+    incluye `real_clinic_id` con el ObjectId de Mongo para que los endpoints
+    (conversations, appointments) reciban un id válido.
     """
-    doctor_ids: list[ObjectId] = []
-    clinic_to_doctor: dict[str, ObjectId] = {}
+    # 1. Lookup por maps_place_id para candidatos que no traen doctor_ids propios.
+    pids_to_resolve: set[str] = set()
+    for c in clinic_candidates:
+        has_ids = bool(c.get("doctor_ids") or c.get("doctor_id"))
+        if has_ids:
+            continue
+        pid = c.get("place_id") or c.get("maps_place_id")
+        if pid:
+            pids_to_resolve.add(pid)
+
+    pid_to_clinic: dict[str, dict] = {}
+    if pids_to_resolve:
+        try:
+            async for doc in mongo_service.clinics().find(
+                {"maps_place_id": {"$in": list(pids_to_resolve)}},
+                {"_id": 1, "maps_place_id": 1, "doctor_ids": 1, "doctor_id": 1},
+            ):
+                pid_to_clinic[doc["maps_place_id"]] = doc
+        except Exception as e:
+            logger.warning("Could not resolve place_ids to clinics: %s", e)
+
+    # 2. Construir (candidate_clinic_id -> [doctor ObjectIds], real_clinic_id)
+    all_doctor_ids: list[ObjectId] = []
+    clinic_to_doctors: dict[str, list[ObjectId]] = {}
+    clinic_to_real_id: dict[str, str] = {}
 
     for c in clinic_candidates:
-        did = c.get("doctor_id")
         cid = c.get("clinic_id")
-        if did and cid:
+        if not cid:
+            continue
+
+        raw_ids = c.get("doctor_ids")
+        if raw_ids is None:
+            legacy = c.get("doctor_id")
+            raw_ids = [legacy] if legacy else []
+
+        # Fallback: resolver por maps_place_id
+        if not raw_ids:
+            pid = c.get("place_id") or c.get("maps_place_id")
+            resolved = pid_to_clinic.get(pid) if pid else None
+            if resolved:
+                ids = resolved.get("doctor_ids")
+                if ids is None:
+                    legacy = resolved.get("doctor_id")
+                    ids = [legacy] if legacy else []
+                raw_ids = [x for x in ids if x]
+                clinic_to_real_id[cid] = str(resolved["_id"])
+
+        parsed: list[ObjectId] = []
+        for did in raw_ids:
+            if not did:
+                continue
             try:
                 obj_id = did if isinstance(did, ObjectId) else ObjectId(str(did))
-                doctor_ids.append(obj_id)
-                clinic_to_doctor[cid] = obj_id
+                parsed.append(obj_id)
+                all_doctor_ids.append(obj_id)
             except Exception:
                 continue
+        if parsed:
+            clinic_to_doctors[cid] = parsed
 
-    if not doctor_ids:
+    if not all_doctor_ids:
         return {}
 
     try:
         cursor = mongo_service.doctors().find(
-            {"_id": {"$in": doctor_ids}, "is_active": True, "is_network": True},
+            {"_id": {"$in": all_doctor_ids}, "is_active": True, "is_network": True},
             {"_id": 1, "name": 1, "last_name": 1, "specialty": 1},
         )
         active_doctors: dict[ObjectId, dict] = {doc["_id"]: doc async for doc in cursor}
@@ -70,15 +124,21 @@ async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, 
         return {}
 
     network_map: dict[str, dict] = {}
-    for clinic_id, obj_id in clinic_to_doctor.items():
-        doc = active_doctors.get(obj_id)
-        if doc:
-            full_name = " ".join(filter(None, [doc.get("name"), doc.get("last_name")]))
-            network_map[clinic_id] = {
-                "doctor_id": str(obj_id),
-                "name": full_name.strip(),
-                "specialty": doc.get("specialty"),
-            }
+    for clinic_id, obj_ids in clinic_to_doctors.items():
+        # Primer doctor del array que esté en red — ése gestiona el chat
+        for obj_id in obj_ids:
+            doc = active_doctors.get(obj_id)
+            if doc:
+                full_name = " ".join(filter(None, [doc.get("name"), doc.get("last_name")]))
+                entry = {
+                    "doctor_id": str(obj_id),
+                    "name": full_name.strip(),
+                    "specialty": doc.get("specialty"),
+                }
+                if clinic_id in clinic_to_real_id:
+                    entry["real_clinic_id"] = clinic_to_real_id[clinic_id]
+                network_map[clinic_id] = entry
+                break
     return network_map
 
 
@@ -154,6 +214,7 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
       "justification": "texto empático y claro en español",
       "is_network": true | false,
       "priority": 1,
+      "match_score": 85,
       "contact": {{
         "type": "chat | info",
         "doctor_id": "... (solo si is_network)",
@@ -165,7 +226,9 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
     }}
   ],
   "urgent_message": "texto urgente si urgency=critical, sino null"
-}}"""
+}}
+
+match_score es un número entero de 0 a 100 que representa qué tan bien se adapta la clínica al caso del paciente, considerando: especialidad requerida, nivel de urgencia, tiempo de traslado, cobertura de seguro y disponibilidad de doctor en red."""
 
     try:
         raw = gemini_service.generate(prompt, system=system)
@@ -180,6 +243,7 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
         clinic_id = rec.get("clinic_id", "")
         source = next((c for c in top_clinics if c.get("clinic_id") == clinic_id), {})
 
+        rec["name"] = source.get("name") or rec.get("name")
         if source.get("lat") is not None and source.get("lng") is not None:
             rec["coords"] = {"lat": source["lat"], "lng": source["lng"]}
         if not rec.get("travel_time_min") and source.get("travel_time_min"):
@@ -190,6 +254,11 @@ Genera recomendaciones para máximo 3 opciones. Formato JSON:
             rec["is_network"] = True
             contact["type"] = "chat"
             contact["doctor_id"] = network_map[clinic_id]["doctor_id"]
+            # Si el candidato vino de Places pero hay registro en Mongo,
+            # preferimos el ObjectId real para endpoints posteriores.
+            real_id = network_map[clinic_id].get("real_clinic_id")
+            if real_id:
+                rec["clinic_id"] = real_id
         else:
             rec["is_network"] = False
             contact["type"] = "info"
@@ -206,11 +275,14 @@ def _fallback_recommendations(clinics: list[dict], network_map: dict, urgency: s
     for i, c in enumerate(clinics[:3], start=1):
         cid = c.get("clinic_id", "")
         is_net = cid in network_map
+        real_id = network_map.get(cid, {}).get("real_clinic_id") if is_net else None
         recs.append({
-            "clinic_id": cid,
+            "clinic_id": real_id or cid,
+            "name": c.get("name"),
             "justification": "Opción recomendada según tu especialidad y ubicación.",
             "is_network": is_net,
             "priority": i,
+            "match_score": 90 - (i - 1) * 15,
             "contact": {
                 "type": "chat" if is_net else "info",
                 "doctor_id": network_map[cid]["doctor_id"] if is_net else None,

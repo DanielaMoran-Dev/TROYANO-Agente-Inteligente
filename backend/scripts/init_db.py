@@ -154,9 +154,9 @@ VALIDATORS = {
     "clinics": {
         "$jsonSchema": {
             "bsonType": "object",
-            "required": ["clues_id", "name", "unit_type", "price_level"],
+            "required": ["name", "price_level"],
             "properties": {
-                "clues_id": {"bsonType": "string"},
+                "clues_id": {"bsonType": ["string", "null"]},
                 "name": {"bsonType": "string"},
                 "type": {"bsonType": ["string", "null"]},
                 "unit_type": {"bsonType": ["string", "null"]},
@@ -171,6 +171,9 @@ VALIDATORS = {
                 "lng": {"bsonType": ["double", "int", "null"]},
                 "phone": {"bsonType": ["string", "null"]},
                 "doctor_id": {"bsonType": ["objectId", "null"]},
+                "doctor_ids": {"bsonType": ["array", "null"]},
+                "maps_place_id": {"bsonType": ["string", "null"]},
+                "formatted_address": {"bsonType": ["string", "null"]},
                 "embedding": {"bsonType": ["array", "null"]},
                 "embedding_text": {"bsonType": ["string", "null"]},
                 "indexed_at": {"bsonType": ["date", "null"]},
@@ -293,7 +296,21 @@ INDEXES = {
         {"keys": [("location.lat", 1), ("location.lng", 1)]},
     ],
     "clinics": [
-        {"keys": [("clues_id", 1)], "unique": True},
+        # Partial unique: CLUES-imported clinics must be unique by clues_id,
+        # user-created ones don't have clues_id (null) and must coexist.
+        {
+            "keys": [("clues_id", 1)],
+            "unique": True,
+            "partialFilterExpression": {"clues_id": {"$type": "string"}},
+        },
+        # Partial unique on maps_place_id: dedup clinics by Google Place ID.
+        {
+            "keys": [("maps_place_id", 1)],
+            "unique": True,
+            "partialFilterExpression": {"maps_place_id": {"$type": "string"}},
+        },
+        {"keys": [("doctor_ids", 1)]},
+        {"keys": [("name", 1)]},
         {"keys": [("insurances", 1)]},
         {"keys": [("price_level", 1)]},
         {"keys": [("specialty", 1)]},
@@ -360,7 +377,22 @@ async def ensure_indexes(db, name: str, specs: list[dict]) -> None:
             await coll.create_index(keys, **kwargs)
             created += 1
         except OperationFailure as exc:
-            logger.warning("  · %s.%s fallo: %s", name, keys, exc)
+            # Conflict with an existing index that has different options
+            # (common: old non-partial unique → new partial unique). Drop & recreate.
+            if exc.code in (85, 86):  # IndexOptionsConflict, IndexKeySpecsConflict
+                existing = await coll.index_information()
+                for idx_name, idx_info in existing.items():
+                    if idx_info.get("key") == [(k, v) for k, v in keys]:
+                        try:
+                            await coll.drop_index(idx_name)
+                            await coll.create_index(keys, **kwargs)
+                            created += 1
+                            logger.info("  · %s.%s recreado con nuevas opciones", name, keys)
+                        except OperationFailure as exc2:
+                            logger.warning("  · %s.%s recreación falló: %s", name, keys, exc2)
+                        break
+            else:
+                logger.warning("  · %s.%s fallo: %s", name, keys, exc)
     logger.info("  · %-18s %d índice(s) listos", name, created)
 
 

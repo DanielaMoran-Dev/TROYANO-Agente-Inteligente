@@ -84,6 +84,15 @@ async def login_doctor(body: DoctorLogin):
 # Perfil
 # ────────────────────────────────────────────────────────────
 
+@router.get("/search", response_model=DoctorPublic)
+async def search_doctor(email: str):
+    """Busca un doctor por email exacto (para vincular a clínica)."""
+    doc = await mongo_service.doctors().find_one({"email": email.strip().lower()})
+    if not doc:
+        raise HTTPException(status_code=404, detail="Doctor no encontrado.")
+    return _doctor_to_public(doc)
+
+
 @router.get("/profile", response_model=DoctorPublic)
 async def get_profile(doctor_id: str):
     try:
