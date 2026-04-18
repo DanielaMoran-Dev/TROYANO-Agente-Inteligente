@@ -68,3 +68,4 @@ class ConsultRequest(BaseModel):
     coords: Coords
     insurance: Insurance
     budget_level: BudgetLevel
+    radius_m: int = Field(5000, ge=500, le=50000)

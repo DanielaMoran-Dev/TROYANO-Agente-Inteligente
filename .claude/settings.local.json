@@ -29,7 +29,17 @@
       "Bash(./.venv/Scripts/python.exe -m scripts.verify_db)",
       "Bash(./.venv/Scripts/python.exe -m scripts.test_vector_search)",
       "Bash(./.venv/Scripts/python.exe -m pip install bcrypt)",
-      "Bash(./.venv/Scripts/python.exe -m scripts.smoke_test)"
+      "Bash(./.venv/Scripts/python.exe -m scripts.smoke_test)",
+      "Bash(pip install *)",
+      "Bash(echo \"PID=$!\")",
+      "Bash(curl -s http://127.0.0.1:8765/)",
+      "Bash(curl -s -X POST http://127.0.0.1:8765/users/register -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"secret123\",\"name\":\"Ana\",\"last_name\":\"Lopez\",\"age\":30,\"insurance\":\"imss\"}')",
+      "Bash(curl -s -X POST http://127.0.0.1:8765/users/login -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"secret123\"}')",
+      "Bash(curl -s -X POST http://127.0.0.1:8765/users/login -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"wrong\"}')",
+      "Bash(curl -s -X POST http://127.0.0.1:8765/doctors/register -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"docpass123\",\"name\":\"Carlos\",\"last_name\":\"Vega\",\"license_number\":\"__TRACKED_VAR__\",\"specialty\":\"cardiología\",\"price_level\":2,\"insurances\":[\"imss\"],\"is_network\":true}')",
+      "Bash(curl -s -X POST http://127.0.0.1:8765/doctors/login -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"docpass123\"}')",
+      "Bash(curl -s -X POST http://127.0.0.1:8765/doctors/register -H 'Content-Type: application/json' -d '{\"email\":\"bad__CMDSUB_OUTPUT__@test.com\",\"password\":\"docpass123\",\"name\":\"X\",\"last_name\":\"Y\",\"license_number\":\"LIC__CMDSUB_OUTPUT__x\",\"specialty\":\"not_real\",\"price_level\":2}')",
+      "Bash(curl -s -X POST http://127.0.0.1:8765/doctors/register -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"docpass123\",\"name\":\"Carlos\",\"last_name\":\"Vega\",\"license_number\":\"LIC999__CMDSUB_OUTPUT__\",\"specialty\":\"cardiología\",\"price_level\":2}')"
     ]
   }
 }

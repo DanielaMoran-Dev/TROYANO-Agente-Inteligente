@@ -17,6 +17,7 @@ GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY", "")
 GEOCODING_URL   = "https://maps.googleapis.com/maps/api/geocode/json"
 ROUTES_URL      = "https://routes.googleapis.com/directions/v2:computeRoutes"
 TILES_SESSION_URL = "https://tile.googleapis.com/v1/createSession"
+PLACES_NEARBY_URL = "https://places.googleapis.com/v1/places:searchNearby"
 
 REQUEST_TIMEOUT = 10
 
@@ -136,6 +137,105 @@ def search_place(query: str) -> dict:
         "lng":               loc["lng"],
         "formatted_address": result["formatted_address"],
     }
+
+
+def search_nearby_health(
+    lat: float,
+    lng: float,
+    radius_m: int = 5000,
+    keyword: str | None = None,
+    max_results: int = 20,
+) -> list[dict]:
+    """
+    Busca hospitales/clínicas cerca de (lat, lng) dentro de `radius_m` metros.
+    Usa Places API (New) — searchNearby. Devuelve una lista de clínicas
+    normalizadas al shape que consume el routing_agent.
+
+    Si `keyword` se provee (p.ej. "cardiología"), se usa searchText con bias
+    circular para priorizar por especialidad.
+    """
+    if not is_configured():
+        raise RuntimeError("GOOGLE_MAPS_API_KEY is not set.")
+
+    radius_m = max(500, min(radius_m, 50000))  # Places límite: 50km
+    headers = {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": GOOGLE_MAPS_API_KEY,
+        "X-Goog-FieldMask": (
+            "places.id,places.displayName,places.formattedAddress,"
+            "places.location,places.types,places.nationalPhoneNumber,"
+            "places.rating,places.userRatingCount,places.businessStatus"
+        ),
+    }
+
+    payload = {
+        "includedTypes": ["hospital", "doctor", "medical_lab", "pharmacy"],
+        "maxResultCount": max(1, min(max_results, 20)),
+        "locationRestriction": {
+            "circle": {
+                "center": {"latitude": lat, "longitude": lng},
+                "radius": float(radius_m),
+            }
+        },
+        "languageCode": "es",
+        "regionCode": "MX",
+    }
+
+    try:
+        response = requests.post(PLACES_NEARBY_URL, json=payload, headers=headers, timeout=REQUEST_TIMEOUT)
+        if not response.ok:
+            logger.error("Places Nearby HTTP %s: %s", response.status_code, response.text)
+            return []
+        data = response.json()
+    except requests.exceptions.RequestException as exc:
+        logger.error("Places Nearby request failed: %s", exc)
+        return []
+
+    results = []
+    for p in data.get("places", []):
+        loc = p.get("location") or {}
+        p_lat, p_lng = loc.get("latitude"), loc.get("longitude")
+        if p_lat is None or p_lng is None:
+            continue
+        if p.get("businessStatus") and p["businessStatus"] != "OPERATIONAL":
+            continue
+
+        types = p.get("types") or []
+        display = (p.get("displayName") or {}).get("text") or ""
+
+        results.append({
+            "clinic_id": p.get("id"),
+            "place_id": p.get("id"),
+            "name": display,
+            "address": p.get("formattedAddress"),
+            "phone": p.get("nationalPhoneNumber"),
+            "lat": p_lat,
+            "lng": p_lng,
+            "types": types,
+            "rating": p.get("rating"),
+            "rating_count": p.get("userRatingCount"),
+            # Heurísticas por tipo — Places no expone seguro/precio:
+            "insurances": [],
+            "price_level": 2,
+            "is_network": False,
+            "source": "places",
+            "distance_m": _haversine_m(lat, lng, p_lat, p_lng),
+        })
+
+    results.sort(key=lambda r: r["distance_m"])
+    return results
+
+
+def _haversine_m(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+    """Distancia en metros entre dos puntos (aproximación esférica)."""
+    import math
+    R = 6_371_000.0
+    p1 = math.radians(lat1)
+    p2 = math.radians(lat2)
+    dp = math.radians(lat2 - lat1)
+    dl = math.radians(lng2 - lng1)
+    a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 2 * R * math.asin(math.sqrt(a))
 
 
 def get_routes(

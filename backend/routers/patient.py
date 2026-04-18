@@ -129,12 +129,13 @@ async def consult(body: ConsultRequest):
         # 1. Triaje
         triage = triage_agent.run(body.symptoms)
 
-        # 2. Ruteo (vector search + filtros + travel times)
+        # 2. Ruteo (Places nearby + vector search + filtros + travel times)
         routing = await routing_agent.run(
             triage=triage,
             insurance=body.insurance,
             budget_level=body.budget_level,
             coords=body.coords.model_dump(),
+            radius_m=body.radius_m,
         )
 
         # 3. Recomendación

@@ -11,15 +11,16 @@
   <link rel="stylesheet" href="style.css?v=1" />
   <style>
     /* ── LOGIN PAGE ── */
-    html, body { height: 100%; overflow: hidden; }
+    html, body { height: 100%; overflow: auto; }
 
     .login-bg {
-      height: 100%;
+      min-height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       background: var(--bg);
       position: relative;
+      padding: 2rem 1rem;
     }
     .login-bg::before {
       content: "";
@@ -32,7 +33,8 @@
     }
 
     .login-card {
-      width: 420px;
+      width: 440px;
+      max-width: 100%;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -43,7 +45,7 @@
     }
 
     .login-header {
-      padding: 2rem 2rem 1.2rem;
+      padding: 1.6rem 2rem 1.1rem;
       border-bottom: 1px solid var(--border);
       text-align: center;
     }
@@ -88,32 +90,37 @@
     .role-tab:hover { color: var(--text-2); background: var(--surface-2); }
     .role-tab.active { color: var(--blue); border-bottom-color: var(--blue); background: rgba(138,180,248,0.05); }
 
-    .login-body { padding: 1.5rem 2rem 2rem; }
+    .login-body { padding: 1.3rem 2rem 1.7rem; }
 
-    /* Patient panel */
-    #panel-patient { display: flex; flex-direction: column; gap: 1rem; }
-    .patient-welcome {
-      text-align: center;
-      padding: 1rem 0;
-    }
-    .patient-welcome .material-symbols-outlined {
-      font-size: 48px !important;
-      color: var(--blue);
-      opacity: 0.7;
-      margin-bottom: 0.6rem;
-      display: block;
-    }
-    .patient-welcome p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.5;
+    /* Mode sub-tabs (Iniciar sesión / Registrarse) */
+    .mode-tabs {
+      display: flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px;
       margin-bottom: 1.2rem;
     }
+    .mode-tab {
+      flex: 1;
+      padding: 0.45rem;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.12s, color 0.12s;
+    }
+    .mode-tab.active { background: var(--surface-2); color: var(--text); }
 
-    /* Doctor panel */
-    #panel-doctor { display: none; flex-direction: column; gap: 0.9rem; }
+    .mode-panel { display: none; flex-direction: column; gap: 0.8rem; }
+    .mode-panel.active { display: flex; }
 
     .login-field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .login-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
     .login-field label {
       font-family: var(--mono);
       font-size: 0.58rem;
@@ -121,18 +128,20 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
-    .login-field input {
+    .login-field input,
+    .login-field select {
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 6px;
       color: var(--text);
       font-family: var(--sans);
       font-size: 0.85rem;
-      padding: 0.6rem 0.8rem;
+      padding: 0.55rem 0.7rem;
       outline: none;
       transition: border-color 0.15s;
     }
-    .login-field input:focus { border-color: var(--blue); }
+    .login-field input:focus,
+    .login-field select:focus { border-color: var(--blue); }
     .login-field input::placeholder { color: var(--disabled); }
 
     .btn-login {
@@ -147,33 +156,27 @@
       font-weight: 600;
       cursor: pointer;
       letter-spacing: 0.5px;
-      transition: background 0.12s;
+      transition: background 0.12s, opacity 0.12s;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
-      margin-top: 0.3rem;
+      margin-top: 0.4rem;
     }
-    .btn-login:hover { background: var(--blue-btn-h); }
+    .btn-login:hover:not(:disabled) { background: var(--blue-btn-h); }
+    .btn-login:disabled { opacity: 0.5; cursor: not-allowed; }
     .btn-login .material-symbols-outlined { font-size: 18px; }
 
-    .login-error {
+    .login-msg {
       font-family: var(--mono);
       font-size: 0.62rem;
-      color: var(--red);
       text-align: center;
       min-height: 1rem;
       letter-spacing: 0.5px;
+      margin-top: 0.2rem;
     }
-
-    .login-hint {
-      text-align: center;
-      font-family: var(--mono);
-      font-size: 0.55rem;
-      color: var(--disabled);
-      letter-spacing: 0.5px;
-      margin-top: 0.5rem;
-    }
+    .login-msg.err { color: var(--red); }
+    .login-msg.ok  { color: #34a853; }
 
     .login-footer {
       padding: 0.8rem 2rem;
@@ -211,36 +214,152 @@
     <!-- Body -->
     <div class="login-body">
 
-      <!-- Patient panel -->
-      <div id="panel-patient">
-        <div class="patient-welcome">
-          <span class="material-symbols-outlined">health_and_safety</span>
-          <p>Describe tus síntomas y nuestra IA te ayudará a encontrar el médico adecuado más cercano a ti.</p>
-          <button class="btn-login" onclick="enterAsPatient()">
-            <span class="material-symbols-outlined">arrow_forward</span>
-            ENTRAR COMO PACIENTE
-          </button>
-        </div>
+      <!-- Mode sub-tabs (login / register) -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" id="mt-login" onclick="switchMode('login')">INICIAR SESIÓN</button>
+        <button class="mode-tab" id="mt-register" onclick="switchMode('register')">REGISTRARSE</button>
       </div>
 
-      <!-- Doctor panel -->
-      <div id="panel-doctor">
+      <!-- ───── PATIENT · LOGIN ───── -->
+      <form id="form-patient-login" class="mode-panel active" onsubmit="event.preventDefault(); patientLogin();">
         <div class="login-field">
           <label>Correo electrónico</label>
-          <input type="email" id="doctor-email" placeholder="doctor@medconnect.mx" autocomplete="email" />
+          <input type="email" id="pl-email" placeholder="tucorreo@ejemplo.com" autocomplete="email" required />
         </div>
         <div class="login-field">
           <label>Contraseña</label>
-          <input type="password" id="doctor-password" placeholder="••••••••" autocomplete="current-password"
-            onkeydown="if(event.key==='Enter') loginDoctor()" />
+          <input type="password" id="pl-password" placeholder="••••••••" autocomplete="current-password" required />
         </div>
-        <div class="login-error" id="login-error"></div>
-        <button class="btn-login" onclick="loginDoctor()">
+        <button type="submit" class="btn-login" id="btn-pl">
+          <span class="material-symbols-outlined">login</span>
+          ENTRAR
+        </button>
+      </form>
+
+      <!-- ───── PATIENT · REGISTER ───── -->
+      <form id="form-patient-register" class="mode-panel" onsubmit="event.preventDefault(); patientRegister();">
+        <div class="login-row">
+          <div class="login-field">
+            <label>Nombre</label>
+            <input type="text" id="pr-name" placeholder="Carlos" maxlength="80" required />
+          </div>
+          <div class="login-field">
+            <label>Apellido</label>
+            <input type="text" id="pr-last" placeholder="Ramírez" maxlength="80" required />
+          </div>
+        </div>
+        <div class="login-field">
+          <label>Correo electrónico</label>
+          <input type="email" id="pr-email" placeholder="tucorreo@ejemplo.com" autocomplete="email" required />
+        </div>
+        <div class="login-field">
+          <label>Contraseña (mínimo 6)</label>
+          <input type="password" id="pr-password" placeholder="••••••••" autocomplete="new-password" minlength="6" required />
+        </div>
+        <div class="login-row">
+          <div class="login-field">
+            <label>Edad</label>
+            <input type="number" id="pr-age" min="0" max="120" placeholder="30" />
+          </div>
+          <div class="login-field">
+            <label>Seguro</label>
+            <select id="pr-insurance">
+              <option value="ninguno" selected>Sin seguro</option>
+              <option value="imss">IMSS</option>
+              <option value="issste">ISSSTE</option>
+              <option value="seguro_popular">Seguro Popular</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-login" id="btn-pr">
+          <span class="material-symbols-outlined">person_add</span>
+          CREAR CUENTA
+        </button>
+      </form>
+
+      <!-- ───── DOCTOR · LOGIN ───── -->
+      <form id="form-doctor-login" class="mode-panel" onsubmit="event.preventDefault(); doctorLogin();">
+        <div class="login-field">
+          <label>Correo electrónico</label>
+          <input type="email" id="dl-email" placeholder="doctor@medconnect.mx" autocomplete="email" required />
+        </div>
+        <div class="login-field">
+          <label>Contraseña</label>
+          <input type="password" id="dl-password" placeholder="••••••••" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="btn-login" id="btn-dl">
           <span class="material-symbols-outlined">login</span>
           INICIAR SESIÓN
         </button>
-        <div class="login-hint">Demo: dr.vega@medconnect.mx / 1234</div>
-      </div>
+      </form>
+
+      <!-- ───── DOCTOR · REGISTER ───── -->
+      <form id="form-doctor-register" class="mode-panel" onsubmit="event.preventDefault(); doctorRegister();">
+        <div class="login-row">
+          <div class="login-field">
+            <label>Nombre</label>
+            <input type="text" id="dr-name" placeholder="Alejandro" maxlength="80" required />
+          </div>
+          <div class="login-field">
+            <label>Apellido</label>
+            <input type="text" id="dr-last" placeholder="Vega" maxlength="80" required />
+          </div>
+        </div>
+        <div class="login-field">
+          <label>Correo profesional</label>
+          <input type="email" id="dr-email" placeholder="doctor@medconnect.mx" autocomplete="email" required />
+        </div>
+        <div class="login-field">
+          <label>Contraseña (mínimo 6)</label>
+          <input type="password" id="dr-password" placeholder="••••••••" autocomplete="new-password" minlength="6" required />
+        </div>
+        <div class="login-row">
+          <div class="login-field">
+            <label>Cédula profesional</label>
+            <input type="text" id="dr-license" placeholder="12345678" minlength="4" maxlength="32" required />
+          </div>
+          <div class="login-field">
+            <label>Especialidad</label>
+            <select id="dr-specialty" required>
+              <option value="medicina_general" selected>Medicina general</option>
+              <option value="cardiología">Cardiología</option>
+              <option value="neurología">Neurología</option>
+              <option value="pediatría">Pediatría</option>
+              <option value="ginecología">Ginecología</option>
+              <option value="traumatología">Traumatología</option>
+              <option value="dermatología">Dermatología</option>
+              <option value="oftalmología">Oftalmología</option>
+              <option value="otorrinolaringología">Otorrinolaringología</option>
+              <option value="gastroenterología">Gastroenterología</option>
+              <option value="neumología">Neumología</option>
+              <option value="urología">Urología</option>
+              <option value="nefrología">Nefrología</option>
+              <option value="psiquiatría">Psiquiatría</option>
+              <option value="endocrinología">Endocrinología</option>
+            </select>
+          </div>
+        </div>
+        <div class="login-row">
+          <div class="login-field">
+            <label>Nivel de precio</label>
+            <select id="dr-price">
+              <option value="1">$ — Público</option>
+              <option value="2" selected>$$ — Privado bajo</option>
+              <option value="3">$$$ — Premium</option>
+            </select>
+          </div>
+          <div class="login-field">
+            <label>Teléfono</label>
+            <input type="tel" id="dr-phone" placeholder="5512345678" />
+          </div>
+        </div>
+        <button type="submit" class="btn-login" id="btn-dr">
+          <span class="material-symbols-outlined">person_add</span>
+          REGISTRARME
+        </button>
+      </form>
+
+      <div class="login-msg" id="login-msg"></div>
 
     </div>
 
@@ -249,61 +368,182 @@
 </div>
 
 <script>
-  // ── Mock doctor accounts (replace with DB auth later) ──────────────
-  const MOCK_DOCTORS = [
-    {
-      id: "doc_001",
-      email: "dr.vega@medconnect.mx",
-      password: "1234",
-      name: "Dr. Alejandro Vega",
-      specialty: "Cardiología",
-      license: "12345678",
-    },
-    {
-      id: "doc_002",
-      email: "dra.luna@medconnect.mx",
-      password: "1234",
-      name: "Dra. María Luna",
-      specialty: "Medicina General",
-      license: "87654321",
-    },
-    {
-      id: "doc_003",
-      email: "dr.reyes@medconnect.mx",
-      password: "1234",
-      name: "Dr. Carlos Reyes",
-      specialty: "Urgencias",
-      license: "11223344",
-    },
-  ];
+  // ── State ──────────────────────────────────────────────────────────────
+  let currentRole = "patient";  // "patient" | "doctor"
+  let currentMode = "login";    // "login" | "register"
 
+  // Si ya hay sesión válida, redirige de una vez
+  (function autoRedirect() {
+    const doctor = sessionStorage.getItem("medconnect_doctor");
+    const user   = sessionStorage.getItem("medconnect_user");
+    if (doctor) { window.location.replace("doctor.html"); return; }
+    if (user)   { window.location.replace("index.html");  return; }
+  })();
+
+  // ── UI switching ───────────────────────────────────────────────────────
   function switchRole(role) {
+    currentRole = role;
     document.getElementById("tab-patient").classList.toggle("active", role === "patient");
     document.getElementById("tab-doctor").classList.toggle("active", role === "doctor");
-    document.getElementById("panel-patient").style.display = role === "patient" ? "flex" : "none";
-    document.getElementById("panel-doctor").style.display  = role === "doctor"  ? "flex" : "none";
-    document.getElementById("login-error").textContent = "";
+    renderPanels();
+    setMsg("", "");
   }
 
-  function enterAsPatient() {
-    sessionStorage.removeItem("medconnect_doctor");
-    window.location.href = "index.html";
+  function switchMode(mode) {
+    currentMode = mode;
+    document.getElementById("mt-login").classList.toggle("active", mode === "login");
+    document.getElementById("mt-register").classList.toggle("active", mode === "register");
+    renderPanels();
+    setMsg("", "");
   }
 
-  function loginDoctor() {
-    const email    = document.getElementById("doctor-email").value.trim().toLowerCase();
-    const password = document.getElementById("doctor-password").value;
-    const errorEl  = document.getElementById("login-error");
+  function renderPanels() {
+    const map = {
+      "patient-login":    "form-patient-login",
+      "patient-register": "form-patient-register",
+      "doctor-login":     "form-doctor-login",
+      "doctor-register":  "form-doctor-register",
+    };
+    const activeId = map[`${currentRole}-${currentMode}`];
+    Object.values(map).forEach(id => {
+      document.getElementById(id).classList.toggle("active", id === activeId);
+    });
+  }
 
-    const doctor = MOCK_DOCTORS.find(d => d.email === email && d.password === password);
-    if (!doctor) {
-      errorEl.textContent = "Credenciales incorrectas. Intenta de nuevo.";
-      return;
+  function setMsg(text, kind) {
+    const el = document.getElementById("login-msg");
+    el.textContent = text || "";
+    el.className = "login-msg" + (kind ? " " + kind : "");
+  }
+
+  // ── API helper ─────────────────────────────────────────────────────────
+  async function apiCall(path, body) {
+    const res = await fetch(path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    let data = null;
+    try { data = await res.json(); } catch { /* no body */ }
+    if (!res.ok) {
+      const detail = (data && data.detail) || `Error ${res.status}`;
+      throw new Error(typeof detail === "string" ? detail : JSON.stringify(detail));
     }
-
-    sessionStorage.setItem("medconnect_doctor", JSON.stringify(doctor));
-    window.location.href = "doctor.html";
+    return data;
   }
+
+  function withBusy(btnId, fn) {
+    return async () => {
+      const btn = document.getElementById(btnId);
+      btn.disabled = true;
+      try { await fn(); }
+      catch (err) { setMsg(err.message || "Error desconocido", "err"); }
+      finally { btn.disabled = false; }
+    };
+  }
+
+  // ── Session storage ────────────────────────────────────────────────────
+  function saveUserSession(user) {
+    // user = backend response (UserPublic)
+    sessionStorage.setItem("medconnect_user", JSON.stringify({
+      user_id:    user.user_id,
+      email:      user.email,
+      name:       user.name,
+      last_name:  user.last_name,
+      full_name:  `${user.name} ${user.last_name}`.trim(),
+      age:        user.age ?? null,
+      phone:      user.phone ?? null,
+      coords:     user.coords ?? null,
+      insurance:  user.insurance ?? "ninguno",
+    }));
+    sessionStorage.removeItem("medconnect_doctor");
+  }
+
+  function saveDoctorSession(doctor) {
+    // doctor = backend response (DoctorPublic)
+    const fullName   = `Dr. ${doctor.name} ${doctor.last_name}`.trim();
+    const specialty  = titleCase((doctor.specialty || "").replaceAll("_", " "));
+    sessionStorage.setItem("medconnect_doctor", JSON.stringify({
+      doctor_id:       doctor.doctor_id,
+      id:              doctor.doctor_id,      // alias legacy
+      email:           doctor.email,
+      first_name:      doctor.name,
+      last_name:       doctor.last_name,
+      name:            fullName,              // display name para doctor.js
+      specialty:       specialty,             // display (Title Case)
+      specialty_raw:   doctor.specialty,      // para filtros/API
+      license:         doctor.license_number, // alias legacy
+      license_number:  doctor.license_number,
+      price_level:     doctor.price_level,
+      insurances:      doctor.insurances || [],
+      is_network:      !!doctor.is_network,
+      is_active:       !!doctor.is_active,
+      calendar_connected: !!doctor.calendar_connected,
+    }));
+    sessionStorage.removeItem("medconnect_user");
+  }
+
+  function titleCase(s) {
+    return (s || "").split(" ").map(w => w ? w[0].toUpperCase() + w.slice(1) : "").join(" ");
+  }
+
+  // ── Handlers ───────────────────────────────────────────────────────────
+  const patientLogin = withBusy("btn-pl", async () => {
+    const email    = document.getElementById("pl-email").value.trim().toLowerCase();
+    const password = document.getElementById("pl-password").value;
+    const user = await apiCall("/users/login", { email, password });
+    saveUserSession(user);
+    setMsg("Sesión iniciada. Redirigiendo...", "ok");
+    window.location.replace("index.html");
+  });
+
+  const patientRegister = withBusy("btn-pr", async () => {
+    const payload = {
+      name:       document.getElementById("pr-name").value.trim(),
+      last_name:  document.getElementById("pr-last").value.trim(),
+      email:      document.getElementById("pr-email").value.trim().toLowerCase(),
+      password:   document.getElementById("pr-password").value,
+      insurance:  document.getElementById("pr-insurance").value,
+    };
+    const ageVal = document.getElementById("pr-age").value;
+    if (ageVal) payload.age = parseInt(ageVal, 10);
+
+    const user = await apiCall("/users/register", payload);
+    saveUserSession(user);
+    setMsg("Cuenta creada. Redirigiendo...", "ok");
+    window.location.replace("index.html");
+  });
+
+  const doctorLogin = withBusy("btn-dl", async () => {
+    const email    = document.getElementById("dl-email").value.trim().toLowerCase();
+    const password = document.getElementById("dl-password").value;
+    const doctor = await apiCall("/doctors/login", { email, password });
+    saveDoctorSession(doctor);
+    setMsg("Sesión iniciada. Redirigiendo...", "ok");
+    window.location.replace("doctor.html");
+  });
+
+  const doctorRegister = withBusy("btn-dr", async () => {
+    const payload = {
+      name:           document.getElementById("dr-name").value.trim(),
+      last_name:      document.getElementById("dr-last").value.trim(),
+      email:          document.getElementById("dr-email").value.trim().toLowerCase(),
+      password:       document.getElementById("dr-password").value,
+      license_number: document.getElementById("dr-license").value.trim(),
+      specialty:      document.getElementById("dr-specialty").value,
+      price_level:    parseInt(document.getElementById("dr-price").value, 10),
+      is_network:     true,  // por defecto; el admin puede cambiarlo después
+    };
+    const phone = document.getElementById("dr-phone").value.trim();
+    if (phone) payload.phone = phone;
+
+    const doctor = await apiCall("/doctors/register", payload);
+    saveDoctorSession(doctor);
+    setMsg("Cuenta creada. Redirigiendo...", "ok");
+    window.location.replace("doctor.html");
+  });
+
+  // Enter-key support: el submit nativo del form ya lo maneja (onsubmit).
 </script>
 </body>
 </html>

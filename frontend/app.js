@@ -5,18 +5,26 @@
 
 const API = "";  // same-origin; empty string = relative URLs
 
-// If a doctor session exists, redirect to the doctor dashboard.
+// ── Auth guard ─────────────────────────────────────────────────────────────────
+// Doctor → redirige a doctor.html. Paciente sin sesión → redirige a login.
 if (sessionStorage.getItem("medconnect_doctor")) {
-  window.location.href = "doctor.html";
+  window.location.replace("doctor.html");
+}
+const userSession = JSON.parse(sessionStorage.getItem("medconnect_user") || "null");
+if (!userSession) {
+  window.location.replace("login.html");
 }
 
 // ── State ──────────────────────────────────────────────────────────────────────
 let sessionId = crypto.randomUUID();
-let userCoords = null;   // { lat, lng }
+let userCoords = userSession?.coords || null;   // { lat, lng }
 let map = null;
 let clinicMarkers = [];
+let userMarker = null;        // marker de "tú estás aquí"
+let radiusCircle = null;      // círculo del perímetro de búsqueda
 let activeWs = null;     // WebSocket for doctor chat
 let budgetLevel = "$$";
+let searchRadiusM = 5000;     // perímetro de búsqueda (metros)
 
 // Conversation state — the backend chat agent owns the dialogue;
 // frontend just relays messages and triggers /consult when agent says ready.
@@ -45,15 +53,51 @@ const modalDoctorName  = document.getElementById("modal-doctor-name");
 // ── Init ───────────────────────────────────────────────────────────────────────
 
 async function init() {
+  setupUserChip();
+  applyUserPreferences();
   setupBudgetButtons();
   setupChatInput();
   setupMapSearch();
   setupRecPanel();
   setupModal();
   await initMap();
+  if (userCoords) {
+    map?.setCenter(userCoords);
+    map?.setZoom(14);
+    drawUserLocation();
+  }
   await checkApiStatus();
   autoDetectLocation();   // fire-and-forget; bot adapts based on coords presence
   await bootstrapChat();
+}
+
+function setupUserChip() {
+  const chip = document.getElementById("user-chip");
+  if (!chip || !userSession) return;
+  const first = (userSession.name || userSession.full_name || "P").trim();
+  const last  = (userSession.last_name || "").trim();
+  const initials = ((first[0] || "P") + (last[0] || "")).toUpperCase();
+  chip.textContent = initials;
+  chip.title = `${userSession.full_name || first} — clic para cerrar sesión`;
+  chip.style.cursor = "pointer";
+  chip.addEventListener("click", () => {
+    if (!confirm("¿Cerrar sesión?")) return;
+    if (activeWs) activeWs.close();
+    sessionStorage.removeItem("medconnect_user");
+    window.location.replace("login.html");
+  });
+}
+
+function applyUserPreferences() {
+  if (!userSession) return;
+  const insSelect = document.getElementById("insurance-select");
+  if (insSelect && userSession.insurance) {
+    const opt = Array.from(insSelect.options).find(o => o.value === userSession.insurance);
+    if (opt) insSelect.value = userSession.insurance;
+  }
+  if (userSession.coords && map) {
+    map.setCenter(userSession.coords);
+  }
 }
 
 async function bootstrapChat() {
@@ -141,11 +185,12 @@ async function triggerConsult(emergency) {
       return;
     }
 
+    const ageForBlob = collectedData.age || userSession?.age || "";
     const symptomsBlob = [
       collectedData.symptoms,
       collectedData.duration ? `Duración: ${collectedData.duration}` : "",
       collectedData.severity ? `Severidad: ${collectedData.severity}` : "",
-      collectedData.age ? `Edad: ${collectedData.age}` : "",
+      ageForBlob ? `Edad: ${ageForBlob}` : "",
       emergency ? "EMERGENCIA reportada por el paciente." : "",
     ].filter(Boolean).join(". ");
 
@@ -183,6 +228,12 @@ async function runConsult(symptoms) {
     return;
   }
 
+  if (!userSession?.user_id) {
+    addBotMessage("Tu sesión expiró. Vuelve a iniciar sesión para continuar.");
+    window.location.replace("login.html");
+    return;
+  }
+
   const insurance = document.getElementById("insurance-select").value;
 
   showSpinner();
@@ -194,14 +245,23 @@ async function runConsult(symptoms) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         session_id: sessionId,
+        user_id: userSession.user_id,
         symptoms,
         coords: userCoords,
         insurance,
         budget_level: budgetLevel,
+        radius_m: searchRadiusM,
       }),
     });
 
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    if (!resp.ok) {
+      let detail = `HTTP ${resp.status}`;
+      try {
+        const err = await resp.json();
+        if (err?.detail) detail = typeof err.detail === "string" ? err.detail : JSON.stringify(err.detail);
+      } catch { /* ignore */ }
+      throw new Error(detail);
+    }
     const data = await resp.json();
 
     handleConsultResponse(data);
@@ -350,6 +410,7 @@ function plotClinicsOnMap(recs) {
     clinicMarkers.forEach(m => bounds.extend(m.getPosition()));
     if (userCoords) bounds.extend(userCoords);
     map.fitBounds(bounds);
+    drawUserLocation();   // re-asegura que el marker del usuario siga visible
   }
 }
 
@@ -368,7 +429,11 @@ async function searchLocation() {
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     userCoords = { lat: data.lat, lng: data.lng };
-    if (map) map.setCenter(userCoords);
+    if (map) {
+      map.setCenter(userCoords);
+      map.setZoom(14);
+    }
+    drawUserLocation();
     addBotMessage(`Ubicación establecida: ${data.formatted_address}`);
   } catch (e) {
     addBotMessage(`No pude encontrar esa ubicación: ${e.message}`);
@@ -381,14 +446,64 @@ async function autoDetectLocation() {
     navigator.geolocation.getCurrentPosition(
       pos => {
         userCoords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        if (map) map.setCenter(userCoords);
-        addBotMessage("Ubicación detectada automáticamente.");
+        const accuracy = Math.round(pos.coords.accuracy || 0);
+        if (map) {
+          map.setCenter(userCoords);
+          map.setZoom(14);
+        }
+        drawUserLocation();
+        addBotMessage(`Ubicación detectada (±${accuracy}m). Buscaré centros de salud en un radio de ${(searchRadiusM/1000).toFixed(1)} km.`);
         resolve();
       },
-      () => resolve(),
-      { timeout: 5000 },
+      err => {
+        console.warn("Geolocation error:", err);
+        addBotMessage("No pude detectar tu ubicación automáticamente. Usa la barra de búsqueda del mapa para fijarla.");
+        resolve();
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 },
     );
   });
+}
+
+// Dibuja (o actualiza) marker del usuario + círculo del radio de búsqueda
+function drawUserLocation() {
+  if (!map || !userCoords || typeof google === "undefined") return;
+
+  if (userMarker) {
+    userMarker.setPosition(userCoords);
+  } else {
+    userMarker = new google.maps.Marker({
+      position: userCoords,
+      map,
+      title: "Tu ubicación",
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 10,
+        fillColor: "#1a73e8",
+        fillOpacity: 1,
+        strokeColor: "#ffffff",
+        strokeWeight: 3,
+      },
+      zIndex: 999,
+    });
+  }
+
+  if (radiusCircle) {
+    radiusCircle.setCenter(userCoords);
+    radiusCircle.setRadius(searchRadiusM);
+  } else {
+    radiusCircle = new google.maps.Circle({
+      center: userCoords,
+      radius: searchRadiusM,
+      map,
+      fillColor: "#1a73e8",
+      fillOpacity: 0.06,
+      strokeColor: "#1a73e8",
+      strokeOpacity: 0.35,
+      strokeWeight: 1,
+      clickable: false,
+    });
+  }
 }
 
 // ── Doctor WebSocket Chat ──────────────────────────────────────────────────────
