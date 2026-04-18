@@ -125,20 +125,21 @@ async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, 
 
     network_map: dict[str, dict] = {}
     for clinic_id, obj_ids in clinic_to_doctors.items():
-        # Primer doctor del array que esté en red — ése gestiona el chat
+        doctors_in_network = []
         for obj_id in obj_ids:
             doc = active_doctors.get(obj_id)
             if doc:
                 full_name = " ".join(filter(None, [doc.get("name"), doc.get("last_name")]))
-                entry = {
+                doctors_in_network.append({
                     "doctor_id": str(obj_id),
                     "name": full_name.strip(),
                     "specialty": doc.get("specialty"),
-                }
-                if clinic_id in clinic_to_real_id:
-                    entry["real_clinic_id"] = clinic_to_real_id[clinic_id]
-                network_map[clinic_id] = entry
-                break
+                })
+        if doctors_in_network:
+            network_map[clinic_id] = {
+                "doctors": doctors_in_network,
+                "real_clinic_id": clinic_to_real_id.get(clinic_id),
+            }
     return network_map
 
 
@@ -253,7 +254,9 @@ match_score es un número entero de 0 a 100 que representa qué tan bien se adap
         if clinic_id in network_map:
             rec["is_network"] = True
             contact["type"] = "chat"
-            contact["doctor_id"] = network_map[clinic_id]["doctor_id"]
+            doctors = network_map[clinic_id]["doctors"]
+            contact["doctor_id"] = doctors[0]["doctor_id"] if doctors else None
+            contact["doctors"] = doctors
             # Si el candidato vino de Places pero hay registro en Mongo,
             # preferimos el ObjectId real para endpoints posteriores.
             real_id = network_map[clinic_id].get("real_clinic_id")
@@ -263,6 +266,7 @@ match_score es un número entero de 0 a 100 que representa qué tan bien se adap
             rec["is_network"] = False
             contact["type"] = "info"
             contact["doctor_id"] = None
+            contact["doctors"] = []
             contact["phone"] = source.get("phone")
             contact["address"] = source.get("address")
 
@@ -276,6 +280,7 @@ def _fallback_recommendations(clinics: list[dict], network_map: dict, urgency: s
         cid = c.get("clinic_id", "")
         is_net = cid in network_map
         real_id = network_map.get(cid, {}).get("real_clinic_id") if is_net else None
+        net_doctors = network_map[cid]["doctors"] if is_net else []
         recs.append({
             "clinic_id": real_id or cid,
             "name": c.get("name"),
@@ -285,7 +290,8 @@ def _fallback_recommendations(clinics: list[dict], network_map: dict, urgency: s
             "match_score": 90 - (i - 1) * 15,
             "contact": {
                 "type": "chat" if is_net else "info",
-                "doctor_id": network_map[cid]["doctor_id"] if is_net else None,
+                "doctor_id": net_doctors[0]["doctor_id"] if net_doctors else None,
+                "doctors": net_doctors,
                 "phone": c.get("phone"),
                 "address": c.get("address"),
             },

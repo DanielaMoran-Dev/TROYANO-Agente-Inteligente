@@ -181,14 +181,16 @@ def reply(
     bootstrap = "[INICIO_DE_SESION] " if not user_message else ""
     payload = f"{hint} {bootstrap}{user_message}".strip() or hint
 
-    raw = gemini_service.send_chat(session_id, payload, system=SYSTEM_PROMPT)
+    raw = gemini_service.send_chat(session_id, payload, system=SYSTEM_PROMPT, json_mode=True)
 
     try:
         parsed = _parse(raw)
     except json.JSONDecodeError as e:
         logger.error("chat_agent JSON parse error: %s — raw: %s", e, raw)
+        # Use whatever text Gemini returned as the reply rather than a generic error
+        fallback_reply = raw.strip() if raw.strip() else "Disculpa, tuve un problema. ¿Puedes repetirlo?"
         return {
-            "reply": "Disculpa, tuve un problema procesando tu mensaje. ¿Puedes repetirlo?",
+            "reply": fallback_reply,
             "action": "none",
             "ready": False,
             "data": {},

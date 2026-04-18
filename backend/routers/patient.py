@@ -259,6 +259,15 @@ async def maps_search(q: str):
         raise HTTPException(status_code=502, detail=str(exc)) from exc
 
 
+@router.get("/maps/reverse", tags=["maps"])
+async def maps_reverse(lat: float, lng: float):
+    """Reverse-geocode a lat/lng pair into a human-readable address."""
+    try:
+        return maps_service.reverse_geocode(lat, lng)
+    except RuntimeError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+
 @router.post("/maps/routes", tags=["maps"])
 async def maps_routes(body: dict):
     try:
@@ -290,6 +299,16 @@ async def create_appointment(body: AppointmentCreate):
         doctor_obj_id = ObjectId(body.doctor_id)
     except InvalidId:
         raise HTTPException(status_code=400, detail="user_id o doctor_id inválido.")
+
+    # Idempotency: reject duplicate slot (same patient + doctor + time, not cancelled)
+    existing = await mongo_service.appointments().find_one({
+        "user_id": user_obj_id,
+        "doctor_id": doctor_obj_id,
+        "scheduled_at": body.scheduled_at,
+        "status": {"$ne": "cancelled"},
+    })
+    if existing:
+        return {"appointment_id": str(existing["_id"]), "status": existing["status"]}
 
     now = datetime.now(timezone.utc)
     doc = {
@@ -325,6 +344,65 @@ async def update_appointment(appointment_id: str, body: AppointmentUpdate):
     if result.matched_count == 0:
         raise HTTPException(status_code=404, detail="Cita no encontrada.")
     return {"ok": True}
+
+
+@router.get("/appointments", tags=["appointments"])
+async def list_user_appointments(user_id: str):
+    """Lista citas del paciente enriquecidas con nombre del doctor y clínica."""
+    try:
+        user_oid = ObjectId(user_id)
+    except Exception:
+        raise HTTPException(status_code=400, detail="user_id inválido.")
+
+    cursor = mongo_service.appointments().find(
+        {"user_id": user_oid}
+    ).sort("scheduled_at", 1)
+    docs = [doc async for doc in cursor]
+
+    # Batch-fetch doctor and clinic names
+    doctor_oids = list({d["doctor_id"] for d in docs if d.get("doctor_id")})
+    clinic_ids_raw = list({d.get("clinic_id") for d in docs if d.get("clinic_id")})
+
+    doctors_map: dict = {}
+    if doctor_oids:
+        async for doc in mongo_service.doctors().find(
+            {"_id": {"$in": doctor_oids}},
+            {"_id": 1, "name": 1, "last_name": 1, "specialty": 1},
+        ):
+            full = " ".join(filter(None, [doc.get("name"), doc.get("last_name")])).strip()
+            doctors_map[doc["_id"]] = {"name": full or "Doctor", "specialty": doc.get("specialty")}
+
+    clinics_map: dict = {}
+    if clinic_ids_raw:
+        try:
+            clinic_oids = [ObjectId(cid) for cid in clinic_ids_raw]
+            async for doc in mongo_service.clinics().find(
+                {"_id": {"$in": clinic_oids}},
+                {"_id": 1, "name": 1},
+            ):
+                clinics_map[str(doc["_id"])] = doc.get("name", "")
+        except Exception:
+            pass
+
+    result = []
+    for d in docs:
+        doc_info = doctors_map.get(d.get("doctor_id"), {})
+        result.append({
+            "appointment_id": str(d["_id"]),
+            "conversation_id": d.get("conversation_id"),
+            "user_id": str(d["user_id"]),
+            "doctor_id": str(d["doctor_id"]),
+            "clinic_id": d.get("clinic_id"),
+            "doctor_name": doc_info.get("name", "Doctor"),
+            "doctor_specialty": doc_info.get("specialty"),
+            "clinic_name": clinics_map.get(d.get("clinic_id") or "", ""),
+            "scheduled_at": d["scheduled_at"].isoformat() if d.get("scheduled_at") else None,
+            "duration_min": d.get("duration_min", 30),
+            "status": d.get("status", "pending"),
+            "notes": d.get("notes"),
+        })
+
+    return {"appointments": result}
 
 
 @router.get("/appointments/{appointment_id}", tags=["appointments"])

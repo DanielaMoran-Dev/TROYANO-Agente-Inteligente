@@ -172,7 +172,7 @@ async def run(
         if travel is None:
             travel = (c.get("distance_m") or 60_000) / 1000.0
         semantic = 1 - float(c.get("score") or 0)
-        network_bonus = -5 if c.get("is_network") else 0
+        network_bonus = -20 if c.get("is_network") else 0
         return travel * (1 - urgency_weight) + semantic * urgency_weight * 100 + network_bonus
 
     return sorted(filtered, key=rank_score)

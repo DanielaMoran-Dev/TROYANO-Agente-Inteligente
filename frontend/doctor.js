@@ -21,118 +21,20 @@ let mapsLoaded    = false;  // Google Maps JS loaded?
 let placeAutocomplete = null;
 let selectedPlace = null;   // { place_id, formatted_address, lat, lng, state, municipality, name }
 
-// ── Calendar appointments (in-memory, persists within session) ─────────────────
+// ── Calendar appointments (in-memory, synced from API) ────────────────────────
 let CAL_APPOINTMENTS = [];
-
-// ── Mock data — replace with real API polling once DB is up ────────────────────
-const MOCK_QUEUE = [
-  {
-    id: "sess_001",
-    urgency: "critical",
-    specialty: "Cardiología",
-    summary: "Paciente masculino de 58 años refiere dolor torácico opresivo con irradiación al brazo izquierdo y diaforesis de 30 min de evolución. Posible síndrome coronario agudo.",
-    symptoms: "Dolor en el pecho fuerte, me duele el brazo izquierdo, sudo mucho",
-    age: "58",
-    insurance: "IMSS",
-    conversationId: "conv_001",
-    arrivedAt: new Date(Date.now() - 4 * 60000),
-  },
-  {
-    id: "sess_002",
-    urgency: "medium",
-    specialty: "Medicina General",
-    summary: "Paciente femenina de 32 años con fiebre de 38.5°C, tos productiva y dolor de garganta de 3 días de evolución. Compatible con infección respiratoria alta.",
-    symptoms: "Fiebre, tos con flema, me duele la garganta",
-    age: "32",
-    insurance: "ISSSTE",
-    conversationId: "conv_002",
-    arrivedAt: new Date(Date.now() - 12 * 60000),
-  },
-  {
-    id: "sess_003",
-    urgency: "low",
-    specialty: "Dermatología",
-    summary: "Paciente masculino de 24 años con erupciones en piel del torso de 1 semana de evolución, sin fiebre ni otros síntomas sistémicos.",
-    symptoms: "Me salieron granos raros en la panza, no me duelen",
-    age: "24",
-    insurance: "Ninguno",
-    conversationId: "conv_003",
-    arrivedAt: new Date(Date.now() - 25 * 60000),
-  },
-];
-
-const MOCK_APPOINTMENTS = [
-  {
-    id: "appt_001",
-    time: "Hoy, 15:30",
-    patientLabel: "Paciente #4872",
-    specialty: "Cardiología — seguimiento",
-    status: "pending",
-  },
-  {
-    id: "appt_002",
-    time: "Hoy, 17:00",
-    patientLabel: "Paciente #1193",
-    specialty: "Medicina General",
-    status: "confirmed",
-  },
-  {
-    id: "appt_003",
-    time: "Mañana, 09:00",
-    patientLabel: "Paciente #3305",
-    specialty: "Cardiología — primera vez",
-    status: "pending",
-  },
-];
-
-// ── Seed CAL_APPOINTMENTS from mock list (with real Date objects) ──────────────
-(function seedCalAppts() {
-  const today    = new Date();
-  const tomorrow = new Date(today); tomorrow.setDate(today.getDate() + 1);
-
-  CAL_APPOINTMENTS = [
-    {
-      id: "appt_001",
-      patient: "Paciente #4872",
-      specialty: "Cardiología — seguimiento",
-      status: "pending",
-      date: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 15, 30),
-      duration: 30,
-      notes: "",
-    },
-    {
-      id: "appt_002",
-      patient: "Paciente #1193",
-      specialty: "Medicina General",
-      status: "confirmed",
-      date: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 17, 0),
-      duration: 60,
-      notes: "",
-    },
-    {
-      id: "appt_003",
-      patient: "Paciente #3305",
-      specialty: "Cardiología — primera vez",
-      status: "pending",
-      date: new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate(), 9, 0),
-      duration: 60,
-      notes: "Primera consulta",
-    },
-  ];
-})();
 
 // ── Boot ───────────────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
   renderProfile();
-  renderQueue();
-  syncAppointmentPanel();
-  updateStats();
   setupChatInput();
   loadMyClinic();
   setupInsuranceChips();
-  ensureMapsLoaded();   // preload for Places Autocomplete
+  ensureMapsLoaded();
+  loadConversations();
+  loadAppointments();
 }
 
 // ── Profile ────────────────────────────────────────────────────────────────────
@@ -163,41 +65,62 @@ function toggleOnline() {
   document.getElementById("hdr-online-text").textContent = isOnline ? "EN LÍNEA" : "OFFLINE";
 }
 
-// ── Queue ──────────────────────────────────────────────────────────────────────
-function renderQueue() {
+// ── Queue (real conversations from API) ────────────────────────────────────────
+async function loadConversations() {
+  try {
+    const res = await fetch(`${API}/conversations?doctor_id=${doctorSession.doctor_id}`);
+    if (!res.ok) { renderQueue([]); return; }
+    const { conversations } = await res.json();
+    renderQueue(conversations);
+    updateStats(conversations);
+  } catch {
+    renderQueue([]);
+  }
+}
+
+function renderQueue(convs) {
   const list  = document.getElementById("queue-list");
   const empty = document.getElementById("queue-empty");
+  list.innerHTML = "";
 
-  if (!MOCK_QUEUE.length) {
+  const active = convs.filter(c => c.status === "active");
+
+  if (!convs.length) {
     empty.style.display = "flex";
     document.getElementById("queue-count").textContent = "0";
     return;
   }
-
   empty.style.display = "none";
-  document.getElementById("queue-count").textContent = MOCK_QUEUE.length;
+  document.getElementById("queue-count").textContent = convs.length;
 
-  MOCK_QUEUE.forEach(p => {
+  const urgencyLabels = { critical: "CRÍTICO", medium: "MODERADO", low: "LEVE" };
+
+  convs.forEach(c => {
+    const urgency = c.urgency_level || "low";
     const item = document.createElement("div");
-    item.className = `queue-item urgency-${p.urgency}`;
-    item.id = `qitem-${p.id}`;
-
-    const urgencyLabels = { critical: "CRÍTICO", medium: "MODERADO", low: "LEVE" };
-    const ago = formatAgo(p.arrivedAt);
+    item.className = `queue-item urgency-${urgency}${c.status === "closed" ? " closed-conv" : ""}`;
+    item.id = `qitem-${c.conversation_id}`;
 
     item.innerHTML = `
       <div class="queue-item-top">
-        <div class="urgency-dot dot-${p.urgency}"></div>
-        <span class="queue-patient-id">Paciente · ${p.id.slice(-3)}</span>
-        <span class="queue-time">${ago}</span>
+        <div class="urgency-dot dot-${urgency}"></div>
+        <span class="queue-patient-id">${escapeHtml(c.patient_name || "Paciente")}</span>
+        <span class="queue-time">${c.updated_at ? formatAgo(new Date(c.updated_at)) : ""}</span>
       </div>
-      <div class="queue-summary">${escapeHtml(p.summary)}</div>
+      <div class="queue-summary">${escapeHtml(c.clinical_summary || "Sin resumen clínico.")}</div>
       <div class="queue-badges">
-        <span class="q-badge q-badge-${p.urgency}">${urgencyLabels[p.urgency]}</span>
-        <span class="q-badge q-badge-specialty">${escapeHtml(p.specialty)}</span>
+        <span class="q-badge q-badge-${urgency}">${urgencyLabels[urgency] || urgency.toUpperCase()}</span>
+        ${c.status === "closed" ? '<span class="q-badge" style="background:#333;color:#888">CERRADO</span>' : ""}
       </div>
     `;
-    item.addEventListener("click", () => selectPatient(p));
+    item.addEventListener("click", () => selectPatient({
+      id: c.conversation_id,
+      urgency,
+      specialty: doctorSession.specialty,
+      summary: c.clinical_summary || "",
+      conversationId: c.conversation_id,
+      patientName: c.patient_name || "Paciente",
+    }));
     list.appendChild(item);
   });
 }
@@ -286,15 +209,42 @@ function sendDocMessage() {
 
 // ── Appointments ───────────────────────────────────────────────────────────────
 
-// ── Stats ──────────────────────────────────────────────────────────────────────
-function updateStats() {
-  const critical = MOCK_QUEUE.filter(p => p.urgency === "critical").length;
-  const pending  = CAL_APPOINTMENTS.filter(a => a.status === "pending").length;
+async function loadAppointments() {
+  try {
+    const res = await fetch(`${API}/doctors/${doctorSession.doctor_id}/appointments`);
+    if (!res.ok) { CAL_APPOINTMENTS = []; }
+    else {
+      const { appointments } = await res.json();
+      CAL_APPOINTMENTS = appointments.map(a => ({
+        id:              a.appointment_id,
+        patient:         a.patient_name || "Paciente",
+        specialty:       a.notes || doctorSession.specialty,
+        status:          a.status,
+        date:            new Date(a.scheduled_at),
+        duration:        a.duration_min,
+        notes:           a.notes || "",
+        userId:          a.user_id,
+        conversationId:  a.conversation_id,
+      }));
+    }
+  } catch { CAL_APPOINTMENTS = []; }
+  syncAppointmentPanel();
+  const calOverlay = document.getElementById("cal-overlay");
+  if (calOverlay && !calOverlay.classList.contains("hidden")) renderCalendar();
+}
 
-  document.getElementById("stat-critical").textContent    = critical;
-  document.getElementById("stat-pending").textContent     = MOCK_QUEUE.length;
-  document.getElementById("stat-completed").textContent   = 3;   // mock
-  document.getElementById("stat-appointments").textContent = pending;
+// ── Stats ──────────────────────────────────────────────────────────────────────
+function updateStats(convs = []) {
+  const critical     = convs.filter(c => c.urgency_level === "critical").length;
+  const active       = convs.filter(c => c.status === "active").length;
+  const pendingAppts = CAL_APPOINTMENTS.filter(a => a.status === "pending").length;
+
+  const elCritical = document.getElementById("stat-critical");
+  const elPending  = document.getElementById("stat-pending");
+  const elAppts    = document.getElementById("stat-appointments");
+  if (elCritical) elCritical.textContent = critical;
+  if (elPending)  elPending.textContent  = active;
+  if (elAppts)    elAppts.textContent    = pendingAppts;
 }
 
 // ── Auth ───────────────────────────────────────────────────────────────────────
@@ -573,24 +523,26 @@ function syncAppointmentPanel() {
   updateStats();
 }
 
-function confirmApptById(id) {
-  const appt = CAL_APPOINTMENTS.find(a => a.id === id);
-  if (!appt) return;
-  appt.status = "confirmed";
-  syncAppointmentPanel();
-  if (document.getElementById("cal-overlay").classList.contains("hidden") === false) {
-    renderCalendar();
-  }
+async function confirmApptById(id) {
+  try {
+    await fetch(`${API}/appointments/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status: "confirmed" }),
+    });
+  } catch { /* fall through — optimistic update below */ }
+  await loadAppointments();
 }
 
-function cancelApptById(id) {
-  const idx = CAL_APPOINTMENTS.findIndex(a => a.id === id);
-  if (idx === -1) return;
-  CAL_APPOINTMENTS.splice(idx, 1);
-  syncAppointmentPanel();
-  if (!document.getElementById("cal-overlay").classList.contains("hidden")) {
-    renderCalendar();
-  }
+async function cancelApptById(id) {
+  try {
+    await fetch(`${API}/appointments/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status: "cancelled" }),
+    });
+  } catch { /* fall through */ }
+  await loadAppointments();
 }
 
 // ── Date helpers ───────────────────────────────────────────────────────────────
@@ -1166,6 +1118,8 @@ function pkInitMap() {
   }
 }
 
+let pkNameSearchTimer = null;
+
 function pkSetupAutocomplete() {
   if (pkAutocomplete) return;
   const input = document.getElementById("pk-search-input");
@@ -1192,6 +1146,51 @@ function pkSetupAutocomplete() {
       address_components: place.address_components,
     });
   });
+
+  // Debounced name search for DB clinics — filters green markers by clinic name.
+  input.addEventListener("input", () => {
+    clearTimeout(pkNameSearchTimer);
+    pkNameSearchTimer = setTimeout(pkSearchDbByName, 300);
+  });
+}
+
+async function pkSearchDbByName() {
+  const q = document.getElementById("pk-search-input")?.value.trim() || "";
+  // Clear existing DB markers before loading fresh results.
+  pkDbMarkers.forEach(m => m.marker.setMap(null));
+  pkDbMarkers = [];
+  pkSeenClinicIds = new Set();
+
+  try {
+    const res = await fetch(`${API}/clinics/search?q=${encodeURIComponent(q)}&limit=50`);
+    if (!res.ok) return;
+    const items = await res.json();
+
+    for (const c of items) {
+      if (c.lat == null || c.lng == null) continue;
+      if (pkSeenClinicIds.has(c.clinic_id)) continue;
+      const pos = { lat: c.lat, lng: c.lng };
+
+      const marker = new google.maps.Marker({
+        position: pos,
+        map: pkMap,
+        title: c.name,
+        icon: pkPinIcon("#34a853"),
+        zIndex: 50,
+      });
+      marker.addListener("click", () => pkSelectDbClinic(c, marker));
+      pkDbMarkers.push({ marker, clinic: c });
+      pkSeenClinicIds.add(c.clinic_id);
+
+      // Pan to first result when searching by name.
+      if (q && pkDbMarkers.length === 1) {
+        pkMap.panTo(pos);
+        pkMap.setZoom(15);
+      }
+    }
+  } catch {
+    /* no-op */
+  }
 }
 
 async function pkLoadMarkers() {

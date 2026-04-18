@@ -145,6 +145,46 @@ def search_place(query: str) -> dict:
     }
 
 
+def reverse_geocode(lat: float, lng: float) -> dict:
+    """
+    Reverse-geocode a lat/lng pair.
+
+    Returns:
+        {
+            "formatted_address": str,
+            "short_address": str,   # first 2 components only
+            "lat": float,
+            "lng": float,
+        }
+    """
+    if not is_configured():
+        raise RuntimeError("GOOGLE_MAPS_API_KEY is not set.")
+
+    params = {
+        "latlng": f"{lat},{lng}",
+        "key": GOOGLE_MAPS_API_KEY,
+        "language": "es",
+        "result_type": "street_address|locality|sublocality",
+    }
+
+    try:
+        response = requests.get(GEOCODING_URL, params=params, timeout=REQUEST_TIMEOUT)
+        if not response.ok:
+            raise RuntimeError(f"Reverse geocoding HTTP {response.status_code}")
+        data = response.json()
+    except requests.exceptions.RequestException as exc:
+        raise RuntimeError(f"Reverse geocoding request failed: {exc}") from exc
+
+    results = data.get("results", [])
+    if not results:
+        return {"formatted_address": f"{lat:.5f}, {lng:.5f}", "short_address": f"{lat:.4f}, {lng:.4f}", "lat": lat, "lng": lng}
+
+    addr = results[0]["formatted_address"]
+    parts = addr.split(",")
+    short = ", ".join(p.strip() for p in parts[:3])
+    return {"formatted_address": addr, "short_address": short, "lat": lat, "lng": lng}
+
+
 def search_nearby_health(
     lat: float,
     lng: float,

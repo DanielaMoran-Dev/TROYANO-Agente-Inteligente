@@ -26,6 +26,7 @@ let activeWs = null;     // WebSocket for doctor chat
 let budgetLevel = "$$";
 let searchRadiusM = 5000;     // perímetro de búsqueda (metros)
 let facilityType = "any";     // "public" | "private" | "any"
+let _locationResolve = null;  // resolves the autoDetectLocation promise on confirm
 
 // Conversation state — the backend chat agent owns the dialogue.
 // Frontend relays messages, applies preference updates, and re-runs /consult
@@ -71,8 +72,15 @@ async function init() {
     drawUserLocation();
   }
   await checkApiStatus();
-  autoDetectLocation();   // fire-and-forget; bot adapts based on coords presence
-  await bootstrapChat();
+  if (userCoords) {
+    // Coords already known from session — skip detection, go straight to chat
+    drawUserLocation();
+    await bootstrapChat();
+  } else {
+    // Wait for geolocation + user confirmation before starting chat
+    await autoDetectLocation();
+    await bootstrapChat();
+  }
 }
 
 function setupUserChip() {
@@ -385,8 +393,9 @@ function handleConsultResponse(data) {
   document.getElementById("triage-summary").classList.remove("hidden");
 
   triggerSplitView();
-  showRecommendations(recommendations.recommendations);
-  plotClinicsOnMap(recommendations.recommendations);
+  const sortedRecs = [...recommendations.recommendations].sort((a, b) => (b.is_network ? 1 : 0) - (a.is_network ? 1 : 0));
+  showRecommendations(sortedRecs);
+  plotClinicsOnMap(sortedRecs);
   hasRecommendations = true;
 }
 
@@ -443,12 +452,20 @@ function showRecommendations(recs) {
       ? `<div class="rec-name">${escapeHtml(rec.name)}</div>`
       : "";
 
-    const networkActions = rec.is_network
-      ? `<button class="rec-action-btn btn-chat"
-             data-doctor="${rec.contact?.doctor_id || ""}"
+    const doctors = rec.contact?.doctors || [];
+    const doctorRows = doctors.map(d =>
+      `<div class="doctor-catalogue-row">
+         <span class="doctor-catalogue-name">${escapeHtml(d.name)}${d.specialty ? " · " + escapeHtml(d.specialty) : ""}</span>
+         <button class="rec-action-btn btn-chat doctor-chat-btn"
+             data-doctor="${d.doctor_id}"
              data-clinic="${rec.clinic_id || ""}">
-           <span class="material-symbols-outlined">chat</span> Chatear
+           <span class="material-symbols-outlined" style="font-size:15px">chat</span>
          </button>
+       </div>`
+    ).join("");
+    const networkActions = rec.is_network
+      ? `<div class="doctor-catalogue-label">Doctores disponibles</div>
+         <div class="doctor-catalogue">${doctorRows || '<span class="doctor-catalogue-empty">Sin doctores en red</span>'}</div>
          <button class="rec-action-btn btn-appt"
              data-doctor="${rec.contact?.doctor_id || ""}"
              data-clinic="${rec.clinic_id || ""}"
@@ -561,26 +578,61 @@ function plotClinicsOnMap(recs) {
     const scoreHtml = rec.match_score != null
       ? `<span style="color:${scoreColor};font-weight:700">${rec.match_score}% compatibilidad</span>`
       : "";
-    const contactLine = rec.is_network
-      ? `<span style="color:#34a853">&#10003; Doctor en red disponible</span>`
-      : [rec.contact?.phone ? `Tel: ${rec.contact.phone}` : "", rec.contact?.address ? `${rec.contact.address}` : ""].filter(Boolean).join("<br>");
     const travelLine = rec.travel_time_min
       ? `<span style="color:#8ab4f8">&#128664; ${Math.round(rec.travel_time_min)} min</span>`
       : "";
 
-    const content = `
-      <div style="font-family:sans-serif;font-size:13px;max-width:220px;line-height:1.5">
-        <div style="font-weight:700;margin-bottom:4px">${escapeHtml(rec.name || `Opción ${i + 1}`)}</div>
-        ${scoreHtml ? `<div>${scoreHtml}</div>` : ""}
-        ${travelLine ? `<div>${travelLine}</div>` : ""}
-        <div style="margin-top:4px;color:#666;font-size:12px">${contactLine}</div>
-      </div>`;
+    if (rec.is_network) {
+      const iwDoctors = rec.contact?.doctors || [];
+      const doctorHtml = iwDoctors.map(d =>
+        `<div style="display:flex;align-items:center;gap:6px;margin:3px 0">
+           <span style="flex:1;font-size:12px;color:#e8eaed">${escapeHtml(d.name)}${d.specialty ? " · " + escapeHtml(d.specialty) : ""}</span>
+           <button class="iw-chat-btn"
+             data-doctor-id="${d.doctor_id}"
+             data-clinic-id="${rec.clinic_id || ""}"
+             style="background:#34a853;color:#fff;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:11px;white-space:nowrap">Chat</button>
+         </div>`
+      ).join("") || `<span style="font-size:12px;color:#aaa">Sin doctores en red</span>`;
 
-    marker.addListener("mouseover", () => {
-      infoWindow.setContent(content);
-      infoWindow.open(map, marker);
-    });
-    marker.addListener("mouseout", () => infoWindow.close());
+      const content = `
+        <div style="font-family:sans-serif;font-size:13px;max-width:250px;line-height:1.5;background:#202124;color:#e8eaed;padding:2px">
+          <div style="font-weight:700;margin-bottom:4px">${escapeHtml(rec.name || `Opción ${i + 1}`)}</div>
+          ${scoreHtml ? `<div>${scoreHtml}</div>` : ""}
+          ${travelLine ? `<div>${travelLine}</div>` : ""}
+          <div style="margin-top:6px;color:#34a853;font-weight:600;font-size:11px;letter-spacing:.04em">DOCTORES EN RED</div>
+          ${doctorHtml}
+        </div>`;
+
+      marker.addListener("click", () => {
+        infoWindow.setContent(content);
+        infoWindow.open(map, marker);
+        google.maps.event.addListenerOnce(infoWindow, "domready", () => {
+          document.querySelectorAll(".iw-chat-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+              openDoctorChat(btn.dataset.doctorId, btn.dataset.clinicId);
+              infoWindow.close();
+            });
+          });
+        });
+      });
+    } else {
+      const contactLine = [
+        rec.contact?.phone ? `Tel: ${rec.contact.phone}` : "",
+        rec.contact?.address ? rec.contact.address : "",
+      ].filter(Boolean).join("<br>");
+      const content = `
+        <div style="font-family:sans-serif;font-size:13px;max-width:220px;line-height:1.5">
+          <div style="font-weight:700;margin-bottom:4px">${escapeHtml(rec.name || `Opción ${i + 1}`)}</div>
+          ${scoreHtml ? `<div>${scoreHtml}</div>` : ""}
+          ${travelLine ? `<div>${travelLine}</div>` : ""}
+          <div style="margin-top:4px;color:#666;font-size:12px">${contactLine}</div>
+        </div>`;
+      marker.addListener("mouseover", () => {
+        infoWindow.setContent(content);
+        infoWindow.open(map, marker);
+      });
+      marker.addListener("mouseout", () => infoWindow.close());
+    }
 
     clinicMarkers.push(marker);
   });
@@ -622,27 +674,131 @@ async function searchLocation() {
 
 async function autoDetectLocation() {
   return new Promise(resolve => {
-    if (!navigator.geolocation) return resolve();
+    if (!navigator.geolocation) { resolve(); return; }
     navigator.geolocation.getCurrentPosition(
-      pos => {
-        userCoords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-        const accuracy = Math.round(pos.coords.accuracy || 0);
-        if (map) {
-          map.setCenter(userCoords);
-          map.setZoom(14);
-        }
+      async pos => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        userCoords = { lat, lng };
+        if (map) { map.setCenter(userCoords); map.setZoom(14); }
         drawUserLocation();
-        addBotMessage(`Ubicación detectada (±${accuracy}m). Buscaré centros de salud en un radio de ${(searchRadiusM/1000).toFixed(1)} km.`);
-        resolve();
+
+        // Reverse-geocode to get a human-readable address, then show the card
+        let address = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+        try {
+          const r = await fetch(`${API}/maps/reverse?lat=${lat}&lng=${lng}`);
+          if (r.ok) address = (await r.json()).short_address || address;
+        } catch { /* keep coordinate fallback */ }
+
+        // Store resolve — confirmLocationCard() will call it
+        _locationResolve = resolve;
+        showLocationCard(address, lat, lng);
+        // Do NOT call resolve() here — wait for user to confirm
       },
       err => {
         console.warn("Geolocation error:", err);
-        addBotMessage("No pude detectar tu ubicación automáticamente. Usa la barra de búsqueda del mapa para fijarla.");
+        addBotMessage("No pude detectar tu ubicación automáticamente. Puedes escribir tu dirección cuando el asistente te lo pida.");
         resolve();
       },
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 },
     );
   });
+}
+
+function showLocationCard(address, lat, lng) {
+  const msgs = document.getElementById("chat-messages");
+  const card = document.createElement("div");
+  card.className = "location-card";
+  card.id = "location-card";
+  card.innerHTML = `
+    <div class="lc-header">
+      <span class="material-symbols-outlined">my_location</span>
+      <span>Ubicación detectada</span>
+    </div>
+    <div class="lc-address" id="lc-address-text">${escapeHtml(address)}</div>
+    <div class="lc-search-row">
+      <input id="lc-input" class="lc-input" type="text" placeholder="Corregir dirección..." autocomplete="off" />
+      <button class="lc-search-btn" onclick="searchLocationFromCard()">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+    </div>
+    <div class="lc-radius-row">
+      <span class="lc-radius-label">Radio de búsqueda</span>
+      <div class="lc-radius-btns" id="lc-radius-btns">
+        <button class="lc-radius-btn" data-val="3000">3 km</button>
+        <button class="lc-radius-btn active" data-val="5000">5 km</button>
+        <button class="lc-radius-btn" data-val="10000">10 km</button>
+        <button class="lc-radius-btn" data-val="20000">20 km</button>
+      </div>
+    </div>
+    <button class="lc-confirm-btn" id="lc-confirm-btn" onclick="confirmLocationCard()">
+      <span class="material-symbols-outlined">check_circle</span>
+      Confirmar y continuar
+    </button>
+  `;
+  msgs.appendChild(card);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  // Store pending coords on card element
+  card._pendingLat = lat;
+  card._pendingLng = lng;
+
+  // Radius buttons
+  card.querySelectorAll(".lc-radius-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      card.querySelectorAll(".lc-radius-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+
+  // Enter key on address input
+  card.querySelector("#lc-input").addEventListener("keydown", e => {
+    if (e.key === "Enter") searchLocationFromCard();
+  });
+}
+
+async function searchLocationFromCard() {
+  const card = document.getElementById("location-card");
+  if (!card) return;
+  const q = card.querySelector("#lc-input").value.trim();
+  if (!q) return;
+  try {
+    const r = await fetch(`${API}/maps/search?q=${encodeURIComponent(q)}`);
+    if (!r.ok) return;
+    const data = await r.json();
+    card._pendingLat = data.lat;
+    card._pendingLng = data.lng;
+    card.querySelector("#lc-address-text").textContent = data.formatted_address || data.name || q;
+    card.querySelector("#lc-input").value = "";
+    if (map) { map.setCenter({ lat: data.lat, lng: data.lng }); map.setZoom(14); }
+  } catch { /* ignore */ }
+}
+
+function confirmLocationCard() {
+  const card = document.getElementById("location-card");
+  if (!card) return;
+
+  const lat       = card._pendingLat;
+  const lng       = card._pendingLng;
+  const activeBtn = card.querySelector(".lc-radius-btn.active");
+  const radius    = activeBtn ? parseInt(activeBtn.dataset.val, 10) : searchRadiusM;
+  const addr      = card.querySelector("#lc-address-text")?.textContent || `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+
+  userCoords    = { lat, lng };
+  searchRadiusM = radius;
+
+  if (map) { map.setCenter(userCoords); map.setZoom(14); }
+  drawUserLocation();
+
+  card.innerHTML = `
+    <div class="lc-confirmed">
+      <span class="material-symbols-outlined">check_circle</span>
+      <span>${escapeHtml(addr)} · Radio ${(radius / 1000).toFixed(0)} km</span>
+    </div>
+  `;
+
+  // Unblock the init() flow so bootstrapChat() runs next
+  if (_locationResolve) { _locationResolve(); _locationResolve = null; }
 }
 
 // Dibuja (o actualiza) marker del usuario + círculo del radio de búsqueda
@@ -813,6 +969,7 @@ async function submitAppointment() {
   }
 
   btn.disabled = true;
+  btn.textContent = "Enviando...";
   errEl.textContent = "";
 
   try {
@@ -842,6 +999,7 @@ async function submitAppointment() {
     errEl.textContent = e.message || "Error de conexión";
   } finally {
     btn.disabled = false;
+    btn.innerHTML = '<span class="material-symbols-outlined">check</span> Confirmar solicitud';
   }
 }
 
@@ -902,6 +1060,132 @@ function escapeAttr(str) {
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
+}
+
+// ── Side panels (Chats + Appointments) ────────────────────────────────────────
+
+function openPanel(which) {
+  const panelId = which === "history" ? "history-panel" : "appt-panel";
+  const btnId   = which === "history" ? "sb-history" : "sb-appts";
+  const panel   = document.getElementById(panelId);
+  const isOpen  = !panel.classList.contains("hidden");
+
+  closeSidePanel();
+  if (isOpen) return; // toggle off if already open
+
+  panel.classList.remove("hidden");
+  document.getElementById(btnId)?.classList.add("active");
+  if (which === "history") loadConversations();
+  else loadPatientAppointments();
+}
+
+function closeSidePanel() {
+  ["history-panel", "appt-panel"].forEach(id =>
+    document.getElementById(id)?.classList.add("hidden")
+  );
+  ["sb-history", "sb-appts"].forEach(id =>
+    document.getElementById(id)?.classList.remove("active")
+  );
+}
+
+function formatConvDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  const now = new Date();
+  const diffMs = now - d;
+  const diffMin = Math.round(diffMs / 60000);
+  if (diffMin < 60) return diffMin <= 1 ? "ahora" : `${diffMin}m`;
+  const diffH = Math.round(diffMin / 60);
+  if (diffH < 24) return `${diffH}h`;
+  return d.toLocaleDateString("es-MX", { month: "short", day: "numeric" });
+}
+
+async function loadConversations() {
+  const body = document.getElementById("conv-list");
+  if (!body) return;
+  body.innerHTML = '<div class="panel-loading">Cargando chats...</div>';
+  const uid = userSession?.user_id;
+  if (!uid) { body.innerHTML = '<div class="panel-empty">Inicia sesión para ver tus chats.</div>'; return; }
+  try {
+    const res = await fetch(`${API}/conversations?user_id=${uid}`);
+    if (!res.ok) throw new Error();
+    const { conversations } = await res.json();
+    if (!conversations.length) {
+      body.innerHTML = '<div class="panel-empty">Aún no tienes chats. Consulta con un médico para empezar.</div>';
+      return;
+    }
+    body.innerHTML = conversations.map(c => `
+      <div class="conv-item${c.status === "closed" ? " conv-closed" : ""}"
+           onclick="reopenConversation('${c.conversation_id}', '${escapeAttr(c.doctor_name || "Doctor")}')">
+        <div class="conv-item-header">
+          <span class="conv-doctor">${escapeHtml(c.doctor_name || "Doctor")}</span>
+          <span class="conv-specialty">${escapeHtml(c.doctor_specialty || "")}</span>
+        </div>
+        <div class="conv-summary">${escapeHtml(c.clinical_summary || c.last_message_text || "—")}</div>
+        <div class="conv-meta">
+          <span class="conv-urgency-dot urgency-dot-${c.urgency_level || "low"}"></span>
+          <span class="conv-date">${formatConvDate(c.updated_at)}</span>
+          <span class="conv-status-badge conv-status-${c.status}">${c.status === "active" ? "Activo" : "Cerrado"}</span>
+        </div>
+      </div>`).join("");
+  } catch {
+    body.innerHTML = '<div class="panel-empty" style="color:#f28b82">No se pudieron cargar los chats.</div>';
+  }
+}
+
+function reopenConversation(conversationId, doctorName) {
+  closeSidePanel();
+  document.getElementById("modal-doctor-name").textContent = `Chat con ${doctorName}`;
+  document.getElementById("modal-messages").innerHTML = "";
+  document.getElementById("chat-modal").classList.remove("hidden");
+  const wsProto = location.protocol === "https:" ? "wss" : "ws";
+  if (activeWs) { activeWs.close(); activeWs = null; }
+  activeWs = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
+  activeWs.onmessage = evt => {
+    try {
+      const msg = JSON.parse(evt.data);
+      if (msg.type === "history") {
+        msg.messages.forEach(m => appendModalMsg(m.sender, m.text));
+      } else if (msg.type !== "error") {
+        appendModalMsg(msg.sender, msg.text);
+      }
+    } catch { /* ignore */ }
+  };
+  activeWs.onerror = () => appendModalMsg("system", "Error de conexión.");
+}
+
+async function loadPatientAppointments() {
+  const body = document.getElementById("appt-list");
+  if (!body) return;
+  body.innerHTML = '<div class="panel-loading">Cargando citas...</div>';
+  const uid = userSession?.user_id;
+  if (!uid) { body.innerHTML = '<div class="panel-empty">Inicia sesión para ver tus citas.</div>'; return; }
+  try {
+    const res = await fetch(`${API}/appointments?user_id=${uid}`);
+    if (!res.ok) throw new Error();
+    const { appointments } = await res.json();
+    if (!appointments.length) {
+      body.innerHTML = '<div class="panel-empty">Sin citas agendadas aún.</div>';
+      return;
+    }
+    const statusLabel = { pending: "Pendiente", confirmed: "Confirmada", cancelled: "Cancelada", completed: "Completada" };
+    body.innerHTML = appointments.map(a => {
+      const dt = new Date(a.scheduled_at);
+      const dateStr = dt.toLocaleDateString("es-MX", { weekday: "short", month: "short", day: "numeric" });
+      const timeStr = dt.toLocaleTimeString("es-MX", { hour: "2-digit", minute: "2-digit" });
+      return `<div class="appt-item appt-item-${a.status}">
+        <div class="appt-item-datetime">${dateStr} · ${timeStr}</div>
+        <div class="appt-item-doctor">${escapeHtml(a.doctor_name)}${a.doctor_specialty ? " · " + escapeHtml(a.doctor_specialty) : ""}</div>
+        <div class="appt-item-clinic">${escapeHtml(a.clinic_name || "—")}</div>
+        <div class="appt-item-footer">
+          <span class="appt-status-badge appt-status-${a.status}">${statusLabel[a.status] || a.status}</span>
+          <span class="appt-duration">${a.duration_min} min</span>
+        </div>
+      </div>`;
+    }).join("");
+  } catch {
+    body.innerHTML = '<div class="panel-empty" style="color:#f28b82">No se pudieron cargar las citas.</div>';
+  }
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────────

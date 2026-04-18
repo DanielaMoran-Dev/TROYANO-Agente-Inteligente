@@ -37,13 +37,37 @@
         <button class="sidebar-btn" title="Nueva consulta" onclick="location.reload()">
           <span class="material-symbols-outlined">add_comment</span>
         </button>
-        <button class="sidebar-btn" title="Buscar">
-          <span class="material-symbols-outlined">search</span>
+        <button class="sidebar-btn" id="sb-history" title="Mis chats" onclick="openPanel('history')">
+          <span class="material-symbols-outlined">forum</span>
         </button>
-        <button class="sidebar-btn" title="Historial">
-          <span class="material-symbols-outlined">history</span>
+        <button class="sidebar-btn" id="sb-appts" title="Mis citas" onclick="openPanel('appts')">
+          <span class="material-symbols-outlined">event_note</span>
         </button>
       </nav>
+
+      <!-- ── HISTORY PANEL (conversations) ──────────────────────── -->
+      <div id="history-panel" class="side-panel hidden">
+        <div class="side-panel-header">
+          <span class="material-symbols-outlined">forum</span>
+          <span>Mis Chats</span>
+          <button class="icon-btn" onclick="closeSidePanel()">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div id="conv-list" class="side-panel-body"></div>
+      </div>
+
+      <!-- ── APPOINTMENTS PANEL ──────────────────────────────────── -->
+      <div id="appt-panel" class="side-panel hidden">
+        <div class="side-panel-header">
+          <span class="material-symbols-outlined">event_note</span>
+          <span>Mis Citas</span>
+          <button class="icon-btn" onclick="closeSidePanel()">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div id="appt-list" class="side-panel-body"></div>
+      </div>
 
       <!-- ── CHAT PANEL ─────────────────────────────────────────── -->
       <div class="chat-left">

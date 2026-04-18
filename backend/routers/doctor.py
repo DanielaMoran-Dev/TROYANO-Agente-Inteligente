@@ -149,9 +149,23 @@ async def list_doctor_appointments(doctor_id: str, status: str | None = None):
         query["status"] = status
 
     cursor = mongo_service.appointments().find(query).sort("scheduled_at", 1)
+    docs = [doc async for doc in cursor]
+
+    # Enrich with patient names
+    user_oids = list({d["user_id"] for d in docs if d.get("user_id")})
+    users_map: dict = {}
+    if user_oids:
+        async for u in mongo_service.users().find(
+            {"_id": {"$in": user_oids}},
+            {"_id": 1, "name": 1, "last_name": 1},
+        ):
+            full = " ".join(filter(None, [u.get("name"), u.get("last_name")])).strip()
+            users_map[u["_id"]] = full or "Paciente"
+
     out = []
-    async for doc in cursor:
+    for doc in docs:
         doc["appointment_id"] = str(doc.pop("_id"))
+        doc["patient_name"] = users_map.get(doc["user_id"], "Paciente")
         doc["user_id"] = str(doc["user_id"])
         doc["doctor_id"] = str(doc["doctor_id"])
         out.append(doc)

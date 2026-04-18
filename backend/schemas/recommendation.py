@@ -13,9 +13,16 @@ AppointmentStatus = Literal["pending", "confirmed", "cancelled", "completed"]
 ConversationStatus = Literal["active", "closed"]
 
 
+class DoctorRef(BaseModel):
+    doctor_id: str
+    name: str
+    specialty: Optional[str] = None
+
+
 class Contact(BaseModel):
     type: Literal["chat", "info"]
     doctor_id: Optional[str] = None
+    doctors: Optional[list["DoctorRef"]] = None
     phone: Optional[str] = None
     address: Optional[str] = None
 

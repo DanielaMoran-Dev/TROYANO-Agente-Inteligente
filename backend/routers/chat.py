@@ -130,6 +130,86 @@ async def get_conversation(conversation_id: str):
     return _serialize_conversation(doc)
 
 
+@router.get("/conversations")
+async def list_conversations(user_id: str | None = None, doctor_id: str | None = None):
+    """
+    Lista conversaciones de un paciente (user_id) o un doctor (doctor_id),
+    enriquecidas con nombre de la contraparte y último mensaje.
+    """
+    if not user_id and not doctor_id:
+        raise HTTPException(status_code=400, detail="Se requiere user_id o doctor_id.")
+
+    try:
+        if user_id:
+            oid = ObjectId(user_id)
+            query = {"user_id": oid}
+        else:
+            oid = ObjectId(doctor_id)
+            query = {"doctor_id": oid}
+    except Exception:
+        raise HTTPException(status_code=400, detail="ID inválido.")
+
+    cursor = mongo_service.conversations().find(query).sort("updated_at", -1)
+    docs = [doc async for doc in cursor]
+
+    # Collect counterpart IDs to batch-fetch names
+    if user_id:
+        # Patient view → need doctor names
+        doctor_oids = list({d["doctor_id"] for d in docs if "doctor_id" in d})
+        doctors_map: dict = {}
+        if doctor_oids:
+            async for doc in mongo_service.doctors().find(
+                {"_id": {"$in": doctor_oids}},
+                {"_id": 1, "name": 1, "last_name": 1, "specialty": 1},
+            ):
+                full = " ".join(filter(None, [doc.get("name"), doc.get("last_name")])).strip()
+                doctors_map[doc["_id"]] = {"name": full or "Doctor", "specialty": doc.get("specialty")}
+    else:
+        # Doctor view → need patient names
+        user_oids = list({d["user_id"] for d in docs if "user_id" in d})
+        users_map: dict = {}
+        if user_oids:
+            async for doc in mongo_service.users().find(
+                {"_id": {"$in": user_oids}},
+                {"_id": 1, "name": 1, "last_name": 1},
+            ):
+                full = " ".join(filter(None, [doc.get("name"), doc.get("last_name")])).strip()
+                users_map[doc["_id"]] = full or "Paciente"
+
+    result = []
+    for d in docs:
+        # Last non-system message preview
+        messages = d.get("messages") or []
+        last_text = ""
+        for m in reversed(messages):
+            if m.get("sender") != "system":
+                last_text = (m.get("text") or "")[:80]
+                break
+
+        entry = {
+            "conversation_id": d.get("conversation_id", ""),
+            "status": d.get("status", "active"),
+            "urgency_level": d.get("urgency_level"),
+            "clinical_summary": d.get("clinical_summary"),
+            "updated_at": d.get("updated_at").isoformat() if d.get("updated_at") else None,
+            "last_message_text": last_text,
+            "user_id": str(d["user_id"]),
+            "doctor_id": str(d["doctor_id"]),
+        }
+
+        if user_id:
+            info = doctors_map.get(d.get("doctor_id"), {})
+            entry["doctor_name"] = info.get("name", "Doctor")
+            entry["doctor_specialty"] = info.get("specialty")
+        else:
+            entry["patient_name"] = users_map.get(d.get("user_id"), "Paciente")
+            entry["doctor_specialty"] = d.get("urgency_level")  # reuse for specialty if needed
+
+        result.append(entry)
+
+    return {"conversations": result}
+
+
 @router.put("/conversations/{conversation_id}/close")
 async def close_conversation(conversation_id: str):
     result = await mongo_service.conversations().update_one(
@@ -195,14 +275,15 @@ async def chat_websocket(websocket: WebSocket, conversation_id: str):
             sender = payload.get("sender")
             text = payload.get("text", "")
 
-            if sender not in ("user", "doctor"):
+            if sender not in ("patient", "user", "doctor"):
                 await websocket.send_json({"type": "error", "detail": "sender inválido."})
                 continue
             if not text.strip():
                 continue
 
+            stored_sender = "user" if sender == "patient" else sender
             message_doc = {
-                "sender": sender,
+                "sender": stored_sender,
                 "text": text,
                 "timestamp": datetime.now(timezone.utc),
             }

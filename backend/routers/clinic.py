@@ -295,6 +295,33 @@ async def list_clinic_doctors(clinic_id: str):
     return results
 
 
+@router.get("/{clinic_id}/doctors/network", response_model=list[ClinicDoctorInfo])
+async def list_network_doctors(clinic_id: str):
+    """Doctores en red activos vinculados a una clínica (para tarjeta del paciente)."""
+    oid = _parse_oid(clinic_id, "clinic_id")
+    clinic = await mongo_service.clinics().find_one({"_id": oid})
+    if not clinic:
+        raise HTTPException(404, "Clínica no encontrada")
+    doctor_oids = _doctor_ids_from_doc(clinic)
+    if not doctor_oids:
+        return []
+    cursor = mongo_service.doctors().find(
+        {"_id": {"$in": doctor_oids}, "is_network": True, "is_active": True},
+        {"_id": 1, "name": 1, "last_name": 1, "specialty": 1, "is_network": 1, "is_active": 1},
+    )
+    results: list[ClinicDoctorInfo] = []
+    async for d in cursor:
+        full_name = " ".join(filter(None, [d.get("name"), d.get("last_name")])).strip()
+        results.append(ClinicDoctorInfo(
+            doctor_id=str(d["_id"]),
+            name=full_name or "(sin nombre)",
+            specialty=d.get("specialty"),
+            is_network=True,
+            is_active=True,
+        ))
+    return results
+
+
 @router.put("/{clinic_id}", response_model=ClinicPublic)
 async def update_clinic(clinic_id: str, body: ClinicUpdate):
     """Actualiza los datos básicos de una clínica (no modifica vínculos con doctores)."""

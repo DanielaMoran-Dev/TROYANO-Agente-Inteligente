@@ -88,23 +88,39 @@ def embed(text: str, model: str = "text-embedding-004") -> list[float]:
 _chat_sessions: dict[str, object] = {}
 
 
-def get_or_create_chat(session_id: str, system: str = "", model: str = DEFAULT_MODEL):
+def get_or_create_chat(
+    session_id: str,
+    system: str = "",
+    model: str = DEFAULT_MODEL,
+    json_mode: bool = False,
+):
     """Return the existing chat session for `session_id`, or create one."""
     chat = _chat_sessions.get(session_id)
     if chat is not None:
         return chat
 
     client = _get_client()
-    config = types.GenerateContentConfig(system_instruction=system) if system else None
+    config_kwargs: dict = {}
+    if system:
+        config_kwargs["system_instruction"] = system
+    if json_mode:
+        config_kwargs["response_mime_type"] = "application/json"
+    config = types.GenerateContentConfig(**config_kwargs) if config_kwargs else None
     chat = client.chats.create(model=model, config=config)
     _chat_sessions[session_id] = chat
     logger.info("Chat session created: %s", session_id)
     return chat
 
 
-def send_chat(session_id: str, message: str, system: str = "", model: str = DEFAULT_MODEL) -> str:
+def send_chat(
+    session_id: str,
+    message: str,
+    system: str = "",
+    model: str = DEFAULT_MODEL,
+    json_mode: bool = False,
+) -> str:
     """Send a user message into the named chat session and return the reply text."""
-    chat = get_or_create_chat(session_id, system=system, model=model)
+    chat = get_or_create_chat(session_id, system=system, model=model, json_mode=json_mode)
     response = chat.send_message(message)
     return response.text.strip()
 
