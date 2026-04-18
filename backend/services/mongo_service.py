@@ -2,10 +2,11 @@
 MongoDB Service — async Motor client + accessors por colección.
 
 Colecciones oficiales (ver Claude/DATABASE_SCHEMA.md):
-  users, doctors, clinics, gemini_sessions, conversations, appointments
+  users, doctors, clinics, gemini_sessions, conversations, appointments, wiki_chunks
 
-El índice Vector Search de `clinics` se configura manualmente en Atlas UI
-(nombre esperado: `clinics_vector_index`, dim=768, similarity=cosine).
+Índices Vector Search (creados manualmente en Atlas UI):
+  clinics_vector_index  — clinics.embedding   (768 dim, cosine)
+  wiki_vector_index     — wiki_chunks.embedding (768 dim, cosine)
 """
 
 import os
@@ -17,8 +18,8 @@ logger = logging.getLogger(__name__)
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "healthapp")
 
-# Nombre del índice Vector Search configurado en Atlas UI.
 CLINICS_VECTOR_INDEX = "clinics_vector_index"
+WIKI_VECTOR_INDEX    = "wiki_vector_index"
 
 _client: AsyncIOMotorClient = None
 
@@ -61,6 +62,10 @@ def conversations():
 
 def appointments():
     return get_db()["appointments"]
+
+
+def wiki_chunks():
+    return get_db()["wiki_chunks"]
 
 
 # Alias de retrocompatibilidad para código existente que usa `patients()`.
@@ -112,4 +117,38 @@ async def vector_search_clinics(embedding: list[float], limit: int = 20) -> list
         },
     ]
     cursor = clinics().aggregate(pipeline)
+    return await cursor.to_list(length=limit)
+
+
+async def vector_search_wiki(embedding: list[float], limit: int = 6) -> list[dict]:
+    """
+    Atlas Vector Search sobre la colección `wiki_chunks`.
+
+    Requiere un índice Vector Search llamado `wiki_vector_index`
+    sobre el campo `embedding` (768 dim, cosine). Se crea manualmente
+    en la UI de MongoDB Atlas.
+    """
+    pipeline = [
+        {
+            "$vectorSearch": {
+                "index": WIKI_VECTOR_INDEX,
+                "path": "embedding",
+                "queryVector": embedding,
+                "numCandidates": max(limit * 10, 60),
+                "limit": limit,
+            }
+        },
+        {
+            "$project": {
+                "_id": 0,
+                "chunk_id": 1,
+                "source": 1,
+                "condition": 1,
+                "cie10": 1,
+                "text": 1,
+                "score": {"$meta": "vectorSearchScore"},
+            }
+        },
+    ]
+    cursor = wiki_chunks().aggregate(pipeline)
     return await cursor.to_list(length=limit)

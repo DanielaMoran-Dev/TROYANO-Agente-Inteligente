@@ -82,11 +82,28 @@ async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, 
     return network_map
 
 
-async def run(routing: list[dict], triage: dict) -> dict:
+def _build_patient_summary(ctx: dict) -> str:
+    """Returns a patient profile string for the recommendation prompt."""
+    parts = []
+    if ctx.get("age"):
+        parts.append(f"Edad: {ctx['age']} años")
+    if ctx.get("conditions"):
+        parts.append(f"Antecedentes: {', '.join(ctx['conditions'])}")
+    if ctx.get("allergies"):
+        parts.append(f"⚠️ Alergias: {', '.join(ctx['allergies'])}")
+    if ctx.get("medications"):
+        parts.append(f"Medicamentos actuales: {', '.join(ctx['medications'])}")
+    if ctx.get("insurance"):
+        parts.append(f"Seguro: {ctx['insurance']}")
+    return "\n".join(parts)
+
+
+async def run(routing: list[dict], triage: dict, patient_context: dict | None = None) -> dict:
     """
     Args:
-        routing: lista rankeada del routing_agent.run()
-        triage:  output del triage_agent.run()
+        routing:         lista rankeada del routing_agent.run()
+        triage:          output del triage_agent.run()
+        patient_context: optional dict with age, conditions, allergies, medications, insurance
 
     Returns:
         dict con `recommendations` y opcional `urgent_message`.
@@ -116,13 +133,16 @@ async def run(routing: list[dict], triage: dict) -> dict:
         ensure_ascii=False,
     )
 
+    patient_summary = _build_patient_summary(patient_context or {})
+    patient_block = f"\nPERFIL DEL PACIENTE:\n{patient_summary}\n" if patient_summary else ""
+
     wiki = _load_wiki()
     system = SYSTEM_PROMPT_TEMPLATE.format(wiki=wiki)
 
     prompt = f"""Nivel de urgencia: {urgency}
 Especialidad requerida: {specialty}
 Resumen clínico: {triage.get('clinical_summary', '')}
-
+{patient_block}
 Opciones disponibles (ordenadas por ranking):
 {clinics_context}
 

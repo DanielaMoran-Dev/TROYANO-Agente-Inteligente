@@ -68,7 +68,8 @@ async def run(
     # ── 2. Candidatos desde DB (vector search) filtrados por radio ──
     db_candidates: list[dict] = []
     try:
-        embed_text = " ".join(filter(None, [specialty, unit_type, *red_flags]))
+        clinical_summary = triage.get("clinical_summary", "")
+        embed_text = " ".join(filter(None, [specialty, unit_type, clinical_summary, *red_flags]))
         if embed_text:
             embedding = gemini_service.embed(embed_text)
             raw = await mongo_service.vector_search_clinics(embedding, limit=limit * 3)

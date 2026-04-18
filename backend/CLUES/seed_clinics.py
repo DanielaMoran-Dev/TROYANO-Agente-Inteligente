@@ -39,22 +39,50 @@ def parse_args():
     return p.parse_args()
 
 
+BUDGET_TO_PRICE = {"$": 1, "$$": 2, "$$$": 3}
+
+
+def transform_doc(raw: dict) -> dict:
+    """Map clinics_wiki.json fields to the MongoDB schema expected by init_db."""
+    coords = raw.get("coords") or {}
+    doc = {
+        "clues_id": raw.get("clues", ""),
+        "name": raw.get("name", ""),
+        "institution": raw.get("institution"),
+        "state": raw.get("state"),
+        "municipality": raw.get("municipality"),
+        "locality": raw.get("locality"),
+        "address": raw.get("address"),
+        "lat": coords.get("lat"),
+        "lng": coords.get("lng"),
+        "phone": raw.get("phone"),
+        "insurances": raw.get("insurance", []),
+        "price_level": BUDGET_TO_PRICE.get(raw.get("budget_level", "$"), 1),
+        "specialty": raw.get("specialty"),
+        "unit_type": raw.get("unit_type", ""),
+        "tipologia": raw.get("tipologia"),
+        "nivel_atencion": raw.get("nivel_atencion"),
+        "estrato": raw.get("estrato"),
+    }
+    return doc
+
+
 async def main():
     args = parse_args()
 
     wiki_path = os.path.join(os.path.dirname(__file__), "clinics_wiki.json")
     logger.info("Loading %s", wiki_path)
     with open(wiki_path, encoding="utf-8") as f:
-        clinics = json.load(f)
+        raw_clinics = json.load(f)
 
     if args.state:
-        clinics = [c for c in clinics if c["state"].upper() == args.state.upper()]
-        logger.info("Filtered to state=%s → %d facilities", args.state, len(clinics))
+        raw_clinics = [c for c in raw_clinics if c["state"].upper() == args.state.upper()]
+        logger.info("Filtered to state=%s → %d facilities", args.state, len(raw_clinics))
 
     if args.limit:
-        clinics = clinics[: args.limit]
+        raw_clinics = raw_clinics[: args.limit]
 
-    logger.info("Total to seed: %d", len(clinics))
+    logger.info("Total to seed: %d", len(raw_clinics))
 
     col = mongo_service.clinics()
 
@@ -63,8 +91,9 @@ async def main():
         logger.info("Dropped existing clinics collection")
 
     inserted = 0
-    for i in range(0, len(clinics), args.batch):
-        batch = clinics[i : i + args.batch]
+    for i in range(0, len(raw_clinics), args.batch):
+        raw_batch = raw_clinics[i : i + args.batch]
+        batch = [transform_doc(r) for r in raw_batch]
 
         for doc in batch:
             embed_text = " ".join(filter(None, [
@@ -76,7 +105,7 @@ async def main():
             try:
                 doc["embedding"] = gemini_service.embed(embed_text)
             except Exception as e:
-                logger.warning("Embedding failed for %s: %s", doc["clues"], e)
+                logger.warning("Embedding failed for %s: %s", doc["clues_id"], e)
                 doc["embedding"] = []
 
         try:
@@ -85,7 +114,7 @@ async def main():
         except Exception as e:
             logger.error("Insert batch %d failed: %s", i // args.batch, e)
 
-        logger.info("Progress: %d / %d", min(i + args.batch, len(clinics)), len(clinics))
+        logger.info("Progress: %d / %d", min(i + args.batch, len(raw_clinics)), len(raw_clinics))
 
     logger.info("Done. Inserted %d documents.", inserted)
 
