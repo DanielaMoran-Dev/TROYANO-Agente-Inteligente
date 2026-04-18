@@ -5,6 +5,11 @@
 
 const API = "";  // same-origin; empty string = relative URLs
 
+// If a doctor session exists, redirect to the doctor dashboard.
+if (sessionStorage.getItem("medconnect_doctor")) {
+  window.location.href = "doctor.html";
+}
+
 // ── State ──────────────────────────────────────────────────────────────────────
 let sessionId = crypto.randomUUID();
 let userCoords = null;   // { lat, lng }
