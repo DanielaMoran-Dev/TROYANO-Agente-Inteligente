@@ -13,6 +13,12 @@ import os
 import logging
 from motor.motor_asyncio import AsyncIOMotorClient
 
+try:
+    import certifi
+    _TLS_CA_FILE = certifi.where()
+except ImportError:
+    _TLS_CA_FILE = None
+
 logger = logging.getLogger(__name__)
 
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
@@ -27,7 +33,8 @@ _client: AsyncIOMotorClient = None
 def get_client() -> AsyncIOMotorClient:
     global _client
     if _client is None:
-        _client = AsyncIOMotorClient(MONGO_URI)
+        kwargs = {"tlsCAFile": _TLS_CA_FILE} if _TLS_CA_FILE else {"tlsAllowInvalidCertificates": True}
+        _client = AsyncIOMotorClient(MONGO_URI, **kwargs)
         logger.info("MongoDB client created (db=%s)", MONGO_DB_NAME)
     return _client
 
@@ -112,6 +119,7 @@ async def vector_search_clinics(embedding: list[float], limit: int = 20) -> list
                 "phone": 1,
                 "address": 1,
                 "doctor_id": 1,
+                "doctor_ids": 1,
                 "score": {"$meta": "vectorSearchScore"},
             }
         },

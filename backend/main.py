@@ -27,7 +27,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-from routers import chat, doctor, patient  # noqa: E402  (import after env load)
+from routers import chat, clinic, doctor, patient  # noqa: E402  (import after env load)
 from services import mongo_service  # noqa: E402
 
 
@@ -93,6 +93,7 @@ if os.path.exists(frontend_path):
 # Routers
 app.include_router(patient.router)
 app.include_router(doctor.router)
+app.include_router(clinic.router)
 app.include_router(chat.router)
 
 

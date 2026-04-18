@@ -1,9 +1,10 @@
 """
 Recommendation Agent — genera recomendaciones empáticas con Gemini + LLM Wiki.
 
-Relación de red (según DATABASE_SCHEMA.md):
-  - `clinics.doctor_id` apunta a `doctors._id`.
-  - Una clínica está "en red" cuando su doctor está activo, is_network=True.
+Relación de red (1:N — una clínica tiene varios doctores):
+  - `clinics.doctor_ids[]` apunta a `doctors._id` (array).
+  - Compat: si un doc legacy trae `doctor_id` singular, se trata como [doctor_id].
+  - Una clínica está "en red" si al menos uno de sus doctores es activo e is_network=True.
 """
 
 import json
@@ -42,26 +43,37 @@ async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, 
     Devuelve {clinic_id: {doctor_id, name, specialty}} para las clínicas
     cuyo doctor_id referencia a un doctor activo en red.
     """
-    doctor_ids: list[ObjectId] = []
-    clinic_to_doctor: dict[str, ObjectId] = {}
+    all_doctor_ids: list[ObjectId] = []
+    clinic_to_doctors: dict[str, list[ObjectId]] = {}
 
     for c in clinic_candidates:
-        did = c.get("doctor_id")
         cid = c.get("clinic_id")
-        if did and cid:
+        if not cid:
+            continue
+        raw_ids = c.get("doctor_ids")
+        if raw_ids is None:
+            legacy = c.get("doctor_id")
+            raw_ids = [legacy] if legacy else []
+
+        parsed: list[ObjectId] = []
+        for did in raw_ids:
+            if not did:
+                continue
             try:
                 obj_id = did if isinstance(did, ObjectId) else ObjectId(str(did))
-                doctor_ids.append(obj_id)
-                clinic_to_doctor[cid] = obj_id
+                parsed.append(obj_id)
+                all_doctor_ids.append(obj_id)
             except Exception:
                 continue
+        if parsed:
+            clinic_to_doctors[cid] = parsed
 
-    if not doctor_ids:
+    if not all_doctor_ids:
         return {}
 
     try:
         cursor = mongo_service.doctors().find(
-            {"_id": {"$in": doctor_ids}, "is_active": True, "is_network": True},
+            {"_id": {"$in": all_doctor_ids}, "is_active": True, "is_network": True},
             {"_id": 1, "name": 1, "last_name": 1, "specialty": 1},
         )
         active_doctors: dict[ObjectId, dict] = {doc["_id"]: doc async for doc in cursor}
@@ -70,15 +82,18 @@ async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, 
         return {}
 
     network_map: dict[str, dict] = {}
-    for clinic_id, obj_id in clinic_to_doctor.items():
-        doc = active_doctors.get(obj_id)
-        if doc:
-            full_name = " ".join(filter(None, [doc.get("name"), doc.get("last_name")]))
-            network_map[clinic_id] = {
-                "doctor_id": str(obj_id),
-                "name": full_name.strip(),
-                "specialty": doc.get("specialty"),
-            }
+    for clinic_id, obj_ids in clinic_to_doctors.items():
+        # Primer doctor del array que esté en red — ése gestiona el chat
+        for obj_id in obj_ids:
+            doc = active_doctors.get(obj_id)
+            if doc:
+                full_name = " ".join(filter(None, [doc.get("name"), doc.get("last_name")]))
+                network_map[clinic_id] = {
+                    "doctor_id": str(obj_id),
+                    "name": full_name.strip(),
+                    "specialty": doc.get("specialty"),
+                }
+                break
     return network_map
 
 

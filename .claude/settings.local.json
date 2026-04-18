@@ -67,7 +67,10 @@
       "Bash(curl -sL \"https://www.imss.gob.mx/sites/all/statics/guiasclinicas/031GRR.pdf\" -o gpc_apendicitis.pdf)",
       "Bash(curl -sL \"https://www.cenetec-difusion.com/CMGPC/GPC-IMSS-635-19/RR.pdf\" -o gpc_colico_renoureteral.pdf)",
       "Bash(curl -sL \"https://www.imss.gob.mx/sites/all/statics/guiasclinicas/000GRRCardiopatiaIsquemica.pdf\" -o gpc_cardiopatia_isquemica.pdf)",
-      "Bash(curl -sL \"https://www.facmed.unam.mx/sg/css/GPC/SIDSS-GPC/gpc/docs/IMSS-191-10-RR.pdf\" -o gpc_evc_stroke.pdf)"
+      "Bash(curl -sL \"https://www.facmed.unam.mx/sg/css/GPC/SIDSS-GPC/gpc/docs/IMSS-191-10-RR.pdf\" -o gpc_evc_stroke.pdf)",
+      "Bash(node --check D:/Hackaton/2026/Lineal-Troyano/TROYANO-Agente-Inteligente/frontend/doctor.js)",
+      "Bash(.venv/Scripts/python.exe scripts/init_db.py)",
+      "Bash(.venv/Scripts/python.exe -c \"from routers import clinic, doctor; print\\('OK'\\)\")"
     ]
   }
 }

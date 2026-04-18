@@ -16,6 +16,10 @@ let isOnline      = false;
 let activeWs      = null;
 let activePatient = null;
 let calWeekStart  = getWeekStart(new Date());   // Monday of displayed week
+let myClinic      = null;   // ClinicPublic | null
+let mapsLoaded    = false;  // Google Maps JS loaded?
+let placeAutocomplete = null;
+let selectedPlace = null;   // { place_id, formatted_address, lat, lng, state, municipality, name }
 
 // ── Calendar appointments (in-memory, persists within session) ─────────────────
 let CAL_APPOINTMENTS = [];
@@ -123,9 +127,12 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   renderProfile();
   renderQueue();
-  syncAppointmentPanel();   // populates right panel from CAL_APPOINTMENTS
+  syncAppointmentPanel();
   updateStats();
   setupChatInput();
+  loadMyClinic();
+  setupInsuranceChips();
+  ensureMapsLoaded();   // preload for Places Autocomplete
 }
 
 // ── Profile ────────────────────────────────────────────────────────────────────
@@ -621,4 +628,600 @@ function formatApptTime(date) {
   if (sameDay(date, today))    return `Hoy, ${timeStr}`;
   if (sameDay(date, tomorrow)) return `Mañana, ${timeStr}`;
   return `${date.getDate()} ${MONTHS[date.getMonth()]}, ${timeStr}`;
+}
+
+// ── Clinic management ──────────────────────────────────────────────────────────
+
+async function loadMyClinic() {
+  try {
+    const res = await fetch(`${API}/clinics/mine?doctor_id=${doctorSession.doctor_id}`);
+    if (res.ok) {
+      myClinic = await res.json();
+    }
+  } catch (e) {
+    console.warn("Could not load clinic:", e);
+  }
+  renderClinicSection();
+}
+
+function renderClinicSection() {
+  const el = document.getElementById("clinic-section");
+  if (!el) return;
+
+  if (!myClinic) {
+    el.innerHTML = `
+      <div style="font-family:var(--mono);font-size:0.6rem;color:var(--disabled);margin-bottom:0.5rem;letter-spacing:0.5px">
+        Aún no has seleccionado tu clínica
+      </div>
+      <button class="clinic-action-btn primary" onclick="openClinicPicker()" style="width:100%;justify-content:center">
+        <span class="material-symbols-outlined">travel_explore</span> Seleccionar mi clínica
+      </button>`;
+    return;
+  }
+
+  const insuranceLabels = {
+    imss: "IMSS", issste: "ISSSTE", seguro_popular: "Seg. Popular", ninguno: "Sin seguro"
+  };
+  const insText = (myClinic.insurances || []).map(i => insuranceLabels[i] || i).join(", ") || "—";
+  const priceMap = { 1: "$", 2: "$$", 3: "$$$" };
+
+  el.innerHTML = `
+    <div class="clinic-info is-linked">
+      <div class="clinic-name">${escapeHtml(myClinic.name)}</div>
+      <div class="clinic-meta">
+        <span>📍 ${escapeHtml(myClinic.address)}</span>
+        <span>🏥 ${myClinic.specialty?.replaceAll("_"," ")} · ${myClinic.unit_type}</span>
+        <span>💳 ${insText} · ${priceMap[myClinic.price_level] || "—"}</span>
+        ${myClinic.phone ? `<span>📞 ${escapeHtml(myClinic.phone)}</span>` : ""}
+        ${myClinic.lat ? `<span style="color:var(--accent)">📌 Coordenadas registradas</span>` : `<span style="color:var(--disabled)">Sin coordenadas (no aparece en mapa)</span>`}
+      </div>
+    </div>
+    <div class="clinic-btn-row">
+      <button class="clinic-action-btn primary" onclick="openClinicModal('edit')">
+        <span class="material-symbols-outlined">edit</span> Editar
+      </button>
+      <button class="clinic-action-btn" onclick="openClinicPicker()">
+        <span class="material-symbols-outlined">swap_horiz</span> Cambiar
+      </button>
+      <button class="clinic-action-btn danger" onclick="unlinkFromMyClinic()">
+        <span class="material-symbols-outlined">logout</span> Salir
+      </button>
+    </div>`;
+}
+
+function openClinicModal(mode) {
+  const modal = document.getElementById("clinic-modal");
+  const title = document.getElementById("clinic-modal-title");
+  title.textContent = mode === "edit" ? "EDITAR CLÍNICA" : "REGISTRAR CLÍNICA";
+  modal._mode = mode;
+
+  // Reset error
+  document.getElementById("clinic-form-error").textContent = "";
+
+  // Prefill if editing
+  const c = mode === "edit" && myClinic ? myClinic : {};
+  document.getElementById("cf-name").value         = c.name || "";
+  document.getElementById("cf-specialty").value    = c.specialty || "medicina_general";
+  document.getElementById("cf-unit-type").value    = c.unit_type || "general";
+  document.getElementById("cf-address").value      = c.address || "";
+  document.getElementById("cf-state").value        = c.state || "";
+  document.getElementById("cf-municipality").value = c.municipality || "";
+  document.getElementById("cf-phone").value        = c.phone || "";
+  document.getElementById("cf-price").value        = c.price_level || 2;
+  document.getElementById("cf-lat").value          = c.lat ?? "";
+  document.getElementById("cf-lng").value          = c.lng ?? "";
+
+  // Existing Places link (edit mode)
+  selectedPlace = c.maps_place_id
+    ? {
+        place_id: c.maps_place_id,
+        formatted_address: c.formatted_address || c.address || "",
+        lat: c.lat, lng: c.lng,
+        state: c.state, municipality: c.municipality,
+        name: c.name,
+      }
+    : null;
+  document.getElementById("cf-place-chip").classList.toggle("hidden", !selectedPlace);
+
+  // Insurance chips
+  const selected = new Set(c.insurances || []);
+  document.querySelectorAll("#cf-insurances .ins-chip").forEach(chip => {
+    chip.classList.toggle("selected", selected.has(chip.dataset.val));
+  });
+
+  // Linked doctors section (only when editing an existing clinic)
+  const linkedWrap = document.getElementById("cf-linked-doctors-wrap");
+  if (mode === "edit" && c.clinic_id) {
+    linkedWrap.style.display = "flex";
+    linkedWrap.style.flexDirection = "column";
+    loadLinkedDoctors(c.clinic_id);
+  } else {
+    linkedWrap.style.display = "none";
+    document.getElementById("cf-linked-doctors").innerHTML = "";
+    document.getElementById("cf-add-doc-email").value = "";
+  }
+
+  modal.classList.remove("hidden");
+
+  // Wire Places Autocomplete (async — fires once Maps is loaded)
+  ensureMapsLoaded().then(setupPlaceAutocomplete).catch(() => {
+    // Maps failed to load; input still works as free-text
+  });
+}
+
+function closeClinicModal() {
+  document.getElementById("clinic-modal").classList.add("hidden");
+}
+
+function setupInsuranceChips() {
+  document.querySelectorAll("#cf-insurances .ins-chip").forEach(chip => {
+    chip.addEventListener("click", () => chip.classList.toggle("selected"));
+  });
+}
+
+function fillMyLocation() {
+  if (!navigator.geolocation) return;
+  navigator.geolocation.getCurrentPosition(pos => {
+    document.getElementById("cf-lat").value = pos.coords.latitude.toFixed(6);
+    document.getElementById("cf-lng").value = pos.coords.longitude.toFixed(6);
+  }, () => alert("No se pudo obtener la ubicación"));
+}
+
+async function saveClinic() {
+  const btn = document.getElementById("clinic-save-btn");
+  const errEl = document.getElementById("clinic-form-error");
+  const modal = document.getElementById("clinic-modal");
+  const mode  = modal._mode;
+
+  const name    = document.getElementById("cf-name").value.trim();
+  const address = document.getElementById("cf-address").value.trim();
+  if (!name)    { errEl.textContent = "El nombre es obligatorio"; return; }
+  if (!address) { errEl.textContent = "La dirección es obligatoria"; return; }
+
+  const insurances = [...document.querySelectorAll("#cf-insurances .ins-chip.selected")]
+    .map(c => c.dataset.val);
+  const latVal = parseFloat(document.getElementById("cf-lat").value);
+  const lngVal = parseFloat(document.getElementById("cf-lng").value);
+
+  const payload = {
+    name,
+    address,
+    specialty:    document.getElementById("cf-specialty").value,
+    unit_type:    document.getElementById("cf-unit-type").value,
+    state:        document.getElementById("cf-state").value.trim() || null,
+    municipality: document.getElementById("cf-municipality").value.trim() || null,
+    phone:        document.getElementById("cf-phone").value.trim() || null,
+    price_level:  parseInt(document.getElementById("cf-price").value),
+    insurances,
+    lat: isNaN(latVal) ? null : latVal,
+    lng: isNaN(lngVal) ? null : lngVal,
+    maps_place_id:     selectedPlace?.place_id || null,
+    formatted_address: selectedPlace?.formatted_address || null,
+  };
+
+  btn.disabled = true;
+  errEl.textContent = "";
+
+  try {
+    let res;
+    if (mode === "new") {
+      res = await fetch(`${API}/clinics`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...payload, doctor_ids: [doctorSession.doctor_id] }),
+      });
+    } else {
+      res = await fetch(`${API}/clinics/${myClinic.clinic_id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+    }
+
+    const data = await res.json();
+    if (!res.ok) {
+      errEl.textContent = data.detail || `Error ${res.status}`;
+      return;
+    }
+
+    myClinic = data;
+    closeClinicModal();
+    renderClinicSection();
+  } catch (e) {
+    errEl.textContent = "Error de conexión";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function deleteClinic() {
+  if (!myClinic) return;
+  if (!confirm(`¿Eliminar la clínica "${myClinic.name}"? Esta acción no se puede deshacer.`)) return;
+
+  try {
+    const res = await fetch(
+      `${API}/clinics/${myClinic.clinic_id}?doctor_id=${doctorSession.doctor_id}`,
+      { method: "DELETE" }
+    );
+    if (res.status === 204 || res.ok) {
+      myClinic = null;
+      renderClinicSection();
+    } else {
+      const d = await res.json().catch(() => ({}));
+      alert(d.detail || "No se pudo eliminar la clínica");
+    }
+  } catch {
+    alert("Error de conexión");
+  }
+}
+
+// ── Google Maps loader (lazy, shared) ──────────────────────────────────────────
+
+async function ensureMapsLoaded() {
+  if (mapsLoaded || window.google?.maps?.places) {
+    mapsLoaded = true;
+    return;
+  }
+  if (window.__gmapsLoading) return window.__gmapsLoading;
+
+  window.__gmapsLoading = (async () => {
+    const resp = await fetch(`${API}/maps/key`);
+    if (!resp.ok) throw new Error("No API key");
+    const { key } = await resp.json();
+    await new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places&language=es&region=MX`;
+      script.async = true;
+      script.defer = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+    mapsLoaded = true;
+  })();
+
+  return window.__gmapsLoading;
+}
+
+// ── Places Autocomplete wiring ─────────────────────────────────────────────────
+
+function setupPlaceAutocomplete() {
+  if (!window.google?.maps?.places) return;
+  const input = document.getElementById("cf-address");
+  if (!input || placeAutocomplete) return;   // already wired
+
+  placeAutocomplete = new google.maps.places.Autocomplete(input, {
+    componentRestrictions: { country: "mx" },
+    fields: ["place_id", "formatted_address", "geometry", "name", "address_components"],
+  });
+
+  placeAutocomplete.addListener("place_changed", () => {
+    const place = placeAutocomplete.getPlace();
+    if (!place || !place.geometry) return;
+
+    const lat = place.geometry.location.lat();
+    const lng = place.geometry.location.lng();
+    const state        = pickComponent(place.address_components, "administrative_area_level_1");
+    const municipality = pickComponent(place.address_components, "locality")
+                      || pickComponent(place.address_components, "administrative_area_level_2")
+                      || pickComponent(place.address_components, "sublocality");
+
+    selectedPlace = {
+      place_id: place.place_id,
+      formatted_address: place.formatted_address || "",
+      lat, lng,
+      state, municipality,
+      name: place.name,
+    };
+
+    // Auto-fill form fields
+    input.value = place.formatted_address || input.value;
+    document.getElementById("cf-lat").value = lat.toFixed(6);
+    document.getElementById("cf-lng").value = lng.toFixed(6);
+    if (state)        document.getElementById("cf-state").value        = state;
+    if (municipality) document.getElementById("cf-municipality").value = municipality;
+
+    // If name field is empty, suggest the place name
+    const nameInput = document.getElementById("cf-name");
+    if (!nameInput.value && place.name) nameInput.value = place.name;
+
+    document.getElementById("cf-place-chip").classList.remove("hidden");
+  });
+
+  // If user edits the address manually, drop the Maps link
+  input.addEventListener("input", () => {
+    if (selectedPlace && input.value !== selectedPlace.formatted_address) {
+      selectedPlace = null;
+      document.getElementById("cf-place-chip").classList.add("hidden");
+    }
+  });
+}
+
+function pickComponent(components, type) {
+  if (!components) return null;
+  const c = components.find(c => c.types.includes(type));
+  return c ? c.long_name : null;
+}
+
+// ── Linked doctors management ──────────────────────────────────────────────────
+
+async function loadLinkedDoctors(clinicId) {
+  const container = document.getElementById("cf-linked-doctors");
+  container.innerHTML = `<div class="linked-doctors-help">Cargando...</div>`;
+  try {
+    const res = await fetch(`${API}/clinics/${clinicId}/doctors`);
+    if (!res.ok) throw new Error();
+    const doctors = await res.json();
+    renderLinkedDoctors(doctors);
+  } catch {
+    container.innerHTML = `<div class="linked-doctors-help" style="color:var(--red)">No se pudieron cargar los doctores.</div>`;
+  }
+}
+
+function renderLinkedDoctors(doctors) {
+  const container = document.getElementById("cf-linked-doctors");
+  if (!doctors.length) {
+    container.innerHTML = `<div class="linked-doctors-help">Aún no hay doctores vinculados.</div>`;
+    return;
+  }
+  container.innerHTML = doctors.map(d => {
+    const isMe = d.doctor_id === doctorSession.doctor_id;
+    const networkBadge = d.is_network
+      ? `<span style="color:#34a853">· EN RED</span>`
+      : `<span style="color:var(--disabled)">· BÁSICO</span>`;
+    return `
+      <div class="linked-doc-row">
+        <div class="linked-doc-info">
+          <span class="linked-doc-name">${escapeHtml(d.name)}${isMe ? " <span style=\"color:var(--accent);font-size:0.55rem\">(TÚ)</span>" : ""}</span>
+          <span class="linked-doc-meta">${escapeHtml(d.specialty || "—")} ${networkBadge}</span>
+        </div>
+        <button class="linked-doc-remove" onclick="removeLinkedDoctor('${d.doctor_id}')">
+          <span class="material-symbols-outlined">close</span>
+          ${isMe ? "SALIR" : "QUITAR"}
+        </button>
+      </div>
+    `;
+  }).join("");
+}
+
+async function addDoctorByEmail() {
+  const input = document.getElementById("cf-add-doc-email");
+  const btn   = document.getElementById("cf-add-doc-btn");
+  const errEl = document.getElementById("clinic-form-error");
+  const email = input.value.trim().toLowerCase();
+  if (!email || !myClinic) return;
+
+  btn.disabled = true;
+  errEl.textContent = "";
+  try {
+    const q = await fetch(`${API}/doctors/search?email=${encodeURIComponent(email)}`);
+    if (!q.ok) {
+      errEl.textContent = q.status === 404
+        ? "No existe un doctor con ese email."
+        : "Error buscando doctor.";
+      return;
+    }
+    const doc = await q.json();
+
+    const link = await fetch(`${API}/clinics/${myClinic.clinic_id}/doctors`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ doctor_id: doc.doctor_id }),
+    });
+    const updated = await link.json();
+    if (!link.ok) {
+      errEl.textContent = updated.detail || "No se pudo vincular.";
+      return;
+    }
+    myClinic = updated;
+    input.value = "";
+    await loadLinkedDoctors(myClinic.clinic_id);
+  } catch {
+    errEl.textContent = "Error de conexión";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function removeLinkedDoctor(doctorId) {
+  if (!myClinic) return;
+  const isMe = doctorId === doctorSession.doctor_id;
+  const msg = isMe
+    ? "¿Salir de esta clínica? Dejarás de estar vinculado."
+    : "¿Quitar a este doctor de la clínica?";
+  if (!confirm(msg)) return;
+
+  try {
+    const res = await fetch(
+      `${API}/clinics/${myClinic.clinic_id}/doctors/${doctorId}`,
+      { method: "DELETE" }
+    );
+    const updated = await res.json();
+    if (!res.ok) {
+      alert(updated.detail || "No se pudo desvincular.");
+      return;
+    }
+    myClinic = updated;
+    // If the current doctor unlinked themselves, clear myClinic in dashboard
+    if (isMe) {
+      myClinic = null;
+      closeClinicModal();
+      renderClinicSection();
+      return;
+    }
+    await loadLinkedDoctors(myClinic.clinic_id);
+  } catch {
+    alert("Error de conexión");
+  }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// CLINIC PICKER — select existing or create from Google Place
+// ══════════════════════════════════════════════════════════════════════════════
+
+let pickerPlaceAutocomplete = null;
+let pkSearchTimer = null;
+
+function openClinicPicker() {
+  const modal = document.getElementById("clinic-picker");
+  document.getElementById("pk-error").textContent = "";
+  document.getElementById("pk-db-input").value = "";
+  document.getElementById("pk-place-input").value = "";
+  document.getElementById("pk-db-results").innerHTML =
+    `<div class="picker-empty">Escribe para buscar clínicas registradas...</div>`;
+
+  modal.classList.remove("hidden");
+
+  // Wire DB search on input with debounce
+  const dbInput = document.getElementById("pk-db-input");
+  dbInput.oninput = () => {
+    clearTimeout(pkSearchTimer);
+    pkSearchTimer = setTimeout(() => doClinicDbSearch(dbInput.value.trim()), 250);
+  };
+  dbInput.focus();
+
+  // Initial list (most recent)
+  doClinicDbSearch("");
+
+  // Wire Places Autocomplete on the "not found" input
+  ensureMapsLoaded().then(setupPickerPlaceAutocomplete).catch(() => {});
+}
+
+function closeClinicPicker() {
+  document.getElementById("clinic-picker").classList.add("hidden");
+}
+
+async function doClinicDbSearch(q) {
+  const container = document.getElementById("pk-db-results");
+  container.innerHTML = `<div class="picker-loading">Buscando...</div>`;
+  try {
+    const res = await fetch(`${API}/clinics/search?q=${encodeURIComponent(q)}&limit=15`);
+    if (!res.ok) throw new Error();
+    const items = await res.json();
+    renderPickerResults(items);
+  } catch {
+    container.innerHTML = `<div class="picker-empty" style="color:var(--red)">Error al buscar.</div>`;
+  }
+}
+
+function renderPickerResults(items) {
+  const container = document.getElementById("pk-db-results");
+  if (!items.length) {
+    container.innerHTML = `<div class="picker-empty">Sin resultados. Prueba con Google Maps abajo.</div>`;
+    return;
+  }
+  container.innerHTML = items.map(it => {
+    const badges = [];
+    badges.push(`<span class="picker-badge ${it.source === "clues" ? "clues" : "db"}">${it.source === "clues" ? "CLUES" : "DB"}</span>`);
+    if (it.doctor_count > 0) badges.push(`<span class="picker-badge docs">${it.doctor_count} DOC${it.doctor_count === 1 ? "" : "S"}</span>`);
+    if (it.has_network_doctor) badges.push(`<span class="picker-badge net">EN RED</span>`);
+    return `
+      <div class="picker-item" onclick="selectExistingClinic('${it.clinic_id}')">
+        <span class="material-symbols-outlined">local_hospital</span>
+        <div class="picker-item-main">
+          <span class="picker-item-name">${escapeHtml(it.name)}</span>
+          <span class="picker-item-address">${escapeHtml(it.address || "—")}</span>
+          <div class="picker-item-badges">${badges.join("")}</div>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+async function selectExistingClinic(clinicId) {
+  const errEl = document.getElementById("pk-error");
+  errEl.textContent = "";
+  try {
+    const res = await fetch(`${API}/clinics/${clinicId}/doctors`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ doctor_id: doctorSession.doctor_id }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      errEl.textContent = data.detail || "No se pudo vincular.";
+      return;
+    }
+    myClinic = data;
+    closeClinicPicker();
+    renderClinicSection();
+  } catch {
+    errEl.textContent = "Error de conexión";
+  }
+}
+
+function setupPickerPlaceAutocomplete() {
+  if (!window.google?.maps?.places) return;
+  const input = document.getElementById("pk-place-input");
+  if (!input || pickerPlaceAutocomplete) return;
+
+  pickerPlaceAutocomplete = new google.maps.places.Autocomplete(input, {
+    componentRestrictions: { country: "mx" },
+    fields: ["place_id", "formatted_address", "geometry", "name", "address_components"],
+  });
+
+  pickerPlaceAutocomplete.addListener("place_changed", async () => {
+    const place = pickerPlaceAutocomplete.getPlace();
+    if (!place || !place.geometry) return;
+    await handlePlaceSelectedInPicker(place);
+  });
+}
+
+async function handlePlaceSelectedInPicker(place) {
+  const errEl = document.getElementById("pk-error");
+  errEl.textContent = "";
+
+  const state = pickComponent(place.address_components, "administrative_area_level_1");
+  const municipality = pickComponent(place.address_components, "locality")
+                    || pickComponent(place.address_components, "administrative_area_level_2")
+                    || pickComponent(place.address_components, "sublocality");
+
+  const payload = {
+    maps_place_id: place.place_id,
+    name: place.name || place.formatted_address,
+    formatted_address: place.formatted_address || "",
+    lat: place.geometry.location.lat(),
+    lng: place.geometry.location.lng(),
+    state, municipality,
+    doctor_id: doctorSession.doctor_id,
+  };
+
+  try {
+    const res = await fetch(`${API}/clinics/from-place`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      errEl.textContent = data.detail || "No se pudo vincular.";
+      return;
+    }
+    myClinic = data;
+    closeClinicPicker();
+    renderClinicSection();
+  } catch {
+    errEl.textContent = "Error de conexión";
+  }
+}
+
+async function unlinkFromMyClinic() {
+  if (!myClinic) return;
+  if (!confirm(`¿Salir de "${myClinic.name}"? Ya no estarás vinculado a esta clínica.`)) return;
+
+  try {
+    const res = await fetch(
+      `${API}/clinics/${myClinic.clinic_id}/doctors/${doctorSession.doctor_id}`,
+      { method: "DELETE" }
+    );
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      alert(d.detail || "No se pudo desvincular.");
+      return;
+    }
+    myClinic = null;
+    renderClinicSection();
+  } catch {
+    alert("Error de conexión");
+  }
 }

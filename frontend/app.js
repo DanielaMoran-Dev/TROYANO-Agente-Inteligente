@@ -60,6 +60,7 @@ async function init() {
   setupMapSearch();
   setupRecPanel();
   setupModal();
+  setupTriageToggle();
   await initMap();
   if (userCoords) {
     map?.setCenter(userCoords);
@@ -206,7 +207,9 @@ async function triggerConsult(emergency) {
 function showTypingIndicator() {
   const div = document.createElement("div");
   div.className = "chat-msg bot typing-indicator";
-  div.innerHTML = `<span class="material-symbols-outlined msg-icon">smart_toy</span><div class="msg-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>`;
+  div.innerHTML = `
+    <div class="bot-avatar"><span class="material-symbols-outlined">smart_toy</span></div>
+    <div class="bot-content"><div class="msg-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>`;
   chatMessages.appendChild(div);
   chatMessages.scrollTop = chatMessages.scrollHeight;
   return div;
@@ -219,7 +222,9 @@ function hideTypingIndicator(el) {
 function showAnalyzingMessage(text) {
   const div = document.createElement("div");
   div.className = "chat-msg bot typing-indicator";
-  div.innerHTML = `<span class="material-symbols-outlined msg-icon">smart_toy</span><div class="msg-bubble"><span class="analyzing-text">${escapeHtml(text)}</span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>`;
+  div.innerHTML = `
+    <div class="bot-avatar"><span class="material-symbols-outlined">smart_toy</span></div>
+    <div class="bot-content"><div class="msg-bubble"><span class="analyzing-text">${escapeHtml(text)}</span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>`;
   chatMessages.appendChild(div);
   chatMessages.scrollTop = chatMessages.scrollHeight;
   return div;
@@ -228,7 +233,16 @@ function showAnalyzingMessage(text) {
 function addBotMessage(text) {
   const div = document.createElement("div");
   div.className = "chat-msg bot";
-  div.innerHTML = `<span class="material-symbols-outlined msg-icon">smart_toy</span><div class="msg-bubble">${escapeHtml(text)}</div>`;
+  div.innerHTML = `
+    <div class="bot-avatar"><span class="material-symbols-outlined">smart_toy</span></div>
+    <div class="bot-content">
+      <div class="msg-text">${escapeHtml(text)}</div>
+      <div class="msg-actions">
+        <button class="msg-action-btn" title="Copiar" onclick="navigator.clipboard?.writeText(this.closest('.bot-content').querySelector('.msg-text').innerText)">
+          <span class="material-symbols-outlined">content_copy</span>
+        </button>
+      </div>
+    </div>`;
   chatMessages.appendChild(div);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
@@ -303,23 +317,56 @@ async function runConsult(symptoms) {
 function handleConsultResponse(data) {
   const { triage, recommendations } = data;
 
+  // Save to chat history (hidden in split mode until toggled)
   const urgencyEmoji = { critical: "🚨", medium: "⚠️", low: "✅" }[triage.urgency_level] || "ℹ️";
-  addBotMessage(
-    `${urgencyEmoji} ${triage.clinical_summary}\n\nEspecialidad requerida: ${triage.specialty}`
-  );
-
-  if (recommendations.urgent_message) {
-    addBotMessage(`🚨 ${recommendations.urgent_message}`);
-  }
+  addBotMessage(`${urgencyEmoji} ${triage.clinical_summary}\n\nEspecialidad requerida: ${triage.specialty}`);
+  if (recommendations.urgent_message) addBotMessage(`🚨 ${recommendations.urgent_message}`);
 
   if (!recommendations.recommendations?.length) {
     addBotMessage("No encontramos clínicas disponibles con tus criterios. Prueba cambiando el presupuesto o seguro.");
     return;
   }
 
-  addBotMessage("Encontré estas opciones para ti. Puedes ver las clínicas en el mapa.");
+  addBotMessage(`Encontré ${recommendations.recommendations.length} opciones para ti. Puedes ver las clínicas en el mapa.`);
+
+  // Build triage summary card
+  const urgencyLabel = { critical: "Crítica 🚨", medium: "Moderada ⚠️", low: "Baja ✅" }[triage.urgency_level] || triage.urgency_level;
+  const urgencyColor = { critical: "#f28b82", medium: "#FFD700", low: "#34a853" }[triage.urgency_level] || "#8ab4f8";
+  document.getElementById("triage-pills").innerHTML = `
+    <span class="triage-pill" style="color:${urgencyColor};border-color:${urgencyColor}55;background:${urgencyColor}18">Urgencia ${urgencyLabel}</span>
+    <span class="triage-pill">${escapeHtml(triage.specialty)}</span>`;
+  document.getElementById("triage-text").textContent = triage.clinical_summary;
+  document.getElementById("toggle-chat-label").textContent =
+    `${recommendations.recommendations.length} opciones encontradas · Ver historial`;
+  document.getElementById("triage-summary").classList.remove("hidden");
+
+  triggerSplitView();
   showRecommendations(recommendations.recommendations);
   plotClinicsOnMap(recommendations.recommendations);
+}
+
+function triggerSplitView() {
+  document.getElementById("workspace").classList.add("split-mode");
+  setTimeout(() => {
+    if (map && typeof google !== "undefined") {
+      google.maps.event.trigger(map, "resize");
+      if (userCoords) {
+        map.setCenter(userCoords);
+        map.setZoom(15);
+      }
+    }
+  }, 450);
+}
+
+function setupTriageToggle() {
+  const btn = document.getElementById("toggle-chat-btn");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const chatLeft = document.querySelector(".chat-left");
+    chatLeft.classList.toggle("chat-expanded");
+    const icon = btn.querySelector(".toggle-icon");
+    icon.textContent = chatLeft.classList.contains("chat-expanded") ? "expand_less" : "expand_more";
+  });
 }
 
 // ── Recommendations panel ──────────────────────────────────────────────────────
@@ -332,7 +379,7 @@ function showRecommendations(recs) {
   recCards.innerHTML = "";
   recs.forEach((rec, i) => {
     const card = document.createElement("div");
-    card.className = "rec-card";
+    card.className = "rec-card" + (rec.is_network ? " is-network" : "");
 
     const networkBadge = rec.is_network
       ? `<span class="badge badge-network">En red</span>`
@@ -342,14 +389,10 @@ function showRecommendations(recs) {
       ? `<span class="rec-travel"><span class="material-symbols-outlined">directions_car</span>${Math.round(rec.travel_time_min)} min</span>`
       : "";
 
-    const scoreHtml = rec.match_score != null ? (() => {
-      const s = rec.match_score;
-      const color = s >= 80 ? "#34a853" : s >= 60 ? "#fbbc04" : "#ea4335";
-      return `<div class="rec-score">
-        <div class="rec-score-bar"><div class="rec-score-fill" style="width:${s}%;background:${color}"></div></div>
-        <span class="rec-score-label" style="color:${color}">${s}%</span>
-      </div>`;
-    })() : "";
+    const scoreHtml = rec.match_score != null ? `<div class="rec-score">
+      <div class="rec-score-bar"><div class="rec-score-fill" style="width:${rec.match_score}%"></div></div>
+      <span class="rec-score-label">${rec.match_score}%</span>
+    </div>` : "";
 
     const clinicName = rec.name
       ? `<div class="rec-name">${escapeHtml(rec.name)}</div>`
@@ -440,11 +483,22 @@ function plotClinicsOnMap(recs) {
 
   recs.forEach((rec, i) => {
     if (!rec.coords || !map) return;
+    const pinColor = rec.is_network ? "#34a853" : "#38BDF8";
+    const pinSvg = encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="42">` +
+      `<path d="M16 2C9.9 2 5 6.9 5 13c0 8.5 11 25 11 25s11-16.5 11-25c0-6.1-4.9-11-11-11z" fill="${pinColor}" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>` +
+      `<text x="16" y="17" text-anchor="middle" dy=".3em" fill="white" font-size="11" font-family="sans-serif" font-weight="700">${i + 1}</text>` +
+      `</svg>`
+    );
     const marker = new google.maps.Marker({
       position: { lat: rec.coords.lat, lng: rec.coords.lng },
       map,
-      label: String(i + 1),
       title: rec.name || rec.justification,
+      icon: {
+        url: `data:image/svg+xml,${pinSvg}`,
+        scaledSize: new google.maps.Size(32, 42),
+        anchor: new google.maps.Point(16, 42),
+      },
     });
 
     const scoreColor = rec.match_score >= 80 ? "#34a853" : rec.match_score >= 60 ? "#fbbc04" : "#ea4335";
@@ -645,8 +699,8 @@ async function checkApiStatus() {
 
 // ── Spinner ────────────────────────────────────────────────────────────────────
 
-function showSpinner() { spinner.classList.remove("hidden"); }
-function hideSpinner() { spinner.classList.add("hidden"); }
+function showSpinner() { /* replaced by inline typing indicator */ }
+function hideSpinner() { /* replaced by inline typing indicator */ }
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
