@@ -1056,152 +1056,407 @@ async function removeLinkedDoctor(doctorId) {
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
-// CLINIC PICKER — select existing or create from Google Place
+// CLINIC PICKER — interactive map-based selector
 // ══════════════════════════════════════════════════════════════════════════════
+//
+// Flow:
+//   1. Modal opens with a Google Map centered on the doctor's geolocation
+//      (or Mexico City as fallback).
+//   2. On every idle event: load DB clinics (green) + nearby Google hospitals
+//      (blue) within the current viewport and drop markers.
+//   3. Clicking a marker selects it; clicking "Vincularme aquí" links the
+//      doctor (POST /clinics/{id}/doctors for DB, POST /clinics/from-place
+//      for Google Place).
+//   4. A Places Autocomplete on the search box pans the map to a new location.
 
-let pickerPlaceAutocomplete = null;
-let pkSearchTimer = null;
+let pkMap = null;
+let pkPlacesSvc = null;
+let pkAutocomplete = null;
+let pkSelectedMarker = null;
+let pkDbMarkers = [];        // {marker, clinic}
+let pkPlaceMarkers = [];     // {marker, place}
+let pkIdleTimer = null;
+let pkSeenPlaceIds = new Set();
+let pkSeenClinicIds = new Set();
+let pkSelection = null;       // { type: "db"|"place", data }
 
 function openClinicPicker() {
   const modal = document.getElementById("clinic-picker");
   document.getElementById("pk-error").textContent = "";
-  document.getElementById("pk-db-input").value = "";
-  document.getElementById("pk-place-input").value = "";
-  document.getElementById("pk-db-results").innerHTML =
-    `<div class="picker-empty">Escribe para buscar clínicas registradas...</div>`;
+  document.getElementById("pk-search-input").value = "";
+  document.getElementById("pk-selection").style.display = "none";
+  document.getElementById("pk-confirm-btn").disabled = true;
+  pkSelection = null;
 
   modal.classList.remove("hidden");
 
-  // Wire DB search on input with debounce
-  const dbInput = document.getElementById("pk-db-input");
-  dbInput.oninput = () => {
-    clearTimeout(pkSearchTimer);
-    pkSearchTimer = setTimeout(() => doClinicDbSearch(dbInput.value.trim()), 250);
-  };
-  dbInput.focus();
-
-  // Initial list (most recent)
-  doClinicDbSearch("");
-
-  // Wire Places Autocomplete on the "not found" input
-  ensureMapsLoaded().then(setupPickerPlaceAutocomplete).catch(() => {});
+  // Init map once Maps + Places are loaded.
+  ensureMapsLoaded()
+    .then(() => pkInitMap())
+    .catch(() => {
+      document.getElementById("pk-error").textContent = "No se pudo cargar el mapa.";
+    });
 }
 
 function closeClinicPicker() {
   document.getElementById("clinic-picker").classList.add("hidden");
 }
 
-async function doClinicDbSearch(q) {
-  const container = document.getElementById("pk-db-results");
-  container.innerHTML = `<div class="picker-loading">Buscando...</div>`;
-  try {
-    const res = await fetch(`${API}/clinics/search?q=${encodeURIComponent(q)}&limit=15`);
-    if (!res.ok) throw new Error();
-    const items = await res.json();
-    renderPickerResults(items);
-  } catch {
-    container.innerHTML = `<div class="picker-empty" style="color:var(--red)">Error al buscar.</div>`;
-  }
-}
+function pkInitMap() {
+  if (!window.google?.maps) return;
 
-function renderPickerResults(items) {
-  const container = document.getElementById("pk-db-results");
-  if (!items.length) {
-    container.innerHTML = `<div class="picker-empty">Sin resultados. Prueba con Google Maps abajo.</div>`;
-    return;
-  }
-  container.innerHTML = items.map(it => {
-    const badges = [];
-    badges.push(`<span class="picker-badge ${it.source === "clues" ? "clues" : "db"}">${it.source === "clues" ? "CLUES" : "DB"}</span>`);
-    if (it.doctor_count > 0) badges.push(`<span class="picker-badge docs">${it.doctor_count} DOC${it.doctor_count === 1 ? "" : "S"}</span>`);
-    if (it.has_network_doctor) badges.push(`<span class="picker-badge net">EN RED</span>`);
-    return `
-      <div class="picker-item" onclick="selectExistingClinic('${it.clinic_id}')">
-        <span class="material-symbols-outlined">local_hospital</span>
-        <div class="picker-item-main">
-          <span class="picker-item-name">${escapeHtml(it.name)}</span>
-          <span class="picker-item-address">${escapeHtml(it.address || "—")}</span>
-          <div class="picker-item-badges">${badges.join("")}</div>
-        </div>
-      </div>
-    `;
-  }).join("");
-}
+  // Reset markers when re-opening so stale selections don't persist.
+  pkClearAllMarkers();
+  pkSeenPlaceIds = new Set();
+  pkSeenClinicIds = new Set();
+  pkSelectedMarker = null;
 
-async function selectExistingClinic(clinicId) {
-  const errEl = document.getElementById("pk-error");
-  errEl.textContent = "";
-  try {
-    const res = await fetch(`${API}/clinics/${clinicId}/doctors`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ doctor_id: doctorSession.doctor_id }),
+  const defaultCenter = myClinic?.lat
+    ? { lat: myClinic.lat, lng: myClinic.lng }
+    : { lat: 19.4326, lng: -99.1332 };  // CDMX
+
+  if (!pkMap) {
+    pkMap = new google.maps.Map(document.getElementById("pk-map"), {
+      center: defaultCenter,
+      zoom: 14,
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: false,
+      clickableIcons: false,
     });
-    const data = await res.json();
-    if (!res.ok) {
-      errEl.textContent = data.detail || "No se pudo vincular.";
-      return;
-    }
-    myClinic = data;
-    closeClinicPicker();
-    renderClinicSection();
-  } catch {
-    errEl.textContent = "Error de conexión";
+    pkPlacesSvc = new google.maps.places.PlacesService(pkMap);
+
+    // Reload markers when the user pans/zooms (debounced).
+    pkMap.addListener("idle", () => {
+      clearTimeout(pkIdleTimer);
+      pkIdleTimer = setTimeout(pkLoadMarkers, 350);
+    });
+
+    // Click on an empty spot drops a custom pin the doctor can confirm.
+    pkMap.addListener("click", (e) => {
+      if (!e.latLng) return;
+      pkPickAdHocLocation(e.latLng);
+    });
+
+    pkSetupAutocomplete();
+  } else {
+    // Re-center on reopen.
+    pkMap.setCenter(defaultCenter);
+    pkMap.setZoom(14);
+  }
+
+  // Trigger resize: modal may have been hidden while map was created.
+  setTimeout(() => {
+    google.maps.event.trigger(pkMap, "resize");
+    pkMap.setCenter(defaultCenter);
+    pkLoadMarkers();
+  }, 60);
+
+  // Try geolocation as a nicer default (doesn't override an explicit myClinic).
+  if (!myClinic?.lat && navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const here = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        pkMap.setCenter(here);
+        pkMap.setZoom(15);
+      },
+      () => {},
+      { timeout: 4000 }
+    );
   }
 }
 
-function setupPickerPlaceAutocomplete() {
-  if (!window.google?.maps?.places) return;
-  const input = document.getElementById("pk-place-input");
-  if (!input || pickerPlaceAutocomplete) return;
+function pkSetupAutocomplete() {
+  if (pkAutocomplete) return;
+  const input = document.getElementById("pk-search-input");
+  if (!input || !window.google?.maps?.places) return;
 
-  pickerPlaceAutocomplete = new google.maps.places.Autocomplete(input, {
+  pkAutocomplete = new google.maps.places.Autocomplete(input, {
     componentRestrictions: { country: "mx" },
     fields: ["place_id", "formatted_address", "geometry", "name", "address_components"],
   });
+  pkAutocomplete.bindTo("bounds", pkMap);
 
-  pickerPlaceAutocomplete.addListener("place_changed", async () => {
-    const place = pickerPlaceAutocomplete.getPlace();
-    if (!place || !place.geometry) return;
-    await handlePlaceSelectedInPicker(place);
+  pkAutocomplete.addListener("place_changed", () => {
+    const place = pkAutocomplete.getPlace();
+    if (!place?.geometry) return;
+    pkMap.panTo(place.geometry.location);
+    pkMap.setZoom(16);
+    // Auto-select this place so the doctor can confirm immediately.
+    pkSelectPlace({
+      place_id: place.place_id,
+      name: place.name || place.formatted_address,
+      formatted_address: place.formatted_address || "",
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng(),
+      address_components: place.address_components,
+    });
   });
 }
 
-async function handlePlaceSelectedInPicker(place) {
-  const errEl = document.getElementById("pk-error");
-  errEl.textContent = "";
+async function pkLoadMarkers() {
+  if (!pkMap) return;
+  pkLoadDbClinics();
+  pkLoadNearbyHospitals();
+}
 
-  const state = pickComponent(place.address_components, "administrative_area_level_1");
-  const municipality = pickComponent(place.address_components, "locality")
-                    || pickComponent(place.address_components, "administrative_area_level_2")
-                    || pickComponent(place.address_components, "sublocality");
+async function pkLoadDbClinics() {
+  try {
+    const res = await fetch(`${API}/clinics/search?q=&limit=50`);
+    if (!res.ok) return;
+    const items = await res.json();
+    const bounds = pkMap.getBounds();
+    if (!bounds) return;
 
-  const payload = {
-    maps_place_id: place.place_id,
-    name: place.name || place.formatted_address,
-    formatted_address: place.formatted_address || "",
-    lat: place.geometry.location.lat(),
-    lng: place.geometry.location.lng(),
-    state, municipality,
-    doctor_id: doctorSession.doctor_id,
+    for (const c of items) {
+      if (c.lat == null || c.lng == null) continue;
+      if (pkSeenClinicIds.has(c.clinic_id)) continue;
+      const pos = { lat: c.lat, lng: c.lng };
+      if (!bounds.contains(pos)) continue;
+
+      const marker = new google.maps.Marker({
+        position: pos,
+        map: pkMap,
+        title: c.name,
+        icon: pkPinIcon("#34a853"),
+        zIndex: 50,
+      });
+      marker.addListener("click", () => pkSelectDbClinic(c, marker));
+      pkDbMarkers.push({ marker, clinic: c });
+      pkSeenClinicIds.add(c.clinic_id);
+    }
+  } catch {
+    /* no-op */
+  }
+}
+
+function pkLoadNearbyHospitals() {
+  if (!pkPlacesSvc) return;
+  const center = pkMap.getCenter();
+  if (!center) return;
+
+  const request = {
+    location: center,
+    radius: 3500,
+    type: "hospital",
   };
+  pkPlacesSvc.nearbySearch(request, (results, status) => {
+    if (status !== google.maps.places.PlacesServiceStatus.OK || !results) return;
+
+    for (const p of results) {
+      if (!p.geometry?.location || !p.place_id) continue;
+      if (pkSeenPlaceIds.has(p.place_id)) continue;
+      pkSeenPlaceIds.add(p.place_id);
+
+      // If this place_id already matches a registered clinic, skip the blue
+      // marker — the green one already covers it.
+      const alreadyDb = pkDbMarkers.some(m => m.clinic?.maps_place_id === p.place_id);
+      if (alreadyDb) continue;
+
+      const marker = new google.maps.Marker({
+        position: p.geometry.location,
+        map: pkMap,
+        title: p.name,
+        icon: pkPinIcon("#38BDF8"),
+        zIndex: 40,
+      });
+      marker.addListener("click", () => pkSelectGooglePlace(p, marker));
+      pkPlaceMarkers.push({ marker, place: p });
+    }
+  });
+}
+
+function pkSelectDbClinic(clinic, marker) {
+  pkHighlightMarker(marker);
+  const badges = [];
+  badges.push(`<span class="picker-badge db">EN LA PLATAFORMA</span>`);
+  if (clinic.doctor_count > 0) {
+    badges.push(`<span class="picker-badge docs">${clinic.doctor_count} DOC${clinic.doctor_count === 1 ? "" : "S"}</span>`);
+  }
+  if (clinic.has_network_doctor) {
+    badges.push(`<span class="picker-badge net">EN RED</span>`);
+  }
+
+  pkSelection = { type: "db", data: clinic };
+  pkShowSelection(clinic.name, clinic.address || "", badges);
+}
+
+function pkSelectGooglePlace(place, marker) {
+  pkHighlightMarker(marker);
+  const badges = [`<span class="picker-badge clues">GOOGLE MAPS</span>`];
+  pkSelection = {
+    type: "place",
+    data: {
+      place_id: place.place_id,
+      name: place.name,
+      formatted_address: place.vicinity || place.formatted_address || "",
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng(),
+      address_components: place.address_components,
+    },
+  };
+  pkShowSelection(place.name, place.vicinity || "", badges);
+}
+
+function pkSelectPlace(place) {
+  // Autocomplete selection — may or may not be an existing DB clinic.
+  const matchingDb = pkDbMarkers.find(m => m.clinic?.maps_place_id === place.place_id);
+  if (matchingDb) {
+    pkSelectDbClinic(matchingDb.clinic, matchingDb.marker);
+    return;
+  }
+  const badges = [`<span class="picker-badge clues">GOOGLE MAPS</span>`];
+  pkSelection = { type: "place", data: place };
+
+  if (pkSelectedMarker) pkSelectedMarker.setMap(null);
+  pkSelectedMarker = new google.maps.Marker({
+    position: { lat: place.lat, lng: place.lng },
+    map: pkMap,
+    title: place.name,
+    icon: pkPinIcon("#ea4335"),
+    zIndex: 100,
+  });
+  pkShowSelection(place.name, place.formatted_address || "", badges);
+}
+
+function pkPickAdHocLocation(latLng) {
+  if (!pkPlacesSvc) return;
+  // Reverse-lookup the clicked point to get a place_id so we can link it.
+  const geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ location: latLng }, (results, status) => {
+    if (status !== "OK" || !results?.length) return;
+    const r = results[0];
+    pkSelectPlace({
+      place_id: r.place_id,
+      name: r.formatted_address.split(",")[0],
+      formatted_address: r.formatted_address,
+      lat: latLng.lat(),
+      lng: latLng.lng(),
+      address_components: r.address_components,
+    });
+  });
+}
+
+function pkHighlightMarker(marker) {
+  if (pkSelectedMarker && pkSelectedMarker !== marker) {
+    // Keep original-color marker on the map; just drop the red selection overlay.
+  }
+  pkSelectedMarker = marker;
+  pkMap.panTo(marker.getPosition());
+}
+
+function pkShowSelection(name, address, badgesHtml) {
+  document.getElementById("pk-sel-name").textContent = name || "—";
+  document.getElementById("pk-sel-addr").textContent = address || "—";
+  document.getElementById("pk-sel-badges").innerHTML = (badgesHtml || []).join("");
+  document.getElementById("pk-selection").style.display = "flex";
+  document.getElementById("pk-confirm-btn").disabled = false;
+}
+
+function pkPinIcon(color) {
+  const svg = encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38">` +
+    `<path d="M14 1C7.9 1 3 5.9 3 12c0 8.5 11 25 11 25s11-16.5 11-25c0-6.1-4.9-11-11-11z" fill="${color}" stroke="rgba(0,0,0,0.35)" stroke-width="1.3"/>` +
+    `<circle cx="14" cy="12" r="4" fill="#fff"/>` +
+    `</svg>`
+  );
+  return {
+    url: `data:image/svg+xml,${svg}`,
+    scaledSize: new google.maps.Size(28, 38),
+    anchor: new google.maps.Point(14, 38),
+  };
+}
+
+function pkClearAllMarkers() {
+  pkDbMarkers.forEach(m => m.marker.setMap(null));
+  pkPlaceMarkers.forEach(m => m.marker.setMap(null));
+  pkDbMarkers = [];
+  pkPlaceMarkers = [];
+  if (pkSelectedMarker) {
+    pkSelectedMarker.setMap(null);
+    pkSelectedMarker = null;
+  }
+}
+
+function pickerUseMyLocation() {
+  if (!navigator.geolocation) {
+    document.getElementById("pk-error").textContent = "Geolocalización no disponible.";
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const here = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      if (pkMap) {
+        pkMap.setCenter(here);
+        pkMap.setZoom(15);
+      }
+    },
+    () => {
+      document.getElementById("pk-error").textContent = "No se pudo obtener tu ubicación.";
+    },
+    { enableHighAccuracy: true, timeout: 6000 }
+  );
+}
+
+async function confirmPickerSelection() {
+  if (!pkSelection) return;
+  const errEl = document.getElementById("pk-error");
+  const btn = document.getElementById("pk-confirm-btn");
+  errEl.textContent = "";
+  btn.disabled = true;
 
   try {
-    const res = await fetch(`${API}/clinics/from-place`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      errEl.textContent = data.detail || "No se pudo vincular.";
-      return;
+    if (pkSelection.type === "db") {
+      const res = await fetch(
+        `${API}/clinics/${pkSelection.data.clinic_id}/doctors`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ doctor_id: doctorSession.doctor_id }),
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) {
+        errEl.textContent = data.detail || "No se pudo vincular.";
+        return;
+      }
+      myClinic = data;
+    } else {
+      const place = pkSelection.data;
+      const state = pickComponent(place.address_components, "administrative_area_level_1");
+      const municipality = pickComponent(place.address_components, "locality")
+                        || pickComponent(place.address_components, "administrative_area_level_2")
+                        || pickComponent(place.address_components, "sublocality");
+
+      const payload = {
+        maps_place_id: place.place_id,
+        name: place.name || place.formatted_address,
+        formatted_address: place.formatted_address || "",
+        lat: place.lat,
+        lng: place.lng,
+        state,
+        municipality,
+        doctor_id: doctorSession.doctor_id,
+      };
+      const res = await fetch(`${API}/clinics/from-place`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        errEl.textContent = data.detail || "No se pudo vincular.";
+        return;
+      }
+      myClinic = data;
     }
-    myClinic = data;
+
     closeClinicPicker();
     renderClinicSection();
   } catch {
     errEl.textContent = "Error de conexión";
+  } finally {
+    btn.disabled = false;
   }
 }
 

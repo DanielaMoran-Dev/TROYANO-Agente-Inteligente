@@ -398,11 +398,19 @@ function showRecommendations(recs) {
       ? `<div class="rec-name">${escapeHtml(rec.name)}</div>`
       : "";
 
-    const actionBtn = rec.is_network
-      ? `<button class="rec-action-btn btn-chat" data-conv="${sessionId}-${rec.clinic_id}" data-doctor="${rec.contact?.doctor_id || ""}">
+    const networkActions = rec.is_network
+      ? `<button class="rec-action-btn btn-chat"
+             data-doctor="${rec.contact?.doctor_id || ""}"
+             data-clinic="${rec.clinic_id || ""}">
            <span class="material-symbols-outlined">chat</span> Chatear
+         </button>
+         <button class="rec-action-btn btn-appt"
+             data-doctor="${rec.contact?.doctor_id || ""}"
+             data-clinic="${rec.clinic_id || ""}"
+             data-name="${escapeAttr(rec.name || "")}">
+           <span class="material-symbols-outlined">event</span> Agendar cita
          </button>`
-      : `<button class="rec-action-btn btn-info" data-phone="${rec.contact?.phone || ""}" data-address="${rec.contact?.address || ""}">
+      : `<button class="rec-action-btn btn-info" data-phone="${rec.contact?.phone || ""}" data-address="${escapeAttr(rec.contact?.address || "")}">
            <span class="material-symbols-outlined">info</span> Contacto
          </button>`;
 
@@ -416,7 +424,7 @@ function showRecommendations(recs) {
       ${scoreHtml}
       <div class="rec-justification">${escapeHtml(rec.justification)}</div>
       <div class="rec-card-footer">
-        ${actionBtn}
+        ${networkActions}
         ${rec.coords ? `<button class="rec-action-btn btn-map" data-lat="${rec.coords.lat}" data-lng="${rec.coords.lng}">
           <span class="material-symbols-outlined">map</span> Ver en mapa
         </button>` : ""}
@@ -427,7 +435,10 @@ function showRecommendations(recs) {
   });
 
   recCards.querySelectorAll(".btn-chat").forEach(btn => {
-    btn.addEventListener("click", () => openDoctorChat(btn.dataset.conv, btn.dataset.doctor));
+    btn.addEventListener("click", () => openDoctorChat(btn.dataset.doctor, btn.dataset.clinic));
+  });
+  recCards.querySelectorAll(".btn-appt").forEach(btn => {
+    btn.addEventListener("click", () => openAppointmentModal(btn.dataset.doctor, btn.dataset.clinic, btn.dataset.name));
   });
   recCards.querySelectorAll(".btn-map").forEach(btn => {
     btn.addEventListener("click", () => {
@@ -632,17 +643,53 @@ function drawUserLocation() {
 
 // ── Doctor WebSocket Chat ──────────────────────────────────────────────────────
 
+// Cache conversación por doctor_id para no crearla dos veces (chat + cita).
+const conversationCache = new Map();   // doctor_id → conversation_id
+
+async function ensureConversation(doctorId, clinicId) {
+  if (!doctorId) throw new Error("doctor_id requerido");
+  if (conversationCache.has(doctorId)) return conversationCache.get(doctorId);
+
+  const resp = await fetch(`${API}/conversations`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      user_id: userSession.user_id,
+      doctor_id: doctorId,
+      session_id: sessionId,
+      clinic_id: clinicId || null,
+    }),
+  });
+  if (!resp.ok) {
+    const err = await resp.json().catch(() => ({}));
+    throw new Error(err.detail || `HTTP ${resp.status}`);
+  }
+  const { conversation_id } = await resp.json();
+  conversationCache.set(doctorId, conversation_id);
+  return conversation_id;
+}
+
 function setupModal() {
   modalCloseBtn.addEventListener("click", closeDoctorChat);
   modalSendBtn.addEventListener("click", sendModalMessage);
   modalInput.addEventListener("keydown", e => { if (e.key === "Enter") sendModalMessage(); });
 }
 
-function openDoctorChat(conversationId, doctorId) {
+async function openDoctorChat(doctorId, clinicId) {
   if (activeWs) activeWs.close();
   modalMessages.innerHTML = "";
-  modalDoctorName.textContent = `Chat (${conversationId.slice(-8)})`;
+  modalDoctorName.textContent = "Conectando con el doctor...";
   chatModal.classList.remove("hidden");
+
+  let conversationId;
+  try {
+    conversationId = await ensureConversation(doctorId, clinicId);
+  } catch (e) {
+    appendModalMsg("sistema", `No se pudo iniciar el chat: ${e.message}`);
+    return;
+  }
+
+  modalDoctorName.textContent = `Chat (${conversationId.slice(-8)})`;
 
   const wsProto = location.protocol === "https:" ? "wss" : "ws";
   activeWs = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
@@ -652,6 +699,8 @@ function openDoctorChat(conversationId, doctorId) {
       const msg = JSON.parse(evt.data);
       if (msg.type === "history") {
         msg.messages.forEach(m => appendModalMsg(m.sender, m.text));
+      } else if (msg.type === "error") {
+        appendModalMsg("sistema", msg.detail || "Error en el chat.");
       } else {
         appendModalMsg(msg.sender, msg.text);
       }
@@ -661,6 +710,94 @@ function openDoctorChat(conversationId, doctorId) {
   };
 
   activeWs.onerror = () => appendModalMsg("sistema", "Error de conexión.");
+}
+
+// ── Appointment booking ────────────────────────────────────────────────────────
+
+function openAppointmentModal(doctorId, clinicId, clinicName) {
+  const overlay = document.getElementById("appt-overlay");
+  const errEl   = document.getElementById("appt-error");
+  errEl.textContent = "";
+
+  overlay.dataset.doctorId = doctorId || "";
+  overlay.dataset.clinicId = clinicId || "";
+
+  document.getElementById("appt-clinic-name").textContent = clinicName || "Doctor en red";
+
+  // Pre-rellenar con mañana 10:00
+  const d = new Date();
+  d.setDate(d.getDate() + 1);
+  const pad = n => String(n).padStart(2, "0");
+  document.getElementById("appt-date").value = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  document.getElementById("appt-time").value = "10:00";
+  document.getElementById("appt-duration").value = "30";
+  document.getElementById("appt-notes").value = "";
+
+  overlay.classList.remove("hidden");
+}
+
+function closeAppointmentModal() {
+  document.getElementById("appt-overlay").classList.add("hidden");
+}
+
+async function submitAppointment() {
+  const overlay  = document.getElementById("appt-overlay");
+  const btn      = document.getElementById("appt-submit-btn");
+  const errEl    = document.getElementById("appt-error");
+  const doctorId = overlay.dataset.doctorId;
+  const clinicId = overlay.dataset.clinicId;
+
+  const date     = document.getElementById("appt-date").value;
+  const time     = document.getElementById("appt-time").value;
+  const duration = parseInt(document.getElementById("appt-duration").value, 10) || 30;
+  const notes    = document.getElementById("appt-notes").value.trim();
+
+  if (!date || !time) {
+    errEl.textContent = "Fecha y hora son obligatorias.";
+    return;
+  }
+
+  const scheduledAt = new Date(`${date}T${time}:00`);
+  if (isNaN(scheduledAt.getTime())) {
+    errEl.textContent = "Fecha/hora inválida.";
+    return;
+  }
+  if (scheduledAt.getTime() < Date.now()) {
+    errEl.textContent = "La fecha debe ser futura.";
+    return;
+  }
+
+  btn.disabled = true;
+  errEl.textContent = "";
+
+  try {
+    const conversationId = await ensureConversation(doctorId, clinicId);
+    const payload = {
+      conversation_id: conversationId,
+      user_id: userSession.user_id,
+      doctor_id: doctorId,
+      clinic_id: clinicId || null,
+      scheduled_at: scheduledAt.toISOString(),
+      duration_min: duration,
+      notes: notes || null,
+    };
+    const resp = await fetch(`${API}/appointments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const data = await resp.json();
+    if (!resp.ok) {
+      errEl.textContent = data.detail || `Error ${resp.status}`;
+      return;
+    }
+    closeAppointmentModal();
+    addBotMessage(`✅ Cita solicitada para ${scheduledAt.toLocaleString("es-MX")}. Estado: pendiente de confirmación.`);
+  } catch (e) {
+    errEl.textContent = e.message || "Error de conexión";
+  } finally {
+    btn.disabled = false;
+  }
 }
 
 function closeDoctorChat() {
@@ -711,6 +848,15 @@ function escapeHtml(str) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/\n/g, "<br>");
+}
+
+function escapeAttr(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 // ── Boot ───────────────────────────────────────────────────────────────────────

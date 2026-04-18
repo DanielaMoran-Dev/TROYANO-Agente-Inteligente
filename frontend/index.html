@@ -154,6 +154,55 @@
       </div>
     </div>
 
+    <!-- ── APPOINTMENT MODAL ──────────────────────────────────── -->
+    <div id="appt-overlay" class="modal hidden">
+      <div class="modal-card" style="max-width:420px">
+        <div class="modal-header">
+          <span class="material-symbols-outlined">event</span>
+          <span>Agendar cita</span>
+          <button class="icon-btn" onclick="closeAppointmentModal()">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <div style="padding:1.1rem 1.3rem;display:flex;flex-direction:column;gap:0.75rem">
+          <div style="font-size:0.78rem;color:var(--muted, #aaa);line-height:1.4">
+            Solicitarás una cita con el doctor en red de
+            <strong id="appt-clinic-name" style="color:var(--text, #fff)">—</strong>.
+            El doctor confirmará tu cita desde su panel.
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.25rem">
+            <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Fecha</label>
+            <input type="date" id="appt-date" class="chat-input" style="padding:0.5rem 0.7rem" />
+          </div>
+          <div style="display:flex;gap:0.6rem">
+            <div style="flex:1;display:flex;flex-direction:column;gap:0.25rem">
+              <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Hora</label>
+              <input type="time" id="appt-time" class="chat-input" step="900" style="padding:0.5rem 0.7rem" />
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:0.25rem">
+              <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Duración</label>
+              <select id="appt-duration" class="chat-input" style="padding:0.5rem 0.7rem">
+                <option value="30">30 min</option>
+                <option value="60">1 hora</option>
+                <option value="90">1 h 30 min</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.25rem">
+            <label style="font-family:var(--mono, monospace);font-size:0.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted, #aaa)">Motivo / Notas (opcional)</label>
+            <input type="text" id="appt-notes" class="chat-input" placeholder="Primera consulta, seguimiento..." style="padding:0.5rem 0.7rem" />
+          </div>
+          <div id="appt-error" style="font-family:var(--mono, monospace);font-size:0.62rem;color:#f28b82;min-height:0.9rem"></div>
+          <div style="display:flex;gap:0.5rem">
+            <button class="rec-action-btn" style="flex:1" onclick="closeAppointmentModal()">Cancelar</button>
+            <button id="appt-submit-btn" class="rec-action-btn btn-chat" style="flex:2" onclick="submitAppointment()">
+              <span class="material-symbols-outlined">check</span> Confirmar solicitud
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ── SPINNER ────────────────────────────────────────────── -->
     <div id="spinner" class="hidden">
       <div class="spinner-ring"></div>

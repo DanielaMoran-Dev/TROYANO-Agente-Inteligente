@@ -40,20 +40,62 @@ Responde ÚNICAMENTE con un JSON válido sin texto adicional.
 
 async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, dict]:
     """
-    Devuelve {clinic_id: {doctor_id, name, specialty}} para las clínicas
-    cuyo doctor_id referencia a un doctor activo en red.
+    Devuelve {clinic_id: {doctor_id, name, specialty, real_clinic_id}} para las
+    clínicas con al menos un doctor activo en red.
+
+    Los candidatos que vienen de Google Places traen `clinic_id == place_id` y
+    no tienen `doctor_ids`. Para detectar si un doctor se registró en ese lugar,
+    buscamos en la colección `clinics` por `maps_place_id`. Si hay match, se
+    incluye `real_clinic_id` con el ObjectId de Mongo para que los endpoints
+    (conversations, appointments) reciban un id válido.
     """
+    # 1. Lookup por maps_place_id para candidatos que no traen doctor_ids propios.
+    pids_to_resolve: set[str] = set()
+    for c in clinic_candidates:
+        has_ids = bool(c.get("doctor_ids") or c.get("doctor_id"))
+        if has_ids:
+            continue
+        pid = c.get("place_id") or c.get("maps_place_id")
+        if pid:
+            pids_to_resolve.add(pid)
+
+    pid_to_clinic: dict[str, dict] = {}
+    if pids_to_resolve:
+        try:
+            async for doc in mongo_service.clinics().find(
+                {"maps_place_id": {"$in": list(pids_to_resolve)}},
+                {"_id": 1, "maps_place_id": 1, "doctor_ids": 1, "doctor_id": 1},
+            ):
+                pid_to_clinic[doc["maps_place_id"]] = doc
+        except Exception as e:
+            logger.warning("Could not resolve place_ids to clinics: %s", e)
+
+    # 2. Construir (candidate_clinic_id -> [doctor ObjectIds], real_clinic_id)
     all_doctor_ids: list[ObjectId] = []
     clinic_to_doctors: dict[str, list[ObjectId]] = {}
+    clinic_to_real_id: dict[str, str] = {}
 
     for c in clinic_candidates:
         cid = c.get("clinic_id")
         if not cid:
             continue
+
         raw_ids = c.get("doctor_ids")
         if raw_ids is None:
             legacy = c.get("doctor_id")
             raw_ids = [legacy] if legacy else []
+
+        # Fallback: resolver por maps_place_id
+        if not raw_ids:
+            pid = c.get("place_id") or c.get("maps_place_id")
+            resolved = pid_to_clinic.get(pid) if pid else None
+            if resolved:
+                ids = resolved.get("doctor_ids")
+                if ids is None:
+                    legacy = resolved.get("doctor_id")
+                    ids = [legacy] if legacy else []
+                raw_ids = [x for x in ids if x]
+                clinic_to_real_id[cid] = str(resolved["_id"])
 
         parsed: list[ObjectId] = []
         for did in raw_ids:
@@ -88,11 +130,14 @@ async def _identify_network_doctors(clinic_candidates: list[dict]) -> dict[str, 
             doc = active_doctors.get(obj_id)
             if doc:
                 full_name = " ".join(filter(None, [doc.get("name"), doc.get("last_name")]))
-                network_map[clinic_id] = {
+                entry = {
                     "doctor_id": str(obj_id),
                     "name": full_name.strip(),
                     "specialty": doc.get("specialty"),
                 }
+                if clinic_id in clinic_to_real_id:
+                    entry["real_clinic_id"] = clinic_to_real_id[clinic_id]
+                network_map[clinic_id] = entry
                 break
     return network_map
 
@@ -209,6 +254,11 @@ match_score es un número entero de 0 a 100 que representa qué tan bien se adap
             rec["is_network"] = True
             contact["type"] = "chat"
             contact["doctor_id"] = network_map[clinic_id]["doctor_id"]
+            # Si el candidato vino de Places pero hay registro en Mongo,
+            # preferimos el ObjectId real para endpoints posteriores.
+            real_id = network_map[clinic_id].get("real_clinic_id")
+            if real_id:
+                rec["clinic_id"] = real_id
         else:
             rec["is_network"] = False
             contact["type"] = "info"
@@ -225,8 +275,9 @@ def _fallback_recommendations(clinics: list[dict], network_map: dict, urgency: s
     for i, c in enumerate(clinics[:3], start=1):
         cid = c.get("clinic_id", "")
         is_net = cid in network_map
+        real_id = network_map.get(cid, {}).get("real_clinic_id") if is_net else None
         recs.append({
-            "clinic_id": cid,
+            "clinic_id": real_id or cid,
             "name": c.get("name"),
             "justification": "Opción recomendada según tu especialidad y ubicación.",
             "is_network": is_net,

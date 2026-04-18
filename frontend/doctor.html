@@ -1112,6 +1112,107 @@
       color: var(--disabled);
       letter-spacing: 0.3px;
     }
+
+    /* ── CLINIC PICKER — MAP LAYOUT ── */
+    .pk-toolbar {
+      display: flex;
+      gap: 0.5rem;
+      align-items: stretch;
+    }
+    .pk-search-wrap {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .pk-search-ico {
+      position: absolute;
+      left: 10px;
+      font-size: 16px;
+      color: var(--muted);
+      pointer-events: none;
+    }
+    .pk-search-input {
+      padding-left: 32px !important;
+    }
+    .pk-loc-btn {
+      margin-top: 0 !important;
+      padding: 0 0.85rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+    .pk-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+      padding: 0.1rem 0;
+    }
+    .pk-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .pk-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0,0,0,0.25);
+      flex-shrink: 0;
+    }
+    .pk-dot-green { background: #34a853; }
+    .pk-dot-blue  { background: #38BDF8; }
+    .pk-dot-red   { background: #ea4335; }
+    .pk-map {
+      width: 100%;
+      height: 380px;
+      border-radius: 8px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .pk-selection {
+      display: flex;
+      gap: 0.55rem;
+      padding: 0.6rem 0.75rem;
+      background: rgba(56,189,248,0.06);
+      border: 1px solid rgba(56,189,248,0.35);
+      border-radius: 8px;
+      align-items: flex-start;
+    }
+    .pk-sel-icon {
+      color: var(--accent);
+      font-size: 20px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+    .pk-sel-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      min-width: 0;
+      flex: 1;
+    }
+    .pk-sel-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .pk-sel-addr {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   </style>
 </head>
 <body>
@@ -1486,52 +1587,62 @@
     </div>
   </div>
 
-  <!-- ── CLINIC PICKER MODAL ──────────────────────────────────── -->
+  <!-- ── CLINIC PICKER MODAL (MAP-BASED) ──────────────────────── -->
   <div id="clinic-picker" class="clinic-modal-overlay hidden">
-    <div class="clinic-modal-card">
+    <div class="clinic-modal-card" style="width:860px; max-width:96vw;">
       <div class="clinic-modal-header">
         <span class="material-symbols-outlined">travel_explore</span>
-        <span class="clinic-modal-title">SELECCIONAR MI CLÍNICA</span>
+        <span class="clinic-modal-title">SELECCIONA TU CENTRO MÉDICO</span>
         <button class="icon-btn" onclick="closeClinicPicker()">
           <span class="material-symbols-outlined">close</span>
         </button>
       </div>
-      <div class="clinic-modal-body">
+      <div class="clinic-modal-body" style="gap:0.7rem; padding:0.9rem 1rem;">
 
-        <!-- Section A: search existing clinics in DB -->
-        <div class="picker-section">
-          <span class="picker-section-title">
-            <span class="material-symbols-outlined">search</span>
-            En la plataforma
-          </span>
-          <input type="text" id="pk-db-input" class="picker-input"
-            placeholder="Busca por nombre (ej: Hospital Ángeles)..."
-            autocomplete="off" />
-          <div class="picker-results" id="pk-db-results">
-            <div class="picker-empty">Escribe para buscar clínicas registradas...</div>
+        <!-- Toolbar: search + my location -->
+        <div class="pk-toolbar">
+          <div class="pk-search-wrap">
+            <span class="material-symbols-outlined pk-search-ico">search</span>
+            <input type="text" id="pk-search-input" class="picker-input pk-search-input"
+              placeholder="Busca un hospital, clínica o dirección..." autocomplete="off" />
+          </div>
+          <button type="button" class="loc-btn pk-loc-btn" onclick="pickerUseMyLocation()">
+            <span class="material-symbols-outlined">my_location</span>
+            Mi ubicación
+          </button>
+        </div>
+
+        <!-- Map legend -->
+        <div class="pk-legend">
+          <span class="pk-legend-item"><span class="pk-dot pk-dot-green"></span> Ya registradas en la plataforma</span>
+          <span class="pk-legend-item"><span class="pk-dot pk-dot-blue"></span> Hospitales de Google Maps</span>
+          <span class="pk-legend-item"><span class="pk-dot pk-dot-red"></span> Tu selección</span>
+        </div>
+
+        <!-- Map -->
+        <div id="pk-map" class="pk-map"></div>
+
+        <!-- Selection card -->
+        <div id="pk-selection" class="pk-selection" style="display:none">
+          <span class="material-symbols-outlined pk-sel-icon">location_on</span>
+          <div class="pk-sel-info">
+            <span id="pk-sel-name" class="pk-sel-name">—</span>
+            <span id="pk-sel-addr" class="pk-sel-addr">—</span>
+            <div id="pk-sel-badges" class="picker-item-badges"></div>
           </div>
         </div>
 
-        <div class="picker-section-divider"></div>
-
-        <!-- Section B: Google Places (create or link) -->
-        <div class="picker-section">
-          <span class="picker-section-title">
-            <span class="material-symbols-outlined">add_location_alt</span>
-            ¿No la encuentras? Búscala en Google Maps
-          </span>
-          <input type="text" id="pk-place-input" class="picker-input"
-            placeholder="Escribe el nombre o dirección..."
-            autocomplete="off" />
-          <div class="picker-help">
-            Al seleccionar un lugar, se creará o vinculará la clínica con tu perfil.
-          </div>
+        <div class="picker-help">
+          Haz clic en un marcador del mapa para seleccionar, o busca un lugar nuevo arriba.
         </div>
-
         <div class="clinic-error" id="pk-error"></div>
       </div>
       <div class="clinic-modal-footer">
-        <button class="btn-cancel" onclick="closeClinicPicker()" style="flex:1">Cancelar</button>
+        <button class="btn-cancel" onclick="closeClinicPicker()">Cancelar</button>
+        <button id="pk-confirm-btn" class="btn-save" onclick="confirmPickerSelection()" disabled>
+          <span class="material-symbols-outlined">check</span>
+          Vincularme aquí
+        </button>
       </div>
     </div>
   </div>

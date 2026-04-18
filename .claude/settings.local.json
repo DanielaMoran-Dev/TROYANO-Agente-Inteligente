@@ -70,7 +70,8 @@
       "Bash(curl -sL \"https://www.facmed.unam.mx/sg/css/GPC/SIDSS-GPC/gpc/docs/IMSS-191-10-RR.pdf\" -o gpc_evc_stroke.pdf)",
       "Bash(node --check D:/Hackaton/2026/Lineal-Troyano/TROYANO-Agente-Inteligente/frontend/doctor.js)",
       "Bash(.venv/Scripts/python.exe scripts/init_db.py)",
-      "Bash(.venv/Scripts/python.exe -c \"from routers import clinic, doctor; print\\('OK'\\)\")"
+      "Bash(.venv/Scripts/python.exe -c \"from routers import clinic, doctor; print\\('OK'\\)\")",
+      "Bash(node --check frontend/app.js)"
     ]
   }
 }
