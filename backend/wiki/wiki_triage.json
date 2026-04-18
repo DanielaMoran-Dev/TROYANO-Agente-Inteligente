@@ -1,0 +1,140 @@
+{
+  "fuente": "Sistema de Triaje de Manchester (MTS) — adaptado MAIS/RPIS Ecuador 2014",
+  "descripcion": "Clasificación de urgencias en 5 prioridades para orientar la atención en emergencias hospitalarias.",
+  "niveles": [
+    {
+      "prioridad": 1,
+      "color": "ROJO",
+      "nombre": "Emergencia crítica / Reanimación",
+      "tiempo_maximo_atencion": "Inmediata (0 minutos)",
+      "descripcion": "Alteración súbita y crítica del estado de salud, riesgo inminente de muerte. Atención en sala de Reanimación–Shock Trauma.",
+      "signos_vitales_alarma": {
+        "adulto": {
+          "FC_min": "< 50 lpm o > 150 lpm",
+          "PAS": "< 90 mmHg o > 220 mmHg",
+          "PAD": "> 110 mmHg o 30 mmHg sobre basal",
+          "FR": "< 10 o > 35 rpm"
+        },
+        "pediatrico_lactante": {
+          "FC": "≤ 60 lpm o ≥ 200 lpm",
+          "PAS": "< 60 mmHg",
+          "FR": "≥ 60 rpm (< 2 meses), ≥ 50 rpm (2 meses–1 año)",
+          "SatO2": "≤ 85%"
+        },
+        "pediatrico_preescolar": {
+          "FC": "≤ 60 lpm o ≥ 180 lpm",
+          "PAS": "< 80 mmHg",
+          "FR": "> 40 rpm sin fiebre",
+          "SatO2": "≤ 85%"
+        }
+      },
+      "condiciones": [
+        "Paro cardiorrespiratorio",
+        "Dolor torácico precordial de posible origen cardiogénico",
+        "Dificultad respiratoria (polipnea, tiraje, sibilantes, estridor, cianosis)",
+        "Shock (hemorrágico, cardiogénico, distributivo, obstructivo)",
+        "Arritmia con compromiso hemodinámico",
+        "Hemorragia profusa",
+        "Obstrucción de vía respiratoria alta",
+        "Inestabilidad hemodinámica / crisis hipertensiva",
+        "Paciente inconsciente",
+        "Trauma severo (accidente de tránsito, quemaduras > 20%, TEC, herida de bala, amputación con sangrado no controlado)",
+        "Status convulsivo",
+        "Sobredosis con depresión respiratoria",
+        "Intoxicación por organofosforados, ácidos, álcalis",
+        "Abdomen agudo con descompensación hemodinámica",
+        "Embarazo ectópico roto",
+        "Suicidio frustrado / intento suicida",
+        "Crisis de agitación psicomotora heteroagresiva",
+        "Deshidratación con shock (llenado capilar > 3 s)",
+        "Status asmático",
+        "Hipertermia maligna",
+        "Politraumatismo"
+      ]
+    },
+    {
+      "prioridad": 2,
+      "color": "NARANJA",
+      "nombre": "Emergencia",
+      "tiempo_maximo_atencion": "≤ 10 minutos",
+      "descripcion": "Cuadro súbito agudo con riesgo de muerte o complicaciones serias. Atención en box de emergencia naranja.",
+      "condiciones": [
+        "FR ≥ 24 rpm",
+        "Crisis asmática con broncoespasmo moderado",
+        "Diabetes mellitus descompensada",
+        "Hemoptisis",
+        "Abdomen agudo (signos y síntomas)",
+        "Convulsión reciente en paciente consciente",
+        "Dolor torácico no cardiogénico sin compromiso hemodinámico",
+        "Arritmias sin compromiso hemodinámico",
+        "Sangrado gastrointestinal con signos vitales estables",
+        "Trastornos del sensorio",
+        "Deshidratación aguda sin descompensación hemodinámica",
+        "Hematuria macroscópica",
+        "Reacción alérgica sin compromiso respiratorio",
+        "Síndrome meníngeo",
+        "Cólico renal sin respuesta a analgesia > 6 h",
+        "Retención urinaria",
+        "Ideación suicida",
+        "Cefalea con antecedente de trauma craneal",
+        "Síntomas vasculares agudos",
+        "Obstétricas: hemorragia de cualquier trimestre, amenaza de parto prematuro, ausencia de movimientos fetales, hipertensión que complica el embarazo",
+        "Pediátricos: < 3 meses con fiebre ≥ 38°C, < 2 años con fiebre ≥ 39°C, fiebre con petequias"
+      ]
+    },
+    {
+      "prioridad": 3,
+      "color": "AMARILLO",
+      "nombre": "Urgencia",
+      "tiempo_maximo_atencion": "≤ 60 minutos",
+      "descripcion": "Paciente sin riesgo de muerte ni secuelas invalidantes. Atención en box de emergencia III.",
+      "condiciones": [
+        "Dolor abdominal leve con náuseas/vómitos/diarrea y signos vitales estables",
+        "Herida que no requiere sutura",
+        "Intoxicación alimentaria",
+        "Trastornos de músculos y ligamentos",
+        "Otitis media aguda",
+        "Deshidratación hidroelectrolítica leve",
+        "Sinusitis aguda",
+        "Fiebre > 39°C sin síntomas asociados",
+        "Síndrome vertiginoso",
+        "Celulitis o absceso con fiebre",
+        "Lumbalgia aguda",
+        "Broncoespasmo leve",
+        "Hipertensión arterial leve no controlada",
+        "Signos de depresión o ansiedad aguda",
+        "Infección urinaria alta"
+      ]
+    },
+    {
+      "prioridad": 4,
+      "color": "VERDE",
+      "nombre": "Urgencia menor",
+      "tiempo_maximo_atencion": "≤ 120 minutos",
+      "descripcion": "Sin compromiso vital ni riesgo inmediato. Se trata sintomáticamente y se refiere a consulta externa.",
+      "condiciones": [
+        "Faringitis aguda",
+        "Amigdalitis aguda",
+        "Enfermedad diarreica aguda sin deshidratación ni vómitos",
+        "Absceso sin fiebre",
+        "Sangrado vaginal leve en no gestante con signos vitales estables",
+        "Enfermedades crónicas no descompensadas"
+      ]
+    },
+    {
+      "prioridad": 5,
+      "color": "AZUL",
+      "nombre": "No urgente",
+      "tiempo_maximo_atencion": "Consulta externa de primer nivel",
+      "descripcion": "Sin compromiso vital ni riesgo inmediato. Solo tratamiento sintomático hasta cita.",
+      "condiciones": [
+        "Fiebre sin síntomas asociados",
+        "Resfriado común",
+        "Dolor de oído leve",
+        "Dolor de garganta sin disfagia"
+      ]
+    }
+  ],
+  "proceso_triaje": "Máximo 5 minutos. Se evalúan signos vitales y motivo de consulta. Se asigna prioridad y se dirige al área correspondiente.",
+  "referencia_hospitalaria": "Diagnóstico CIE-10, procedimientos realizados, signos vitales, Glasgow; documentado en formulario HCU-F053."
+}

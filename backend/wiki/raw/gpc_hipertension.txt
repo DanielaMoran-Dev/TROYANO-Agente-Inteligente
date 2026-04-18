@@ -1,0 +1,5685 @@
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+GUÍA DE PRÁCTICA CLÍNICA
+
+GPC
+
+Actualización
+2014
+
+Diagnóstico y Tratamiento de la
+
+H IPERTENSIÓN ARTERIAL
+en el Primer Nivel de Atención
+
+Evidencias y Recomendaciones
+Catálogo Maestro de Guías de Práctica Clínica: IMSS-076-08
+
+1
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Avenida Paseo de la Reforma 450, piso 13,
+Colonia Juárez, Delegación Cuauhtémoc, C. P. 06600, México D. F.
+www.cenetec.salud.gob.mx
+Publicado por CENETEC
+© Copyright Instituto Mexicano del Seguro Social, “Derechos Reservados”. Ley Federal de Derecho de Autor
+Editor General
+Centro Nacional de Excelencia Tecnológica en Salud
+Esta guía de práctica clínica fue elaborada con la participación de las instituciones que conforman el Sistema Nacional de
+Salud, bajo la coordinación del Centro Nacional de Excelencia Tecnológica en Salud. Los autores han hecho un esfuerzo
+por asegurarse de que la información aquí contenida sea completa y actual; por lo que asumen la responsabilidad
+editorial por el contenido de esta guía, declaran que no tienen conflicto de intereses y en caso de haberlo lo han
+manifestado puntualmente, de tal manera que no se afecte su participación y la confiabilidad de las evidencias y
+recomendaciones.
+Las recomendaciones son de carácter general, por lo que no definen un curso único de conducta en un procedimiento o
+tratamiento. Las recomendaciones aquí establecidas, al ser aplicadas en la práctica, podrían tener variaciones
+justificadas con fundamento en el juicio clínico de quien las emplea como referencia, así como en las necesidades
+específicas y preferencias de cada paciente en particular, los recursos disponibles al momento de la atención y la
+normatividad establecida por cada Institución o área de práctica.
+En cumplimiento de los artículos 28 y 29 de la Ley General de Salud; 50 del Reglamento Interior de la Comisión
+Interinstitucional del Cuadro Básico y Catálogo de Insumos del Sector Salud y Primero del Acuerdo por el que se establece
+que las dependencias y entidades de la Administración Pública Federal que presten servicios de salud aplicarán, para el
+primer nivel de atención médica, el cuadro básico y, en el segundo y tercer nivel, el catálogo de insumos, las
+recomendaciones contenidas en las GPC con relación a la prescripción de fármacos y biotecnológicos deberán aplicarse
+con apego a los cuadros básicos de cada Institución.
+Este documento puede reproducirse libremente sin autorización escrita, con fines de enseñanza y actividades no
+lucrativas, dentro del Sistema Nacional de Salud. Queda prohibido todo acto por virtud del cual el Usuario pueda explotar
+o servirse comercialmente, directa o indirectamente, en su totalidad o parcialmente, o beneficiarse, directa o
+indirectamente, con lucro, de cualquiera de los contenidos, imágenes, formas, índices y demás expresiones formales que
+formen parte del mismo, incluyendo la modificación o inserción de textos o logotipos.
+Debe ser citado como: Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+México: Instituto Mexicano del Seguro Social; 08/07/2014
+Actualización total.
+http://www.cenetec.salud.gob.mx/interior/catalogoMaestroGPC.html
+
+ISBN: 978-607-7790-24-2
+
+2
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CIE-10: I10 Hipertensión arterial esencial primaria
+GPC: Diagnóstico y Tratamiento de la Hipertensión Arterial
+en el Primer Nivel de Atención
+Coordinadores, Autores y Validadores, 2008
+Coordinadores:
+Dr.
+
+Arturo
+
+Viniegra
+
+Medicina Interna
+
+Instituto Mexicano del
+Seguro Social
+
+Cardiología /
+Electrofisiología
+Cardíaca
+
+Instituto Mexicano del
+Seguro Social
+
+Dr. José Luis Gutiérrez
+Barbosa
+
+Medicina Familiar
+
+Instituto Mexicano del
+Seguro Social
+
+HGR/MF No. 1, Delegación Morelos
+
+Dra. María del Consuelo
+Medina González
+
+Medicina Familiar
+
+Instituto Mexicano del
+Seguro Social
+
+HP/UMF No. 10, Delegación Sur del D.F.
+
+Dra. Martha Leticia
+Rolón Montaño
+
+Medicina Interna
+Cuidados Intensivos
+
+Instituto Mexicano del
+Seguro Social
+
+HGR No. 110, Delegación Jalisco
+
+Dra.
+Concepción
+Cristina Sierra Soria
+
+Medicina Familiar
+
+Instituto Mexicano del
+Seguro Social
+
+UMF No. 55, Delegación Puebla
+
+Osorio
+
+Coordinación de
+Especialidad, IMSS
+
+Unidades
+
+Médicas
+
+de
+
+Alta
+
+Autores:
+Dr. Eddie Alberto Favela
+Pérez
+
+Dr.
+
+Arturo
+
+Viniegra
+
+Osorio
+
+Medicina Interna
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Especialidades, Mérida, Yucatán
+
+Coordinación de
+Especialidad, IMSS
+
+Unidades
+
+Médicas
+
+de
+
+Alta
+
+de
+
+Alta
+
+Validación:
+Luís Rey García Flores
+
+Dr. Rodolfo de Jesús
+Castaño Guerra
+
+Medicina Interna
+
+Instituto de Seguridad y
+Servicios Sociales de los
+Trabajadores del
+Estado
+
+CMN “20 de Noviembre” ISSSTE
+
+Cardiología
+
+Instituto Mexicano del
+Seguro Social
+
+Coordinación de
+Especialidad, IMSS
+
+3
+
+Unidades
+
+Médicas
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Coordinadores, Autores y Validadores, 2014
+
+Coordinadores:
+Dra. Adriana Abigail
+Valenzuela Flores
+
+Pediatría Médica
+
+Instituto Mexicano del
+Seguro Social
+
+Jefa de Área. División de Excelencia Clínica. CUMAE.
+México, DF
+
+Medicina Familiar
+
+Instituto Mexicano del
+Seguro Social
+
+Director médico
+UMF 59
+Mérida, Yucatán
+
+Cardiología
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Cardiología, CMN SXX.
+México, DF
+
+Instituto Mexicano del
+Seguro Social
+
+Coordinador de Programa
+División de rehabilitación
+Coordinación de Áreas Médicas.
+México, DF
+
+Autores:
+Dr. Juan Pablo Angli
+Montero
+
+Dr. José Angel Cigarroa
+López
+Dr.
+David
+Álvaro
+Escudero Rodríguez
+
+Medicina
+Física
+Rehabilitación
+
+Dr. Jorge Héctor Genis
+Zarate
+
+Geriatría
+Medicina Interna
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Cardiología, CMN SXX.
+México, DF
+
+Dr. Enrique
+Flores.
+
+Cardiología
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Cardiología, CMN SXX.
+México, DF
+
+Dr. Romel Alexander
+Martínez Vargas
+
+Medicina Familiar
+
+Instituto Mexicano del
+Seguro Social
+
+UMF 38.
+México DF
+
+Dra. Beatriz Carolina
+Mendoza Pérez
+
+Cardiología
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Cardiología, CMN SXX.
+México, DF
+
+Dr.
+Luis
+Moreno Ruiz.
+
+Antonio
+
+Cardiología
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Cardiología, CMN SXX.
+México, DF
+
+Lic. Nallely
+Hernández
+
+Sánchez
+
+Nutrición Clínica
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Especialidades CMN La Raza
+México, DF
+
+Dra.
+A.
+Gabriela
+Valenzuela Flores
+
+Cardiología
+Medicina Interna
+
+Instituto Mexicano del
+Seguro Social
+
+División de Calidad
+UMAE Hospital Oncología
+México, DF
+AMEIN
+
+Martínez
+
+y
+
+4
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Validación:
+Lic. Lucía Hernández
+Amezcua MC
+
+Nutrición Clínica
+
+Instituto Mexicano del
+Seguro Social
+
+Hospital General de Zona No. 27
+México, DF
+
+Dra. Gabriela Borrayo
+Sánchez
+
+Cardiología
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Cardiología, CMN, SXX.
+México, DF
+
+Dr. Rodolfo
+Cardiología
+
+Cardiología
+
+Secretaría de Salud
+
+Hospital General de México
+México, DF
+
+Dr. Jesús Alejandro
+Gómez García
+
+Geriatría
+Medicina Interna
+
+Instituto Mexicano del
+Seguro Social
+
+UMAE Hospital de Cardiología 34.
+Monterrey, NL
+
+Dra. Mercedes de Jesús
+Juárez López
+
+Medicina
+Física
+Rehabilitación
+
+Instituto Mexicano del
+Seguro Social
+
+Centro de Rehabilitación y Medicina Física Norte
+México, DF
+
+Dra. Mariana Elizabeth
+Soria Guerra
+
+Medicina Familiar
+
+Instituto Mexicano del
+Seguro Social
+
+UMF 15
+México, DF
+
+Castaño
+
+y
+
+5
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Índice
+1. CLASIFICACIÓN ............................................................................................................................................. 7
+2. PREGUNTAS A RESPONDER......................................................................................................................... 9
+3. ASPECTOS GENERALES............................................................................................................................... 10
+3.1 Justificación ................................................................................................................................................................................................ 10
+3.2 Actualización del Año 2008 al 2014 .................................................................................................................................................. 11
+3.3 Objetivo........................................................................................................................................................................................................ 12
+3.4 Definición de hipertensión arterial sistémica ................................................................................................................................... 12
+
+4. EVIDENCIAS Y RECOMENDACIONES ........................................................................................................ 13
+4.1. Prevención primaria ................................................................................................................................................................................. 14
+4.1.1. Promoción a la salud ...................................................................................................................................................................... 14
+4.1.1.1. Estilos de vida ..................................................................................................................................................................................................... 14
+
+4.2. Prevención secundaria ............................................................................................................................................................................ 15
+4.2.1. Factores de riesgo........................................................................................................................................................................... 15
+4.2.2. Detección .......................................................................................................................................................................................... 16
+4.2.3. Diagnóstico (Protocolo de estudio) .......................................................................................................................................... 17
+4.2.3.1 Diagnóstico Clínico ............................................................................................................................................................................................ 17
+4.2.3.2. Pruebas Diagnósticas....................................................................................................................................................................................... 19
+
+4.2.4. Tratamiento farmacológico ........................................................................................................................................................ 21
+4.2.4.1.Sin condiciones especiales ............................................................................................................................................................................... 21
+(Ver cuadros de medicamentos) ........................................................................................................................................................................... 21
+
+4.2.4. Tratamiento Farmacológico ....................................................................................................................................................... 24
+4.2.4.2. En condiciones especiales ............................................................................................................................................................................... 24
+(Ver cuadros de medicamentos) ........................................................................................................................................................................... 24
+
+4.2.5 Tratamiento no farmacológico ................................................................................................................................................... 30
+4.2.5.1 Estilos de vida ...................................................................................................................................................................................................... 30
+
+4.3. Vigilancia y seguimiento ........................................................................................................................................................................ 37
+4.4. Técnicos administrativos....................................................................................................................................................................... 39
+4.5.1. Días de incapacidad ....................................................................................................................................................................... 39
+4.5. Criterios de referencia ............................................................................................................................................................................ 39
+
+5. ANEXOS ........................................................................................................................................................ 41
+5.1 Protocolo de Búsqueda............................................................................................................................................................................ 41
+5.1.1 Primera Etapa ................................................................................................................................................................................... 42
+5.1.2 Segunda Etapa.................................................................................................................................................................................. 45
+5.2 Escalas de Gradación ............................................................................................................................................................................... 46
+5.3 Escalas de Clasificación Clínica ............................................................................................................................................................. 49
+5.4 Diagramas de Flujo ................................................................................................................................................................................... 59
+5.5 Listado de Recursos ................................................................................................................................................................................. 61
+5.5.1 Cuadros de Medicamentos ........................................................................................................................................................... 61
+
+6. GLOSARIO ..................................................................................................................................................... 68
+7. BIBLIOGRAFÍA .............................................................................................................................................. 71
+8. AGRADECIMIENTOS .................................................................................................................................... 74
+9. COMITÉ ACADÉMICO .................................................................................................................................. 75
+10. DIRECTORIO SECTORIAL Y DEL CENTRO DESARROLLADOR ............................................................. 76
+11. COMITÉ NACIONAL DE GUÍAS DE PRÁCTICA CLÍNICA ....................................................................... 77
+6
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+1. Clasificación
+Catálogo Maestro: IMSS-076-08
+Profesionales de Medicina Familiar, Medicina Interna, Cardiología, Geriatría, Física y de Rehabilitación y Pediatría Médica
+la salud
+Clasificación de I10.X Hipertensión arterial esencial primaria
+la enfermedad
+Categoría de la Primer nivel de atención
+guía
+Médico general, familiar, internista, geriatra, cardiólogo y personal de enfermería, nutrición y terapia física y
+Usuarios
+de rehabilitación.
+potenciales
+Tipo
+de Instituto Mexicano del Seguro Social
+organización
+desarrolladora
+Población blanco Persona de cualquier sexo de 18 años o más, se excluyen embarazadas.
+Fuente
+de
+financiamiento /
+Patrocinador
+Intervenciones y
+actividades
+consideradas
+
+Impacto
+esperado en la
+salud
+
+Metodología de
+actualización
+
+Método
+integración
+
+de
+
+Instituto Mexicano del Seguro Social
+
+Criterios diagnósticos
+Biometría hemática
+Química sanguínea, Perfil de Lípidos
+Educación nutricional
+Ejercicio
+Fármacos: antihipertensivos, diuréticos.
+Control de la hipertensión arterial
+Mejora de la calidad de servicios de atención primaria a la salud
+Calidad de vida
+Diagnóstico temprano
+Tratamiento oportuno e integral
+Referencia oportuna y efectiva
+Satisfacción del usuario
+Reducción de la incidencia de complicaciones
+Evaluación de la guía a actualizar con el instrumento AGREE II, ratificación o rectificación de las preguntas a
+responder y conversión a preguntas clínicas estructuradas, búsqueda y revisión sistemática de la literatura:
+recuperación de guías internacionales o meta análisis, o ensayos clínicos aleatorizados y/o estudios de
+cohorte publicados que den respuesta a las preguntas planteadas, de los cuales se seleccionaran las fuentes
+con mayor puntaje obtenido en la evaluación de su metodología y las de mayor nivel en cuanto a gradación de
+evidencias y recomendaciones de acuerdo con la escala.
+Métodos empleados para colectar y seleccionar evidencia
+Protocolo sistematizado de búsqueda: Algoritmo de búsqueda reproducible en bases de datos electrónicas, en
+centros elaboradores o compiladores de guías, de revisiones sistemáticas, meta análisis, en sitios Web
+especializados. Búsqueda manual de la literatura.
+Número de fuentes documentales utilizadas: 1 de la guía original, y 29 utilizadas en la actualización, del
+periodo al periodo:>, especificadas por tipo en el anexo de Bibliografía.
+Total: 32
+Guías de Práctica Clínica: 7
+Revisiones sistemáticas/meta análisis: 9
+Ensayos controlados aleatorizados: 3
+Reportes de casos: 0
+Otras fuentes seleccionadas:13
+Validación por pares clínicos
+Validación del protocolo de búsqueda: Instituto Mexicano del Seguro Social
+Validación de la guía: Instituto Mexicano del Seguro Social
+
+Método
+de
+validación de la
+GPC actualizada:
+Conflicto
+de Todos los miembros del grupo de trabajo han declarado la ausencia de conflictos de interés
+interés
+IMSS-076-08
+Registro
+
+7
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Actualización
+
+Fecha de publicación de la actualización: 08/07/2014. Esta guía será actualizada nuevamente cuando exista
+evidencia que así lo determine o de manera programada, a los 3 a 5 años posteriores a la publicación de la
+actualización.
+
+Para mayor información sobre los aspectos metodológicos empleados en la construcción de esta guía se puede contactar al CENETECSalud a través de su portal http://www.cenetec.salud.gob.mx/
+
+8
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+2. Preguntas a Responder
+1. ¿Cuáles son los factores de riesgo de hipertensión arterial sistémica?
+2. ¿Cuáles son las acciones para prevenir o disminuir los factores de riesgo de hipertensión
+arterial en el primer nivel de atención?
+3. ¿Cuáles son los criterios diagnósticos para hipertensión arterial sistémica?
+4. ¿Cuáles son los esquemas terapéuticos recomendados para el tratamiento de la hipertensión
+arterial sistémica en el primer nivel de atención?
+5. ¿Cuáles son las recomendaciones para favorecer un adecuado control, vigilancia y seguimiento
+en los pacientes con hipertensión arterial sistémica en el primer nivel de atención?
+6. ¿Qué medidas se recomiendan al paciente para mantener un adecuado control de su presión
+arterial?
+7. ¿Qué otras recomendaciones son necesaria para pacientes en situaciones especiales en el
+primer nivel?
+8. ¿Cuáles son los criterios para la referencia de pacientes con hipertensión arterial a medicina
+interna, oftalmología, y cardiología, para una valoración y atención integral?
+
+9
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+3. Aspectos Generales
+3.1 Justificación
+La Hipertensión Arterial Sistémica (HAS) es un síndrome de etiología múltiple caracterizado por la elevación
+persistente de las cifras de presión arterial a cifras ≥ 140/90 ml/Hg (NOM-030-SSA2-1999). Es producto
+del incremento de la resistencia vascular periférica y se traduce en daño vascular sistémico.
+La prevalencia actual de HAS en México es 31.5% (IC 95% 29.8-33.1), y es más alta en adultos con obesidad
+(42.3%; IC 95% 39.4-45.3) que en adultos con índice de masa corporal (IMC) normal (18.5%; IC 95% 16.221.0), y en adultos con diabetes (65.6%; IC 95% 60.3-70.7) que sin esta enfermedad (27.6%, IC 95% 26.129.2). El 47.3% de los pacientes desconocen que padecía de HAS. Por grupos de mayor y menor edad, la
+distribución de la prevalencia de HAS fue 4.6 veces más baja en el grupo de 20 a 29 años de edad (p<0.05)
+que en el grupo de 70 a 79 años. De los adultos con HAS diagnosticada por un médico, sólo 73.6% reciben
+tratamiento farmacológico y menos de la mitad de estos tiene la enfermedad bajo control. (Encuesta
+Nacional de Salud y Nutrición; ENSANUT, 2012).
+La hipertensión arterial es considerada como un predictor de morbimortalidad para enfermedades
+cardiovasculares, entre las que destacan la enfermedad cerebro vascular, el infarto del miocardio, la
+insuficiencia cardíaca, la enfermedad arterial periférica y la insuficiencia renal. Para el control del paciente
+hipertenso, existe una gran variabilidad en el tratamiento farmacológico, en muchos casos, no se han
+instrumentado medidas no farmacológicas, y en un elevado porcentaje no existe un adecuado control de las
+cifras tensionales, con los consecuentes incrementos en el riesgo de daño en los órganos blanco, la
+discapacidad, los costos de la atención y su repercusión en la economía familiar, en los sistemas de salud y
+en el país. Proporcionar una herramienta eficiente a los médicos del primer nivel de atención, en la prevención
+(primaria y secundaria), el diagnóstico oportuno, detección temprana de complicaciones y el tratamiento
+adecuado de los pacientes con hipertensión.
+
+10
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+3.2 Actualización del Año 2008 al 2014
+La presente actualización refleja los cambios ocurridos alrededor del mundo y a través del tiempo respecto al
+abordaje del padecimiento relacionado con la salud tratado en esta guía.
+Cabe mencionar que algunas recomendaciones formuladas en esta versión fueron tomadas de guías
+recientes y adaptadas de acuerdo a los servicios de atención primaria a la salud del país y
+principalmente, a las Instituciones de Seguridad Social.
+La actualización es total. A continuación se describen las actualizaciones más relevantes:
+1. El Título de la guía (no se modificó)
+2. La actualización en Evidencias y Recomendaciones se realizó en:
+ Promoción de la salud
+ Prevención
+ Diagnóstico
+ Tratamiento
+ Pronóstico
+
+11
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+3.3 Objetivo
+La Guía de Práctica Clínica Diagnóstico y Tratamiento de la Hipertensión Arterial en el primer nivel
+de atención forma parte de las guías que integrarán el Catálogo Maestro de Guías de Práctica Clínica, el cual
+se instrumentará a través del Programa de Acción Específico: Desarrollo de Guías de Práctica Clínica, de
+acuerdo con las estrategias y líneas de acción que considera el Programa Nacional de Salud 2013-2018.
+La finalidad de este catálogo es establecer un referente nacional para orientar la toma de decisiones clínicas
+basadas en recomendaciones sustentadas en la mejor evidencia disponible.
+Esta guía pone a disposición del personal del primer nivel de atención las recomendaciones basadas en la
+mejor evidencia disponible con la intención de estandarizar las acciones nacionales sobre:
+1. Identificar y controlar los factores de riesgo para el desarrollo de la hipertensión arterial.
+2. Sistematizar los criterios para el diagnóstico de la hipertensión arterial en el primer nivel de atención.
+3. Proporcionar tratamiento farmacológico y no farmacológico oportuno a las condiciones del paciente
+hipertenso en el primer nivel de atención.
+4. Establecer los criterios de referencia del paciente hipertenso al segundo nivel de atención.
+Lo anterior favorecerá la mejora en la efectividad, seguridad y calidad de la atención médica, contribuyendo
+de esta manera al bienestar de las personas y de las comunidades, que constituye el objetivo central y la
+razón de ser de los servicios de salud.
+
+3.4 Definición de hipertensión arterial sistémica
+Hipertensión arterial sistémica esencial primaria: La hipertensión arterial sistémica es un síndrome de
+etiología múltiple caracterizado por la elevación persistente de las cifras de presión arterial a cifras ≥ 140/90
+ml/Hg.
+
+12
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+4. Evidencias y Recomendaciones
+Las recomendaciones señaladas en esta guía son producto del análisis de las fuentes de
+información obtenidas mediante el modelo de revisión sistemática de la literatura. La presentación
+de las Evidencias y Recomendaciones expresadas corresponde a la información disponible y
+organizada según criterios relacionados con las características cuantitativas, cualitativas, de diseño
+y tipo de resultados de los estudios que las originaron.
+
+Las evidencias y recomendaciones provenientes de las GPC utilizadas como documento base se
+gradaron de acuerdo a la escala original utilizada por cada una. En caso de evidencias y/o
+recomendaciones desarrolladas a partir de otro tipo de estudios, los autores utilizaron la escala:
+Shekelle modificada.
+Símbolos empleados en las tablas de Evidencias y Recomendaciones de esta guía:
+
+Evidencia
+
+E
+
+Recomendación
+
+R
+
+Punto de buena práctica
+
+
+
+En la columna correspondiente al nivel de evidencia y recomendación, el número y/o letra
+representan la calidad de la evidencia y/o fuerza de la recomendación, especificando debajo la
+escala de gradación empleada; las siglas que identifican el nombre del primer autor y el año de
+publicación se refiere a la cita bibliográfica de donde se obtuvo la información, como se observa en
+el ejemplo siguiente:
+
+Evidencia / Recomendación
+La valoración del riesgo para el desarrollo de UPP a través
+de la escala de “BRADEN” tiene una capacidad predictiva
+superior al juicio clínico del personal de salud.
+
+13
+
+Nivel / Grado
+Ia
+Shekelle
+Matheson, 2007
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+4.1. Prevención primaria
+4.1.1. Promoción a la salud
+4.1.1.1. Estilos de vida
+
+EVIDENCIA / RECOMENDACIÓN
+Existe una asociación entre la hipertensión arterial y el
+excedente de peso.
+
+Se recomienda aconsejar a las personas mantener un
+índice de masa corporal entre 18.5 y 24.9 kg/m2, para
+prevenir el riesgo de hipertensión arterial sistémica.
+Estudios epidemiológicos sugieren que la actividad física
+aeróbica puede ser benéfica para la prevención y
+tratamiento de la hipertensión arterial.
+
+NIVEL / GRADO
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+C
+Hackam (CHEP), 2013
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+En los pacientes hipertensos en los que el estrés podría
+contribuir a la elevación de la presión arterial, el manejo del
+estrés se considera una intervención benéfica.
+
+D
+Hackam (CHEP), 2013
+
+Para el manejo del estrés se recomienda terapias
+conductuales acompañadas de técnicas de relajación.
+
+B
+Hackam (CHEP), 2013
+
+Se recomienda un plan de alimentación con consumo alto
+de frutas y vegetales, así como con ingesta baja de grasas
+saturadas.
+
+I
+ESCH/ESC, 2013
+
+Existe una relación entre el hábito tabáquico y la elevación
+de la presión arterial.
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+14
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Aconsejar al paciente la suspensión del hábito tabáquico y
+ofrecer su integración a grupos de apoyo.
+
+Existe una relación entre el consumo excesivo de sal y la
+elevación de la presión arterial.
+
+Aconsejar al paciente la reducción de sal en la dieta diaria
+familiar.
+
+Sugerir al paciente, disminuir el consumo excesivo de café
+y otros productos con alto contenido en cafeína.
+
+Proponer al paciente, realizar cambios en su estilo de vida,
+dado que la suma de varias intervenciones reduce la
+presión sistólica 10 mm Hg o más, aproximadamente.
+
+I
+ESCH/ESC, 2013
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+C
+(E. Shekelle)
+ESCH/ESC, 2013
+
+C
+(E. Shekelle)
+ESCH/ESC, 2013
+
+Punto de Buena práctica
+
+4.2. Prevención secundaria
+4.2.1. Factores de riesgo
+Evidencia / Recomendación
+El Riesgo Cardio-Vascular (RCV) consiste en la suma de
+múltiples factores que comprenden: antecedentes
+heredofamiliares y personales, así como factores que
+pueden determinarse a través del interrogatorio, la
+exploración física y pruebas específicas de laboratorio y
+gabinete.
+La determinación del RCV de forma temprana permite la
+identificación de daño a órgano blanco, así como el
+establecimiento de las estrategias de tratamiento (inicio,
+intensidad, y combinación de medicamentos) y el
+pronóstico. Por consiguiente, el abordaje es diferente entre
+pacientes con RCV alto y bajo (Ver cuadro XIII).
+La evaluación de Daño a Órgano Blanco (DOB) se
+establece a nivel renal, con:
+ Identificación de microalbuminuria 30-300 mg/dl en el
+examen general de orina.
+ Tasa de filtración glomerular (calculado):
+
+15
+
+Nivel / Grado
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+III
+(E. Shekelle)
+NICE, 2011
+
+B
+ESCH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+30-60 ml/min
+
+La determinación de niveles de perfil de lípidos (colesterol,
+triglicéridos, lipoproteínas de alta y baja densidad) es
+esencial para establecer el RCV y elegir el tratamiento
+complementario, cuando se requiera.
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+La determinación de glucosa, así como la prueba de
+tolerancia a la glucosa es relevante sobre todo en
+pacientes que no tienen el diagnóstico de Diabetes Mellitus
+(DM); considerándose como riesgo cifras de glucosa de
+102 a125 mg/dl.
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+Se recomienda realizar exploración neurológica para
+identificar probable daño a órgano blanco (cerebro).
+
+C
+ESCH/ESC, 2013
+
+Se recomienda realizar examen de agudeza visual (tabla de
+Snellen), así como exploración de fondo de ojo para
+identificar retinopatía.
+Se recomienda estimar el riesgo RCV en pacientes adultos.
+
+C
+NICE 2011
+IIa
+ESCH/ESC, 2013
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+III
+(E. Shekelle)
+NICE, 2011
+
+4.2.2. Detección
+Evidencia / Recomendación
+La historia clínica y la exploración física en todos los
+pacientes candidatos de escrutinio preventivo logran la
+detección oportuna de hipertensión arterial, dirigiendo la
+búsqueda de causas de hipertensión secundaria, registro
+de factores de cardiovasculares y la identificación de Daño
+a Órgano Blanco (DOB) y otras enfermedades
+cardiovasculares.
+Con los antecedentes familiares del historial clínico puede
+investigarse la predisposición de hipertensión y
+enfermedades cardiovasculares.
+
+16
+
+Nivel / Grado
+
+C
+ESCH/ESC, 2013
+
+B
+ESCH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Por medio de la anamnesis y exploración física en el
+consultorio se logra hacer el diagnóstico clínico de la
+enfermedad.
+
+B
+ESCH/ESC, 2013
+
+El diagnóstico se establece tras dos mediciones de la
+presión arterial por consulta en al menos dos citas
+continuas.
+
+C
+ESCH/ESC, 2013
+
+La palpación del pulso en reposo determina el ritmo
+cardiaco y permite identificar arritmias, especialmente
+fibrilación auricular.
+
+B
+ESCH/ESC, 2013
+
+Es conveniente el escrutinio de la hipertensión arterial a
+través de la toma periódica de la presión arterial mediante
+la estrategia oportunista en la consulta médica.
+
+I
+ESCH/ESC, 2013
+
+Es preferible que las determinaciones de la presión arterial
+en las unidades de salud se realicen por personal de
+enfermería capacitado (Cuadro IV).
+
+Punto de Buena Práctica
+
+4.2.3. Diagnóstico (Protocolo de estudio)
+4.2.3.1 Diagnóstico Clínico
+Evidencia / Recomendación
+Se considera diagnóstico probable de HAS cuando exista
+elevación de la presión arterial sistémica con cifras iguales
+o mayores a 140/90 mm Hg, registradas por personal
+capacitado.
+
+Nivel / Grado
+III
+(E. Shekelle)
+ES ESCH/ESC, 2013
+NICE, 2011
+Hackam (CHEP), 2013
+
+Los pacientes que acudan por datos de alarma o por
+urgencia hipertensiva se diagnostican como HAS, desde la
+primera consulta médica.
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+NICE, 2011
+
+De acuerdo a la presión arterial, los pacientes se
+estadifican en (Cuadro V):
+ Óptima,
+ Normal,
+ Normal alta,
+ Hipertensión (3 grados)
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+17
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Por medio del modelo SCORE (Sistematic, Coronary, Risk,
+Evaluation, por sus siglas en inglés), puede establecerse el
+riesgo de fallecer asociado a enfermedad cardiovascular; el
+puntaje de este modelo se estima con base en la edad,
+sexo, hábito tabáquico, colesterol total y presión sistólica
+del paciente.
+
+III
+(E. Shekelle)
+ESCH/ESC, 2013
+
+El modelo de SCORE se aplica en pacientes con HAS
+asintomáticos, sin enfermedad cardiovascular, renal o
+diabetes mellitus.
+
+B
+ESCH/ESC, 2013
+
+Establecer diagnóstico de HAS en la segunda consulta
+médica (al mes de la primera determinación de la presión
+arterial) cuando el paciente manifieste:
+ > 140/90 mm Hg,
+ Bitácora positiva (registro de presión arterial en su
+domicilio) o
+ Ambas situaciones
+
+D
+Hackam (CHEP), 2013
+C
+ESH/ESC, 2013
+
+Integrar diagnóstico de HAS desde la primera consulta
+médica en todo paciente diabético con DOB o datos de
+insuficiencia renal de moderada a grave (filtración
+glomerular <60 mL/min/m2), que presente cifras de más
+de 140/90 mm Hg.
+Se recomienda en personas con HAS, asintomáticas,
+sin enfermedad cardiovascular, renal o diabetes la
+estratificación del riesgo cardiovascular utilizando el
+modelo SCORE.
+Se recomienda la búsqueda intencionada de daño a órgano
+blanco particularmente, en aquellos casos con riesgo
+moderado o alto, dado que predice la mortalidad
+independientemente del puntaje de SCORE (Cuadro VI).
+Realizar una adecuada historia clínica con anamnesis
+detallada incluyendo historia familiar, factores de riesgo y
+una exploración física completa, para identificar la
+presencia de signos y síntomas relacionados a hipertensión
+secundaria, así como establecer el grado de DOB.
+La somatometría incluye (en posición de pie):
+ Peso
+ Talla
+ Circunferencia de la cintura, y
+ Cálculo del Índice de Masa Corporal (IMC)
+La exploración vascular incluye la auscultación de
+carótidas, corazón y arterias renales; tiene como objetivo
+la búsqueda intencionada de soplos. La presencia de soplos
+justifica la necesidad de otros estudios más específicos
+para DOB.
+
+18
+
+D
+Hackam (CHEP), 2013
+I
+ESH/ESC, 2013
+A
+Hackam (CHEP), 2013
+
+IIa
+ESH/ESC, 2013
+
+I
+ESH/ESC, 2013
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+La palpación de un pulso irregular puede sugerir la
+presencia de fibrilación auricular.
+
+Como parte de la exploración, la determinación de la
+presión arterial se realiza conforme a la técnica
+previamente descrita.
+
+B
+ESH/ESC, 2013
+
+C
+(E. Shekelle)
+ESH/ESC, 2013
+
+Se recomienda tomar el pulso en reposo desde la primera
+consulta médica.
+
+I
+ESH /ESC, 2013
+
+En la exploración física inicial se recomienda investigar, a
+profundidad:
+ Datos clínicos de DOB
+ Datos sugestivos de hipertensión secundaria.
+
+III
+ESH/ESC, 2013
+
+4.2.3.2. Pruebas Diagnósticas
+
+Evidencia / Recomendación
+Los exámenes de rutina aceptados internacionalmente
+para estudio de la enfermedad y daño a órgano blanco, así
+como identificación de comorbilidades asociadas en un
+paciente con HAS, son:
+ Citometría hemática
+ Química sanguínea y electrolíticos séricos (cloro, sodio
+y potasio)
+ Ácido úrico
+ Perfil del lípidos (HDL, LDL; colesterol total y
+triglicéridos)
+ Electrocardiograma (ECG)
+ Examen general de orina
+
+19
+
+Nivel / Grado
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Entre las pruebas específicas que se realizan para
+búsqueda de DOB, incluyen:
+
+
+
+
+
+
+
+Hemoglobina glucosilada
+Proteinuria cuantitativa
+Ecocardiograma
+Monitoreo Holter
+Ultrasonografía (vascular, carotideo, arterial periférico,
+y renal)
+Fundoscopia
+
+El protocolo de estudio del paciente con HAS consiste en:
+ Citometría hemática
+ Química sanguínea y
+ Electrolíticos séricos,
+ Ácido úrico
+ Perfil del lípidos incluyendo HDL, LDL; colesterol total y
+triglicéridos y
+ Examen general de orina
+
+En establecimientos donde se cuenten con los recursos y el
+personal capacitado para la realización e interpretación de
+ECG, se sugiere un estudio basal de 12 derivaciones, con el
+propósito de investigar hipertrofia ventricular y bloqueo.
+
+En establecimientos donde se cuenten con los recursos y el
+personal capacitado para la realización e interpretación del
+monitoreo de Holter (MAPA), se sugiere un estudio en las
+siguientes condiciones:
+ Discordancia de la presión arterial registrada en casa y
+el consultorio,
+ Sospecha de hipertensión nocturna por daño renal o
+apnea del sueño,
+ Sospecha de hipotensión autonómica.
+
+En aquellos lugares, en los que se cuenten con el recurso y
+personal capacitado, se sugiere la realización de teleradiografía de tórax (posterior-anterior), como parte del
+protocolo de estudio
+
+20
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+C
+(E. Shekelle)
+ESH/ESC, 2013
+D
+Hackam (CHEP), 2013
+
+C
+(E. Shekelle)
+ESH and ESC, 2013
+D
+Hackam (CHEP), 2013
+
+C
+(E. Shekelle)
+ESH/ESC, 2013
+
+Punto de buena práctica
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+4.2.4. Tratamiento farmacológico
+4.2.4.1.Sin condiciones especiales
+(Ver cuadros de medicamentos)
+
+Evidencia / Recomendación
+El tratamiento farmacológico reduce el RCV, y eventos
+cardiovasculares y cerebrovasculares, así como la muerte
+del paciente con HAS.
+
+Diversos regímenes terapéuticos pueden utilizarse para
+alcanzar y mantener la meta recomendada. Sin embargo,
+la calidad de la evidencia es limitada para analizar los
+desenlaces (eventos cardiovasculares, cerebrovasculares,
+renales y muerte), de estos regímenes.
+
+El tratamiento de inicio en pacientes con HAS comprende
+(fármacos de primera línea):
+1. Diuréticos tiazidicos (o clortalidona),
+2. beta-bloqueadores
+3. IECA (Inhibidores de la Enzima Convertidora de
+Angiotensina)
+4. ARA-II (Antagonistas de los Receptores de
+Angiotensina II)
+5. Calcio-antagonista de acción prolongada.
+
+Los tratamientos de segunda línea constituyen la
+combinación de 2 o más fármacos de la primera línea.
+Diuréticos de tiazidas, IECA, ARA II, calcio-antagonistas o
+beta-bloqueadores se recomiendan para el inicio y
+mantenimiento de los tratamientos, tanto para
+monoterapia como combinada.
+
+21
+
+Nivel / Grado
+III
+(E. Shekelle)
+NICE, 2011
+III
+(E. Shekelle)
+AACF/AHA, 2011
+
+E
+JNC-8, 2014
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+Ia
+ESH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Iniciar el tratamiento
+diuréticos tiazidicos.
+
+como monoterapia,
+
+utilizando
+
+A
+Hackam (CHEP), 2013
+
+Se recomienda utilizar fármacos de primera línea con
+prescripción razonada, a dosis bajas e incrementar
+gradualmente, dependiendo de la respuesta y control de la
+presión arterial.
+
+C
+(E. Shekelle)
+JNC-7, 2003
+
+Antes de agregar un segundo o tercer fármaco en el
+régimen elegido, se sugiere administrar las dosis
+máximas de los fármacos prescritos, que sean toleradas
+por el paciente.
+
+C
+(E. Shekelle)
+NICE, 2011
+
+En caso de requerir la combinación de 3 fármacos, se
+recomienda:
+1) Tiazidas,
+2) más IECA o ARA II,
+3) más calcio-antagonistas.
+
+A
+ESH/ESC 2013
+III
+(E. Shekelle)
+NICE, 2011
+
+Basado en estudios de ensayos clínicos la combinación que
+no puede utilizarse simultáneamente, son 2 diferentes del
+sistema renina-angiotensina.
+
+A
+ESH/ESC, 2013
+
+No combinar IECA y ARA-II en un mismo régimen
+terapéutico, para el paciente con HAS.
+
+A
+Hackam (CHEP), 2013
+B
+NICE, 2011
+III
+ESH/ESC, 2013
+
+Prescribir tratamiento antihipertensivo cuando la PAS
+≥140mmHg y/o PAD ≥90mmHg, registrada en la
+bitácora del paciente y/o en la segunda consulta, después
+de las 2 semanas o simultáneamente, al inicio de los
+cambios de estilo de vida adoptados por el paciente.
+
+Iniciar tratamiento farmacológico en pacientes con PAS
+≥160mmHg PAD ≥100mmHg, sin DOB ni otros
+factores de RCV.
+
+22
+
+IIa
+ESH/ESC, 2013
+
+A
+Hackam (CHEP), 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Considerar para los regímenes, combinaciones de
+medicamentos de primera línea cuando las cifras de
+presión arterial continúan por arriba de la meta ≥20 mm
+Hg para PAS o ≥10 mm Hg para PAD.
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+Para el tratamiento de hipertensión arterial sistólica
+aislada el tratamiento inicial se basa en diuréticos del tipo
+de tiazidas, calcio-antagonistas de acción prolongada o
+ARA II.
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+A, B
+Hackam (CHEP), 2013
+
+Para el tratamiento de hipertensión sistólica aislada no
+controlada, se sugiere la combinación de dos fármacos de
+primera línea o en presencia de eventos adversos utilizar
+alfa-bloqueadores, IECA o calcio antagonista.
+
+El inicio inmediato del tratamiento farmacológico se
+recomienda en personas con PAS ≥ 180 mm Hg y PAD
+≥110 mm Hg, con cualquier nivel de RCV.
+
+Para el tratamiento de la hipertensión resistente
+considerar el uso de espironolactona a dosis de 25 mg
+cada 24 horas, vigilando su utilización en enfermos con
+disminución de la Tasa de Filtración Glomerular (TFG).
+
+Para el caso de pobre tolerancia o contraindicaciones
+a espironolactona, o falta de eficacia terapéutica
+considerar la utilización de alfa o beta-bloqueadores.
+
+En pacientes que presenten un adecuado control de la
+presión arterial (<140/90 mm Hg) con un régimen que
+incluya un beta-bloqueador utilizado por largo tiempo; no
+representa una indicación absoluta para remplazarse.
+
+23
+
+D
+Hackam (CHEP), 2013
+
+C
+ESH/ESC, 2013
+D
+Hackam (CHEP), 2013
+
+C
+(E. Shekelle)
+ESH/ESC, 2013
+
+C
+(E. Shekelle)
+ESH/ESC, 2013
+
+C
+(E. Shekelle)
+NICE, 2006
+C
+(E. Shekelle)
+NICE, 2011
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+4.2.4. Tratamiento Farmacológico
+4.2.4.2. En condiciones especiales
+(Ver cuadros de medicamentos)
+Evidencia / Recomendación
+Varios ensayos clínicos realizados en ancianos han
+demostrado reducción de eventos cardiovasculares, al
+disminuir la presión arterial; los promedios de PAS
+alcanzados no fueron menos de 140 mm Hg.
+Basado en los resultados de dos ensayos clínicos, no
+existen diferencias en el beneficio de reducir la PAS por
+debajo de 140 mm Hg.
+
+Nivel / Grado
+III
+(E. Shekelle)
+AACF/AHA, 2011
+
+III
+(E. Shekelle)
+AACF/AHA, 2011
+
+En una revisión sistemática (n=24,000 ancianos), se
+encontró que el tratamiento farmacológico disminuye la
+incidencia
+de
+eventos
+cardiovasculares
+y
+cerebrovasculares.
+
+III
+(E. Shekelle)
+AACF/AHA, 2011
+
+En el paciente anciano, el tratamiento se inicia cuando la
+presión arterial sistólica es ≥160 mm Hg.
+
+A
+ESH/ESC 2013
+
+En un paciente anciano con PAS ≥160 mm Hg., se
+recomienda iniciar tratamiento farmacológico.
+El tratamiento antihipertensivo se considera en el anciano<
+80 años de edad continuarlo cuando la PAS sea de 140 a
+159 mm Hg, y el régimen terapéutico sea tolerado
+adecuadamente.
+Uno de los regímenes propuestos para el tratamiento
+farmacológico, es el inicio de los fármacos de primera línea
+con prescripción razonada a dosis bajas e incrementos
+graduales, dependiendo de la respuesta de la PA, a la
+máxima dosis tolerada por el paciente anciano; con
+vigilancia intencionada al fenómeno de hipotensión
+ortostática.
+
+24
+
+Ia
+ESH/ESC, 2013
+
+C
+ESH/ESC, 2013
+
+III
+(E. Shekelle)
+JNC-8, 2014
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Persistiendo el descontrol hipertensivo al fármaco de
+primera línea, después de alcanzar la dosis máxima
+tolerada se adiciona un segundo de fármaco de otra
+clase (primera línea).
+
+III
+(E. Shekelle)
+JNC-8, 2014.
+
+La meta para la presión diastólica es no menos de 65 mm
+Hg, por el incremento en el riego de hipo perfusión
+coronaria.
+
+Ia
+(E. Shekelle)
+Staessen JA, 2000
+Ia
+(E. Shekelle)
+Pastor-Barriuso, 2003
+Ia
+(E. Shekelle)
+Protogerou, 2007
+
+Cuando no se inicia con un diurético de tiazidas de primera
+elección en el paciente anciano, se recomienda adicionar
+este al régimen del tratamiento como segunda línea.
+
+C
+(E. Shekelle)
+JNC-7, 2003.
+
+Persistiendo el descontrol hipertensivo con el tratamiento
+de dos fármacos, se adiciona un tercer de fármaco de
+otra clase de primera línea.
+
+III
+(E. Shekelle)
+JNC-7, 2003.
+
+Ante la falla terapéutica de 3 fármacos, se
+recomienda buscar las posibles causas, entre ellas:
+a. pobre adherencia al tratamiento
+b. sobrecarga de volumen diastólico
+c. interacciones
+farmacológicas
+(ver
+cuadro
+medicamentos)
+d. condiciones
+asociadas
+(obesidad,
+tabaquismo,
+consumo excesivo de alcohol, resistencia a la insulina,
+pseudoresistencia
+al
+tratamiento
+y
+pseudohipertensión).
+
+C
+(E. Shekelle)
+JNC-7, 2003
+
+Un grupo de investigadores propuso una meta de
+PAS<150 mm Hg en adultos de 60 años o más, sin
+embargo; la evidencia es insuficiente. Algunos de ellos,
+consideran que se necesita más investigación para
+identificar las metas óptimas de la PAS en pacientes con
+presión arterial alta.
+
+III
+(E. Shekelle)
+JNC-8, 2013
+
+En paciente adulto mayor <80 años, se considera meta
+terapéutica de PAS < 140 mm Hg, y de PAD no menos
+de 65 mm Hg, de observarse tolerancia al tratamiento.
+
+IIb
+ESH/ESC, 2013
+
+25
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+En un paciente adulto mayor >80 años con una PAS
+inicial >160 mm Hg, se recomienda reducir la PA entre
+140 y 150 mm Hg, una vez probada una buena condición
+física y mental, así como disminuir la dosis de los fármacos
+de acuerdo a la tolerancia y sintomatología.
+
+I
+ESH/ESC, 2013
+
+En un paciente anciano con fragilidad, se recomienda
+depositar la decisión de terapia antihipertensiva al médico
+tratante y bajo el monitoreo de los efectos clínicos del
+tratamiento.
+
+I
+ESH/ESC, 2013
+
+El tratamiento anti hipertensivo bien tolerado en un
+paciente anciano, que alcanza los 80 años de edad,
+considerar su continuidad.
+
+IIa
+ESH/ESC, 2013
+
+En un paciente anciano, se recomiendan diuréticos y
+calcio antagonistas como fármacos de primera línea
+para la hipertensión arterial sistólica aislada.
+
+I
+ESH/ESC, 2013
+
+Los beta-bloqueadores no se utilizan como agentes de
+primera línea en pacientes jóvenes particularmente,
+aquellos con intolerancia o contraindicación a IECA y ARA
+II, y en mujeres de edad fértil o pacientes con evidencia de
+aumento de la actividad simpática.
+
+III
+(E. Shekelle)
+NICE, 2011
+
+En el anciano se demostró que el uso de betabloqueadores se asoció con un alto riesgo de eventos
+cerebrovasculares (16%), comparado con cualquier otra
+clase de fármaco de primera línea.
+Se sugiere incluir en el esquema terapéutico de un
+paciente anciano con HAS, fármacos de primera
+línea que no sean beta-bloqueadores.
+
+Prescribir terapia antihipertensiva si PAS es 140 a 160
+mm Hg en presencia de DOB.
+Se recomienda dar tratamiento farmacológico en
+pacientes con HAS, con RCV alto por DOB, Diabetes
+Mellitus (DM), Enfermedad Cardiovascular (ECV) o
+Enfermedad Renal Crónica (ERC).
+
+26
+
+III
+(E. Shekelle)
+AACF/AHA, 2011
+
+C
+(E. Shekelle)
+AACF/AHA, 2011
+
+C
+Hackam (CHEP), 2013
+
+I
+ESH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+En pacientes de HAS con DM, iniciar tratamiento cuando la
+PAS se encuentre >140 mm Hg.
+
+En pacientes de HAS, con DM y evidencia de proteinuria o
+microalbuminuria se prefiere el uso de ARA II.
+
+En el paciente con DM se recomienda, como orden de
+preferencia en la elección del fármaco (de primera línea),
+los siguientes:
+1. IECA o ARA II,
+2. Calcio-antagonistas, y
+
+I
+ESH/ESC, 2013
+
+A
+ESH-ESC, 2013
+
+A
+Hackam (CHEP), 2013
+
+3. Tiazidas a dosis bajas
+Realizar la elección del tratamiento farmacológico en el
+paciente con DM valorando siempre la presencia de ERC,
+así como la excreción urinaria de albumina y otras
+comorbilidades.
+
+Utilizar terapia combinada con:
+1) IECA o ARA II especialmente en enfermos con diabetes
+y proteinuria o microalbuminuria,
+2) Más calcioantagonistas de efecto prolongado
+
+A
+Hackam (CHEP), 2013
+
+A
+Hackam (CHEP), 2013
+A
+Hackam (CHEP), 2013
+
+En el paciente con DM, la meta recomendada es PAS <130
+mm Hg y PAD < 80 mm Hg.
+
+C
+Hackam (CHEP), 2013
+A
+Hackam (CHEP), 2013
+
+Se recomienda en pacientes con síndrome metabólico:
+1) Medidas generales:
+a. Bajar de peso y
+b. Realizar un programa de ejercicios aeróbicos.
+2) Utilizar para la terapia combinada:
+a. IECA o ARA II, especialmente en enfermos con
+proteinuria o microalbuminuria
+b. Calcio-antagonistas de efecto prolongado
+
+IIa
+ESH/ESC, 2013
+
+c. Diuréticos ahorradores de potasio.
+
+27
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+En pacientes portadores de angina o infarto del miocardio
+con hipertensión arterial se utiliza la combinación de un
+beta-bloqueador y un IECA. En caso de intolerancia a IECA
+puede remplazarse con ARA II o calcio antagonistas en
+caso de existir contraindicación para el uso de betabloqueadores.
+
+III
+(E. Shekelle)
+NICE, 2011
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+La terapia inicial con beta-bloqueadores es igual de
+efectiva que otros agentes antihipertensivos para prevenir
+desenlaces coronarios en enfermos con infarto reciente y
+falla ventricular. Así como, para reducir el riesgo de
+exacerbaciones y la mortalidad en enfermedad pulmonar
+obstructiva crónica.
+
+A
+ESH/ESC, 2013
+
+Los calcioantagonistas tienen mayor efectividad que los
+beta-bloqueadores para reducir la hipertrofia ventricular
+izquierda.
+
+A
+ESH/ESC, 2013
+
+En pacientes con hipertrofia de ventrículo izquierdo no se
+usa vasodilatadores como hidralazina o minoxidil.
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+En paciente con cardiopatía isquémica se recomienda
+mantener cifras de <130/80 mm Hg.
+
+C
+(E. Shekelle)
+NICE, 2011
+
+Pacientes con angina estable, se prefiere el uso de los
+beta-bloqueadores o calcio antagonistas como terapia
+inicial.
+
+B
+Hackam (CHEP), 2013
+
+En enfermos con infarto reciente se recomiendan betabloqueadores.
+
+En enfermos con alto RCV, se recomienda la combinación
+de un IECA y un calcio-antagonista.
+
+28
+
+IIa
+ESH/ESC, 2013
+
+A
+Hackam (CHEP), 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+No se recomienda prescribir calcio-antagonistas en
+presencia de insuficiencia cardíaca con congestión
+pulmonar o evidencia radiológica de la misma.
+
+D
+Hackam (CHEP), 2013
+
+En insuficiencia cardiaca y disfunción sistólica, los
+IECA y los beta-bloqueadores se recomiendan como
+terapia inicial.
+
+A
+Hackam (CHEP), 2013
+
+En enfermos con insuficiencia cardíaca o disfunción
+grave del ventrículo izquierdo, se recomienda para el
+régimen terapéutico:
+a. Diuréticos,
+b. beta-bloqueadores,
+
+IIa
+ESH/ESC, 2013
+
+c. IECA o ARA II.
+Utilizar calcio-antagonistas cuando los beta-bloqueadores
+están contraindicados o no son efectivos.
+
+A
+Hackam (CHEP), 2013
+
+En enfermedad cardiovascular:
+1) Alcanzar la meta recomendable:
+PAS <140 mm Hg
+2) Utilizar terapia combinada con:
+a. IECA o ARA II
+
+A, C
+Hackam (CHEP), 2013
+
+b. Más calcio-antagonista
+En enfermedades cardiovasculares con daño en arterias
+coronarias, evitarse el uso de Nifedipino de acción corta.
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+En pacientes con un evento agudo vascular cerebral no
+emplearse ni ECA ni ARA, a menos que se eleve
+extremadamente la presión arterial.
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+En pacientes con HAS asociada a enfermedad
+cerebrovascular se recomienda la combinación de IECA y
+diuréticos de tiazidas.
+
+B
+Hackam (CHEP), 2013
+
+29
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+En pacientes con enfermedad arterial periférica grave se ha
+propuesto evitar el uso de beta-bloqueadores.
+
+En pacientes con HAS e insuficiencia renal no asociada
+a DM y en ausencia de estenosis de la arteria renal,
+se recomienda de primera línea: IECA.
+
+En pacientes con DM y ERC con sobrecarga de volumen de
+líquido extracelular, se ha propuesto el uso de diuréticos de
+asa.
+
+Hipertensión arterial y nefropatía diabética o no
+diabética, se recomienda:
+1) Utilizar terapia combinada con:
+a. IECA o ARA II
+b. Calcioantagonistas de efecto prolongado
+c. Los diuréticos de asa reemplazan a las tiazidas
+cuando la creatinina sérica es 1.5 mg/dL o la TFG
+es <30 mL/min/1.73 m.
+
+III
+Hackam (CHEP), 2013
+
+A
+Hackam (CHEP), 2013
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+II
+ESH/ESC, 2013
+
+2) Mantener la meta recomendable PAS <130 mm Hg, en
+presencia de proteinuria.
+
+4.2.5 Tratamiento no farmacológico
+4.2.5.1 Estilos de vida
+
+Evidencia / Recomendación
+Los cambios en el estilo de vida son la piedra angular en el
+tratamiento de la HAS.
+
+30
+
+Nivel / Grado
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+El estudio CARDIOTENS (España) reveló que la falta de
+control de la PA se asocia a factores relacionados con el
+estilo de vida y la alimentación, concretamente la obesidad
+y el tabaquismo.
+En pacientes con presión arterial normal alta, las
+modificaciones en el estilo de vida, retrasan la progresión
+de la hipertensión arterial.
+
+IIa
+(E. Shekelle)
+Cordero, 2011
+III
+(E. Shekelle)
+NICE, 2011
+III
+(E. Shekelle)
+Brook RD, 2013
+
+Los estudios clínicos demuestran que el efecto hipotensor
+de la modificación de los estilos de vida puede ser
+equivalente al tratamiento con fármacos, aunque el
+principal inconveniente a largo plazo es el bajo nivel de
+adherencia.
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+Para mejorar los niveles de la presión arterial, se
+recomienda realizar cambios en el estilo de vida que
+incluyan una mejora en la alimentación y actividad física
+diaria.
+
+B
+Hackam (CHEP), 2013
+IA
+Eckel RH (AHA/ACC), 2013
+
+Se ha demostrado que el consumo de sal menos de 5
+gramos, al día reduce la PAS en 4 a 5 mm Hg en pacientes
+con HAS y 1 a 2 mm Hg en pacientes sin HAS.
+
+B
+ESH/ESC, 2013
+
+La ingesta de menos de 2 gramos de sodio disminuye la
+PAS: 3.47 mm Hg (0.76-6.18) y en PAD: 1.81 mm Hg
+(0.54-3.08).
+
+Ia
+(E. Shekelle)
+Aburto, 2013
+
+Se ha demostrado que el consumo de sal de 6 gramos al
+día, reduce la PAS en 5.8 mm Hg (2.5-9.2, p=0.001),
+ajustado por edad, grupo étnico, y presión arterial.
+
+Ia
+(E. Shekelle)
+Feng J, 2013
+
+En mujeres sanas post-menopaúsicas, sin terapia de
+reemplazo hormonal, la sensibilidad a la sal aumenta como
+resultado de reducción de biodisponibilidad del óxido
+nítrico (ON) asociado a los niveles incrementados del
+agonista de la sintetasa de ON: arginina-L-dimetil
+asimétrica.
+
+III
+(E. Shekelle)
+Coleylewright, 2008
+
+31
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Las recomendaciones actuales de reducir la ingesta de sal
+de 9-12 a 5-6 gramos al día tendrán un efecto importante
+sobre la PA, pero no es lo ideal. Una reducción mayor de 3
+gramos al día tendrá un efecto mayor y deberá ser el
+objetivo a largo plazo a nivel poblacional, ya que se puede
+reducir el riesgo de enfermedades cardiovasculares.
+Para pacientes con HAS se recomienda una ingesta de
+sodio:
+ 1,500 mg/día en menores de 50 años
+ 1,300 mg/día en 51 a 70 años
+ 1,200 mg/ día en mayores de 70 años
+
+Aconsejar al paciente un consumo de sal de 5-6 gramos
+por día y reducir a 3 gramos por día, por sus posibles
+efectos beneficiosos largo plazo.
+
+Es recomendable implementar políticas de salud que
+incluyan la participación y responsabilidad social de la
+industria alimentaria, para lograr la disminución en el
+consumo de sal en la dieta de la población ya que el 80%
+del consumo total de sal por día se encuentra en los
+productos industrializados.
+La dieta saludable y baja en calorías tiene un efecto
+modesto en la reducción de la presión arterial.
+
+Ia
+(E. Shekelle)
+Cochrane Database of
+Systemic, 2013
+
+B
+Hackam (CHEP), 2013
+
+A
+(E. Shekelle)
+Cochrane Database of
+Systemic, 2013
+A
+(E. Shekelle)
+Feng, 2013
+I
+ESH-ESC, 2013
+C
+(E. Shekelle)
+ESH/ESC, 2013
+
+B
+NICE, 2011
+
+La hipertensión arterial sistémica está relacionada con el
+sobrepeso y por ende, la reducción en el peso corporal está
+ligada con una disminución de la presión arterial.
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+En pacientes con sobrepeso y obesidad, la reducción de 5
+Kg. de peso corporal disminuye, en promedio, la PAS y PAD
+4.4 y 3.6 mm Hg, respectivamente.
+
+B
+ESH/ESC, 2013
+
+En pacientes hipertensos se recomienda reducción de peso
+corporal para lograr un IMC de 25 Kg/m.2
+
+32
+
+I
+ESH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Una dieta rica en frutas y verduras, baja en grasas
+saturadas y totales (plan DASH) reduce la presión arterial
+de 8 a 14 mm Hg.
+
+Proporcionar al paciente los siguientes consejos para
+disminuir el consumo de sal y sodio:
+a. Escoger comidas y condimentos con poca cantidad de
+sal.
+b. Comprar vegetales frescos, congelados o enlatados sin
+sal añadida.
+c. Consumir aves frescas, pescados y cortes de carne
+delgado sin grasa en vez de los tipos enlatados,
+ahumados o procesados.
+d. Escoger para el desayuno cereales con bajo contenido
+de sodio
+e. Evitar el consumo de alimentos curados (jamón, tocino,
+etc.), alimentos enlatados en agua salada y
+condimentos.
+f. Limitar el consumo de salsa de soya, salsa teriyaki,
+inglesa, cátsup y mostaza.
+g. Cocinar con hierbas, especias, limón, lima, vinagre o
+mezclas de condimentos sin sal.
+h. Comenzar por reducir la cantidad de sal que
+habitualmente se usa a la mitad.
+i. Disminuir el consumo de arroz instantáneo y comidas
+precocinadas.
+j. Escoger frutas y verduras frescas en lugar de aperitivos
+o botanas saladas.
+Las frutas frescas son recomendadas, aunque con
+precaución; debido a su alto contenido de hidratos de
+carbono pueden promover ganancia de peso.
+
+Se recomienda 4 a 5 frutas por día (por ejemplo: naranja,
+plátano, toronja o melón, entre otros).
+
+33
+
+Ib
+(E. Shekelle)
+Sacks, 2001
+Vollmer, 2001
+III
+(E. Shekelle)
+Chobanian, 2000
+
+Punto de Buena Práctica
+
+I
+ESH/ESC,
+2013
+
+C
+(E. Shekelle)
+A
+(E. Shekelle)
+ESH/ESC,
+2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+El consumo de suplementos de potasio, calcio y magnesio
+no se utiliza para el tratamiento de HAS.
+
+B
+Hackam (CHEP), 2013
+
+Se recomienda aumentar el consumo de vegetales, fibra
+soluble, granos enteros y proteínas de origen vegetal, así
+como reducir el consumo de grasas saturadas.
+
+I
+ESH/ESC, 2013
+
+La dieta mediterránea ha sido evaluada por varios estudios
+y meta-análisis concluyendo que produce un efecto
+cardioprotector.
+
+B
+ESH/ESC, 2013
+
+En pacientes con HAS, se recomienda:
+a. Consumo de pescado por lo menos 2 veces por
+semana.
+b. Consumo de frutas y vegetales de 300 a 400 gr al día.
+
+C
+(E. Shekelle)
+ESH/ESC,
+2013
+
+La combinación de la dieta DASH (Dietary Approaches to
+Stop Hypertension, por sus siglas en inglés) con ejercicio y
+pérdida de peso favorece la reducción de la presión arterial
+y la masa ventricular izquierda.
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+El plan alimentario de DASH reduce la PAS de 8 a 14 mm
+Hg. Consiste en la reducción del consumo de grasas, carne
+roja, dulces y bebidas azucaradas, reemplazándolas con
+granos integrales, carne de aves, productos lácteos bajos
+en grasas, pescado y frutos secos.
+
+III
+(E. Shekelle)
+Sosa-Rosado, 2010
+
+El plan alimentario de DASH es recomendado por la
+Asociación Americana del Corazón ([AHA]; American
+Heart Association, por sus siglas en inglés).
+
+III
+(E. Shekelle)
+Sosa-Rosado, 2010
+
+Se recomienda al paciente con HAS adoptar un plan
+alimenticio (DASH) con alto consumo de frutas, verduras y
+productos lácteos bajos en grasa, fibra dietética y soluble,
+granos enteros y proteínas de origen vegetal, así como con
+bajo contenido grasas saturadas y colesterol.
+
+B
+Hackam (CHEP), 2013
+
+El plan DASH es rico en magnesio, potasio, calcio, proteínas
+y fibra, considerar que la interacción de todos estos
+nutrientes ayuda a reducir la presión arterial.
+
+Punto de Buena Práctica
+
+34
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Una revisión sistemática reciente encontró que la mayoría
+de los estudios disponibles eran de calidad insuficiente para
+elaborar una recomendación a favor o en contra del
+consumo del café en el paciente con HAS.
+
+El consumo moderado de alcohol de no más de 20 a 30 gr
+de etanol al día en hombres y no más de 10 a 20 gr en
+mujeres, reduce la presión arterial.
+En adultos sanos, se recomienda limitar el consumo de
+alcohol a 2 copas o menos por día, sin exceder por semana:
+14 bebidas estándar en hombres y 9 bebidas estándar en
+mujeres.
+(Por ejemplo: una bebida estándar [comercial] equivale a:
+13.6 gr o 17.2 ml de etanol o aproximadamente, 44 ml
+[1.5 oz] de 80° [40%] bebidas preparadas; 355 ml [12 oz]
+de cerveza a 5%; o 148 ml [5 oz] de vino a 12%).
+
+La reducción en el consumo de alcohol disminuye 2 y 4 mm
+Hg la PAS y PAD, respectivamente.
+Las personas con un estilo de vida saludable y actividad
+física estructurada, adquieren beneficios sobre la presión
+arterial y la capacidad cardiorrespiratoria, además de ello,
+las personas con presencia de HAS deben seguir las
+recomendaciones de realizar ejercicio programado.
+Diversas
+organizaciones
+mundiales
+proponen
+el
+incremento de la actividad física como primera línea de
+intervención para prevenir y tratar a pacientes con presión
+arterial sistólica 120–139 mmHg, presión arterial
+diastólica 80–89 mmHg o, ambas.
+El ejercicio se considera como una estrategia terapéutica
+en pacientes clasificados en:
+ Grado 1 (140–159/90-99 mm Hg),
+ Grado 2 (160–179/100–109 mm Hg).
+
+El ejercicio aeróbico tiene un efecto favorable para reducir
+la presión sanguínea y debe ser el principal modo de
+ejercicio en un programa diseñado para prevenir y
+controlar la hipertensión arterial.
+
+35
+
+III
+(E. Shekelle)
+Steffen M, 2012.
+
+A
+ESH/ESC, 2013
+
+B
+Hackam (CHEP), 2013
+
+Ia
+(E. Shekelle)
+Xin X, 2001
+
+III
+(E. Shekelle)
+ACSM, 2011
+
+III
+(E. Shekelle)
+Rodríguez-Hernández,
+2012
+ACSM, 2011
+III
+(E. Shekelle)
+Rodríguez-Hernández,
+2012
+ACSM, 2011
+III
+(E. Shekelle)
+Rodríguez-Hernández,
+2012
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Se aconsejará al paciente realizar ejercicio aeróbico
+moderado al menos 30 min al día, de 5 a 7 días por
+semana.
+
+El ejercicio aeróbico de 30 a 60 min de 4 a 7 días, a la
+semana disminuye la PAS y PAD de 4 a 9 mm Hg.
+
+A
+ESH/ESC,2013
+
+Ia
+(E. Shekelle)
+Kelley GA, 2000
+Ia
+(E. Shekelle)
+Whelton SP, 2002
+III
+(E. Shekelle)
+NICE, 2011
+D
+Hackam (CHEP), 2013
+B
+NICE, 2011
+
+Se recomienda proporcionar al paciente un programa de
+ejercicios aérobicos (caminar, trotar, ciclismo, aeróbico o
+natación).
+
+Promover la suspensión del hábito tabáquico, y sugerirse la
+asistencia a grupos de apoyo, así como a un consejero
+profesional.
+
+Se sugiere proporcionar consejo profesional y referir al
+paciente a grupos de apoyo para el control de los factores
+modificables.
+
+Considerar la heterogeneidad del paciente adulto mayor
+antes de recomendarse el consumo y cantidad de sal, al
+día.
+
+36
+
+D
+Hackam (CHEP), 2013
+
+Punto de Buena Práctica
+
+Punto de Buena Práctica
+
+Punto de buena práctica
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+4.3. Vigilancia y seguimiento
+Evidencia / Recomendación
+El control y la vigilancia de la HAS son componentes
+críticos para los programas de salud poblacional.
+
+Nivel / Grado
+IV
+(E. Shekelle)
+ENSANUT, 2012
+
+El registro de la presión arterial en casa es muy importante
+para el control y modificación de las dosis y cantidad de
+fármacos.
+En algunos casos especiales como:
+ Sospecha de hipertensión por efecto de bata blanca,
+ Hipertensión en el consultorio sin factores de riesgo
+con daño a órgano blanco,
+ Presión arterial normal en el consultorio, asintomático
+y con daño a órgano blanco y
+ Sospecha de episodios de hipotensión secundaria a
+medicamento.
+En los pacientes con RCV alto el control de HAS es difícil y
+frecuentemente
+requieren
+la
+combinación
+de
+medicamentos, así como la intervención de otras
+especialidades para su control y seguimiento.
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+Se recomienda enfatizar el control de las causas asociadas
+a HAS como son el sobrepeso y la obesidad; la dieta con
+alto contenido de sodio y grasas saturadas, así como la
+falta de actividad física y sedentarismo.
+
+C
+(E. Shekelle)
+NICE, 2011
+
+En la atención del paciente con HAS se incluyen diversos
+mecanismos que modifican las cifras tensionales como: el
+ciclo respiratorio cada tres segundos, la variación anual de
+la presión arterial, y condiciones ambientales como el nivel
+de estrés laboral y la intensidad de la actividad física en las
+actividades cotidianas.
+Estudios refieren que una vez alcanzado la meta en las
+cifras de presión arterial no existe diferencia en las citas de
+control cuando este se lleva a cabo en intervalos de 3 a 6
+meses.
+
+37
+
+I
+ESH/ESC, 2013
+
+III
+(E. Shekelle)
+Gerin W, 2010
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Las citas subsecuentes se pueden realizar de acuerdo a los
+recursos y la organización de las instituciones de salud de
+cada localidad.
+
+III
+(E. Shekelle)
+ESH/ESC, 2103
+
+Las visitas regulares también pueden utilizarse para
+reforzar recomendaciones sobre los cambios de estilo de
+vida, que representan un aspecto muy importante en el
+tratamiento de la HAS.
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+El paciente de HAS con RCV bajo y presión arterial
+controlada (meta alcanzada) puede evaluarse cada 3
+meses, a criterio del médico tratante según la evolución y
+respuesta clínica, considerando que el paciente se
+encuentre controlado, con modificaciones en su estilo de
+vida.
+El paciente con un RCV alto o descontrol en sus cifras de
+presión arterial se sugiere evaluarse cada 2 a 4 semanas,
+siendo necesario la individualización de cada caso
+dependiendo de la respuesta al tratamiento y evolución
+clínica.
+La reevaluación integral de los factores de RCV incluso en
+pacientes asintomáticos se realiza con una periodicidad no
+mayor de 2 años.
+En pacientes no diabéticos con enfermedad renal, debe
+vigilarse la función renal y el nivel sérico de potasio, para
+aquellos en los que se prescribe ARA II o IECA.
+
+Punto de buena práctica
+
+Punto de buena práctica
+
+III
+(E. Shekelle)
+ESH/ESC, 2013
+
+III
+(E. Shekelle)
+Hackam (CHEP), 2013
+
+Después del inicio del tratamiento antihipertensivo con
+medicamentos se recomienda citar nuevamente al
+paciente en intervalos de 2-4 semanas para valorar
+respuesta
+y
+posibles
+reacciones
+adversas
+por
+medicamentos.
+
+C
+(E. Skekelle)
+ESC/ESH, 2013
+
+En pacientes hipertensos con otras condiciones de alto
+riesgo (uso de anticoagulantes orales, enfermedad
+vascular cerebral, riñón único, alteraciones de la
+coagulación, aneurismas, entre otras), se recomienda
+control estricto de la presión arterial para alcanzar la meta
+recomendada de acuerdo a cada condición asociada en el
+paciente.
+
+D
+(E. Shekelle)
+NICE, 2006
+NICE, 2011
+
+38
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Se recomienda individualizar la periodicidad de la
+determinación de los estudios de laboratorio con base en la
+presencia de condiciones especiales. Se sugiere solicitar los
+estudios paraclínicos al menos una vez al año en el
+paciente sin comorbilidades y cada 4-6 meses en el
+paciente con comorbilidades o con condiciones especiales,
+dependiendo de la evolución clínica y control del DOB.
+La valoración Geriátrica Integral (VGI) es un proceso
+diagnóstico interdisciplinario multidimensional, enfocado
+para determinar el deterioro en el área
+médica,
+psicológica, funcional, social y familiar de los problemas de
+una persona de edad avanzada así como sus recursos, con
+el fin de desarrollar un plan integral de manejo y
+seguimiento.
+Se recomienda realizar una valoración geriátrica integral a
+todo paciente anciano ≥70 años de edad con HAS, por lo
+menos una vez al año en atención primaria.
+
+Punto de Buena Práctica
+
+Ia
+(E. Shekelle)
+GPC IMSS (109-10), 2011
+
+Punto de Buena práctica.
+
+4.4. Técnicos administrativos
+4.5.1. Días de incapacidad
+Evidencia / Recomendación
+
+Nivel / Grado
+
+El reposo debe ser indicado en casos de hipertensión grave
+o con repercusión a órgano blanco en tanto se logra su
+control con las medidas terapéuticas adecuadas.
+Punto de buena práctica
+
+4.5. Criterios de referencia
+Evidencia / Recomendación
+Ante la sospecha de hipertensión secundaria (renovascular
+o endócrina) el paciente debe ser referido a segundo nivel
+para evaluación completa por el servicio correspondiente.
+En casos de crisis hipertensiva con o sin lesión a DOB,
+iniciar las medidas generales de tratamiento y referir a 2° o
+3° nivel para su evaluación integral y control de la
+hipertensión arterial, según sea el caso.
+
+39
+
+Nivel / Grado
+
+Punto de buena práctica
+
+Punto de buena práctica
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Si el paciente presuntamente requiere de un cuarto
+fármaco para el control de la presión arterial, considerar el
+envío al médico especialista en el segundo nivel.
+
+C
+(E. Shekelle)
+NICE, 2006
+
+Se recomienda que los pacientes hipertensos con
+complicaciones (HAS de difícil control, evidencia o
+sospecha de DOB) se envíen a evaluación por 2º nivel al
+momento de su detección.
+
+C
+(E. Shekelle)
+NICE, 2006
+NICE, 2011
+
+El paciente hipertenso puede ser enviado anualmente a
+valoración oftalmológica, y a medicina interna con el
+propósito de detectar y controlar oportunamente la
+aparición de lesiones a órgano blanco.
+El paciente hipertenso controlado en situaciones especiales
+(complicaciones por HAS o diabetes) se propone
+individualizar el caso para la vigilancia y seguimiento en el
+primer nivel.
+
+Se sugiere enviar al paciente para valoración cardiológica,
+por antecedente, sospecha o presencia de daño
+cardiovascular, anualmente.
+
+El paciente hipertenso puede ser enviado a valoración
+cardiológica, por HAS de difícil control.
+
+40
+
+Punto de Buena Práctica
+
+Punto de Buena Práctica
+
+Punto de Buena Práctica
+
+Punto de Buena Práctica
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+5. Anexos
+5.1 Protocolo de Búsqueda
+La búsqueda sistemática de información se enfocó a documentos obtenidos acerca de la temática
+Hipertensión arterial sistémica. La búsqueda se realizó en PubMed y en el listado de sitios Web
+para la búsqueda de Guías de Práctica Clínica.
+Criterios de inclusión:
+ Documentos escritos en inglés o español.
+ Documentos publicados los últimos 5 años (rango recomendado) o, en caso de encontrarse
+escasa o nula información, documentos publicados los últimos 10 años (rango extendido).
+ Documentos enfocados en diagnóstico, pruebas diagnósticas, tratamiento farmacológico,
+modificación de estilos de vida, dieta, programas de ejercicios, control de peso,.
+Criterios de exclusión:
+ Documentos escritos en otro idioma que no sea español o inglés.
+Estrategia de búsqueda
+
+41
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+5.1.1 Primera Etapa
+Esta primera etapa consistió en buscar documentos relacionados al tema hipertensión arterial
+sistémica en PubMed. Las búsquedas se limitaron a humanos, documentos publicados durante los
+últimos 5 años, en idioma inglés o español, del tipo de documento de Guías de Práctica Clínica y se
+utilizaron términos validados del MeSh. Se utilizó los terminos: hypertension, diagnosis, therapy,
+adverse effects, classification, diet therapy, radiography, therapeutic use and drug effects. Esta
+etapa de la estrategia de búsqueda dio 76 resultados, de los cuales se utilizaron 5 documentos en
+la elaboración de la guía.
+
+Search
+
+Add to builder
+
+Query
+
+#26
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] AND
+((Meta-Analysis[ptyp] OR systematic[sb]) AND "loattrfree full text"[sb] AND
+"2009/01/16"[PDat] : "2014/01/14"[PDat] AND "humans"[MeSH Terms] AND
+(English[lang] OR Spanish[lang]) AND "adult"[MeSH Terms])
+
+76
+
+23:02:21
+
+#24
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Meta-Analysis; Systematic Reviews; Free full text available; published in the last 5
+years; Humans; English; Spanish; Adult: 19+ years
+
+76
+
+22:34:05
+
+#25
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Meta-Analysis; Systematic Reviews; Free full text available; published in the last 5
+years; Humans; English; Spanish; Male; Adult: 19+ years
+
+53
+
+22:33:36
+
+#23
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Meta-Analysis; Systematic Reviews; Randomized Controlled Trial; Free full text
+available; published in the last 5 years; Humans; English; Spanish; Adult: 19+ years
+
+520
+
+22:28:40
+
+#22
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Controlled Clinical Trial; Meta-Analysis; Systematic Reviews; Randomized
+Controlled Trial; Free full text available; published in the last 5 years; Humans;
+English; Spanish; Adult: 19+ years
+
+540
+
+22:27:52
+
+#21
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+
+596
+
+22:27:44
+
+42
+
+Items found
+
+Time
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Search
+
+Add to builder
+
+Query
+
+Items found
+
+Time
+
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Controlled Clinical Trial; Meta-Analysis; Review; Systematic Reviews; Randomized
+Controlled Trial; Free full text available; published in the last 5 years; Humans;
+English; Spanish; Adult: 19+ years
+#20
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Controlled Clinical Trial; Meta-Analysis; Review; Systematic Reviews; Free full
+text available; published in the last 5 years; Humans; English; Spanish; Adult: 19+
+years
+
+152
+
+22:27:09
+
+#19
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Controlled Clinical Trial; Meta-Analysis; Review; Free full text available; published
+in the last 5 years; Humans; English; Spanish; Adult: 19+ years
+
+116
+
+22:27:03
+
+#18
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Controlled Clinical Trial; Meta-Analysis; Free full text available; published in the
+last 5 years; Humans; English; Spanish; Adult: 19+ years
+
+45
+
+22:27:01
+
+#17
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Controlled Clinical Trial; Free full text available; published in the last 5 years;
+Humans; English; Spanish; Adult: 19+ years
+
+20
+
+22:26:09
+
+#14
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Free full text available; published in the last 5 years; Humans; English; Spanish;
+Adult: 19+ years
+
+2007
+
+22:25:12
+
+#15
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Guideline; Free full text available; published in the last 5 years; Humans; English;
+Spanish; Adult: 19+ years
+
+5
+
+22:25:11
+
+#16
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Guideline; Practice Guideline; Free full text available; published in the last 5 years;
+Humans; English; Spanish; Adult: 19+ years
+
+5
+
+22:25:01
+
+#13
+
+Add
+
+Search
+
+3214
+
+22:19:06
+
+"Hypertension/adverse
+
+43
+
+effects"[Mesh]
+
+OR
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+Search
+
+Add to builder
+
+Query
+
+Items found
+
+Time
+
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Free full text available; published in the last 5 years; Humans; English; Spanish
+#12
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Free full text available; published in the last 5 years; Humans; English
+
+3174
+
+22:19:04
+
+#11
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Free full text available; published in the last 5 years; Humans
+
+3382
+
+22:18:47
+
+#10
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Free full text available; published in the last 5 years
+
+3903
+
+22:18:24
+
+#9
+
+Add
+
+Search
+"Hypertension/adverse
+effects"[Mesh]
+OR
+"Hypertension/classification"[Mesh] OR "Hypertension/diagnosis"[Mesh] OR
+"Hypertension/diet therapy"[Mesh] OR "Hypertension/drug effects"[Mesh] OR
+"Hypertension/drug therapy"[Mesh] OR "Hypertension/radiography"[Mesh] OR
+"Hypertension/therapeutic use"[Mesh] OR "Hypertension/therapy"[Mesh] Filters:
+Free full text available
+
+14170
+
+22:18:14
+
+#4
+
+Add
+
+Search hypertension
+
+373675
+
+22:11:42
+
+Algoritmo de búsqueda:
+1. Hypertension (Mesh)
+2. Classification (Subheading)
+3. Diagnosis (Subheading
+4. Drug therapy (Subheading)
+5. Diet therapy
+6. Drug effects
+7. Radioghaphy (Subheading)
+8. Therapy (Subheading)
+9. Therapeutic use (Subheading)
+10. Drug effects (Subheading)
+11. Adverse effects (subheading)
+12. #2 OR #3 OR #4 OR #5 OR #6 OR #7 OR #8 OR #9 OR #10 OR #11
+13. #1 AND #12
+44
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+14. Meta-analysis (ptyp)
+15. Systematic (sb)
+16. #14 OR #15
+17. loatfree full text (sb)
+18. 2009/01/16 (pdat)
+19. 2014/01/14 (pdat)
+20. #18 and #19
+21. Humans (Mesh)
+22. English (lang)
+23. Spanish (lang)
+24. #22 OR #23
+25. Adut (Mesh)
+26. #13 AND #16 AND #17 AND #20 AND #21 AND #24 AND #25
+27. #1 AND (#2 OR #3 OR #4 OR #5 OR #6 OR #7 OR #8 OR #9 OR #10 OR #11) AND (#14
+OR #15) AND # 17 AND (#18 and #19) AND #21 AND (#22 OR #23) AND #25
+
+5.1.2 Segunda Etapa
+(En esta etapa se realizó la búsqueda en sitios Web en los que se buscaron Guías de Práctica Clínica con el
+término hypertension, diagnosis, therapy, adverse effects, classification, diet therapy, radiography,
+therapeutic use and drug effects. A continuación se presenta una tabla que muestra los sitios Web de los que
+se obtuvieron los documentos que se utilizaron en la elaboración de la guía.
+
+Búsqueda
+
+Resultado
+
+effects"[Mesh] OR "Hypertension/classification"[Mesh] OR
+"Hypertension/diagnosis"[Mesh]
+OR
+"Hypertension/diet
+therapy"[Mesh]
+OR
+"Hypertension/drug effects"[Mesh] OR "Hypertension/drug therapy"[Mesh] OR
+"Hypertension/radiography"[Mesh] OR "Hypertension/therapeutic use"[Mesh] OR
+"Hypertension/therapy"[Mesh] AND ((Guideline[ptyp] OR Practice Guideline[ptyp]) AND
+"loattrfree full text"[sb] AND "2009/01/16"[PDat] : "2014/01/14"[PDat] AND
+"humans"[MeSH Terms] AND (English[lang] OR Spanish[lang]) AND "adult"[MeSH Terms]
+
+5
+
+"Hypertension/adverse
+
+Sitios Web
+
+# de resultados obtenidos
+
+# de documentos utilizados
+
+PubMed
+
+5
+
+4
+
+NICE
+
+1
+
+1
+
+Canada
+
+1
+
+1
+
+IMSS
+
+1
+
+1
+
+Total
+
+8
+
+7
+
+45
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+5.2 Escalas de Gradación
+CUADRO I. ESCALA MODIFICADA DE SHEKELLE Y COLABORADORES
+
+Clasifica la evidencia en niveles (categorías) e indica el origen de las recomendaciones emitidas por
+medio del grado de fuerza. Para establecer la categoría de la evidencia utilizan números romanos
+de I a IV y las letras a y b (minúsculas). En la fuerza de recomendación se usan letras mayúsculas de
+la A a la D.
+Categoría de la evidencia
+
+Fuerza de la recomendación
+
+Ia. Evidencia para meta-análisis de los estudios
+clínicos aleatorios
+
+A. Directamente basada en evidencia categoría I
+
+Ib. Evidencia de por lo menos un estudio clínico
+controlado aleatorios
+IIa. Evidencia de por lo menos un estudio
+controlado sin aleatoridad
+IIb.
+Al
+menos
+otro
+tipo
+de
+cuasiexperimental o estudios de cohorte
+
+B. Directamente basada en evidencia categoría II o
+recomendaciones extrapoladas de evidencia I
+
+estudio
+
+III. Evidencia de un estudio descriptivo no
+experimental, tal como estudios comparativos,
+estudios de correlación, casos y controles y
+revisiones clínicas
+
+C. Directamente basada en evidencia categoría III o en
+recomendaciones
+extrapoladas
+de
+evidencias
+categorías I o II
+
+IV. Evidencia de comité de expertos, reportes
+opiniones o experiencia clínica de autoridades en
+la materia o ambas
+
+D. Directamente basadas en evidencia categoría IV o de
+recomendaciones
+extrapoladas
+de
+evidencias
+categorías II, III
+
+Modificado de: Shekelle P, Wolf S, Eccles M, Grimshaw J. Clinical guidelines. Developing guidelines.BMJ 1999;
+:18:593-659
+
+46
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CUADRO II. ESCALA ESH/ESC GUIDELINE, 2013
+Clasifica la evidencia en niveles (categorías) e indica el origen de las recomendaciones emitidas por medio del
+grado de fuerza. Para establecer la categoría de la evidencia utilizan letras. En la fuerza de recomendación se
+usan números romanos.
+Nivel de Evidencia
+
+Descripción
+
+A
+
+Los datos derivan de múltiples ensayos clínicos aleatorizado ensayos o metaanálisis
+
+B
+
+Los datos derivan de un ensayo clínico único aleatorizado o grande no aleatorizado.
+
+C
+
+Consenso de opinión de expertos y/o pequeños estudios retrospectivos, registros.
+
+Clase
+recomendación
+I
+
+II
+
+III
+
+de
+
+Descripción
+
+Uso
+
+Evidencia y/o acuerdo general acerca del beneficio, eficacia y
+utilidad de realizar un procedimiento o dar un tratamiento
+específico.
+
+Recomendada
+
+Evidencia contradictoria, y opiniones diferentes sobre la
+eficacia y utilidad de dar un tratamiento o procedimiento
+
+IIa
+
+El peso de la evidencia o la opinión es a favor de su eficacia o
+utilidad
+
+Considerarse
+
+IIb
+
+La eficiacia y utilidad no está bien definida por evidencia o por
+opiniones de expertos
+
+Podría
+considerarse
+
+La evidencia o el acuerdo general no considera eficaz o util dar
+un procedimiento o tratamiento específico, y en algunos casos
+puede causar daños a la salud.
+
+No recomendada
+
+47
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CUADRO III. ESCALA CHEP, 2013
+En resumen:
+Categoría de la
+recomendación
+A
+B
+C
+D
+
+Descripción
+Se basan en estudios con altos niveles de validez interna, precisión estadística, y de
+generalización con relevancia clínica.
+Se derivan de estudios que se caracterizan por baja validez interna precisión o
+limitada generalización.
+Resultan de estudios que informan intermedia o sustituto resultados en lugar de más
+clínicamente relevante queridos
+se basan en la opinión de expertos o estudios con una menor nivel de validez o
+precisión interna que las recomendaciones de grado C
+
+Zarnke KB, Campbell NR, McAlister FA, Levine M; Canadian Hypertension Recommendations Working Group.
+A novel process for updating recommendations for managing hypertension: Rationale and methods. Can J
+Cardiol 2000;16:1094-102.
+McAlister FA. The Canadian Hypertension Education Program –a unique Canadian initiative. Can J Cardiol
+2006;22:559-64.
+
+A
+
+Recomendación Alta
+Hay una alta certeza en base a la evidencia de que el benefita neto es sustancial.
+
+B
+
+Recomendación Moderada
+No hay certeza moderada sobre la base de la evidencia de que el beneficio neto es de moderado a
+sustancial o hay un alto certeza de que el beneficio neto es moderado.
+
+C
+
+Recomendación débil
+Hay por lo menos certeza moderada sobre la base de pruebas de que hay un pequeño beneficio
+neto
+No recomendable
+Hay por lo menos certeza moderada basada en evidencia de que no tiene ningún beneficio, o los
+riesgos
+superan
+los
+beneficios.
+
+D
+
+E
+
+Opinión de expertos
+No hay evidencia o es insuficiente, no es clara o contradictoria; sin embargo el comité considera
+importante hacer una recomendación por los beneficios clínicos potenciales.
+Se recomienda realizar más investigaciones en esta área.
+
+N
+
+No se puede hacer una recomendación a favor o en contra
+(No hay suficiente evidencia, es insuficiente, no es clara o es contradictoria).
+El beneficio no es claro. Los beneficios y daños no se pueden determinar por falta de pruebas,
+insuficiente pruebas insuficientes, la evidencia poco clara o evidencia contradictoria, y el comité
+cree
+que
+no
+puede
+formularse
+ninguna
+recomendación.
+Se recomienda realizar más investigaciones en esta área.
+
+48
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+5.3 Escalas de Clasificación Clínica
+CUADRO IV. MEDICIÓN DE LA PRESIÓN SANGUÍNEA POR AUSCULTACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+Estandarizar el procedimiento tanto como sea posible.
+Sentar al paciente relajado, tranquilo y en un ambiente adecuado.
+Con su brazo extendido y apoyado, en línea en medio del esternón.
+Enrollar correctamente el brazalete y colocar el manómetro. Debe enrollarse el brazalete hasta la
+marca del rango de la circunferencia permitida, estas marcas deben ser vistas el inicio o al empezar a
+enrollar el brazalete.
+Palpar el pulso humeral en la fosa antecubital del brazo.
+Inflar rápidamente el brazalete a 20 mmHg, por arriba del punto en donde el pulso humeral
+desaparece.
+Desinflar el brazalete y anotar la presión a la cual el pulso re aparece: aproximándose la presión
+sistólica.
+Re inflar el brazalete a 20 mmHg. Por arriba de donde desapareció el pulso humeral
+Usando una mano, el estetoscopio será colocado sobre la piel en el lugar de la arteria humeral, evitar
+colocarlo entre la piel y el brazalete.
+Desinflar despacio el brazalete a 2 – 3 mm Hg por segundo, escuchando los sonidos de Korotkoff.
+
+FASE I.- El primer sonido es un pulso leve y repetido que gradualmente incrementa en intensidad y
+duración hasta dos latidos de menor intensidad consecutivos: marcando la presión sistólica
+FASE II.-Un breve periodo puede seguir cuando los sonidos son débiles, auscultación gap: en algunos
+pacientes los sonidos pueden desaparecer en su totalidad.
+FASE III.-El retorno de los sonidos nítidos empezarán a ser claros en un corto tiempo.
+FASE IV.-Los distintos sonidos desaparecen abruptamente iniciando un suave soplido.
+FASE V.-En el registro que los sonidos desaparecen totalmente, marcan la presión diastólica.
+
+
+
+Cuando los sonidos desparecen rápidamente, desinflar completamente el brazalete y repetir la
+medición de la presión.
+Cuando sea posible tomar lecturas al inicio y al final de la consulta.
+
+Fuente: NICE, 2006.
+
+49
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CUADRO V. DEFINICIÓN Y CLASIFICACIÓN DE LA PRESIÓN ARTERIAL
+(PA).
+CATAGORIA
+
+SISTOLICA (mm Hg)
+
+DIASTOLICA (mm Hg)
+
+Optima
+
+< 120
+
+<80
+
+Normal
+
+120-129
+
+80-84
+
+Normal alta
+
+130-139
+
+85-89
+
+Hipertensión grado 1
+
+140-159
+
+90-99
+
+Hipertensión grado 2
+
+160-179
+
+100-109
+
+Hipertensión grado 3
+
+> =180
+
+>= 110
+
+Hipertensión sistólica aislada
+
+> =140
+
+<90
+
+La hipertensión sistólica aislada debe evaluarse de acuerdo a los grados 1, 2, y 3; basada en la valoración
+sistólica de los rangos indicados, si la presión diastólica es <90 mm Hg.
+Los grados 1,2 y 3 corresponden a la calificación leve, moderada y grave respectivamente.
+Fuente: European Heart Journal, 2013.
+
+50
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CUADRO VI. ESTRATIFICACIÓN DEL RIESGO CARDIOVASCULAR (RCV) DE ACUERDO A FACTORES
+DE RIESGOS Y OTROS PARAMETROS
+Estimar RCV con base en el número de factores de riesgos que presente la persona, en ausencia de DM, DOB, ERC o
+Enfermedad vascular establecida.
+FACTORES DE RIESGO (*)
+
+CRITERIOS
+
+PUNTAJE
+SI=1/ NO=0
+
+Sexo
+
+Masculino
+
+Edad (años)*
+
+Hombre: >55
+Mujer:> 65
+
+Tabaquismo*
+
+Positivo
+
+Dislipidemia*
+
+Colesterol: > 190 mg/dl
+Colesterol LDL: 115 mg/dl
+Colesterol HDL:
+Hombres < 40 mg/dl
+Mujer: < 46 mg/dl
+Triglicéridos: > 150 mg/dl
+
+Glucosa anormal en ayuno*
+
+102-125 mg/dl
+
+Prueba de tolerancia a la glucosa*
+
+Anormal
+
+Obesidad*
+
+IMC > 30 (kg/m2 SC)
+
+Circunferencia abdominal
+
+Hombres: 102 cm
+Mujeres: 88 cm
+
+Historia familiar de ECV temprana*
+
+Hombre < 55 años
+Mujer < 65 años
+*Suma (total) de factores de riesgo (individuales)
+
+Identificar a la persona con RCV MEDIANO - ALTO, independientemente de la presencia de los factores de riesgo(*)
+cuando presente (datos):
+a.
+
+DIABETES MELLITUS
+
+(si/no)
+
+Glucosa plasmática y/o
+
+126 mg/dl en 2 pruebas
+
+Hb. Glucosilada y/o
+
+>7 %
+
+Glucosa plasmática posprandial
+
+>198 mg/dl
+
+b.
+
+DAÑO A ÓRGANO BLANCO ASINTOMÁTICO
+
+(si/no)
+
+En el anciano, presión del pulso
+
+> 60 mm Hg
+
+ERC con TFG
+
+30-60 ml/min
+
+Microalbuminuria
+
+30-300 mg/24 hrs
+
+Identificar a la persona con RCV ALTO, cuando presente:
+ENFERMEDAD RENAL O ENFERMEDAD VASCULAR ESTABLECIDA
+a.
+
+ERC con TFG
+
+< 30 ml/min ; Proteinuria > 300 mg/24 horas
+
+b.
+
+Retinopatía etapa avanzada
+
+Hemorragia, Exudados, papiledema
+
+c.
+
+Cardiovascular
+
+Infarto del miocardio, angina de pecho, y otras.
+
+d.
+
+Cerebrovascular
+
+Infarto, hemorragia cerebral, evento transitorio
+isquémico.
+
+(si/no)
+
+ERC= Enfermedad Renal Crónica, ECV= Enfermedad Cardiovascular, TFG= Tasa de Filtración Glomerular, DOB= Daño a Órgano Blanco
+DM=Diabetes Mellitus.
+Notas: La calificación del RCV se obtiene sumando los factores individuales y dependiendo de las comorbilidades asociadas. Cuadro
+modificado para las unidades de primer nivel.
+Fuente: ESH-ESC, 2013
+
+51
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CUADRO VII. GRADACIÓN DE RIESGO CARDIOVASCULAR DE ACUERDO A LAS CIFRAS DE PRESIÓN
+ARTERIAL Y LA PRESENCIA DE FACTORES DE RIESGOS Y DOB
+Factores de riesgo
+(FR),
+DOB asintomático o
+enfermedad
+
+Sin otro
+riesgo
+
+factor
+
+Presión Arterial (mm Hg)
+Normal alta
+
+HAS Grado 1
+
+HAS Grado 2
+
+HAS Grado 3
+
+PAS 130-139
+
+PAS 140-159
+
+PAS 160-179 o
+
+PAS ≥ 180 o
+
+o PAD 85-89
+
+o PAD 90-99
+
+PAD 100-109
+
+PAD ≥ 110
+
+Riesgo
+
+Riesgo Moderado
+
+Riesgo
+
+de
+
+Bajo
+1-2 factores de riesgo
+
+≥ 3 factores de riesgo
+
+DOB, ERC estado 3 o
+diabetes
+
+ECV sintomática, ERC
+estadio
+≥
+4
+o
+diabetes con DOB/FR
+
+Riesgo Bajo
+
+Alto
+Riesgo
+
+Riesgo
+
+Moderado a Alto
+
+Alto
+
+Riesgo
+
+Riesgo
+
+Riesgo
+
+Moderado a Alto
+
+Alto
+
+Alto
+
+Riesgo
+
+Riesgo
+
+Riesgo
+
+Riesgo Alto a
+
+Moderado a Alto
+
+Alto
+
+Alto
+
+Muy Alto
+
+Riesgo
+
+Riesgo
+
+Riesgo
+
+Riesgo
+
+Muy Alto
+
+Muy Alto
+
+Muy Alto
+
+Muy Alto
+
+Riesgo
+bajo
+Moderado
+
+Riesgo Moderado
+
+a
+
+PA= Presión arterial; ERC= enfermedad renal crónica; CV = cardiovascular; ECV = enfermedad cardiovascular; PAD= presión arterial
+diastólica; HAS = hipertensión; DOB = daño a órgano blanco; FR = factores de riesgo; PAS = presión arterial sistólica.
+Fuente: ESH-ESC, 2013
+
+52
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CUADRO VIII. DIETA DASH*
+Descripción de alimentos (ejemplos)
+
+Alimento
+
+Ración
+
+Cereales y tubérculos
+
+7-8/día
+
+Verduras
+
+4-5/día
+
+Frutas
+
+4-5/día
+
+Lácteos (1%)
+
+2-3/día
+
+Leguminosas
+
+2-3/semana
+
+Frijoles, habas, lentejas
+
+Grasas con proteína
+
+4-5/semana
+
+Almendras, cacahuetes, nueces, semillas de girasol
+
+Grasas sin proteínas
+
+2-3/ día
+
+Margarina blanda, mayonesa baja en grasa, vegetales
+aceite (oliva, maíz, canola y cártamo)
+
+Productos de origen animal
+
+5/día
+
+Carne cocida, pollo, pescado
+
+Azucares**
+
+5/semana
+
+Jarabe de arce, azúcar, jalea, mermelada, caramelos,
+helados.
+
+Pan de trigo entero, avena, palomitas de maíz.
+Tomates, papas, zanahorias, judías, guisantes, calabaza,
+espinaca
+Durazno, plátanos, uvas, naranjas, toronjas, melón.
+sin grasa (descremada) o baja en grasa, sin grasa o yogurt
+bajo en grasa, sin grasa o queso bajo en grasa
+
+CUADRO IX. DISTRIBUCIÓN DE RACIONES RECOMENDADAS EN PACIENTES SIN CONDICIONES
+ESPECIALES DE ACUERDO A LA CANTIDAD DE CALORÍAS REQUERIDAS
+A. DIETA HIPOSÓDICA DE 1,200 CALORÍAS POR DÍA***
+Distribución de raciones
+Grupo de alimento
+Ración/día
+Desayuno
+Comida
+Verduras
+7
+2
+3
+Frutas
+2
+1
+1
+Cereales y Tubérculos
+5
+2
+2
+Alimentos de origen animal
+3
+1
+2
+Lácteos
+1
+0
+0
+Grasas sin proteína
+3
+1
+1
+Grasas con Proteína
+1
+0
+1
+Azúcares**
+1
+1
+0
+
+Cena
+2
+0
+1
+0
+1
+1
+1
+0
+
+B. DIETA HIPOSÓDICA DE 1,500 CALORÍAS POR DÍA***
+Distribución de raciones
+Grupo de alimento
+Ración/día
+Desayuno
+Comida
+Verduras
+8
+3
+3
+Frutas
+2
+1
+1
+Cereales y Tubérculos
+5
+2
+2
+Alimentos de origen animal
+4
+1
+2
+Leche
+2
+1
+0
+Grasas sin proteína
+4
+1
+2
+Grasas con proteína
+1
+0
+0
+Azúcares**
+2
+1
+1
+
+Cena
+2
+0
+1
+1
+1
+1
+1
+0
+
+*Fuente: Plan de alimentación DASH disponible en www.nhlbi.nih.gov/health/public/heart/hbp/tablero/new_dash.pdf
+**Azucares: Distribuir las raciones entre los días de la semana, recomendando un consumo máximo de 5/semana.
+***Dieta: 50% Carbohidratos, 20% proteínas, 30% lípidos
+
+53
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+CUADRO X. ESPECIFICACIONES DE LAS RACIONES EN LA DIETA, POR GRUPO DE ALIMENTOS
+
+VERDURAS
+Alimento
+Ración
+1/2 taza
+Acelga cocida
+1/2 taza
+Brócoli cocido
+1/2 taza
+Champiñón cocido
+1/2 taza
+Espinaca cocida
+1 pieza
+Jitomate
+3 tazas
+Lechuga
+1 taza
+Nopal cocido
+2 tazas
+Rábano
+1/2 taza
+Verdolaga cocida
+
+PRODUCTOS DE ORIGEN ANIMAL
+Alimento
+Ración
+Atún en agua
+35 g
+Bistec de res
+35 g
+Chambarete
+35 g
+Clara de huevo
+2 piezas
+Cuete
+40 g
+Falda de res
+35 g
+Filete de pescado
+45 g
+Filete de res
+35 g
+Filete de salmón
+30 g
+Huevo cocido
+1 pieza
+Machaca
+12 g
+Milanesa de res
+35 g
+Molida de pollo
+35 g
+Muslo de pollo
+1/3 pieza
+Pechuga de pollo
+30 g
+Pierna de pollo
+½ pieza
+Queso blanco
+35 g
+Queso cottage
+3 cucharadas
+Requesón
+3 cucharadas
+Sardina
+40 g
+Sirlón
+25 g
+Tampiqueña
+30 g
+
+GRASAS CON PROTEÍNAS
+Alimento
+Ración
+Almendra
+10 piezas
+Nuez
+3 piezas
+Cacahuate tostado
+14 piezas
+Semilla de girasol
+4 cucharitas
+Pistache
+18 piezas
+
+LÁCTEOS
+Alimento
+Helado con leche
+Jocoque
+Leche descremada
+Yogurt light
+
+Ración
+¾ taza
+¾ taza
+1 taza
+1 taza
+
+CEREALES Y TUBÉRCULOS
+
+Alimento
+Amaranto
+Arroz cocido
+Avena cocida
+Bolillo sin migajón
+Espagueti cocido
+Fideo
+Galletas marías
+Masa de maíz
+Palitos de pan
+Palomitas natural
+Pan de caja
+Tortilla de maíz
+
+GRASAS SIN PROTEÍNA
+Alimento
+Ración
+Aceite comestible
+1 cucharadita
+Aceite de oliva
+1 cucharadita
+Aderezo vinagreta
+2 cucharaditas
+Aguacate
+1/3 pieza
+Crema
+1 cucharadita
+Mantequilla
+1 ½ cucharadita
+Mayonesa
+½ cucharadita
+
+54
+
+Ración
+1/4 taza
+1/4 taza
+3/4 taza
+1/3 pieza
+1/3 taza
+1/2 taza
+5 piezas
+45 g
+3 piezas
+3 tazas
+1 pieza
+1 pieza
+
+Diagnóstico y Tratamiento de la Hipertensión Arterial en el Primer Nivel de Atención
+
+FRUTAS
+Alimento
+Cerezas
+Chabacano
+Durazno
+Frambuesa
+Fresa
+Higo
+Kiwi
+Lima
+Mamey
+Mandarina
+Mango ataulfo
+Manzana
+Melón
+Naranja
+Papaya
+Pasas
+Pera
+Perón
+Piña
+Plátano
+Sandia
+Toronja
+Uva roja
+Uva verde
+Zarzamora
+
+LEGUMINOSAS
+Alimento
+Ración
+Alubias, garbanzos,
+habas, lentejas
+1/2 taza
+cocidas
+Alverjón
+1/2 taza
+Frijol canario,
+1/2 taza
+negro cocido
+Soya cocida
+1/3 taza
+Soya texturizada
+35 gramos
+seca
+
+Ración
+20 piezas
+4 piezas
+2 piezas
+1 taza
+17 piezas
+3 piezas
+2 piezas
+3 piezas
+1/3 pieza
+2 piezas
+1 pieza
+1 pieza
+1 taza
+1 piezas
+1 taza
+10 piezas
+½ pieza
+1 pieza
+1 taza
+½ pieza
+1 taza
+½ pieza
+15 piezas
+18 piezas
+¾ taza
+
+*En caso de no permitir el uso de azúcares,
+se sugiere utilizar algún edulcorante como
+sucralosa y acesulfame K.
+Nota: g: gramos
+Fuente: Federación Mexicana de Diabetes,
+AC. Disponible en URL (acceso 2 enero,
+2014):
+http://www.fmdiabetes.org/fmd/pag/nut
+ricion.php?id=MTQ1.
+Referencias
+consultadas:
+http://www.nutriciongrupobimbo.com/upl
+oads/pdf/tablas_equivalencias.pdf
+Sistema
+Mexicano
+de
+Alimentos
+Equivalentes,
+segunda
+Edición.
+http://www.fns.org.mx/index.php?IdConte
+nido=46&IdSubContenido=53
+
+AZÚCARES
+Alimento
+Ración
+Ate
+15 g
+Azúcar
+2 cucharaditas
+Cajeta
+2 cucharaditas
+Leche condensada
+2 cucharaditas
+Mermelada
+2 cucharaditas
+Miel de abeja
+2 cucharaditas
+
+55
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+PROGRAMA DE EJERCICIOS PARA EL PACIENTE CON HIPERTENSIÓN ARTERIAL SISTÉMICA
+
+El consenso universal apoya la realización de actividad física como parte de la terapia en
+pacientes hipertensos, se recomienda la actividad física de intensidad moderada en la cual
+este nivel de intensidad se alcanza con una frecuencia de 60 al 80% de la frecuencia cardíaca
+máxima.
+La principal guía para la realización de ejercicio aeróbico es la frecuencia cardíaca, (entre el 60
+al 80% de la frecuencia cardíaca máxima), la cual puede ser obtenida mediante algún sistema
+de monitoreo o bien a través de la prueba de esfuerzo; en ausencia de lo anterior y
+tratándose de pacientes hipertensos controlados la frecuencia cardíaca máxima (FCM) puede
+ser calculada de la siguiente manera:
+Frecuencia cardíaca máxima = 220 – edad (en años)
+Ejemplo, si un paciente tiene 55 años de edad tendríamos lo siguiente: 220-55=165, es decir,
+su FCM sería 165 latidos por minuto de lo que obtendríamos el 60% (99 latidos por minuto) y
+el 80% (132 latidos por minuto)
+Debido al riesgo de los pacientes hipertensos de presentar enfermedad cardiovascular es
+conveniente realizar una prueba de esfuerzo antes de iniciar el programa de ejercicio
+aeróbico, la prueba se recomienda para identificar isquemia, arritmias e isquemia miocárdica
+asintomática entre otras.
+Las fases del programa de ejercicio terapéutico para el paciente hipertenso comprenden lo
+siguiente:
+a) Una fase de calentamiento
+b) Una fase de ejercicio
+a. Aeróbico
+b. Resistencia
+c) Una fase de enfriamiento
+
+56
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+Descripción de cada una de las fases
+FASE DE CALENTAMIENTO: (realizar la toma del pulso en arteria radial a nivel de muñeca al iniciar y finalizar esta fase). Para el
+inicio de la actividad física existen diversas posibilidades de acuerdo a las condiciones del paciente y a las características de su
+entorno. Si es posible en esta fase, se puede realizar ejercicio aeróbico pero de baja intensidad como sería caminata o ciclismo
+por un periodo de 5 a 10 minutos, de lo contrario se deberán de realizar ejercicios de calistenia y de estiramiento por el mismo
+periodo de tiempo y con la siguiente secuencia y número de repeticiones:
+
+Realizar 10
+repeticiones
+de cada
+ejercicio
+
+1A. Flexo-extensión de cuello. Flexión lateral de cuello hacia la derecha e izquierda
+2A. Elevación-descenso de hombros. Movimientos circulares de hombros
+3A. Con brazos extendidos al frente efectuar movimientos circulares
+4A. Con brazos extendidos al frente efectuar flexo-extensión de codos
+5A. Flexo-extensión de tronco con brazos extendidos
+1B. Con manos entrelazadas realizar en forma simultánea flexo-extensión de muñeca.
+2B. Con los dedos de las manos entrelazados se llevan los brazos extendidos hacia arriba y se hace ligera hiperextensión de tronco.
+3B. Colocar la mano en el hombro contrario, la mano libre sujeta el codo flexionado y hace presión hacia
+adentro, realizar en forma alternada.
+4B. Llevar los brazos hacia atrás sujetando las manos (a la altura de la cintura), y tratar de acercar ambos
+codos.
+5B. De pie, apoyado sobre la mano izquierda, flexionar la rodilla derecha hacia atrás y ayudándose con la mano
+derecha sujetar el pie por el empeine acercando el talón al glúteo del mismo lado, al completar las
+repeticiones se repite del lado contrario.
+6B. De pie, se adelanta la pierna derecha y se flexiona, la pierna izquierda permanece extendida, se realiza
+flexión de tronco en esta posición, después de completar las repeticiones se repite del lado contrario.
+
+FASE DE ACTIVIDAD FÍSICA MODERADA: (realizar la toma del pulso en arteria radial a nivel de muñeca al iniciar y finalizar esta
+fase).
+Tipo – aeróbico. Se recomienda realizar esta actividad en forma diaria. Puede practicarse algunas de las siguientes
+modalidades, ciclismo, caminata (a paso enérgico), natación (pueden intercalarse por día), por un periodo de 30 a 45 minutos. En
+caso contrario se deberá efectuar la siguiente secuencia y número de repeticiones
+Realizar 30
+1C. Movimientos alternos simulando la marcha
+repeticiones de
+2C. Movimientos alternos simulando la marcha y coordinar con flexo-extensión de brazos.
+cada ejercicio
+3C. Movimientos alternos simulando la marcha y coordinando con flexo-extensión de hombros con los brazos
+extendidos.
+4C. Movimientos alternos simulando la marcha y coordinar con abducción-aducción de brazos.
+5C. Movimientos alternos simulando la marcha y coordinando con hiper-extensión de hombros manteniendo
+los brazos extendidos.
+6C. Flexión lateral de tronco con elevación lateral del brazo contrario sobre la cabeza, la mano libre se apoya
+sobre la cintura. Realizar alternadamente.
+7C. Flexión de tronco y de pierna derecha tratando con la mano izquierda de tocar el pie derecho, el brazo
+contrario se lleva en extensión, se realiza en forma alterna.
+8C. Desplazamiento de la pierna izquierda por el frente hacia la derecha, la pierna derecha también se
+desplaza hacia el mismo lado con torsión de tronco (hacia la derecha) y cruzando el brazo izquierdo por el
+frente y hacia atrás, se alterna del lado contrario.
+Tipo – Resistencia. Este tipo de actividad se recomienda llevarlo a cabo de 2 a 3 días por semana empleando una variedad de
+ejercicios y usando diferente equipo. La intensidad ligera a muy ligera debe usarse para pacientes adultos mayores o en pacientes
+que llevan una vida sedentaria. Los pacientes hipertensos deben esperar al menos 48 horas entre las sesiones de este tipo de
+ejercicios.
+Realizar 2 a 4
+Ejemplos de los ejercicios que se pueden realizar:
+series de cada
+1D. Cuclillas
+uno de los
+2D. Abdominales
+ejercicios,
+3D. Apoyo de ambas manos sobre una superficie (pared), los pies separados de la pared la misma distancia
+empleando de
+que dan los brazos extendidos, sin despegar los pies del suelo flexionar los codos acercando el tronco a la
+10 a 15
+pared, regresar a la posición de partida e iniciar nuevamente
+repeticiones de
+4D. Levantar pesos aproximados a 1 kg. Elevando el brazo extendido y alternando con el contralateral
+cada ejercicio
+5D. Lanzar pesos aproximados a 1 kg (pueden ser costalitos de arena).
+Utilizar bandas elásticas
+6D. La práctica de Tai Chi Chua.
+
+Los ejercicios de resistencia generalmente, en este tipo de programas, están dirigidos a los
+grandes grupos musculares. Es importante mencionar que el beneficio que se obtiene con los
+
+57
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+ejercicios de resistencia se pierde rápidamente con la inactividad sobretodo en individuos
+adultos mayores.
+FASE DE ENFRIAMIENTO: (realizar la toma del pulso en arteria radial a nivel de de muñeca al iniciar y finalizar esta
+fase).
+Realizar 10
+Repetir la serie de los primeros 5 ejercicios (del 1A. al 5A.)
+repeticiones
+Realizar serie de respiraciones profundas con las manos a la cintura, llevando los brazos
+de cada
+hacia atrás durante la inhalación y al frente durante la exhalación.
+ejercicio
+
+58
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+5.4 Diagramas de Flujo
+FLUJOGRAMAS 1-2. DETECCIÓN, DIANGÓSTICO Y TRATAMIENTO DE LA HIPERTENSIÓN ARTERIAL
+SISTÉMICA
+
+59
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+60
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+5.5 Listado de Recursos
+5.5.1 Cuadros de Medicamentos
+CUADRO XI. MEDICAMENTOS PARA EL TRATAMIENTO DE HIPERTENSIÓN ARTERIAL SISTÉMICA,
+SEGÚN LA CLASE Y PRINCIPIO ACTIVO
+
+CLASE
+
+FÁRMACO
+
+Diuréticos tiazídicos
+
+Clortalidona
+Hidoroclorotiazida
+
+Diuréticos de asa
+
+Furosemida
+
+Bloqueantes de los receptores de
+aldosterona
+Beta-Bloqueadores
+
+Espironolactona
+
+IECA
+(Inhibidores de la Enzima Convertidora
+de Angiotensina)
+ARA II
+(Antagonistas de los Receptores de
+Angiotensina II)
+
+Metoprolol
+Propanolol
+Captopril
+Enalapril
+Candesartán
+Losartán
+Telmisartán
+Valsartán
+
+Calcio antagonistas
+No Dihidropiridinicos
+
+Diltiazem
+
+Calcio antagonistas
+Dihidropiridinicos
+
+Nifedipino
+
+Alfa-1 Bloqueadores
+
+Prazocina
+
+Agonistas centrales alfa-2 y otros
+fármacos de acción central.
+
+Metildopa
+
+Vasodilatadores
+Directos
+
+Hidralacina
+
+Verapamilo
+
+Amlodipino
+Felodipino
+
+Fuente: JNC-8, 2013.
+
+61
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+CUADRO XII.COMBINACIONES DE SEGUNDA LÍNEA PARA LOS RÉGIMES DE LOS TRATAMIENTOS DE
+INICIO Y MANTENIMIENTO
+
+Inicio/Mantenimiento
+
+Diuréticos
+tiazidas
+
+Caantagonista
+
+IECA
+
+ARA II
+
+CA
+
+CA
+
+CA
+
+CA
+
+CA
+
+Diuréticos tiazidas
+Ca-antagonista
+
+CA
+
+IECA
+
+CA
+
+CA
+
+ARA II
+
+CA
+
+CA
+
+CNR
+
+beta-bloqueadores
+
+CU
+
+CU
+
+CU
+
+CNR
+
+CU
+
+Nota: Verde (CA): combinación aceptable; Amarillo: (CU): combinación útil, con limitaciones; Rojo (CNR):
+combinación no recomendable.
+
+62
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+CUADRO XIII. TRATAMIENTO FARMACOLÓGICO
+RECOMENDADO PARA EL PACIENTES CON
+HAS CON O SIN CONDICIONES ASOCIADAS.
+Condición
+
+Meta
+
+SIN CONDICIONES ESPECIALES
+Hipertensión
+< 140/90
+Hipertensión
+arterial mm Hg
+diastólica con o sin
+hipertensión
+sistólica
+>140/90 mm Hg
+
+Hipertensión
+arterial
+sistólica aislada
+
+Terapia primera
+línea
+
+Terapia
+línea
+
+Diuréticos de tiazidas,
+IECA o ARA II, CaA, BB
+
+Combinaciones
+de
+fármacos de primera
+línea
+
+Considerar el inicio de la terapia
+con combinaciones de fármacos
+de primera línea si la presión
+arterial sistólica es ≥20 mm Hg o
+presión arterial diastólica ≥10
+mm Hg de la meta
+Diuréticos Tiazidicos, ARA II, CaA
+
+CON CONDICIONES ESPECIALES
+Adulto mayor con HAS
+sistólica aislada (en > 80 años:
+ausencia de insuficiencia <150
+mm
+cardíaca)
+Hg
+Diabetes mellitus con < 130/80
+micro
+albuminuria, mm Hg
+enfermedad
+renal,
+cardiovascular y otros
+factores de riesgo
+Diabetes mellitus no
+incluida en la categoría
+anterior
+
+segunda
+
+Combinaciones
+de
+fármacos de primera
+línea
+Titular dosis de diurético y/o
+CaA
+No se recomienda BB
+
+IECA o
+ARA II
+
+Combinación
+CaA
+
+con
+
+IECA o ARA II
+CaA
+Diuréticos tiazidicos
+
+Combinación
+IECA+CaA
+
+de
+
+< 140/90
+mm Hg
+
+IECA o ARA II,
+CaA
+
+Enfermedad
+cardiovascular
+Coronariopatía
+Angina estable
+
+<140/90
+mm Hg
+
+IECA o ARA II
+
+No se recomienda monoterapia
+con BB en enfermos ≥60 años
+de edad.
+
+Vigilar presencia de hipocalemia
+
+Diuréticos
+CaA
+
+Síndrome metabólico
+
+Observaciones
+
+Considerar un diurético de Asa
+en enfermos con nefropatía y
+sobrecarga de volumen
+
+Agregue CaA
+
+Evitar CaA como nifedipina y
+combinación de IECA con ARA II.
+
+BB, IECA (ARA II en caso de
+intolerancia a IECA)
+
+Agregue CaA, si el BB
+está contraindicado
+
+Con el uso de BB, vigilar los
+datos de falla cardíaca aguda.
+
+Insuficiencia cardíaca
+
+Diuréticos (asa o ahorrador de
+potasio), BB, IECA (ARA II en caso
+de intolerancia a IECA)
+
+Titular dosis de IECA o ARA II
+
+Hipertrofia
+izquierda
+
+IECA o ARA II
+CaA
+Diuréticos de Tiazidas
+
+IECA con hidralazina
+si el IECA o el ARA
+están
+contraindicados.
+Combinaciones
+de
+fármacos de primera
+línea
+
+Combinaciones
+de
+fármacos de primera
+línea
+
+Monitoreo de la función renal y
+de los niveles de potasio
+
+Infarto del
+reciente
+
+BB
+
+miocardio
+
+ventricular
+
+Insuficiencia renal
+Nefropatía no diabética
+con proteinuria
+
+130/80
+mm Hg
+140/90
+mm Hg
+
+IECA o ARA II
+IECA o ARA II,
+Diuréticos
+
+Nota: BB, Beta-Bloqueadores; IECA: Inhibidores de la Enzima Convertidora de Angiotensina; ARA II:
+Antagonistas de los Receptores de Angiotensina II; CaA: Calcio-Antagonista.
+
+63
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+CUADRO XIV. Medicamentos mencionados en la guía e indicados en el tratamiento de
+
+Hipertensión arterial sistémica del Cuadro Básico de IMSS y del Cuadro Básico Sectorial:
+CLAVE
+
+2301
+
+Hidroclorotiazida
+
+DOSIS /DÍA
+(NÚMERO DE
+TOMAS)
+12.5 a 100mg/día (1)
+
+561
+
+Clortalidona
+
+12.5 a 50 mg/día (1)
+
+Tabletas 50 mg
+
+Indefinido
+
+574
+
+Captopril
+
+25 a 100 mg/día (1-3)
+
+Tabletas 25 mg
+
+Indefinido
+
+2501
+
+Enalapril
+
+10 a 60 mg (1-3)
+
+Tabletas 10 mg
+
+Indefinido
+
+599
+
+Nifedipino
+
+30 a 60 mg (1-2)
+
+Tabletas 30 mg
+
+Indefinido
+
+596
+
+Verapamil
+
+80 a 480 mg (2-3)
+
+Tabletas 80 mg
+
+Indefinido
+
+530
+
+de
+
+40 a 120 mg (2)
+
+Indefinido
+
+de
+
+50 a 300 mg (2-3)
+
+Tabletas de 10 y 40
+mg
+Tabletas 100 mg
+
+de
+
+2 a 8 mg (2-3)
+25 a 200 mg (1-2)
+
+Tabletas de 1 y 2
+mg
+Tabletas 50mg
+
+Indefinido
+
+2520
+
+Clorhidrato
+propranolol
+Tartrato
+metoprolol
+Clorhidrato
+prazocin
+Losartan potasico
+
+2114
+
+Felodipino
+
+5 a 10 mg (1-2)
+
+Tabletas 5 mg
+
+Indefinido
+
+4201
+
+Hidralazina
+
+50 a 100 mg
+
+Indefinido
+
+103
+
+Ácido acetilsalicilico
+
+150 mg/día (1 por la
+noche)
+
+Tabletas 10 y 50
+mg
+Tabletas 300 mg
+
+4246
+
+Clopidogrel
+
+75 mg /día (1)
+
+Tabletas 75 mg
+
+Indefinido
+
+5105
+
+Esmolol
+
+50 a 100 mcg / Kg/min
+
+Dosis
+Respuesta
+
+4114
+
+Nitroglicerina
+
+50 mg en 100 cc
+(dosis respuesta)
+
+Fco ámpula
+250mg/ml
+10ml
+Frasco ámpula 50
+mg
+
+Edema
+Rubor
+Cefalea,
+Taquicardia
+Hipotensión Cefalea Lupus
+Cefalea Taquicardia
+Tinnitus prolongación de
+tiempos de coagulación
+hemorragia hepatitis asma
+Neutropenia
+trombocitopenia
+diarrea
+dispepsia
+Hipotension
+naúsea
+broncoespasmo
+
+Dosis
+respuesta
+
+Cefalea
+Taquicardia
+
+572
+573
+
+PRINCIPIO ACTIVO
+
+PRESENTACIÓN
+
+TIEMPO
+
+Tabletas 25 mg
+
+Indefinido
+
+64
+
+Indefinido
+
+Indefinido
+
+Indefinido
+
+EFECTOS ADVERSOS
+
+Anorexia nausea vómito
+dolor abdominal
+hipokalemia
+Hiponatremia
+Hipotasemia
+Hiperglucemia
+Hpercalcemia
+Tos, proteinuria
+Disgeusia
+Diarrea
+Tos, proteinuria
+Disgeusia
+Diarrea
+Edema
+Rubor
+Cefalea
+Taquicardia
+Hipotensión
+Bradicardia
+Naúsea Rubor
+Constipación Edema
+Bradicardia,bronco
+espasmo,constipación
+Bradicardia,hipotensión
+diarrea,fatiga
+Hipotensión
+ortostática
+mareo síncope taquicardia
+Vertigo Hipotensión Rash
+
+Hipotensión
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+CUADRO XV. CONTRAINDICACIONES PARA EL USO DE FÁRMACOS ANTIHIPERTENSIVOS.
+
+FÁRMACO
+
+ABSOLUTAS
+
+Diuréticos (Tiazidas)
+
+Gota
+
+IECA
+
+Embarazo
+Edema angioneuóico
+Hipercalemia
+Estenosis renal bilateral
+
+ARA II
+
+Embarazo
+Hipercalemia
+Estenosis renal bilateral
+
+Síndrome Metabólico
+Intolerancia a la Glucosa
+Embarazo
+Hipercalcemia
+Hipocalcemia
+Mujer en edad fértil
+
+Mujer en edad fértil
+
+Calcio
+antagonistas
+(Dihidropiridina)
+Calcio-antagonistas
+(Verapamilo, diltiacem)
+
+Antagonistas
+receptores
+Mineralocorticoides
+
+Taquiarritmia
+Insuficiencia cardíaca
+Bloqueo de A–V (grado 2 o 3, bloqueo
+trifascicular),
+Falla grave del ventrículo izquierdo
+Falla cardíaca
+Asma
+Bloqueo A–V (Grado 2 o 3)
+
+beta-bloqueadores
+
+de
+de
+
+RELATIVAS
+
+Insuficiencia aguda y renal (TFG <30
+mL/min)
+Hipercalemia
+
+IECA: inhibidor de enzima convertidora de angiotensina,
+ARA II: bloqueadores de receptores de angiotensina
+
+65
+
+Síndrome Metabólico
+Intolerancia a la Glucosa
+Atletas y enfermos físicamente
+activos
+EPOC (excepto para vasodilatadores,
+beta-bloqueadores)
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+CUADRO XVI. INTERACCIONES FARMACOLOGICAS PARA EL PACIENTE ADULTO
+JOVEN Y MAYOR
+Clase
+de
+fármaco
+/principio activo
+beta-bloqueadores
+
+Fármaco interactuante
+
+Consecuencia
+
+Profilaxis
+
+Efectos:
+
+Calcioantagonista, especial
+atención con Nifedipino.
+
+Riesgo de
+miocárdica.
+
+isquemia
+
+Control de tensión arterial, dosis
+ajustada.
+
+Interacciones
+hemodinámicas
+
+Verapamilo, diltiazem. La
+mayoría de los anestesicos.
+
+Riesgo
+de
+falla
+cardíaca, hipotensión.
+
+Escrutinio
+de
+insuficiencia
+cardíaca, dosis ajustada.
+
+Interacciones
+electrofisiológicas
+
+Verapamilo, diltiazem.
+
+Bradicardia,
+Bloqueo
+completo de rama,
+hipotensión.
+
+Descartar síndrome de seno
+enfermo, enfermedad del nodo
+AV, Falla de VI.
+
+Amiodarona
+
+Bradicadia, bloqueo de
+rama.
+Efectos
+betabloqueadores
+excesivos
+
+Descartar enfermedad nodal.
+
+beta-bloqueadores
+
+Efectos
+inotropicos
+negativos y nodales.
+
+Evitar la interacción o reducir la
+dosis de betabloqueador.
+
+Intoxicación digitálica
+
+Asistolia,
+bloqueo
+completo de rama.
+Riesgo de toxicidad de
+digoxina.
+
+Evitar vía intravenosa.
+
+Hipotensión excesiva.
+
+Verificación de la tensión arterial
+en el uso adyuvante.
+
+Bradicardia
+
+El nifedipino mejora la
+pobre función del VI.
+
+Vigilancia
+electrocardiografica y
+función ventricular.
+Disminuye el efecto
+quinidina.
+
+AINEs
+
+Disminuye el efecto
+anti-hipertensivo.
+
+Ajustar la dosis del diuretico o
+adicionar otro agente.
+
+IECAs, BRAs
+
+Hipotension excesiva,
+uremia prerenal.
+
+Disminuir la dosis de diurético;
+iniciar dosificación baja.
+
+Captopril
+
+Perdida de la eficacia
+diurética
+de
+furosemida.
+Asumir menor eficacia
+en la falla cardíaca.
+
+Cambiar a otro IECA.
+
+Interacciones hepáticas:
+(Carvedilol,
+labetalol,
+metoprolol,
+propanolol,
+probablemente timolol).
+Calcioantagonistas
+Verapamilo
+
+Inhibidores del CYP2D6
+hepático;
+cimetidina,
+ritonavir, quinidina.
+
+Digoxina
+
+Prazocin y otros
+bloqueadores.
+
+alfa-
+
+beta-bloqueadores
+
+Nifedipino
+Diuréticos
+Tiazidicos y de Asa
+
+Diurético de Asa
+
+Prazocin,
+alfabloqueadores.
+
+Aspirina
+
+otros
+
+66
+
+Evitar la interacción o reducir la
+dosis de beta-bloqueador.
+
+Redosificar digoxin y muestreo
+sanguíneo.
+
+de
+
+la
+
+de
+
+la
+
+Suspender la aspirina al inicio
+agudo del tratamiento de falla
+cardíaca.
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+Diurético
+potasio.
+
+ahorrador
+
+de
+
+Antagonista del receptor
+de aldosterona.
+Eplerenona
+
+IECA, ARA II
+
+Hipercalemia.
+
+Monitorear potasio y reducir la
+dosis de IECA.
+
+IECA
+
+Hipercalemia.
+
+Monitorear potasio y reducir o
+eliminar IECA, BRA o el diurético
+ahorrador de potasio.
+
+Diuréticos excesivos, raro
+en hipertensión.
+
+Riesgo de falla renal.
+
+Reducir la dosis de diurético,
+corregir el volumen depletado.
+
+Diuréticos ahorradores de
+potasio, espironolactona.
+
+Hipercalemia
+
+Evitar la combinación o usar con
+precaución.
+
+AINEs
+
+Disminuye la TA.
+
+Evitarlo en lo posible
+
+Aspirina
+
+Disminuye efectos de
+la falla cardíaca.
+
+Disminuir la dosis.
+
+Diurético de Asa
+
+Disminuye el efecto
+diurético
+de
+furosemida.
+Aumenta el riesgo de
+neutropenia.
+
+Considerar un IECA alternativo.
+
+IECA
+
+Captopril
+
+Fármacos
+inmunosupresores
+
+Evitar la combinación, vigilancia
+de neutrófilos.
+
+ARA II
+
+Exceso de diuréticos, raro
+en hipertensión.
+
+Hipotensión al iniciarel
+tratamiento, riesgo de
+lesión renal.
+
+Reducir la dosis de diurético,
+corregir la depleción de volumen.
+
+beta-bloqueadores
+metabolizados en hígado
+
+Disminuye
+el
+metabolismo
+de
+betabloqueadores
+y
+aumenta los niveles
+séricos.
+
+Disminuir la dosis de metoprolol.
+
+Nitratos
+
+Menor tolerancia a
+nifedipino, riesgo de
+hipotension excesiva
+
+Dosificar lentamente.
+
+Verapamilo
+
+Sinergia con efecto
+antihipertensivo
+
+Ajustar dosis.
+
+ARA II
+Vasodilatadores
+
+Hidralazina
+
+Fuente: adaptada CHEP, 2013
+
+67
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+6. Glosario
+Adherencia terapéutica: observación estricta de las indicaciones médicas por parte del paciente
+para la prevención y el control de la hipertensión arterial.
+Bitácora positiva: registro realizado por el paciente ambulatorio en el que se demuestra la
+elevación persistente de PAS >140 mm Hg y/o PAD >90 mm Hg.
+Caso de hipertensión arterial: persona que cumple con los criterios diagnósticos enunciados en
+esta guía.
+Caso en control: paciente hipertenso bajo tratamiento que presenta de manera regular cifras de
+presión arterial <140/90 mmHg o con los parámetros que su condición requiere.
+Caso sospechoso: persona a la que en una medición de presión arterial se le registran cifras
+iguales o mayores de 140/90 mmHg.
+Contrarreferencia: procedimiento para el regreso del paciente a su unidad de adscripción, o a una
+de menor nivel de complejidad, una vez atendido el motivo de su envío
+Dieta: conjunto de alimentos naturales y preparados que se consumen cada día.
+Emergencia hipertensiva: caso de descontrol grave de la hipertensión arterial con repercusión o
+evidencia de lesión a un órgano blanco, y que requiere reducción de la presión arterial inmediata.
+Esfigmomanómetro: Instrumento médico para la medición no invasiva de la presión arterial
+sistémica, puede ser de columna de mercurio, aneroide o digital.
+Estilo de vida: conjunto de hábitos que influyen en la presencia de factores de riesgo para
+desarrollar la hipertensión arterial.
+Factor de riesgo: atributo o exposición de una persona que le confiere mayor probabilidad para
+desarrollar hipertensión arterial.
+Fármacos de primera línea: comprende el tratamiento de inicio en pacientes con HAS
+comprende (Diuréticos de tiazidas (o clortalidona), beta-bloqueadores, IECA (Inhibidores de la
+Enzima Convertidora de Angiotensina), ARA-II (Antagonistas de los Receptores de Angiotensina II)
+y Calcio-antagonista de acción prolongada
+Fármacos de segunda línea: constituyen la combinación de 2 o más fármacos de la primera
+línea.
+Fragilidad: Síndrome biológico de origen multifactorial, que consiste en reservas fisiológicas
+disminuidad, que condicionan vulnerabilidad ante factores estresantes y situaciones adversas que
+inciden en la dependencia funcional del anciano.
+
+68
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+Heterogeneidad del envejecimiento: El reconocimiento de la diferencia biológica, sexo y
+cronológica en el proceso de envejecimiento.
+Índice de masa corporal (ïndice de Quetelet): valor obtenido de la división entre peso corporal
+y la estatura elevada al cuadrado (kg/m2).
+Meta del tratamiento antihipertensivo: consiste en la reducción de la morbimortalidad por
+eventos cardiovasculares, cerebrovasculares y la prevención del daño renal, alcanzando las cifras
+de presión arterial sistólica y diastólica recomendadas en pacientes de HAS, las cuales varían de
+acuerdo a las situaciones o condiciones especiales del paciente; cifras que deberán mantenerse y
+traducen control de la enfermedad.
+Órgano blanco: órgano que sufre algún grado de deterioro en el corto, mediano o largo plazo, a
+consecuencia de enfermedades crónico-degenerativas entre las que se encuentran la hipertensión
+arterial, en este caso, son particularmente relevantes el cerebro, el corazón, el riñón y el ojo.
+Polifarmacia: Definida como el uso de múltiples medicamentos por un mismo paciente, el número
+determinado para el Instituto Mexicano del Seguro Social es de 4 o más fármacos.
+Prescripción razonada: implica la definición de un problema a través del diagnóstico, el
+planteamiento de un objetivo terapéutico y la discriminación de la adecuada terapéutica para cada
+caso, con la mejora de la relación médico-paciente y garantía deñ seguimiento.
+Prevención primaria: conjunto de acciones para reducir el riesgo de desarrollar hipertensión
+arterial.
+Prevención secundaria: conjunto de acciones para reducir el riesgo de desarrollar complicaciones
+de la hipertensión arterial.
+Primer nivel de atención: unidades de atención medica que constituyen la entrada a los servicio
+de salud y se orientan primordialmente a la promoción de salud, prevención, detección y
+tratamiento temprano de las enfermedades de mayor prevalencia y de bajo nivel de complejidad
+diagnóstica o terapéutica..
+Pseudohipertensión: El falso incremento de la tensión arterial sistólica como resultado de la
+acentuada esclerosis arterial que no se colapsan durante el insuflamiento del manguito del
+esfigmomanómetro.
+Pseudoresistencia: antihipertensiva: la inadecuada respuesta al tratamiento antihipertensivo
+sustentada en las mediciones elevadas de la tensión arterial realizadas en el consultorio en
+comparación con las mediciones domiciliarias.
+Referencia: procedimiento para el envío de pacientes a unidades médicas con mayor nivel de
+resolución.
+
+69
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+Segundo nivel de atención: unidades médicas que proveen los servicio de atención en los
+procesos hospitalarios a los pacientes que presentan enfermedades que por su complejidad no
+pueden ser atendido en el primer nivel de atención.
+Titulación de la dosis: el proceso de graduación progresiva de la dosis farmacológica para
+alcanzar el equilibrio de biodisponibilidad antes de alcanzar los efectos adversos.
+Tratamiento adecuado: conjunto de intervenciones en salud farmacológicas
+farmacológicas (aplicadas al paciente) para conseguir el control de la hipertensión arterial.
+
+y
+
+no
+
+Tratamiento farmacológico: conjunto de indicaciones que integran la prescripción de
+medicamentos para el tratamiento específico de la hipertensión arterial.
+Tratamiento no-farmacológico: conjunto de acciones higiénico-dietéticas que implican estilos
+de vida saludables para limitar la incidencia de riesgos y el desarrollo o evolución de la hipertensión
+arterial.
+Urgencia hipertensiva: caso de descontrol grave de la hipertensión arterial sin evidencia de
+lesión a órgano blanco, y que requiere reducción de la presión arterial en término de horas.
+
+70
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+7. Bibliografía
+1. Aburto NJ, Ziolkovska A, Hooper L, Elliott P, Cappuccio FP, Meerpohl J Effect of lower sodium
+intake on health: systematic review and meta-analyses.. BMJ 2013;346:f1326 doi:
+10.1136/bmj.f1326 (Published 5 April 2013).
+2. American College of Sports Medicine ACSM. Quantity and Quality of Exercise for Developind and
+Maintaining Cardiorespiratory, Musculoskeletal, and Neuromotor Fitness in Apparently Healthy
+Adults: Guidance for Prescribing Exercise. Medicine & Science in Sports & Exercise 2011 by the
+American College of Sports Medicine. DOI: 10.1249/MSS.0b013e318213fefb. Disponible en URL
+(acceso, octubre 2013): http://greatist.com/fitness/acsm-releases-new-exercise-guidelines
+3. Aronow WS, Fleg JL, Pepine CJ, Artinian NT, Bakris G, Brown AS, et al. ACCF/AHA 2011 Expert
+Consensus Document on Hypertension in the Elderly. A Report of the American College of
+Cardiology Foundation Task Force on Clinical Expert Consensus Document Developed in
+Collaboration With the American Academy of Neurology, American Geriatrics Society, American
+Society for Preventive Cardiology, American Society of Hypertension, American Society of
+Nephrology, Association of Black Cardiologists, and European Society of Hypertension. JACC
+2011; 57(20):2037–114
+4. Brook RD, Appel LJ, Rubenfire M, Ogedegbe G, Bisognano JD, Elliott W, et al. Beyond Medications
+and Diet: Alternative Approaches to Lowering Blood Pressure A Scientific Statement From the
+American Heart Association. Hypertension. published online April 22, 2013. Disponible en URL
+(Acceso
+agosto
+2013):
+http://hyper.ahajournals.org/content/early/2013/04/22/HYP.0b013e318293645f
+5. Centers of Disease and Prevention (CDC). Vital signs: prevalence, treatment, and control
+hypertension United States1999-2002 and 2005-2008. MMWR Morb Mortal Wkly Rep
+2011;60:103-108.
+6. Chobanian AV, Hill M. National Heart, Lung, and Blood Institute Workshop on Sodium and Blood
+Pressure: A critical review of current scientific evidence. Hypertension. 2000;35:858-63. PR
+7. Colylewright M, Reckelhoff JE, Ouyang P. Menopause and hypertension an age- old debate.
+Hypertension 2008;51:952–9.
+8. Cordero A, Bertomeu-Martínez V, Mazón P, Fácilac L, Bertomeu-González V, Juan Cosín, et al.
+Factores asociados a la falta de control de la hipertensión arterial en pacientes con y sin
+enfermedad cardiovascular. Rev Esp Cardiol. 2011;64(7):587–593.
+9. Cochrane Database of Systemic Reviews. Efecto de la reducción moderada de la sal a largo plazo
+en la preseón arterial. (revision Cochrane traducida). Cochrane Database of Systemic Reviews
+213 Issue 4Art No.: CD 004937. DOI: 10.1002/14651858.CD004937.
+10. Eckel RH, Jakicic JM, Ard JD, Hubbard Van S., de Jesus Janet M., Lee I-Min et al. AHA/ACC
+guideline on lifestyle management to reduce cardiovascular risk: a report of the American College
+of Cardiology/American Heart Association task force on practice guidelines. Circulation. 2013.
+doi:10.1161/01.cir.0000437740.48606.d1.
+
+71
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+11. ESH and ESC Guidelines. 2013 ESH/ESC Guidelines for themanagement of arterial hypertension.
+The Task Force for the management of arterial hypertension of the European Society of
+Hypertension (ESH) and of the European Society of Cardiology (ESC). European Heart Journal
+Advance
+Access
+published
+June
+14,
+2013.
+European
+Heart
+Journal
+doi:10.1093/eurheartj/eht151.
+12. Feng J, He FJ, Li J, MacGregor GA. Effect of longer term modest salt reduction on blood pressure:
+Cochrane systematic review and meta-analysis of randomised trials. BMJ 2013;346:f1325 doi:
+10.1136/bmj.f1325 (Published 5 April 2013).
+13. Gerin W; James G. Special Memorial Tribute Issue Psychosocial determinants of hypertension:
+laboratory and field models Blood Pressure Monitoring (abstract) 2010;(15)2:93-99.
+14. Hackam DG, Quinn RR, Ravani P, Rabi DM, Dasgupta K, MD, Daskalopoulou S, et al. Guidelines.
+The 2013 Canadian Hypertension Education Program (CHEP) Recommendations for Blood
+Pressure Measurement, Diagnosis, Assessment of Risk, Prevention, and Treatment of
+Hypertension. Canadian Journal Cardiology 29 (2013) 528e542.
+15. Instituto de Salud Pública. Encuesta de Nutrición en Salud 2012 (ENSANUT). México.
+16. Instituto Mexicano del Seguro Social. Guía de Práctica Clínica para la Valoración Geriátrica
+Integral en Unidades de Atención Médica. México: Instituto Mexicano del Seguro Social, 2011.
+(acceso
+diciembre,
+2013):
+http://www.imss.gob.mx/profesionales/guiasclinicas/Pages/guias.aspx
+17. James PA, Oparil S, Carter BL, Cushman WC, Dennison-Himmerlfarb C, HandlerJ, et al. 2014
+evidence- (JNC8). JAMA. Based guideline for the management of high blood pressure in adults:
+report from the panel members appointed to the Eighth Joint National Committee 2014 Feb 5;31
+(5): 507-20.
+18. Kearney PM, Whelton M, Reynolds K, Whelton, PK, He J. Worldwide prevalence of hypertension: a
+systematic review. J Hypertens 2004;22:11-19.
+19. Kelley GA, Kelley KS. Progressive resistance exercise and resting blood pressure: A meta-analysis
+of randomized controlled trials. Hypertension. 2000;35:838-43. M
+20. NICE Clinical Guidelines, No. 34. Hypertension: Management in Adults in Primary Care:
+Pharmacological Update National Collaborating Centre for Chronic Conditions (UK), London:
+Royal College of Physicians (UK); 2006.
+21. NICE clinical guideline 127. Hypertension: clinical management of primary hypertension in adults.
+National Institute for Health and Clinical Excellence, 2011.
+22. Pastor-Barriuso R, Banegas JR, Damián J, et al. Systolic blood pressure, diastolic blood pressure,
+and pulse pressure: an evaluation of their joint effect on mortality. Ann Intern Med 2003;
+139:731.
+23. Protogerou AD, Safar ME, Iaria P, et al. Diastolic blood pressure and mortality in the elderly with
+cardiovascular disease. Hypertension 2007; 50:172.
+
+72
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+24. Rodríguez-Hernández M. Intersedes. La actividad física en la prevención y tratamiento de la
+hipertensión arterial. InterSedes. Vol. XIII. (26-2012) 144-156 ISSN: 2215-2458. Disponible en
+URL (acceso diciembre, 2013): www.intersedes.ucr.ac.cr.
+25. Sacks FM, Svetkey LP, Vollmer WM, et al. Effects on blood pressure of reduced dietary sodium
+and the Dietary Approaches to Stop Hypertension (DASH) diet. DASH-Sodium Collaborative
+Research Group. N Engl J Med. 2001;344:3-10.
+26. Seventh Report of the Joint National Committee on the Prevention, Detection, Evaluation, and
+Treatment of High Blood Pressure (JNC-7). Resetting the Hypertension Sails. Lenfant C,
+Chobanian AV, Jones D, Roccella E. Circulation 2003;107:2993-2994. Disponible en URL (acceso
+agosto 2013): http://www.circulationaha.org
+27. Sosa-Rosado JM. Tratamiento no farmacológico de la hipertensión arterial. An Fac Med
+2010;71(4):241-4.
+28. Staessen JA, Gasowski J, Wang JG, et al. Risks of untreated and treated isolated systolic
+hypertension in the elderly: meta-analysis of outcome trials. Lancet 2000; 355:865.
+29. Steffen M, Kuhle C, Hensrud D, Erwin PJ, Murad MH. The effect of coffee consumption on blood
+pressure and the development of hypertension: a systematic review and meta-analysis. J
+Hyperten 2012;30(12):2245-54. doi: 10.1097/HJH.0b013e3283588d73
+30. Vollmer WM, Sacks FM, Ard J, et al. Effects of diet and sodium intake on blood pressure:
+Subgroup analysis of the DASH-sodium trial. Ann Intern Med. 2001;135:1019-28.
+31. Whelton SP, Chin A, Xin X, He J. Effect of aerobic exercise on blood pressure: A meta-analysis of
+randomized, controlled trials. Ann Intern Med 2002;136:493-503.
+32. Xin X, He J, Frontini MG, et al. Effects of alcohol reduction on blood pressure: A meta-analysis of
+randomized controlled trials. Hypertension 2001;38:1112-7
+
+73
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+8. Agradecimientos
+Se agradece a las autoridades de Instituto Mexicano de Seguro Social las gestiones realizadas
+para que el personal adscrito al centro o grupo de trabajo que desarrolló la presente guía asistiera a
+los eventos de capacitación en Medicina Basada en la Evidencia y temas afines, coordinados por
+Instituto Mexicano de Seguro Social y el apoyo, en general, al trabajo de los autores.
+
+Instituto Mexicano de Seguro Social / IMSS
+
+DG. David Alvarado Escobar Rodríguez
+
+Luz María Manzanares Cruz
+
+Carlos Hernández Bautista
+
+Diseñador gráfico
+Secretaria
+Coordinación
+Técnica
+Coordinación de UMAE
+
+de
+
+Excelencia
+
+Clínica.
+
+Mensajero
+Coordinación
+Técnica
+Coordinación de UMAE
+
+de
+
+Excelencia
+
+Clínica.
+
+74
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+9. Comité Académico
+INSTITUTO MEXICANO DEL SEGURO SOCIAL, COORDINACIÓN TÉCNICA DE
+EXCELENCIA CLÍNICA, COORDINACIÓN DE UNIDADES MÉDICAS DE ALTA
+ESPECIALIDAD / CUMAE
+Dr. Jaime Antonio Zaldívar Cervera
+Dr. Arturo Viniegra Osorio
+Dra. Laura del Pilar Torres Arreola
+Dra. Adriana Abigail Valenzuela Flores
+
+Dra. Rita Delia Díaz Ramos
+Dra. Judith Gutiérrez Aguilar
+
+Coordinador de Unidades Médicas de Alta Especialidad
+Coordinador Técnico de Excelencia Clínica
+Jefa de Área de Desarrollo de Guías de Práctica Clínica
+Jefa del Área de Implantación y Evaluación de Guías de
+Práctica Clínica
+Jefa de Área de Proyectos y Programas Clínicos
+Jefa de Área de Innovación de Procesos
+
+Dr. Antonio Barrera Cruz
+
+Coordinador de Programas Médicos
+
+Dra. Virginia Rosario Cortés Casimiro
+
+Coordinadora de Programas Médicos
+
+Dra. Aidé María Sandoval Mex
+
+Coordinadora de Programas Médicos
+
+Dra. Yuribia Karina Millán Gámez
+
+Coordinadora de Programas Médicos
+
+Dra. María Antonia Basavilvazo Rodríguez
+
+Coordinadora de Programas Médicos
+
+Dr. Juan Humberto Medina Chávez
+
+Coordinador de Programas Médicos
+
+Dra. Adolfina Bergés García
+
+Coordinadora de Programas Médicos
+
+Lic. Ana Belem López Morales
+
+Coordinadora de Programas de Enfermería
+
+Lic. Héctor Dorantes Delgado
+
+Coordinador de Programas
+
+Lic. Abraham Ruiz López
+
+Analista Coordinador
+
+Lic. Ismael Lozada Camacho
+
+Analista Coordinador
+
+75
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+10. Directorio Sectorial y del Centro
+Desarrollador
+Directorio sectorial Directorio del centro
+desarrollador
+Secretaría de Salud Instituto Mexicano del Seguro Social
+Dra. Mercedes Juan Dr. Javier Dávila Torres
+Secretaria de Salud
+
+Director de Prestaciones Médicas
+
+Instituto Mexicano del Seguro Social
+Dr. José Antonio González Anaya Dr. José de Jesús González Izquierdo
+Directora General
+
+Titular de la Unidad de Atención Médica
+
+Instituto de Seguridad y Servicios
+Sociales de los Trabajadores del Estado
+Lic. Sebastián Lerdo de Tejada Covarrubias Dr. Jaime Antonio Zaldivar Cervera
+Director General
+
+Coordinador de Unidades Médicas de Alta
+Especialidad
+
+Sistema Nacional para el Desarrollo
+Integral de la Familia
+Lic. Laura Vargas Carrillo Dr. Roberto Aguli Ruiz Rosas
+Titular del Organismo SNDIF (Encargado) Coordinación Integral de Atención
+en el Segundo Nivel
+
+Petróleos Mexicanos
+Dr. Emilio Ricardo Lozoya Austín Dr. Arturo Viniegra Osorio
+Director General
+
+Coordinador Técnico de Excelencia Clínica
+
+Secretaría de Marina Armada de
+México
+Almte. Vidal Francisco Soberón Sanz
+Secretario de Marina
+
+Secretaría de la Defensa Nacional
+Gral. Salvador Cienfuegos Zepeda
+Secretario de la Defensa Nacional
+
+Consejo de Salubridad General
+Dr. Leobardo Ruíz Pérez
+Secretario del Consejo de Salubridad General
+
+76
+
+Diagnóstico y Tratamiento de la Hipertensión arterial en el primer nivel
+
+11. Comité Nacional de Guías de Práctica Clínica
+Dr. Eduardo González Pier
+Subsecretario de Integración y Desarrollo del Sector Salud
+Dr. Pablo Kuri Morales
+Subsecretario de Prevención y Promoción de la Salud
+Dr. Guillermo Miguel Ruíz-Palacios y Santos
+Titular de la Comisión Coordinadora de Institutos Nacionales de Salud y Hospitales de Alta Especialidad
+Dr. Gabriel Jaime O´Shea Cuevas
+Comisionado Nacional de Protección Social en Salud
+Dr. Alfonso Petersen Farah
+Secretario Técnico del Consejo Nacional de Salud
+Dr. Leobardo Ruíz Pérez
+Secretario del Consejo de Salubridad General
+General de Brigada M. C. Rene Gutierrez Bastida
+Director General de Sanidad Militar de la Secretaría de la Defensa Nacional
+Contraalmirante SSN, M.C. Pediatra Rafael Ortega Sánchez
+Director General Adjunto de Sanidad Naval de la Secretaría de Marina Armada de México
+Dr. Javier Dávila Torres
+Director de Prestaciones Médicas del Instituto Mexicano del Seguro Social
+Dr. José Rafael Castillo Arriaga
+Director Médico del Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado
+Dr. Rodolfo Rojas Rubí
+Subdirector de Servicios de Salud de Petróleos Mexicanos
+Lic. Mariela Amalia Padilla Hernández
+Directora General de Integración del Sistema Nacional para el Desarrollo Integral de la Familia
+Dr. Ricardo Camacho Sanciprian
+Director General de Rehabilitación del Sistema Nacional para el Desarrollo Integral de la Familia
+Dr. José Meljem Moctezuma
+Comisionado Nacional de Arbitraje Médico
+Dr. José Ignacio Santos Preciado
+Director General de Calidad y Educación en Salud
+Dra. Laura Elena Gloria Hernández
+Directora General de Evaluación del Desempeño
+Lic. Juan Carlos Reyes Oropeza
+Director General de Información en Salud
+M en A María Luisa González Rétiz
+Directora General del Centro Nacional de Excelencia Tecnológica en Salud
+Dr. Sergio Leonardo Piña Marshall
+Secretario de Salud y Director General de Servicios de Salud de Chihuahua
+Dr. Agustín Lara Esqueda
+Secretario de Salud y Bienestar Social y Presidente Ejecutivo de los Servicios de Salud en el Estado de Colima
+Dr. Francisco Ignacio Ortíz Aldana
+Secretario de Salud y Director General del Instituto de Salud Pública del Estado de Guanajuato
+Dr. Enrique Ruelas Barajas
+Presidente de la Academia Nacional de Medicina
+Dr. Alejandro Reyes Fuentes
+Presidente de la Academia Mexicana de Cirugía
+
+Presidente
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular
+Titular y Suplente del
+presidente del CNGPC
+Titular 2014-2015
+Titular 2014-2015
+Titular 2014-2015
+Titular
+Titular
+Asesor Permanente
+
+Presidente Ejecutivo de la Fundación Mexicana para la Salud, A.C.
+M. en C. Víctor Manuel García Acosta
+Presidente de la Asociación Mexicana de Facultades y Escuelas de Medicina, A.C.
+Dr. Francisco Pascual Navarro Reynoso
+Presidente de la Asociación Mexicana de Hospitales, A.C.
+Lic. Alejandro Alfonso Díaz
+Presidente de la Asociación Nacional de Hospitales Privados, A.C.
+Dr. Sigfrido Rangel Frausto
+Presidente de la Sociedad Mexicana de Calidad de Atención a la Salud
+M. en C. Julio Cesár Ballesteros del Olmo
+Presidente de la Academia Mexicana de Pediatría
+Dr. Esteban Hernández San Román
+Director de Evaluación de Tecnologías en Salud, CENETEC-Salud
+
+77
+
+Asesor Permanente
+Asesor Permanente
+Asesor Permanente
+Asesor Permanente
+Invitada
+Secretario Técnico
+
+

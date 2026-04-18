@@ -1,0 +1,273 @@
+{
+  "gpc_diabetes": {
+    "condicion": "Diabetes Mellitus Tipo 2",
+    "cie10": "E11",
+    "nivel_atencion": "Primer nivel",
+    "especialidad": "Medicina familiar / Endocrinología (2º nivel)",
+    "referencia_segundo_nivel": [
+      "Debut de DM2 con glucosa > 400 mg/dL o cetoacidosis",
+      "Hipoglucemia grave o recurrente",
+      "HbA1c > 9% tras 3 meses de tratamiento intensificado",
+      "Complicaciones crónicas avanzadas",
+      "Embarazo con diabetes",
+      "Necesidad de insulinoterapia compleja"
+    ],
+    "signos_alarma": [
+      "Glucosa > 400 mg/dL",
+      "Cetoacidosis: vómito, dolor abdominal, aliento cetónico, alteración de conciencia",
+      "Hipoglucemia: temblor, diaforesis, confusión, pérdida de conciencia",
+      "Estado hiperosmolar: poliuria extrema, deshidratación grave, confusión"
+    ],
+    "criterios_diagnostico": [
+      "Glucosa en ayuno ≥ 126 mg/dL (en dos ocasiones)",
+      "Glucosa 2h post-carga ≥ 200 mg/dL",
+      "HbA1c ≥ 6.5%",
+      "Glucosa casual ≥ 200 mg/dL con síntomas clásicos"
+    ],
+    "sintomas_cardinales": [
+      "poliuria",
+      "polidipsia",
+      "polifagia",
+      "pérdida de peso inexplicada",
+      "visión borrosa",
+      "fatiga"
+    ],
+    "metas_control": {
+      "HbA1c": "< 7%",
+      "glucosa_ayuno": "70–130 mg/dL",
+      "PA": "< 130/80 mmHg",
+      "LDL": "< 100 mg/dL"
+    }
+  },
+  "gpc_hipertension": {
+    "condicion": "Hipertensión Arterial Sistémica",
+    "cie10": "I10",
+    "nivel_atencion": "Primer nivel",
+    "especialidad": "Medicina familiar / Cardiología (2º–3º nivel)",
+    "clasificacion": [
+      {
+        "categoria": "Normal",
+        "PAS": "< 120",
+        "PAD": "< 80"
+      },
+      {
+        "categoria": "Prehipertensión",
+        "PAS": "120–139",
+        "PAD": "80–89"
+      },
+      {
+        "categoria": "HTA Estadio 1",
+        "PAS": "140–159",
+        "PAD": "90–99"
+      },
+      {
+        "categoria": "HTA Estadio 2",
+        "PAS": "≥ 160",
+        "PAD": "≥ 100"
+      },
+      {
+        "categoria": "Crisis hipertensiva",
+        "PAS": "≥ 180",
+        "PAD": "≥ 120"
+      }
+    ],
+    "referencia_urgencias": [
+      "PA > 180/120 mmHg con daño a órgano blanco (emergencia hipertensiva)",
+      "Déficit neurológico, dolor torácico, disnea, alteración visual aguda",
+      "HTA en embarazo"
+    ],
+    "signos_alarma": [
+      "PA > 180/120 mmHg",
+      "Cefalea intensa súbita",
+      "Déficit neurológico focal",
+      "Dolor torácico",
+      "Disnea súbita",
+      "Alteración visual aguda"
+    ],
+    "sintomas": [
+      "cefalea occipital matutina",
+      "mareo",
+      "tinnitus",
+      "epistaxis",
+      "frecuentemente asintomática"
+    ],
+    "tratamiento_no_farmacologico": [
+      "Reducción de sal < 6 g/día",
+      "Actividad física 30 min/día 5 días/semana",
+      "Dieta DASH",
+      "Reducción de peso",
+      "Suspensión de tabaco y alcohol"
+    ]
+  },
+  "gpc_infeccion_respiratoria": {
+    "condicion": "Infección Aguda de Vías Respiratorias (IVRA)",
+    "cie10": "J00–J22",
+    "nivel_atencion": "Primer nivel",
+    "especialidad": "Medicina general / Pediatría",
+    "tipos": [
+      "Rinofaringitis aguda J00",
+      "Faringitis aguda J02",
+      "Amigdalitis aguda J03",
+      "Bronquitis aguda J20",
+      "Neumonía J18"
+    ],
+    "signos_alarma": [
+      "FR > 60 rpm (lactante < 2 meses)",
+      "FR > 50 rpm (lactante 2–12 meses)",
+      "FR > 40 rpm (niño 1–5 años)",
+      "Tiraje subcostal, intercostal o supraesternal",
+      "Estridor en reposo",
+      "Cianosis central",
+      "Incapacidad para beber (lactante)",
+      "Alteración del estado de conciencia",
+      "Fiebre > 39°C en < 3 meses de edad",
+      "Convulsión febril"
+    ],
+    "referencia_segundo_nivel": [
+      "Neumonía grave",
+      "Lactante < 2 meses con fiebre",
+      "Insuficiencia respiratoria",
+      "Sin respuesta al tratamiento en 48–72 h"
+    ],
+    "manejo_primer_nivel": [
+      "Hidratación oral",
+      "Antipiréticos (paracetamol, ibuprofeno)",
+      "Antibióticos solo si hay evidencia bacteriana",
+      "No antibióticos en virus"
+    ]
+  },
+  "gpc_cardiopatia_isquemica": {
+    "condicion": "Cardiopatía Isquémica / Síndrome Coronario Agudo",
+    "cie10": "I20–I25",
+    "nivel_atencion": "Urgencias 2º/3er nivel — NO tratar en primer nivel",
+    "especialidad": "Cardiología / Urgencias",
+    "tipos": [
+      "Angina estable I20.8",
+      "Angina inestable I20.0",
+      "IAMSEST I21.4",
+      "IAMCEST I21.0–I21.3"
+    ],
+    "signos_alarma": [
+      "Dolor torácico opresivo > 20 min sin respuesta a nitratos",
+      "Irradiación a brazo izquierdo, mandíbula, cuello, espalda",
+      "Diaforesis profusa",
+      "Náusea o vómito",
+      "Disnea",
+      "Síncope",
+      "PA < 90 mmHg sistólica",
+      "FC > 120 o < 50 lpm"
+    ],
+    "accion_primer_nivel": [
+      "REFERIR URGENCIAS INMEDIATAMENTE",
+      "Aspirina 300 mg VO si no hay contraindicación",
+      "Monitoreo de signos vitales durante traslado",
+      "Oxígeno si SatO2 < 94%"
+    ],
+    "factores_riesgo": [
+      "tabaquismo",
+      "diabetes mellitus",
+      "hipertensión",
+      "dislipidemia",
+      "obesidad",
+      "antecedente familiar",
+      "sedentarismo"
+    ]
+  },
+  "gpc_evc_stroke": {
+    "condicion": "Enfermedad Vascular Cerebral (EVC) — Ictus / Stroke",
+    "cie10": "I60–I64",
+    "nivel_atencion": "Tercer nivel — URGENCIA, ventana terapéutica 4.5 horas",
+    "especialidad": "Neurología / Urgencias",
+    "tipos": [
+      "EVC isquémico I63 (80%)",
+      "Hemorragia intracerebral I61 (15%)",
+      "Hemorragia subaracnoidea I60 (5%)"
+    ],
+    "signos_FAST": {
+      "F": "Cara: asimetría facial, desviación de comisura labial",
+      "A": "Brazos: debilidad o parálisis de un brazo",
+      "S": "Habla: dificultad para hablar o entender",
+      "T": "Tiempo: llamar urgencias INMEDIATAMENTE, anotar hora de inicio"
+    },
+    "otros_signos": [
+      "Cefalea intensa de inicio súbito",
+      "Pérdida súbita de visión",
+      "Vértigo intenso con caída",
+      "Confusión o pérdida de conciencia"
+    ],
+    "accion_primer_nivel": [
+      "TRASLADO INMEDIATO a hospital con tomógrafo — ventana 4.5 h para trombolisis",
+      "NO dar aspirina hasta descartar hemorragia por TC",
+      "Mantener PA < 220/120 mmHg (no bajar bruscamente)",
+      "Posición: cabeza a 30° si inconsciente",
+      "Corregir hipoglucemia si glucemia < 60 mg/dL"
+    ]
+  },
+  "gpc_apendicitis": {
+    "condicion": "Apendicitis Aguda",
+    "cie10": "K35–K37",
+    "nivel_atencion": "Segundo nivel — QUIRÚRGICO URGENTE",
+    "especialidad": "Cirugía general",
+    "presentacion_clasica": [
+      "Dolor periumbilical que migra a fosa ilíaca derecha (FID)",
+      "Náusea y vómito",
+      "Anorexia",
+      "Fiebre 37.5–38.5°C",
+      "Rebote en FID (Blumberg positivo)",
+      "Leucocitosis"
+    ],
+    "signos_alarma_perforacion": [
+      "Fiebre > 38.5°C",
+      "Dolor difuso (peritonitis)",
+      "Rigidez en tabla",
+      "Leucocitos > 18,000"
+    ],
+    "escala_alvarado": {
+      "criterios": [
+        {
+          "criterio": "Migración dolor a FID",
+          "pts": 1
+        },
+        {
+          "criterio": "Anorexia",
+          "pts": 1
+        },
+        {
+          "criterio": "Náusea/vómito",
+          "pts": 1
+        },
+        {
+          "criterio": "Sensibilidad en FID",
+          "pts": 2
+        },
+        {
+          "criterio": "Rebote en FID",
+          "pts": 1
+        },
+        {
+          "criterio": "Temperatura > 37.3°C",
+          "pts": 1
+        },
+        {
+          "criterio": "Leucocitosis > 10,000",
+          "pts": 2
+        },
+        {
+          "criterio": "Desviación a la izquierda",
+          "pts": 1
+        }
+      ],
+      "interpretacion": [
+        "1–4: baja — observación",
+        "5–6: media — imagen (US/TC)",
+        "7–10: alta — cirugía"
+      ]
+    },
+    "accion_primer_nivel": [
+      "REFERIR URGENCIAS QUIRÚRGICAS si Alvarado ≥ 5",
+      "No analgésicos opioides antes de evaluación quirúrgica",
+      "Dieta absoluta",
+      "Vía IV y líquidos"
+    ]
+  }
+}

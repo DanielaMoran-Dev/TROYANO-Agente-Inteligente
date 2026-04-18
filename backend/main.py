@@ -15,7 +15,7 @@ from fastapi.staticfiles import StaticFiles
 
 # Always load from services/.env (user's location), then allow cwd/.env to override
 _services_env = os.path.join(os.path.dirname(__file__), "services", ".env")
-load_dotenv(_services_env)
+load_dotenv(_services_env, override=True)
 load_dotenv(override=False)  # also pick up backend/.env if it exists
 
 sys.path.insert(0, os.path.dirname(__file__))

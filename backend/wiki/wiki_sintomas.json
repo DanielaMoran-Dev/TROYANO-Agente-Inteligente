@@ -1,0 +1,306 @@
+[
+  {
+    "sintoma": "dolor torácico",
+    "palabras_clave": [
+      "dolor pecho",
+      "opresión pecho",
+      "angina",
+      "infarto"
+    ],
+    "condiciones_posibles": [
+      "Síndrome coronario agudo",
+      "Angina",
+      "GERD",
+      "Costocondritis",
+      "Neumotórax"
+    ],
+    "señales_alarma": [
+      "irradiación al brazo/mandíbula",
+      "diaforesis",
+      "disnea",
+      "duración > 20 min"
+    ],
+    "triaje_default": 2,
+    "triaje_con_alarma": 1,
+    "accion": "Referir urgencias (2º nivel) si alarma. ECG inmediato.",
+    "especialidad": "Cardiología / Urgencias"
+  },
+  {
+    "sintoma": "dolor abdominal",
+    "palabras_clave": [
+      "dolor barriga",
+      "dolor estómago",
+      "cólico"
+    ],
+    "condiciones_posibles": [
+      "Apendicitis",
+      "Cólico biliar",
+      "Gastroenteritis",
+      "Cólico renal",
+      "Pancreatitis"
+    ],
+    "señales_alarma": [
+      "rigidez abdominal",
+      "rebote positivo",
+      "fiebre > 38.5°C",
+      "vómito en proyectil"
+    ],
+    "triaje_default": 3,
+    "triaje_con_alarma": 2,
+    "accion": "Alvarado si FID. Referir cirugía si ≥ 5 o peritonitis.",
+    "especialidad": "Cirugía general"
+  },
+  {
+    "sintoma": "fiebre",
+    "palabras_clave": [
+      "calentura",
+      "temperatura alta",
+      "febrícula"
+    ],
+    "condiciones_posibles": [
+      "Infección viral",
+      "Neumonía",
+      "Infección urinaria",
+      "Dengue",
+      "Sepsis"
+    ],
+    "señales_alarma": [
+      "< 3 meses con T ≥ 38°C",
+      "petequias/púrpura",
+      "rigidez de nuca",
+      "alteración de conciencia"
+    ],
+    "triaje_default": 4,
+    "triaje_con_alarma": 1,
+    "accion": "Primer nivel si sin alarma. Urgencias si petequias o < 3 meses.",
+    "especialidad": "Medicina general / Pediatría"
+  },
+  {
+    "sintoma": "dificultad respiratoria",
+    "palabras_clave": [
+      "falta de aire",
+      "disnea",
+      "ahogo",
+      "sibilancias",
+      "no puedo respirar"
+    ],
+    "condiciones_posibles": [
+      "Asma",
+      "EPOC",
+      "Neumonía",
+      "Insuficiencia cardiaca",
+      "Anafilaxia"
+    ],
+    "señales_alarma": [
+      "cianosis",
+      "tiraje",
+      "FR > 30",
+      "SatO2 < 90%",
+      "no puede completar frases"
+    ],
+    "triaje_default": 2,
+    "triaje_con_alarma": 1,
+    "accion": "Oxígeno y traslado urgente.",
+    "especialidad": "Urgencias / Neumología"
+  },
+  {
+    "sintoma": "cefalea",
+    "palabras_clave": [
+      "dolor cabeza",
+      "migraña",
+      "jaqueca"
+    ],
+    "condiciones_posibles": [
+      "Migraña",
+      "Cefalea tensional",
+      "HTA",
+      "Hemorragia subaracnoidea",
+      "Meningitis"
+    ],
+    "señales_alarma": [
+      "inicio súbito explosivo",
+      "rigidez de nuca",
+      "fiebre",
+      "déficit neurológico",
+      "post-trauma"
+    ],
+    "triaje_default": 4,
+    "triaje_con_alarma": 1,
+    "accion": "Triaje 1 si inicio súbito/explosivo (HSA). TC urgente.",
+    "especialidad": "Neurología / Urgencias"
+  },
+  {
+    "sintoma": "pérdida de conciencia",
+    "palabras_clave": [
+      "desmayo",
+      "se desmayó",
+      "síncope",
+      "convulsión",
+      "se cayó inconsciente"
+    ],
+    "condiciones_posibles": [
+      "Síncope vasovagal",
+      "Hipoglucemia",
+      "Arritmia",
+      "EVC",
+      "Convulsión"
+    ],
+    "señales_alarma": [
+      "no recupera en < 1 min",
+      "déficit neurológico",
+      "FC anormal",
+      "trauma craneal"
+    ],
+    "triaje_default": 2,
+    "triaje_con_alarma": 1,
+    "accion": "Glucemia capilar. ECG. Traslado urgente si persiste.",
+    "especialidad": "Urgencias / Neurología"
+  },
+  {
+    "sintoma": "vómito o náuseas",
+    "palabras_clave": [
+      "vomitando",
+      "nauseas",
+      "arcadas"
+    ],
+    "condiciones_posibles": [
+      "Gastroenteritis viral",
+      "Intoxicación alimentaria",
+      "Obstrucción intestinal"
+    ],
+    "señales_alarma": [
+      "hematemesis",
+      "deshidratación grave",
+      "vómito fecaloide",
+      "rigidez de nuca"
+    ],
+    "triaje_default": 4,
+    "triaje_con_alarma": 2,
+    "accion": "Hidratación oral si tolera. Referir si hematemesis.",
+    "especialidad": "Medicina general"
+  },
+  {
+    "sintoma": "glucosa alta o baja",
+    "palabras_clave": [
+      "azúcar alta",
+      "hipoglucemia",
+      "temblor diabético",
+      "azúcar baja"
+    ],
+    "condiciones_posibles": [
+      "Cetoacidosis diabética",
+      "Estado hiperosmolar",
+      "Hipoglucemia"
+    ],
+    "señales_alarma": [
+      "glucosa > 400",
+      "vómito + dolor abdominal + aliento cetónico",
+      "glucosa < 60 con síntomas",
+      "confusión"
+    ],
+    "triaje_default": 3,
+    "triaje_con_alarma": 2,
+    "accion": "Hipoglucemia consciente: glucosa oral. Inconsciente o cetoacidosis: urgencias.",
+    "especialidad": "Urgencias / Endocrinología"
+  },
+  {
+    "sintoma": "presión arterial alta",
+    "palabras_clave": [
+      "presión elevada",
+      "hipertensión",
+      "presión 180",
+      "crisis hipertensiva"
+    ],
+    "condiciones_posibles": [
+      "Urgencia hipertensiva",
+      "Emergencia hipertensiva"
+    ],
+    "señales_alarma": [
+      "PA > 180/120 + cefalea intensa",
+      "déficit neurológico",
+      "dolor torácico",
+      "disnea"
+    ],
+    "triaje_default": 3,
+    "triaje_con_alarma": 1,
+    "accion": "PA > 180/120 con daño a órgano = emergencia hipertensiva → urgencias.",
+    "especialidad": "Urgencias / Cardiología"
+  },
+  {
+    "sintoma": "trauma o golpe",
+    "palabras_clave": [
+      "accidente",
+      "caída",
+      "golpe en cabeza",
+      "fractura",
+      "herida"
+    ],
+    "condiciones_posibles": [
+      "Fractura",
+      "TEC",
+      "Contusión",
+      "Herida cortante"
+    ],
+    "señales_alarma": [
+      "pérdida de conciencia aunque sea breve",
+      "confusión post-trauma",
+      "vómito en proyectil post-TEC",
+      "deformidad obvia",
+      "sangrado no controlado"
+    ],
+    "triaje_default": 3,
+    "triaje_con_alarma": 1,
+    "accion": "TEC con pérdida de conciencia → TC urgente. Fractura expuesta → cirugía.",
+    "especialidad": "Urgencias / Ortopedia"
+  },
+  {
+    "sintoma": "signos neurológicos",
+    "palabras_clave": [
+      "no puede hablar",
+      "cara caída",
+      "brazo débil",
+      "parálisis",
+      "entumecimiento mitad del cuerpo"
+    ],
+    "condiciones_posibles": [
+      "EVC isquémico",
+      "EVC hemorrágico",
+      "Parálisis de Bell",
+      "Hipoglucemia"
+    ],
+    "señales_alarma": [
+      "inicio súbito",
+      "cualquier déficit focal nuevo"
+    ],
+    "triaje_default": 1,
+    "triaje_con_alarma": 1,
+    "accion": "TRASLADO INMEDIATO. Ventana de trombolisis 4.5 h. No aspirina hasta TC.",
+    "especialidad": "Neurología / Urgencias"
+  },
+  {
+    "sintoma": "embarazo con complicaciones",
+    "palabras_clave": [
+      "embarazada con dolor",
+      "sangrado en embarazo",
+      "contracciones prematuras",
+      "preeclampsia"
+    ],
+    "condiciones_posibles": [
+      "Amenaza de aborto",
+      "Embarazo ectópico",
+      "Preeclampsia",
+      "Parto prematuro"
+    ],
+    "señales_alarma": [
+      "sangrado profuso",
+      "dolor abdominal intenso",
+      "PA > 140/90 en embarazo",
+      "ausencia de movimientos fetales",
+      "< 37 semanas con contracciones"
+    ],
+    "triaje_default": 2,
+    "triaje_con_alarma": 1,
+    "accion": "Referir urgencias obstétricas de 2º nivel. Toda embarazada con sangrado o dolor intenso es triaje 1 o 2.",
+    "especialidad": "Ginecología y Obstetricia"
+  }
+]

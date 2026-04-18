@@ -40,6 +40,33 @@
       "Bash(curl -s -X POST http://127.0.0.1:8765/doctors/login -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"docpass123\"}')",
       "Bash(curl -s -X POST http://127.0.0.1:8765/doctors/register -H 'Content-Type: application/json' -d '{\"email\":\"bad__CMDSUB_OUTPUT__@test.com\",\"password\":\"docpass123\",\"name\":\"X\",\"last_name\":\"Y\",\"license_number\":\"LIC__CMDSUB_OUTPUT__x\",\"specialty\":\"not_real\",\"price_level\":2}')",
       "Bash(curl -s -X POST http://127.0.0.1:8765/doctors/register -H 'Content-Type: application/json' -d '{\"email\":\"__TRACKED_VAR__\",\"password\":\"docpass123\",\"name\":\"Carlos\",\"last_name\":\"Vega\",\"license_number\":\"LIC999__CMDSUB_OUTPUT__\",\"specialty\":\"cardiología\",\"price_level\":2}')"
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(backend/.venv/bin/python *)",
+      "Bash(backend/.venv/bin/pip install *)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:cenetec-difusion.com)",
+      "WebFetch(domain:hospitalgeneralchone.gob.ec)",
+      "WebFetch(domain:saludsinaloa.gob.mx)",
+      "Bash(curl -sL \"https://github.com/verasativa/CIE-10/raw/master/cie-10.csv\" -o backend/wiki/raw/cie10.csv)",
+      "Bash(pdftotext /home/angel/.claude/projects/-home-angel-Escritorio-TROYANO-Agente-Inteligente/39b515e1-27ba-493d-b698-19268626186d/tool-results/webfetch-1776478772289-gk9f5v.pdf backend/wiki/raw/manchester_triage.txt)",
+      "WebFetch(domain:enfermeriadeurgencias.com)",
+      "WebFetch(domain:www.cenetec-difusion.com)",
+      "Bash(cp backend/wiki/raw/manchester_triage.txt /tmp/manchester_full.txt)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL \"https://extranet.who.int/ncdccs/Data/MEX_D1_GPC%20DM%201er%20nivel.pdf\" -o gpc_diabetes.pdf)",
+      "Bash(curl -sL \"https://extranet.who.int/ncdccs/Data/MEX_D1_HIPERTENSION_EVR_CENETEC.pdf\" -o gpc_hipertension.pdf)",
+      "Bash(curl -sL \"https://www.cenetec-difusion.com/CMGPC/GPC-IMSS-335-19/ER.pdf\" -o gpc_enfermedad_renal.pdf)",
+      "Bash(wait)",
+      "Bash(curl -sL \"https://www.cenetec-difusion.com/CMGPC/GPC-SS-009-20/ER.pdf\" -o gpc_asma_pediatrico.pdf)",
+      "Bash(curl -sL \"https://www.imss.gob.mx/sites/all/statics/guiasclinicas/062GER.pdf\" -o gpc_infeccion_respiratoria.pdf)",
+      "Bash(curl -sL \"https://www.cenetec-difusion.com/CMGPC/IMSS-632-13/ER.pdf\" -o gpc_embarazo.pdf)",
+      "Bash(curl -sL \"https://www.cenetec-difusion.com/CMGPC/GPC-SS-106-20/RR.pdf\" -o gpc_diarrea_aguda.pdf)",
+      "Bash(curl -sL \"https://www.imss.gob.mx/sites/all/statics/guiasclinicas/031GRR.pdf\" -o gpc_apendicitis.pdf)",
+      "Bash(curl -sL \"https://www.cenetec-difusion.com/CMGPC/GPC-IMSS-635-19/RR.pdf\" -o gpc_colico_renoureteral.pdf)",
+      "Bash(curl -sL \"https://www.imss.gob.mx/sites/all/statics/guiasclinicas/000GRRCardiopatiaIsquemica.pdf\" -o gpc_cardiopatia_isquemica.pdf)",
+      "Bash(curl -sL \"https://www.facmed.unam.mx/sg/css/GPC/SIDSS-GPC/gpc/docs/IMSS-191-10-RR.pdf\" -o gpc_evc_stroke.pdf)"
     ]
   }
 }

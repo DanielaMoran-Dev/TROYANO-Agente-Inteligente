@@ -1,0 +1,869 @@
+Guía de Referencia
+Rápida
+
+Diagnóstico, estratificación y tratamiento
+hospitalario inicial de pacientes con síndrome
+coronario agudo sin elevación ST
+
+GPC
+Guía de Práctica Clínica
+Catálogo maestro de guías de práctica clínica: IMSS-191-10
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+Guía de Referencia Rápida
+120.9 Angina de pecho sin especificar
+121Infarto agudo del miocardio
+GPC
+Diagnóstico, estratificación y tratamiento hospitalario inicial de pacientes
+con síndrome coronario agudo sin elevación ST
+ISBN en trámite
+DEFINICIÓN
+El síndrome coronario agudo (SICA) incluye: infarto agudo de miocardio con elevación del segmento ST
+(IAM-CEST), cuya reperfusión es necesaria y SICA sin elevación del segmento ST (SICA-SEST), que incluye
+angina inestable (AI) e infarto agudo de miocardio sin elevación del ST (IM-SEST), en este último existe
+elevación de marcadores de necrosis miocárdica mas importante y cuadro clínico prolongado (más de 20
+minutos) y con mayor frecuencia depresión persistente o transitoria del segmento ST; un bajo porcentaje de
+estos pacientes pueden evolucionar al infarto con onda Q
+
+PREVENCIÓN PRIMARIA
+El médico de primer contacto, con intervalos regulares (al menos cada 3 años), debe indagar en todos los
+pacientes sobre la presencia y estado de control de los principales factores de riesgo cardiovascular, ofrecer
+tratamiento y apoyo necesarios
+El riesgo a 10 años para el desarrollo de cardiopatía isquémica sintomática (según el riesgo global del
+National Cholesterol Education Program “NCEP”): debe ser calculado en todos los pacientes que tengan 2 o
+más de los principales factores de riesgo cardiovascular. (ver GPC de estratificación de riesgo cardiovascular
+IMSS)
+Las estrategias de prevención primaria se deben enfocar en lo siguiente:
+Abandono del consumo de tabaco
+Manejo dietético (dieta baja en grasas saturadas, baja en grasas trans y colesterol, rica en fibra, vegetales y
+granos)
+Manejo de actividad física (programa regular de ejercicio aeróbico de 30 a 60 minutos con actividad física
+moderada)
+Control ponderal (índice de masa corporal entre 18.5 y 24.9 kg/m2 y circunferencia de cintura menor o igual
+de 80 cm en mujeres y de 90 cm en hombres)
+Control de la presión arterial de acuerdo a recomendaciones de JNC 7
+Inicio de tratamiento hipolipemiante con estatinas (de acuerdo a los criterios de NCEP)
+Control de factores de riesgo para síndrome metabólico o cualquiera de sus componentes
+Inicio de aspirina a dosis profiláctica de 75 mg a 162 mg/día “en pacientes con más de 10% de riesgo
+calculado”
+
+2
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+DETECCIÓN
+En todos los pacientes con cardiopatía isquémica se deben evaluar la presencia y estado de control de los
+principales factores de riesgo cardiovascular en intervalos regulares
+Se debe identificar y seguir a los pacientes con cardiopatía isquémica establecida y realizar estrategias de
+prevención secundaria. Deben recibir intervención intensiva para el control de factores de riesgo los
+pacientes con ateroesclerosis periférica, diabetes mellitus, enfermedad renal crónica o con un riesgo mayor
+de 20% a 10 años calculado por las ecuaciones de Framingham.
+
+DIAGNÓSTICO CLÍNICO
+Los pacientes con angina inestable o infarto del miocardio sin desnivel positivo del segmento ST, además de
+tener dolor precordial pueden presentar molestia en la mandíbula, cuello, brazo izquierdo, espalda o en
+epigastrio. Se ha reportado como equivalentes de angina de pecho la disnea inexplicable o fatiga extrema
+Generalmente el paciente con angina inestable tiene dolor precordial que dura de 5 a 20 minutos y se puede
+disminuir con nitratos sublinguales. Cuando el dolor precordial tipo opresivo dura más de 20 minutos es una
+angina prologada o un infarto con desnivel negativo o desnivel positivo del segmento ST en el
+electrocardiograma
+Otras causas graves de dolor torácico, sin isquemia miocárdica son: disección aórtica o tromboembolia
+pulmonar, por lo que debe hacerse el diagnóstico diferencial correspondiente
+Todo paciente con dolor precordial, con o sin irradiación a brazos, espalda, cuello, mandíbula o epigastrio;
+disnea, debilidad, diaforesis, náusea, mareo debe ser transportado, de preferencia por un servicio de
+ambulancia en lugar de familiares o amigos a un servicio de urgencias
+
+DIAGNÓSTICO POR LABORATORIO Y GABINETE
+En todos los pacientes con malestar, dolor precordial, equivalente anginoso u otro síntoma sugestivo de
+síndrome coronario agudo es necesario tomar un electrocardiograma de 12 derivaciones, el cual deberá ser
+evaluado por un experto lo antes posible (no más de 10 minutos como tiempo meta)
+Un electrocardiograma completamente normal, no excluye en 100% de los casos un síndrome coronario
+agudo sin desnivel positivo del segmento ST
+Los electrocardiogramas con interpretación validada por computadora están recomendados para este
+propósito
+Si el electrocardiograma de 12 derivaciones muestra evidencia de daño agudo o isquemia, es razonable que
+sea evaluado a la brevedad posible en un sistema de emergencia o médico capacitado
+Ante un cuadro clínico de angina de pecho, cuando el primer electrocardiograma no presenta alteraciones, se
+debe repetir a las 6 a 8 horas
+Antes de dar de alta del servicio de urgencias al paciente es recomendable repetir el electrocardiograma de
+12 derivaciones
+El monitoreo electrocardiográfico continuo de 12 derivaciones es una alternativa razonable a los registros
+seriados de 12 derivaciones en pacientes cuyo ECG inicial es no diagnóstico.
+Los biomarcadores troponina T o I, como marcador de lesión miocárdica, son más sensibles y específicos
+comparados con la creatinfosfokinasa CPK o con su isoenzima MB (CK-MB)
+Las troponinas son el mejor biomarcador de pronóstico a corto tiempo (30 días) para tener un infarto del
+miocardio o muerte súbita. Las troponinas posterior a un daño miocárdico (infarto) empiezan a elevarse
+3
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+después de 3-4 horas, con elevación máxima en sangre a las 8-12 horas y pueden persistir elevadas entre 5 a
+14 días. Puede haber falsos positivos en pacientes con insuficiencia renal crónica (creatinina >2.5 mg/dl) o
+miopatías esqueléticas
+El biomarcador CPK-MB, se eleva entre la 4-6 horas, su pico máximo se alcanza en 12-24 horas. Es menos
+costoso y tiene mayor capacidad para detectar reinfarto del miocardio. Baja especificidad y sensibilidad en
+infartos menores de 6 horas de evolución, además su capacidad de detección es menor cuando la lesión
+miocárdica es mínima
+Debe tomarse a la brevedad posible troponina I o T cuantitativa o CPK-MB, y tener los resultados en un
+máximo de 60 minutos. El estudio debe repetirse después de 6 a 12 horas del primer examen negativo
+Es recomendable volver a medir niveles de biomarcadores a intervalos de 6 a 8 horas por lo menos 2 a 3
+veces o hasta que los niveles alcancen su pico máximo, como un índice del tamaño del infarto y dinámica de
+daño por necrosis cuando estos son positivos
+La medición del peptido natriurético tipo B(BNP) o NT pro-BNP debe ser considerada como valoración
+suplementaria en el cálculo del riesgo global en pacientes con SCA
+La medición de CPK total (sin MB), aspartato aminotransferasa y alaninotransferasa (AST, ALT) y lactato
+deshidrogenasa(DHL) no deben ser utilizadas como pruebas iniciales para la detección de necrosis
+miocárdica en pacientes con dolor precordial sugestivo de Síndrome Coronario Agudo
+
+TRATAMIENTO PRE-HOSPITALARIO
+Atención inicial
+Como la mayoría de los pacientes que fallecen por un SICA antes de llegar a un hospital, lo hace por paro
+cardiorrespiratorio secundario a arritmias letales como taquicardia ventricular y fibrilación ventricular, el
+personal de salud que se encargue de la atención pre-hospitalaria de pacientes con SICA debe estar
+capacitado para la atención de pacientes con paro cardiorrespiratorio y el uso de un desfibrilador
+Es razonable administrar oxigeno suplementario en todos los pacientes con SICA SEST durante las primeras 6
+horas del inicio del cuadro. Es útil la oximetría de pulso, pero no es indispensable en pacientes con bajo riesgo
+de hipoxemia
+Los proveedores del servicio de emergencias deben administrar 160 a 325 mg de ASA (ácido acetilsalícilico) sin capa entérica, a pacientes con dolor precordial y sospecha de un síndrome coronario agudo, a
+menos que exista contraindicación o haya sido tomado por el paciente previamente.
+Los médicos deben instruir a los pacientes con angina estable crónica(sin contraindicaciones para NTG), para
+que en presencia de dolor precordial, si los síntomas mejoran de forma significativa con una dosis de NTG, es
+apropiado repetir la dosis cada 5 minutos hasta un máximo de 3 dosis, pero si no mejora o incluso empeora
+después de 5 minutos, de la primera dosis, se recomienda llamar a un sistema de urgencias o acudir
+inmediatamente al departamento de urgencias del hospital mas cercano antes de tomar más dosis
+
+ESTRATIFICACIÓN INICIAL DEL RIESGO
+En este contexto el término “riesgo” se refiere a la probabilidad individual de tener un evento adverso
+(mortalidad cardiovascular, infarto del miocardio, evento vascular cerebral o revascularización urgente)
+La estratificación de riesgo de presentar una obstrucción de las arterias coronarias o un evento adverso
+cardiovascular en forma temprana divide a los pacientes en riesgo bajo, intermedio o alto
+Deben utilizarse escalas de riesgo (GRACE, TIMI, o PURSUIT) para la evaluación del riesgo inicial y
+subsecuente (cuadro 1, 2)
+4
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+La escala GRACE (Global Registry of Acute Cardiac Events) deriva del poder predictivo independiente de los
+factores para mortalidad hospitalaria y a 6 meses, mediante una evaluación clínica, electrocardiográfica y de
+laboratorio.
+Para determinar el riesgo se recomienda incluir los siguientes antecedentes:
+Edad, infarto, intervención coronaria percutánea o cirugía previa, exploración física (presión arterial y
+frecuencia cardiaca), electrocardiograma de 12 derivaciones (patrones de isquemia), pruebas de laboratorio
+(troponina I o T, creatinina, glucosa y hemoglobina)
+La estratificación de riesgo debe guiar el manejo y hacer un balance entre el riesgo beneficio del tratamiento
+
+TRATAMIENTO HOSPITALARIO
+Cuidados generales y manejo inmediato
+Desde el ingreso el paciente debe permanecer en reposo en cama con monitoreo continuo con ECG.
+Es razonable administrar oxigeno suplementario en todos los pacientes con SICA SEST durante las primeras 6
+horas del inicio del cuadro
+En todos los pacientes con dolor torácico u otros síntomas sugestivos de SCA se debe realizar una
+determinación clínica rápida del riesgo de enfermedad arterial coronaria obstructiva definiendo si tiene un
+riesgo bajo, intermedio o alto para determinar el manejo
+En pacientes con sospecha de SCA con presencia de cardiopatía isquémica, si el ECG de 12 derivaciones
+seriado, y los biomarcadores cardíacos son normales, una prueba de esfuerzo o farmacológica debe ser
+realizada para inducir isquemia ya sea en un servicio de urgencias, unidad de dolor torácico o como externo
+dentro de las próximas 72 horas como alternativa al ingreso hospitalario del paciente
+Los pacientes de bajo riesgo con pruebas diagnósticas negativas, pueden manejarse de forma ambulatoria
+Pacientes libres de dolor anginoso, con ECG normal o no diagnóstico, o sin cambios en relación a un trazo
+previo, con biomarcadores en rango normal, y con un ECG sin factores de confusión tales como bloqueos de
+rama, hipertrofia ventricular izquierda o con ritmos de marcapaso, pueden ser sometidos a una prueba de
+esfuerzo convencional limitada por síntomas
+Los pacientes de bajo riesgo, referidos para realización de prueba de esfuerzo como externos, deben recibir
+tratamiento con ácido acetilsalicílico, nitroglicerina sublingual y/o betabloqueadores, mientras se espera el
+resultado de la prueba de esfuerzo
+Pacientes con SCA definitivo con presencia de síntomas isquémicos, biomarcadores cardíacos positivos,
+aparición de nuevas desviaciones en el segmento ST, inversión de ondas T, alteraciones hemodinámicas o
+prueba de esfuerzo positiva deben ser ingresados al hospital para continuar su manejo.
+La admisión a una Unidad de Cuidados Coronarios se recomienda para aquellos casos con isquemia activa o
+inestabilidad eléctrica o hemodinámica
+Los pacientes egresados de un servicio de urgencias o unidad de dolor torácico deben ser instruidos en
+relación a actividad física, medicamentos, necesidad de pruebas adicionales y seguimiento por un médico.
+Pacientes con SCA probable o posible pero en los cuales su ECG de 12 derivaciones inicial y biomarcadores
+cardíacos son normales, deben permanecer en observación en un hospital con facilidades para monitoreo
+cardíaco (ej: unidad de dolor torácico u hospital capacitado). El seguimiento ECG seriado de 12 derivaciones
+o continuo, así como la determinación repetida de biomarcadores debe ser realizada en intervalos de tiempo
+específicos(6 y 12 horas)
+Pacientes con SCA posible y biomarcadores cardíacos negativos incapaces de realizar ejercicio o con un ECG
+de reposo anormal deben ser llevados a una prueba de esfuerzo farmacológica
+En pacientes con sospecha de SCA con baja o intermedia probabilidad de enfermedad arterial coronaria, en
+los que el seguimiento de ECG de 12 derivaciones y marcadores cardíacos son normales, la realización de una
+5
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+prueba de imagen coronaria no invasiva constituye una alternativa a la prueba de esfuerzo
+Pacientes con SCA definitiva y elevación del segmento en derivaciones V7 a V9 debido a oclusión de la
+arteria circunfleja deben ser evaluados para recibir terapia de reperfusión de forma inmediata
+
+SULFATO DE MORFINA
+Su mayor efecto adverso es la hipotensión, especialmente en presencia de depleción de volumen y/o
+terapia vasodilatadora. Nausea y vómito ocurre en aproximadamente 20% de los pacientes. La depresión
+respiratoria es la complicación mas seria
+Es razonable administrar morfina o un derivado (buprenorfina o nalbufina) a pacientes con SICA-SEST con
+dolor precordial no controlado con el tratamiento anti-isquemia (por ej después de 3 dosis de nitroglicerina
+sublingual) o en los que los síntomas recurren a pesar de tratamiento anti-isquemia. Se puede administrar
+EV con la nitroglicerina, monitoreando la tensión arterial. Dosis de 1 a 5 mg EV y se puede repetir cada 5 a
+30 minutos hasta controlar los síntomas.
+
+ANALGÉSICOS Y ANTIINFLAMATORIOS NO ESTEROIDEOS
+Los AINEs selectivos y no selectivos de la Cox2 no deben administrarse en pacientes con SICA SEST. Los
+pacientes que estén recibiendo AINEs o inhibidores COX2 y que presenten SICA-SEST deben suspenderlos
+
+TERAPIA ANTI-ISQUEMIA. NITRATOS
+Los pacientes con SICA SEST con malestar o dolor de origen isquémico deben recibir nitroglicerina
+sublingual 0.4 mg cada 5 minutos con un máximo de 3 dosis, (si no está contraindicada) con evaluación
+posterior de la administración intravenosa.
+No administrar nitroglicerina ni otros nitratos en pacientes con antecedente de utilización de sildenafil 24
+horas o menos, tadalafil o vardenafil 48 horas o antes. Tampoco deben ser administrados en pacientes con
+tensión arterial sistólica inicial menor de 90 mm Hg o con disminución de ésta 30 mm Hg o más en
+relación a cifras básales o con marcada bradicardia (menos de 50 por minuto) o taquicardia (mas de 100
+por minuto).
+La nitroglicerina endovenosa (EV) beneficia a los pacientes con falla cardiaca, hipertensión o en los que los
+síntomas no han remitido con tres dosis de nitroglicerina sublingual y con la administración oral o EV de
+betabloqueadores.
+La tolerancia a los efectos hemodinámicos de los nitratos depende de la dosis y tiempo de administración y
+generalmente se observa después de 24 horas de terapia continua
+La nitroglicerina endovenosa esta indicada en las primeras 48 horas después de un SICA SEST para
+tratamiento de la isquemia persistente, falla cardiaca o hipertensión. La decisión de administrar la
+nitroglicerina intravenosa y la dosis a usar no debe excluir el tratamiento con otras intervenciones útiles
+como los beta bloqueadores y los inhibidores de la ECA.
+La nitroglicerina EV se debe iniciar a 10 mcg por minuto en infusión continua, incrementando 10 mcg cada
+3 a 5 minutos hasta que disminuyan los síntomas o se observe la respuesta en la tensión arterial. Si los
+síntomas y signos de isquemia no mejoran la dosis deberá ser incrementada hasta que la respuesta en la
+6
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+tensión arterial sea observada. Una vez que se observe una respuesta parcial en la tensión arterial deberán
+alargarse los intervalos y los incrementos de dosis deben ser menores. La tensión arterial sistólica (TAS)
+generalmente no debe llevarse a menos de 110 mm Hg en pacientes previamente normotensos o no inferior
+a 25% de la tensión arterial media (TAM) si previamente tenía presión arterial elevada; 200 mcg por
+minuto se considera la cifra tope.
+Los pacientes que requieren tratamiento continuo por más de 24 horas pueden requerir incrementos de la
+dosis para mantener su efecto, sin embargo, se recomienda utilizar bajas dosis e intermitentes para evitar la
+tolerancia.
+Cuando los pacientes estén sin datos de isquemia de 12 a 24 hrs se debe intentar reducir la dosis y cambiar
+a la vía oral y/o tópica
+
+BLOQUEADORES BETA-ADRENÉRGICOS
+Se debe administrar un betabloqueador en las primeras 24 horas del inicio del cuadro. Se recomienda
+vigilancia hemodinámica estricta, y tener presente que el tratamiento agresivo con betabloqueadores puede
+ser riesgoso sobre todo en pacientes hemodinamicamente inestables
+En pacientes con una o más de las siguientes condiciones no deben administrarse betabloqueadores:
+Signos de insuficiencia cardiaca
+Bajo gasto
+Riesgo incrementado para choque cardiogénico (edad mayor de 70 años, TAS por debajo de 120 mm Hg,
+taquicardia sinusal mayor de 110, frecuencia cardiaca menor de 60)
+Intervalo PR mayor de 0.24 segundos, bloqueo cardiaco de segundo o tercer grado, Contraindicaciones
+relativas: asma activo o enfermedad reactiva de vías aéreas
+En los pacientes con isquemia continua o con recurrencias frecuentes que no puedan recibir betabloqueadores, el tratamiento inicial, puede ser con verapamilo o diltiazem siempre y cuando no presenten
+disfunción de ventrículo izquierdo u otras contraindicaciones
+Es razonable administrar beta-bloqueadores vía EV cuando se presenta hipertensión en los pacientes con
+SICA SEST que no presentan contraindicaciones mencionadas. La vía EV se justifica en pacientes con angina
+persistente en reposo, especialmente con taquicardia o hipertensión. La vía oral puede elegirse en pacientes
+de bajo riesgo.
+La dosis de los betabloqueadores se ajustará según respuesta teniendo como meta 50 a 60 latidos por
+minuto. En pacientes con antecedentes de bronco-espasmo, si es necesario, puede administrarse betabloqueador cardio-selectivo de vida media corta y con vigilancia de efectos adversos
+El metoprolol EV puede ser administrado en incrementos de 5 mg por vía EV lenta (5 mg en 1 a 2
+minutos), repetida cada 5 minutos por una dosis total inicial de 15 mg. En pacientes que toleran la dosis de
+15 mg EV, la terapia oral puede iniciarse 15 minutos después de la última dosis intravenosa a 25-50 mg
+cada 6 horas por 48 hrs. Después los pacientes deben recibir una dosis de mantenimiento de hasta 100 mg
+dos veces al día. El monitoreo durante la terapia EV del betabloqueador debe incluir revisión frecuente de la
+frecuencia cardiaca y de la presión arterial y monitoreo ECG continuo así como también auscultación para
+estertores y broncoespasmo. El beta bloqueo puede también ser administrado oralmente, en pequeñas dosis
+si es apropiado, dentro de las primeras 24 horas, en casos de que no exista indicación clínica específica para
+la administración EV o si se tiene la preocupación por la seguridad de un beta bloqueo agresivo.
+Carvedilol, 6.25 mg por vía oral dos veces al día, con incrementos individualizados a intervalos de 3 a 10
+días, hasta un máximo de 25 mg dos veces al día, puede reducir la mortalidad y reinfarto cuando es dado a
+pacientes con infarto miocárdico reciente (3 a 21 días) y con disfunción del VI. Después de la carga EV
+7
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+inicial, si es dada, los pacientes sin efectos colaterales limitantes pueden pasar a un régimen oral. La
+frecuencia cardiaca blanco es de 50 a 60 latidos por minuto a menos de que se presente un efecto colateral.
+La selección del agente oral debe incluir la familiaridad del clínico con el agente
+
+BLOQUEADORES DE LOS CANALES DEL CALCIO
+Es razonable utilizar bloqueadores de los canales del calcio no-dihidropiridinicos en pacientes con isquemia
+recurrente, después de que los nitratos y betabloqueadores han sido utilizados a dosis máximas. Se ha
+observado mejoría de los síntomas con la administración de verapamilo o diltiazem tempranamente en
+pacientes sin insuficiencia cardiaca
+Se puede considerar utilizar bloqueadores de los canales del calcio dihidropiridinicos de liberación
+prolongada cuando no se pueda utilizar un betabloqueador y no exista insuficiencia cardiaca.
+Las bloqueadores de los canales del calcio dihidropiridinicos de acción inmediata en presencia de adecuado
+bloqueo beta pueden ser consideradas en paciente con SICA SEST con angina persistente en reposo o
+hipertensión
+Los bloqueadores de los canales del calcio dihidropiridinicos de acción inmediata (nifedipina) no deben
+administrarse en ausencia de un betabloqueador. Se debe tener precaución cuando se combina un
+betabloqueador y un bloqueador de los canales del calcio en pacientes con angina refractaria ya que se
+puede presentar un efecto sinérgico deprimiendo la función ventricular izquierda y los nodos de conducción
+sinusal y AV.
+
+INHIBIDORES DEL SISTEMA RENINA-ANGIOTENSINA-ALDOSTERONA
+Un IECA vía oral, debe ser administrado dentro de las primeras 24 horas de iniciado el cuadro en pacientes
+con congestión pulmonar o fracción de expulsión del ventrículo izquierdo menor o igual 0.40, excepto si el
+paciente presenta hipotensión (TAS menor de 100 mm Hg o disminución mayor o igual de 30 mm Hg con
+relación a la basal) u otras contraindicaciones.
+Un bloqueador del receptor de la angiotensina debe ser administrado en pacientes que son intolerantes a los
+IECA y que tienen insuficiencia cardiaca o fracción de expulsión del ventrículo izquierdo menor o igual
+0.40. No utilizar en forma conjunta un IECA y un bloqueador de receptores de angiotensina
+El tratamiento con IECA esta contraindicado en pacientes con hipotensión arterial, choque, antecedente de
+estenosis bilateral de la arteria renal o antecedente de disminución de la función renal con IECA, pacientes
+con hiperkalemia e insuficiencia renal aguda
+No deberá administrarse un IECA vía EV en las primeras 24 horas de iniciado el cuadro ya que se incrementa
+el riesgo de hipotensión (una posible exclusión son los pacientes con hipertensión refractaria)
+Captopril dosis inicial de 6.25 mg con intervalos de 6 a 8 hrs y un máximo de 50 mg tres veces al día,
+administrar siempre y cuando la tensión arterial se encuentre por encima de 90 a 100 mm Hg, enalapril
+(dosis inicial 2.5 mg/día aumentando hasta 20 mg dos veces al día o lisinopril dosis inicial 2.5 mg al día
+aumentando hasta un máximo de 10 mg/día.
+Los antagonistas de los receptores de angiotensina II (ARA II) son una alternativa considerable en caso de
+alergia o intolerancia a los IECA.
+Se recomienda la administración, de un antagonista de la aldosterona 3 a 14 días después del IM (en
+promedio 7.3 días), en todos los pacientes que tengan los siguientes criterios:
+8
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+Que esté recibiendo un IECA
+Que tengan una fracción de expulsión ventricular izquierda 40%
+Que tengan insuficiencia cardiaca o diabetes
+Tener un depuración de creatinina mayor de 30 ml/min
+Tener un potasio sérico 5.0 meq/L
+Se sugiere iniciar con espironolactona 25 a 50 mg por día
+
+TRATAMIENTO ANTIPLAQUETARIO
+El ASA debe ser administrada en pacientes con SICA SEST inmediatamente que se presenten en el hospital y
+continuarse indefinidamente siempre que el paciente no tenga intolerancia al medicamento. En pacientes
+que presentan hipersensibilidad o intolerancia gastrointestinal mayor a la aspirina se podrá administrará
+clopidogrel (dosis de carga seguida por dosis de mantenimiento). Cuando se estén administrando ASA y
+clopidogrel en forma aislada o combinados, en pacientes con antecedentes de sangrado gastrointestinal, se
+deberá prescribir concomitantemente medicamentos para minimizar el riesgo de recurrencia de sangrado
+gastrointestinal.
+En pacientes con sica sest de riesgo intermedio o alto que serán manejados con estrategia invasiva inicial
+deberán recibir terapia dual antiplaquetaria, agregada a la aspirina se deberá elegir uno de los siguientes
+antiagregantes:
+Inicio antes de la intervención coronaria percutánea:
+-Clopidogrel , o Inhibidor de glicoproteína IIb/IIIa, tirofiban o eptifibatide son preferibles
+Si se inicia al tiempo de la intervención coronaria percutánea:
+-Clopidogrel si es que no se inició antes , o Prasugrel, o Inhibidor de glicoproteínas IIb/IIIa
+En pacientes que serán manejados con tratamiento inicial conservador se debe agregar el clopidogrel (dosis
+de carga seguida por dosis de mantenimiento) al ASA y al tratamiento anticoagulante lo mas rápido posible
+y continuar su administración durante por lo menos un mes (idealmente un año)
+Se deberá realizar angiografía diagnóstica en pacientes que serán manejados con tratamiento inicial
+conservador, pero si la isquemia o los síntomas recurren, si se complica con insuficiencia cardiaca o se
+presentan arritmias graves.
+Se deberá agregar a la ASA y anticoagulante, un inhibidor GP IIb/IIIa (eptifibatide o tirofiban), o clopidogrel
+(dosis de carga seguida por dosis de mantenimiento) antes del estudio diagnóstico angiográfico
+En pacientes con SICA SEST en quienes se planea realizar intervención coronaria percutánea, la dosis de
+carga de thienopiridina puede ser alguna de las siguientes:
+-clopidogrel 300 a 600mg administrarla lo antes posible o durante la ICP, o
+-prasugrel 60mg se debe administrar lo antes posible o menos de 1 hr después de la ICP
+La duración del tratamiento con thienopiridina, debe ser como se indica a continuación:
+-En pacientes con SICA SEST sometidos a ICP, clopidogrel 75mg al día o prasugrel 10mg al día, por lo
+menos durante 12 meses.
+-Si el riesgo de morbilidad debida a sangrado supera el beneficio que puede ofrecer el uso de thienopiridinas,
+se debe considerar su suspensión temprana.
+En pacientes que serán manejados con tratamiento inicial conservador y que tienen molestias isquémicas
+recurrentes a pesar del tratamiento con clopidogrel, ASA y la terapia anticoagulante es razonable añadir un
+antagonista GP IIb/IIIa antes de la angiografía diagnóstica
+En pacientes que serán manejados con estrategia inicial invasiva es razonable omitir la administración previa
+de inhibidores de GP IIb/IIIa, si se seleccionó como anticoagulante el bivalirudin y si se administraron por lo
+9
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+menos 300 mg de clopidogrel 6 hrs antes del momento en que se planea el cateterismo cardiaco o la ICP.
+En pacientes que serán manejados con tratamiento inicial conservador puede ser razonable agregar el
+eptifibatide o tirofiban al tratamiento anticoagulante y antiplaquetario oral.
+Se considera conveniente iniciar lo más pronto posible tratamiento con prasugrel 60 mg en pacientes con
+SICA SEST en quienes se planea realizar ICP, antes de valorar la anatomía coronaria, si el riesgo de sangrado
+es bajo y es poco probable que requiera de cirugía de revascularización miocárdica
+Se puede considerar el pretratamiento con inhibidores de glicoproteínas IIb/IIIa, en pacientes con SICA
+SEST de alto riesgo (elevación de troponinas, desnivel negativo del segmento ST significativo), que ya estén
+recibiendo aspirina y thienopiridina, en quienes se consideró la estrategia invasiva, pero que no tenga por
+otras causas riesgo alto de hemorragias.
+En pacientes que serán sometidos a ICP como parte de la estrategia invasiva temprana, se puede considerar
+una dosis de carga de clopidogrel de 600mg, seguido de dosis alta de mantenimiento de 150mg al día por 6
+días y después 75mg al día, siempre y cuando no se trate de pacientes de alto riesgo de eventos
+hemorrágicos.
+En pacientes con SICA SEST que se consideran con bajo riesgo de eventos isquémicos, (score de TIMI bajo)
+que se encuentran recibiendo aspirina y clopidogrel, no se recomienda el pretratamiento con Inhibidores de
+glicoproteínas IIb/IIIa.
+En los pacientes que no se planea realizar la intervención coronaria percutánea no debe administrarse
+Abciximab.
+En pacientes con antecedentes de evento vascular cerebral o isquemia cerebral transitoria, en quienes se
+planea realizar ICP, el prasugrel es potencialmente dañino como parte de una terapia antiagregante dual
+
+TRATAMIENTO ANTICOAGULANTE
+Los anticoagulantes se utilizan en el tratamiento de pacientes con SICA SEST para inhibir la generación de
+trombina y/o su actividad, reduciendo los eventos trombóticos
+Las ventajas del fondaparinux sobre la heparina no fraccionada es que, como otras heparinas de bajo peso
+molecular, no requiere monitoreo de su actividad
+El tratamiento anticoagulante se debe agregar al tratamiento antiagregante lo más pronto posible.
+Para los pacientes que serán sometidos a tratamiento invasivo, la primera elección es la enoxaparin y HnF,
+segunda elección bivalirudin y fondaparinux
+En los pacientes con tratamiento conservador se debe administrar enoxaparin, HnF o fondaparinux. En
+pacientes con tratamiento conservador y que tienen un mayor riesgo de sangrado el fondaparinux es
+preferible
+En el caso de los inhibidores directos de la trombina y fondaparinux, no es posible revertir el efecto con
+protamina debido a la carencia de un dominio de unión a la protamina, la reversión de su acción en eventos
+de sangrado requieren de su suspensión y de ser necesario, transfusión de factores de coagulación.
+En pacientes con tratamiento conservador inicial la enoxaparina o la fondaparinux son preferibles a la HnF
+como tratamiento anticoagulante al menos que se planee cirugía de revascularización miocárdica dentro de
+las siguientes 24 horas.
+
+10
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+CONSIDERACIONES ADICIONALES RELACIONADAS CON EL TRATAMIENTO
+La estratificación de riesgo identifica a los pacientes que parecen beneficiarse de una revascularización. Por
+ejemplo, paciente con enfermedad del tronco de la coronaria izquierda o enfermedad arterial coronaria de
+múltiples vasos con deterioro de la función ventricular izquierda, tienen alto riesgo para evolución adversa y
+parecen beneficiarse más de una cirugía de RVM. La evaluación clínica y pruebas no invasivas pueden
+ayudar a identificar a pacientes con criterios de alto riesgo: edad avanzada (>70 años), infarto previo,
+revascularización previa, desnivel del segmento ST, falla cardiaca o función ventricular en reposo deprimida
+(FEVI < 40%) en un estudio no invasivo, o hallazgo en una prueba de estrés no-invasiva
+En pacientes con función sistólica ventricular izquierda deprimida, conocida o sospechada, incluyendo
+aquellos pacientes con infarto previo con onda Q de localización anterior y aquellos que se presentan con
+falla cardiaca, se considera con riesgo suficiente y son los que pueden beneficiarse con procedimientos de
+revascularización, por lo que esta indicado realizar angiografía coronaria temprana sin necesidad de realizar
+pruebas funcionales.
+Se debe realizar prueba de stress a los pacientes con tratamiento inicial conservador y sin características que
+puedan indicar que será necesaria una angiografía diagnóstica como son los que presentan síntomas
+recurrentes de isquemia, insuficiencia cardiaca o arritmias graves.
+Se debe clasificar a los pacientes en función del riesgo identificando mediante la prueba de esfuerzo:
+a. Pacientes con alto riesgo: realizar la angiografía diagnóstica.
+b. Pacientes con bajo riesgo: iniciar preparación para egreso hospitalario
+En pacientes con SICA SEST se ha demostrado que el efecto protector del ASA se mantiene por lo menos de
+1 a 2 años por lo cual parece prudente continuar con el ASA indefinidamente, a menos de que se presenten
+efectos secundarios o desarrollen contraindicaciones. Es importante enfatizarle al paciente de que es
+razonable que se usen en forma concomitante con el ASA otros fármacos antitrombóticos, como el
+clopidogrel o la warfarina y que la suspensión o descontinuación del ASA o el clopidogrel se han asociado
+con eventos recurrentes de SICA, incluyendo la trombosis del stent.
+Se cree que la duración de la anticoagulación por más de 2 días para pacientes que recibieron estrategia
+conservadora puede ser benéfica, pero esto requiere de futuros estudios. La mayoría de los estudios que han
+evaluado el uso de HnF en pacientes con SICA SEST, continúan el tratamiento por 2 a 5 días.
+La preparación para egreso hospitalario de pacientes con bajo riesgo por prueba de stress incluye lo
+siguiente:
+1. Continuar indefinidamente con ASA
+2. Continuar con clopidogrel por al menos un mes o idealmente un año.
+3. Descontinuar inhibidor de GP IIb/IIIA EV en caso de que se estuviera utilizando
+4. Continuar con HnF (heparina no fraccionada) por 48 horas o administrar enoxaparina o
+fondaparinux durante la hospitalización hasta completar 8 días y después interrumpir el
+tratamiento
+Debido a que el efecto de la heparina no fracciona puede revertirse más rápidamente que el
+fondaparinux o que las heparinas de bajo peso molecular, la heparina no fraccionada se prefiere a ésta en
+pacientes que requieran tratamiento quirúrgico en las siguientes 24 horas.
+Para los pacientes que después de la angiografía diagnóstica serán sometidos a cirugía de
+revascularización miocárdica se deberá realizar lo siguiente:
+a) Continuar con ASA.
+b) Descontinuar inhibidores de GP IIb/IIIa (eptifibatide o tirofiban) por lo menos 4 horas antes de la
+11
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+intervención
+c) La terapia anticoagulante se manejará con los parámetros siguientes:
+1. Continuar con HnF
+2. Descontinuar enoxaparina 12 a 24 h antes de la cirugía de RVM y medicar con HnF de acuerdo con la
+práctica institucional.
+3. Descontinuar fondaparinux 24 h antes de la cirugía de RVM y medicar con HnF de acuerdo con la
+práctica institucional.
+4. Descontinuar bivalirudin 3 h antes de la cirugía de RVM y dosificar HnF de acuerdo con la práctica
+institucional.
+En pacientes en quienes se planea una cirugía de revascularización miocárdica que pueda diferirse, y
+estén recibiendo una thienopiridina, es recomendable que se descontinúe para eliminar su efecto.
+-Se sugiere descontinuar el clopidogrel por lo menos 5 días antes de la cirugía.
+-En caso de prasugrel deberá descontinuarse por lo menos 7 días antes.
+A menos que la necesidad de la revascularización o el beneficio neto de las thienopiridina sea mayor que el
+potencial riesgo de sangrados excesivos.
+En los pacientes que posterior a la angiografía diagnóstica serán sometidos a intervención coronaria
+percutánea se deberá realizar lo siguiente:
+a) Continuar ASA.
+b) Administrar una dosis de carga de thienopiridina si no se inició antes de la angiografía diagnóstica.
+c) Suspender el tratamiento anticoagulante después de la intervención coronaria percutánea en casos
+sin complicación.
+En los pacientes en que se seleccionó tratamiento médico por resultado de angiografía y que no tienen
+lesiones obstructivas significativas se deberá administrar tratamiento anticoagulante y antiplaquetario a
+discreción. En pacientes con evidencia de ateroesclerosis coronaria (por ej irregularidades luminales, o
+lesiones intravasculares demostradas por ultrasonido), no obstante sin estenosis que limiten el flujo
+coronario, el tratamiento durante largo tiempo con ASA y otras medidas de prevención secundaria deberán
+ser prescritas
+En los pacientes que se seleccionó tratamiento médico por resultado de angiografía y con enfermedad
+arterial coronaria se recomienda lo siguiente:
+a) Continuar con ASA
+b) Administrar la dosis de carga de clopidogrel si no se había dado antes de la angiografía
+c) Suspender el inhibidor de GP IIb/IIIa si se había iniciado previamente
+d) El tratamiento anticoagulante se manejará con los siguientes parámetros:
+1. Continuar con HnF EV por al menos 48 horas hasta el egreso si se inició antes de la angiografía
+diagnóstica.
+2. Continuar enoxaparina mientras dure la hospitalización, hasta 8 días, si se inició antes de la angiografía
+diagnóstica.
+3. Continuar con fondaparinux mientras dure la hospitalización, hasta 8 días, si se dio antes de la angiografía
+diagnóstica
+4- De acuerdo a criterio del médico suspender o continuar la bivalirudin a dosis 0.25 mg por Kg por hora
+hasta 72 horas, si se dio antes de la angiografía diagnóstica.
+Para los pacientes que se seleccionó la terapia inicial conservadora y que no serán sometidos a
+angiografía ni prueba de esfuerzo se deberán indicar las siguientes medidas:
+a) ASA en forma indefinida
+b) Continuar con clopidogrel por al menos un mes e idealmente por un año
+c) Suspender inhibidores de GP IIb/IIIa si se iniciaron previamente
+12
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+d) Continuar con HnF por 48 horas o administrar enoxaparina o fondaparinux mientras dure la
+hospitalización, hasta 8 días, y después suspender la terapia anticoagulante
+En los pacientes con tratamiento conservador inicial y que por sus características subsecuentes parecen
+no requerir la angiografía (pacientes sin síntomas recurrentes de isquemia, insuficiencia cardiaca o
+arritmias graves) se deberá determinar la fracción de expulsión ventrículo izquierdo
+En pacientes que se seleccionó la intervención coronaria percutánea por resultado de angiografía es
+razonable administrar un inhibidor de GP IIb/IIIa EV (abciximab, eptifibatide o tirofiban) si no se habían
+iniciado antes de la angiografía diagnóstica o por troponina-positiva.
+En pacientes que se seleccionó la intervención coronaria percutánea por resultado de angiografía es
+razonable no administrar un inhibidor de GPIIb/IIIa, si la bivalirudin fue seleccionado como
+anticoagulante y se administró carga de 300 mg de clopidogrel al menos 6 hrs antes.
+Generalmente se considera que los pacientes con SICA SEST que presenten síntomas de isquemia
+recurrente, a pesar de tratamiento óptimo o son de alto riesgo debido a la presencia de: falla cardiaca,
+arritmias graves, o en pruebas no invasivas se encuentra deterioro de la función sistólica ventricular con
+fracción de expulsión menor de 0.30, infarto anterior o con múltiples defectos perfusorios, son
+pacientes que han mostrado mejoría en su pronóstico después de algún procedimiento de
+revascularización
+Si la fracción de expulsión ventricular izquierda es menor o igual de 0.40, es razonable realizar una
+angiografía diagnóstica
+Si la fracción de expulsión ventricular es mayor de 0.40, es razonable hacer una prueba de stress
+Las pruebas de función plaquetaria para determinar la respuesta sobre la inhibición plaquetaria en pacientes
+con SICA SEST (o después de un SCA y la ICP), que se encuentran bajo tratamiento con thienopiridina se
+debe considerar cuando el resultado de la prueba puede modificar el manejo.
+Hasta el momento no existen estudios prospectivos que demuestren que el uso rutinario de pruebas de
+genotipificación puedan modificar la respuesta a la terapia antiplaquetaria y que esto mejore la evolución
+clínica o reduzca la frecuencia de eventos clínicos subsecuentes.
+La terapia intravenosa fibrinolítica no esta indicada en pacientes sin elevación aguda del segmento ST, un
+infarto de localización posterior, o bloqueo de rama izquierda del Haz de His presumiblemente nuevo
+
+INDICACIONES PARA TRATAMIENTO INICIAL CONSERVADOR O TRATAMIENTO
+INICIAL INVASIVO
+La estrategia invasiva temprana (angiografía diagnóstica con intento de realizar revascularización) está indicada en
+pacientes con angina SICA SEST que tienen angina refractaria o inestabilidad hemodinámica o eléctrica (sin
+comorbilidades graves o contraindicaciones para el procedimiento)
+La estrategia invasiva temprana (angiografía diagnóstica con intento de realizar revascularización) está indicada en
+pacientes con SICA SEST inicialmente estabilizados (sin comorbilidades graves o contraindicaciones para el
+procedimiento) quienes, por eventos clínicos, tienen un riesgo elevado.
+Se puede considerar la estrategia invasiva temprana (dentro de las 12 a 24 hrs. de su ingreso hospitalario, sobre la
+invasiva diferida, para pacientes con SICA SEST de alto riesgo inicialmente estabilizados. Se puede considerar terapia
+invasiva diferida en pacientes con SICA SEST que no sean de alto riesgo
+En pacientes inicialmente estabilizados, un tratamiento conservador (es decir invasiva electiva) puede ser
+considerado en pacientes sin comorbilidades graves o contraindicaciones del procedimiento y que tienen clínicamente
+datos de alto riesgo, incluyendo los que tiene troponina positivas La decisión de implementar una estrategia
+conservadora inicial en lugar de invasiva inicial, se puede derivar de las consideraciones del médico y preferencia del
+
+13
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+paciente
+Hasta el momento no es posible definir la magnitud de comorbilidades presentes en los pacientes que puedan
+considerar inapropiada una terapia invasiva. En pacientes angina SICA SEST, de riesgo alto pero con comorbilidades
+significativas, requieren de una cuidadosa valoración y discusión entre el médico, paciente y familiares, para tomar la
+decisión sobre la mejor opción terapéutica.
+Una estrategia invasiva temprana (esto es angiografía diagnóstica con intento de revascularización) no se recomienda
+en pacientes con varias comorbilidades (por ejemplo cáncer o insuficiencia pulmonar o hepática) en quienes los
+riesgos de las condiciones comórbidas son probablemente mayores que los beneficios de la revascularización.
+No existe evidencia hasta el momento de que la estrategia invasiva en forma rutinaria beneficie a pacientes que no
+muestren criterios de riesgo alto o intermedio.
+El tratamiento invasivo temprano (esto es angiografía diagnóstica con intento de revascularización) no se recomienda
+en pacientes con dolor torácico agudo y baja probabilidad de síndrome coronario agudo.
+El tratamiento invasivo temprano (esto es angiografía diagnóstica con intento de revascularización) no deberá ser
+realizado en pacientes que no den su consentimiento a pesar de las conclusiones
+Para criterios de referencia y contrarreferencia e incapacidades ver GPC en formato extenso.
+
+14
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+ALGORITMO.
+Manejo del SICA SEST
+
+15
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+Cuadro 1. Mortalidad hospitalaria y a 6 meses de acuerdo con la escala GRACE
+
+Categoría de riesgo
+
+Escala GRACE
+
+Mortalidad Hospitalaria
+(%)
+
+Bajo
+Intermedio
+Alto
+
+<108
+109-140
+>140
+
+Bajo
+Intermedio
+Alto
+
+<88
+89-118
+>118
+
+<1
+1-3
+>3
+Mortalidad a 6 meses (%)
+<3
+3-8
+>8
+
+Fuente: ESC Guidelines 2007
+(http://www.outcomes-umassmed.org/grace/acs_risk/acs_risk_content.html)
+
+Cuadro 2. Escala TIMI
+
+Características
+Edad mayor de 65 años
+
+Puntuación
+1
+
+Presencia de 3 factores de riesgo:
+Tabaquismo
+Hipertensión arterial
+Hipercolesterolemia
+Diabetes Mellitus
+Historia familiar de enfermedad coronaria
+
+1
+
+Antecedente de estenosis coronaria > 50%
+(IM, ACTP, Cirugía coronaria)
+
+1
+
+Uso de ASA en los últimos 7 días
+
+1
+
+Desviación ST>0.5 mV
+
+1
+
+Dos eventos anginosos severos en las últimas 24 horas
+
+1
+
+Marcadores séricos elevados (CPK-MB, Tpn)
+
+1
+
+0-2= Bajo riesgo (mortalidad a un año 3.9%); 3-4= Intermedio (mortalidad a un año 6.5%); 5-7=
+Alto(mortalidad a un año 21%);
+
+16
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+Cuadro 3. Biomarcadores cardíacos en la evaluación y manejo de pacientes con sospecha de
+SICA sin elevación del segmento ST en ECG de 12 derivaciones.
+Marcador
+
+Troponinas
+
+CPK MB
+
+Ventajas
+
+Desventajas
+
+Comentario
+
+Recomendación
+Clínica
+
+1, Herramienta de
+gran utilidad para
+estratificación
+de
+riesgo.
+2. Mayor sensibilidad
+y especificidad que la
+CK MB
+3. Detección de
+Infarto del miocardio
+reciente
+en
+las
+últimas 2 semanas.
+4. útil para la
+selección de tipo de
+tratamiento.
+5. Detección de
+reperfusión
+
+1. Baja sensibilidad en
+etapas
+muy
+tempranas
+del
+infarto( menos de 6
+horas desde el inicio
+de los síntomas)
+requiere
+medición
+repetida a las 8 y 12
+horas,
+2. Capacidad limitada
+para
+detectar
+reinfartos menores
+tardíos.
+
+Provee
+resultados
+diagnósticos y
+tiene
+implicaciones
+terapéuticas
+potenciales lo
+cual ha sido
+demostrado en
+Ensayos Clínicos.
+
+Útil como única
+prueba para el
+diagnóstico
+eficiente de
+IMSEST(
+incluyendo daño
+miocárdico menor)
+con mediciones
+seriadas. Es
+recomendable que
+los clínicos se
+familiaricen con los
+puntos de corte
+locales reportados
+por cada hospital.
+
+1.Prueba
+rápida
+costo-eficiente
+2. Capacidad para
+detectar reinfarto de
+forma temprana.
+
+1.
+Pierde
+especificidad
+en
+presencia
+de Familiar para la
+mayoría de los
+enfermedades
+músculo-esqueléticas clínicos.
+o daño muscular
+incluyendo cirugía.
+2. Baja sensibilidad
+durante la etapa muy
+temprana del Infarto(
+menos de 6 horas de
+inicio
+de
+los
+síntomas) o en forma
+tardía( más de 36
+horas de inicio de los
+síntomas) y para
+daño
+miocárdico
+menor( detectable
+con troponinas)
+
+17
+
+Estándar de oro
+previo y todavía
+considerada
+una
+prueba diagnóstica
+en la mayoría de las
+circunstancias
+clínicas.
+
+Diagnóstico y Tratamiento de Síndrome Mielodisplásico
+
+Mioglobina
+
+
+
+
+
+
+1. Alta sensibilidad.
+2. Útil en el
+diagnóstico temprano
+de Infarto.
+3. Detección de
+reperfusión.
+4. La más útil para
+descartar un Infarto
+
+1.
+Muy
+baja
+especificidad en el
+presencia
+de
+enfermedades
+músculoesqueléticas
+o daño muscular.
+2.
+Regresa
+rápidamente a rangos
+normales lo que limita
+la sensibilidad en
+presentaciones
+tardías.
+
+Marcador
+temprano más
+conveniente que
+las isoformas de
+CK MB debido a
+mayor
+disponibilidad,
+rápida liberación
+lo que la hace un
+parámetro
+no
+invasivo
+de
+monitoreo
+de
+reperfusión en
+pacientes con
+Infarto
+establecido.
+
+Wu AH, Apple FS, Gibler WB, Jesse RL, Warshaw MM, Valdes RJ. National Academy of Clinical Biochemistry Standards of
+Laboratory Practice: recommendations for the use of cardiac markers in coronary artery diseases. Clin Chem
+1999;45:1104-21.
+Lindahl B, Venge P, Wallentin L. Early diagnosis and exclusion ofacute myocardial infarction using biochemical monitoring.
+The BIOMACS Study Group. Biochemicals Markers of Acute Coronary Syndromes. Coron Artery Dis 1995;6:321– 8.
+Kontos MC, Anderson FP, Hanbury CM, Roberts CS, Miller WG, Jesse RL. Use of the combination of myoglobin and CKMB mass for the rapid diagnosis of acute myocardial infarction. Am J Emerg Med 1997;15:14 –9.
+Rao SV, Ohman EM, Granger CB, et al. Prognostic value of isolatedtroponin elevation across the spectrum of chest pain
+syndromes. Am J Cardiol 2003;91:936–40.
+
+18
+
+

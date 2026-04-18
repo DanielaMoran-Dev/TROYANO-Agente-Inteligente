@@ -1,0 +1,539 @@
+Guía de Referencia
+Rápida
+Diagnóstico y Tratamiento de
+Cardiopatía Isquémica Crónica
+
+Guía de Referencia Rápida
+414 Otras formas de enfermedad cardiaca isquémica crónica
+
+GPC
+Diagnóstico y Tratamiento de la Cardiopatía Isquémica Crónica
+ISBN 978-607-8290-09-3
+
+DEFINICIÓN
+La cardiopatía isquémica crónica constituye un síndrome caracterizado por una
+disminución del aporte de sangre oxigenada al miocardio que desde un punto de vista
+estructural, funcional o estructural y funcional afecte el libre flujo de sangre de una o más
+arterias coronarias epicárdicas o de la microcirculación coronaria
+
+EVALUACIÓN DEL RIESGO DE CARDIOPATÍA ISQUÉMICA
+Detección de factores de riesgo para cardiopatía isquémica en los 3 niveles de atención
+Factores de riesgo: obesidad, sedentarismo, dislipidemia, hipertensión arterial sistémica,
+diabetes mellitus, síndrome metabólico, tabaquismo, antecedentes familiares de
+cardiopatía isquémica.
+
+PREVENCIÓN PRIMARIA
+Control de los factores de riesgo modificables de acuerdo a las siguientes metas:
+Diabetes mellitus: Control óptimo de las cifras de glucemia en ayuno (< 100 mg/dL)
+Hipertensión Arterial Sistémica alcanzar cifras de TA < 140/90 o < 130/80 en diabéticos o
+nefrópatas
+Suspensión total del hábito tabáquico
+Dislipidemias
+Metas terapéuticas:
+Colesterol total < 200 mg%
+Colesterol-LDL < 100 mg%
+Colesterol-HDL > 50 mg%
+Triglicéridos < 200 mg%
+Practicar actividad física predominantemente aeróbica (caminata, trote, bicicleta, natación)
+30 minutos al menos 5 días a la semana
+
+PREVENCIÓN SECUNDARIA
+Control de la morbilidad de acuerdo a las siguientes metas:
+Diabetes mellitus (DM):
+Meta terapéutica (MT): Hemoglobina glucosilada < 6.5%
+Glucemia en ayuno < 100 mg%
+Hipertensión Arterial Sistémica (HTAS):
+(MT) Población en general: tensión arterial sistémica < 140 mmHg; tensión arterial
+diastólica <90 mmHg
+Diabéticos y nefrópatas: tensión arterial sistémica < 130 mmHg; tensión arterial diastólica
+< 80 mmHg
+Dislipidemia
+Colesterol total < 180 mg/dL
+Colesterol ligado a lipoproteínas de baja densidad (C-LDL) < 100 mg/dL
+Colesterol ligado a lipoproteínas de alta densidad (C-HDL) > 50 mg/dL
+Triglicéridos < 150 mg/dL
+Obesidad:
+(IMCT) Índice de masa corporal > 19 kg/m2SC y < 25 kg/m2SC
+Cintura abdominal: Hombres < 90 cm; Mujeres < 80 cm
+Tabaquismo
+Suspensión total del consumo de tabaco
+
+DIAGNÓSTICO
+
+Interrogatorio y exploración física en búsqueda de síntomas o signos de angor pectoris
+Diagnóstico diferencial:
+• Pericarditis
+• Disección aórtica
+• Enfermedad por reflujo gastroesofágico
+• Costocondritis
+• Neuritis intercostal
+• Tromboembolismo pulmonar
+• Neumonía
+• Hipertensión arterial pulmonar
+• Espasmo esofágico
+• Litiasis vesicular
+• Pancreatitis
+• Herpes zoster
+• Crisis de ansiedad
+Toma de Electrocardiograma de 12 derivaciones en reposo:
+Búsqueda intencionada de cambios eléctricos que sugieran isquemia miocárdica antigua o
+reciente (inversión de la onda T que sugiere isquemia subepicárdica o complejos QS u
+onda Q patológica que sugiere zonas eléctricamente inactivables); también es capaz de
+detectar alteraciones que coexisten con la isquemia miocárdica tales como crecimiento de
+cavidades, alteraciones del ritmo o de la conducción.
+Prueba de esfuerzo eléctrica en banda sin fin para confirmar la sospecha diagnóstica de
+isquemia miocárdica
+
+Ecocardiograma de estrés en pacientes con sospecha clínica de isquemia miocárdica que
+no sean tributarios a ser llevados a prueba de esfuerzo en banda sin fin (vgr. Pacientes
+seniles, amputados, etc.)
+Prueba de perfusión miocárdica para corroborar el diagnóstico clínico de isquemia
+miocárdica en pacientes con contraindicación para ser llevados a prueba de esfuerzo
+eléctrica en banda sin fin (vgr. Pacientes con bloqueos de rama en el ECG de reposo,
+ancianos, amputados, intolerantes al ejercicio físico) o en aquellos en quienes la prueba
+eléctrica no fue concluyente
+Angiografía coronaria para definir la anatomía coronaria y las características de las
+lesiones aterosclerosas en pacientes con diagnóstico clínico de cardiopatía isquémica
+confirmado mediante pruebas inductoras de isquemia miocárdica
+
+INDICACIONES DE ECOCARDIOGRAMA TRANSTORÁCICO EN REPOSO
+EN PACIENTES CON SOSPECHA O DIAGNÓSTICO DE CARDIOPATÍA
+ISQUÉMICA
+
+En pacientes con antecedente de infarto del miocardio para determinar viabilidad
+miocárdica
+Pacientes con probabilidad intermedia de enfermedad arterial coronaria en quienes exista
+alguna de las siguientes condiciones:
+Síndrome de preexcitación (Wolf-Parkinson-White)
+Depresión establecida del segmento ST de 1 mm o más en el electrocardiograma de
+reposo
+Incapacidad física para realizar ejercicio (en estos casos se debe utilizar estrés
+farmacológico con dobutamina o dipiridamol)
+Diagnóstico de isquemia miocárdica en sujetos sintomáticos pero con prueba de esfuerzo
+eléctrica no concluyente
+Pacientes con síntoma sugestivos de isquemia con antecedente de revascularización
+miocárdica no susceptibles de llevar a una prueba de esfuerzo en banda sinfín
+Diagnóstico de isquemia miocárdica en mujeres con prueba de esfuerzo positiva
+(infradesnivel del segmento ST no mayor de 1mm, sin dolor anginoso durante la prueba de
+esfuerzo)
+Para valorar el defecto funcional de la lesión anatómica de una arteria coronaria.
+Identificación del vaso responsable en enfermedad multivasos.
+Valoración de re-estenosis u obstrucción de hemoductos en pacientes revascularizados,
+con sintomatología típica o atípica.
+Valoración de riesgo de cirugía no cardiaca en pacientes con cardiopatía isquémica,
+principalmente en cirugía vascular mayor.
+
+DIAGNÓSTICO POR MEDICINA NUCLEAR
+
+Identificar isquémia inducida (extensión/severidad) en pacientes con angina estable con
+terapia médica o con diagnóstico dudoso
+Cambios hemodinámicos significativos de estenosis coronaria después de arteriografía
+coronaria
+Determinar función ventricular
+
+INDICACIONES PARA CORONARIOGRAFÍA DIAGNÓSTICA
+
+Pacientes con angina Clase Funcional III y IV de la Sociedad canadiense, refractarios a
+manejo médico
+Pacientes con síntomas típicos o sugestivos de isquemia miocárdica y pruebas inductoras
+de isquemia positivas
+Supervivientes de un episodio de muerte súbita sin otros datos que precisen la etiología
+del paro cardiorrespiratorio
+Pacientes con angina de esfuerzo clase funcional II de la Sociedad canadiense, que
+mejoran con tratamiento médico y pruebas inductoras de isquemia positivas pero sin
+criterios de alto riesgo
+Pacientes asintomáticos o con angina de esfuerzo clase funcional II de la Sociedad
+Canadiense, pero con pruebas inductoras de isquemia con criterios de alto riesgo o mal
+pronóstico
+Pacientes en Clase Funcional I o II de la Sociedad Canadiense con pruebas inductoras de
+isquemia positiva sin criterios de alto riesgo o mal pronóstico
+
+MEDIDAS NO FARMACOLÓGICAS EN EL TRATAMIENTO DE
+LA CARDIOPATÍA ISQUÉMICA CRÓNICA
+Dieta hipocolesterolémica
+Consumo de menos de 7% de grasas saturadas del total de la ingesta calórica diaria
+Consumo de menos de 200 mg de colesterol por día.
+Suspensión total de tabaco
+Moderar el consumo de alcohol
+Evitar sobrepeso, manteniendo un índice de masa corporal (IMC) entre 18.5 y 24.9
+kg/m2SC, así como un perímetro abdominal menor de 89 cm en mujeres y de 102 cm en
+hombres
+Actividad física regular, supervisada por programas de rehabilitación cardiaca en pacientes
+de alto riesgo (infarto reciente, posoperados de cirugía de revascularización miocárdica,
+falla cardiaca)
+Actividad física aeróbica regular y moderada de acuerdo a síntomas (caminata 60 minutos
+diariamente, mínimo 30 minutos 5 veces a la semana)
+
+FÁRMACOS RECOMENDADOS PARA LA PREVENCIÓN
+PRIMARIA DE CARDIOPATÍA ISQUÉMICA
+
+Hipoglucemiantes orales (metformina o glibenclamida) o insulina en pacientes con
+Diabetes mellitus (Ver GPC de Diabetes mellitus)
+Betabloqueadores (metoprolol), Calcioantagonistas (verapamilo), Inhibidores de la ECA
+(captopril o enalapril) o Antagonistas del receptor de angiotensina (ARA 2) (losartan,
+valsartan, telmisartan) en pacientes con hipertensión arterial sistémica (Ver GPC de
+Hipertensión arterial sistémica)
+Estatinas (pravastatina o atorvastatina) y/o fibratos (bezafibarto) en pacientes con
+
+dislipidemias para alcanzar las metas terapéuticas
+Acido acetilsalicilico 75-325 mg/día en pacientes con más de 2 factores de riesgo
+coronario
+
+FÁRMACOS RECOMENDADOS PAR LA PREVENCIÓN
+SECUNDARIA DE CARDIOPATÍA ISQUÉMICOS EN PACIENTES
+CON CARDIOPATÍA ISQUÉMICA CRÓNICA
+Estatinas para el manejo crónico de pacientes con diagnóstico de cardiopatía isquémica
+crónica con o sin hipercolesterolemia. La duración del tratamiento con estatinas
+(atorvastatina, pravastatina) debe ser determinado por cardiólogos, considerando el perfil
+de lípidos, la expresión de marcadores inflamatorios y la realización o no de
+procedimientos de revascularización miocárdica.
+En pacientes con cardiopatía isquémica crónica se debe prescribir ácido acetil salicílico
+para prevenir eventos cardiovasculares. Contraindicaciones: alergia, hipersensibilidad,
+sangrado activo, diátesis hemorrágica.
+Se debe prescribir clopidogrel en conjunto con salicilatos para evitar casos de trombosis
+intrastent de forma aguda y subaguda.
+Para intervenciones coronarias percutáneas se recomienda el clopidogrel en dosis de
+carga de 300 a 600 mg y dosis de sostén de 75mg/día. En pacientes con colocación de
+Stents convencionales la duración del tratamiento debe ser de 1 a 3 meses posterior al
+procedimiento; en los que se usaron Stents liberadores de fármacos la duración debe ser
+de 6 a 12 meses.
+En mujeres menopáusicas con cardiopatía isquémica con dislipidemia, el empleo de
+terapia de sustitución hormonal NO está recomendado ´por lo que deberán preferirse las
+estatinas o fibratos antes del empleo que Terapia de Remplazo Hormonal
+
+FÁRMACOS RECOMENDADOS CONTROL SINTOMÁTICO DE
+EVENTOS ISQUÉMICOS EN PACIENTES CON CARDIOPATÍA
+ISQUÉMICA CRÓNICA
+Nitratos están indicados en:
+Pacientes con cardiopatía isquémica crónica clínicamente estables con o sin insuficiencia
+cardiaca (independientemente de sus síntomas)
+Durante los episodios agudos de angina de pecho.
+Dinitrato de isosorbida (30 mg/día dividido c/8hrs) por 3-6 meses
+En caso de dolor anginoso: una tableta sublingual cada 5 min.
+Calcioantagonistas están indicados en:
+Pacientes con cardiopatía isquémica crónica, en quienes no es suficiente la monoterapia
+con betabloqueadores para lograr el control de los síntomas.
+En pacientes con cardiopatía isquémica de origen no ateroesclerosa (por ejemplo ectasia
+coronaria o angina vasoespástica)
+Los Calcioantagonistas no se recomiendan para pacientes con insuficiencia cardiaca por
+disfunción sistólica
+
+La nifedipina de corta duración no está indicada en cardiopatia isquémica crónica.
+Betabloqueadores están indicados en :
+Angina fuertemente relacionada a esfuerzos físicos
+Insuficiencia cardiaca
+Hipertensión arterial sistémica
+Taquicardias
+Infarto miocárdico previo
+Tono adrenérgico incrementado
+Los betabloqueadores se deben evitar o bien utilizar con suma precaución en pacientes
+con:
+Asma o hiperreactividad bronquial
+Disfunción grave del ventrículo izquierdo
+Trastornos distímicos severos
+Fenómeno de Raynaud con o sin claudicación intermitente
+Bradicardia sinusal significativa o bloqueos atrio-ventriculares avanzados y en aquellos
+pacientes con Diabetes mellitus de difícil control
+
+MEDICAMENTOS ADYUVANTES
+
+Inhibidores del Eje Renina-Angiotensina-Aldosterona
+(IECAs)
+De elección para pacientes que además de cardiopatía isquémica crónica tienen
+disfunción ventricular izquierda.
+En sobrevivientes a un infarto miocárdico con depresión de la función ventricular izquierda
+(FEVI < 40%) con o sin síntomas de insuficiencia cardiaca.
+Pacientes con cardiopatía isquémica crónica e hipertensión arterial sistémica, diabetes
+mellitus o insuficiencia renal crónica en fases no terminales, debido a sus efectos
+protectores desde el punto de vista metabólico y renal.
+En este grupo de fármacos se encuentran el captopril y el enalapril; la dosis va de 25 a 75
+mg/día y de 10 a 40 mg/día respectivamente. Duración del tratamiento: 6 meses a 1 año y
+revalorar de acuerdo a condición clínica. Si el paciente es portador de hipertensión arterial
+sistémica o de síndrome de insuficiencia cardiaca por disfunción sistólica, el tratamiento
+deberá continuar de forma indefinida
+Contraindicaciones: Tos asociada a IECAs, edema angioneurótico, estenosis bilateral de
+arterias renales
+Efectos adversos más frecuentes: Tos
+Efectos adversos graves: Edema angineurótico
+Antagonistas Selectivos del Receptor de Angiotensina
+(Losartan, valsartán o telmisartán)
+Estan indicados en los casos en donde existe intolerancia a IECA
+Antagonistas de aldosterona
+Son útiles para disminuir la progresión del daño miocárdico en pacientes con cardiopatía
+isquémica sobrevivientes a un infarto del miocardio con deterioro de la función sistólica del
+ventrículo izquierdo con una FEVI menor de 40%. Se ha reportado disminución
+considerable de la mortalidad global y la muerte súbita, cuando el tratamiento se inicia
+entre los 3 y 14 días posinfarto. No existe evidencia clara de los beneficios de esta terapia
+
+en pacientes con cardiopatía isquémica crónica en ausencia de daño miocárdico por lo
+que por el momento no se recomiendan en enfermos crónicos, estables y con función
+ventricular conservada
+Antiarrítmicos Las arritmias cardiacas (fibrilación atrial, taquicardia ventricular sostenida)
+se presentan frecuentemente en los pacientes con cardiopatía isquémica crónica
+especialmente aquellos con daño miocárdico severo (FEVI ≤ 30%) o en aquellos con
+aneurisma ventricular con o sin trombo intracavitario. El medicamento más empleado para
+su control es la amiodarona un antiarrítmico de clase III con efecto betabloqueador
+agregado. La dosis diaria recomendada es de 200 mg en una toma y la duración del
+tratamiento depende del control de los episodios de la arritmia aunque se establece un
+lapso promedio de 6 meses siempre y cuando el paciente se encuentre estable y sin
+evidencia objetiva (demostrada por Holter de 24 horas) de nuevos episodios de arritmias.
+Vigilar la función tiroidea in vitro cada 6 meses, aún en ausencia de datos clínicos de
+distiroidismo; vigilar también la función respiratoria, en caso de presentar disnea
+progresiva, tos con o sin alteraciones radiológicas deberán realizarse pruebas de función
+respiratoria y evaluación neumológica con la finalidad de descartar reacciones adversas.
+Anticoagulantes
+En pacientes isquémicos con ectasia coronaria, disfunción grave del VI (FEVI ≤ 30%),
+aneurisma ventricular con o sin trombo intracavitario, angina vasoespástica, fibrilación o
+flutter auricular y en aquellos portadores de prótesis valvulares mecánicas se recomienda
+el empleo de agentes anticoagulante orales. La warfarina es la primera elección, la dosis
+recomendada dependerá de cada paciente y la duración del tratamiento será indefinida.
+Se acepta como un nivel satisfactorio de anticoagulación a un INR entre 2.0 y 3.0 en
+ausencia de prótesis valvulares.
+El control periódico de niveles de anticoagulación mediante la toma de trombotest o tiempo
+de protrombina expresado mediante el INR será responsabilidad de los médicos de
+segundo nivel una vez que los pacientes hayan sido dados de alta del tercer nivel de
+atención.
+
+INDICACIONES DE LA REVASCULARIZACIÓN MIOCÁRDICA
+PERCUTÁNEA EN PACIENTES CON CARDIOPATÍA ISQUÉMICA
+CRÓNICA
+Pacientes con enfermedad de 2 o 3 vasos, con enfermedad significativa de la arteria
+coronaria descendente anterior (DA) proximal quienes tienen una anatomía apropiada para
+la terapia basada en catéter, con función normal del VI y sin Diabetes Mellitus.
+Pacientes con enfermedad de 1 o 2 vasos sin enfermedad significativa de la DA proximal
+pero con una extensa área de miocardio viable y criterios de alto riesgo por pruebas no
+invasivas.
+Pacientes con enfermedad de 1 o 2 vasos con enfermedad significativa de la DA proximal
+Pacientes con enfermedad significativa del Tronco Coronario Izquierdo que no son
+candidatos a cirugía de revascularización miocárdica.
+Pacientes con enfermedad de 1 o 2 vasos sin enfermedad significativa de la DA proximal
+quienes sobrevivieron a una muerte cardiaca súbita o Taquicardia Ventricular Sostenida.
+Pacientes con enfermedad de 1 o 2 vasos sin enfermedad significativa de la DA proximal
+pero con un área moderada de miocardio viable e isquemia demostrada por pruebas no
+invasivas.
+
+INDICACIONES PARA LA CIRUGÍA DE REVASCULARIZACIÓN
+MIOCÁRDICA
+
+Enfermedad de tronco izquierdo o equivalente
+Enfermedad de tres vasos con función ventricular deprimida
+Enfermedad de tres vasos con isquemia grave y función ventricular normal
+Enfermedad de uno o dos vasos con estenosis grave de la descendente anterior proximal
+mas isquemia grave o función ventricular deprimida
+Enfermedad de tres vasos con función ventricular normal o isquemia moderada
+Enfermedad de uno o dos vasos con lesión grave proximal de la descendente anterior e
+isquemia leve
+Enfermedad de uno o dos vasos sin lesión grave de la descendente anterior e isquemia
+extensa no subsidiaria de revascularización percutánea
+
+CRITERIOS DE REFERENCIA
+
+En las Unidades de Medicina Familiar cuando se identifique a un paciente con alto riesgo
+cardiovascular (dos o más factores de riesgo coronario o Diabetes mellitus) y episodios de
+dolor torácico sugestivo de angor pectoris, deberá ser referido de inmediato al Segundo
+Nivel de Atención Médica a Cardiología a fin de continuar con los estudios de extensión e
+implementar el tratamiento específico.
+En los Hospitales Generales de Zona se deberá referir al Tercer nivel de atención a
+aquellos pacientes con diagnóstico confirmado de cardiopatía isquémica crónica que
+requieran la realización de angiografía coronaria y/o procedimientos de revascularización
+miocárdica.
+El control periódico de niveles de anticoagulación mediante la toma de trombotest o tiempo
+de protrombina expresado mediante el INR será responsabilidad de los médicos de
+segundo nivel una vez que los pacientes hayan sido dados de alta del tercer nivel de
+atención, por lo que es deseable que todas las unidades de segundo nivel cuenten con los
+recursos de laboratorio suficientes para satisfacer la demanda de los enfermos bajo
+manejo anticoagulante a fin de que exista continuidad en el control de estos
+medicamentos.
+
+FÁRMACOS DE USO COMÚN EN PACIENTES CON
+CARDIOPATÍA ISQUÉMICA CRÓNICA.
+Fármaco
+
+Hipolipemiantes
+Atorvastatina
+Pravastatina
+Ezetamibe
+Antiagregantes
+plaquetarios
+Ácido Acétil Salicílico
+Clopidogrel
+Nitratos
+Dinitrato de isosorbida
+
+Calcioantagonistas
+Amlodipino
+Felodipino
+Verapamilo
+Betabloqueadores
+Metoprolol
+IECAs
+Captopril
+Enalapril
+Losartan
+Valsartán
+Telmisartán
+
+Presentación en el cuadro
+básico
+
+Dosis
+recomendada
+
+Vía
+
+Tabletas 20 mg
+Tabletas 10 mg.
+
+20-80 mg/día
+10-80 mg/día
+
+Oral
+Oral
+
+Tabletas 20 mgr.
+
+20 mgr/día
+
+Oral
+
+Tabletas solubles 325 mg 75 a 325 mg/día
+Tabletas 75 mg
+75 mg/día
+
+Oral
+Oral
+
+Tabletas 10 mg
+
+30mg/día
+Oral
+dividido c/8hrs
+Una
+tableta
+Tabletas sublinguales 5 sublingual cada sublingual
+mg
+5 min en caso
+de
+dolor
+anginoso
+Tabletas 5 mg
+Tabletas 5 mg
+Grageas 80 mg
+
+5-10 mg/día
+5-10 mg/día
+80-240 mg/día
+
+Oral
+Oral
+Oral
+
+Tabletas 100 mg
+
+50-200 mg/día
+
+Oral
+
+Tabletas 25 mg
+Tabletas 10 mg
+Tabletas 50 mg
+Tabletas 80 mg
+Tabletas 80 mg
+
+25-75 mg/día
+10-40 mg/día
+50-150 mg/día
+80-160 mg/día
+40-80 mg/día
+
+Oral
+Oral
+Oral
+Oral
+Oral
+
+La nifedipina y el propanolol no se recomiendan para el tratamiento de cardiopatía isquémica
+(evidencia clase II, nivel B).
+
+Algoritmos
+Diagnóstico de dolor torácico típico de angor de esfuerzo
+
+Diagnóstico de dolor torácico atípico de angor de esfuerzo
+
+Dolor torácico atípico de angor
+pectoris
+
+*Electrocardiografía
+de reposo de 12
+derivaciones
+
+**Prueba de esfuerzo
+electrónica en banda sin fin
+(protocolo de Bruce), (en
+ausencia de
+contraindicación)
+
+no
+
+¿bloqueo de rama izquierda
+del haz de his?
+
+*Primer Nivel
+de Atención
+Mèdica
+
+si
+
+**2do Nivel de
+Atención
+Médica
+Negativa
+
+Paciente sin
+FRCV
+
+no
+
+*Buscar otras
+causas de dolor
+torácico
+
+Dudosa
+
+Positiva
+
+***Tercer Nivel
+de Atención
+Médica
+
+Paciente con 2
+FRCV o diabético
+
+***
+¿2a Prueba inductora
+de isquemia: Medicina
+nuclear o
+ecocardiograma de
+estrés positiva
+
+***
+Prueba inductora de
+isquemia: Medicina
+nuclear o
+ecocardiograma de
+estres
+
+si
+
+***
+Angiografía
+
+si
+
+¿Positiva?
+
+no
+
+Diagnóstico de dolor torácico atípico de angor de esfuerzo
+
+

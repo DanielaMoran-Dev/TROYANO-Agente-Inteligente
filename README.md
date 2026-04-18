@@ -1,50 +1,82 @@
-# Linealp — Smart City Planner
+# MedConnect — Plataforma Médica Inteligente
 
-Plataforma de planificación urbana de alta fidelidad que combina **IA Generativa (IBM watsonx.ai)** con visualización **3D avanzada (Deck.gl)** para diseñar ciudades resilientes y sostenibles.
+Plataforma médica de conexión paciente-doctor impulsada por IA avanzada (**Gemini 2.5 flash**) para triaje automatizado, ruteo inteligente y comunicación en tiempo real.
 
 ## Características Principales
 
-- **Orquestación Multi-Agente:** Pipeline de 4 agentes especializados (Construcción, Viabilidad, Evaluación y Análisis) impulsado por **LangGraph**.
-- **Validación RAG (PDFs):** El sistema consulta automáticamente normativas locales (NOM-001, PMDU, Manual de Calles) en formato PDF para validar la factibilidad legal de cada propuesta.
-- **Visualización 3D Pro:** Renderizado de edificios neón, corredores de movilidad y zonas verdes utilizando el motor **Deck.gl**.
-- **Análisis de Impacto Real:** Cálculo dinámico de reducción de CO2, presupuesto estimado, población afectada y resiliencia ante inundaciones.
-- **Diseño Glassmorphism:** Interfaz moderna y técnica diseñada bajo los estándares de estética IBM Enterprise.
+- **Triaje Inteligente Multi-Agente:** Pipeline secuencial de 3 agentes (Triaje, Ruteo y Recomendación) que procesan síntomas en lenguaje natural para clasificar la urgencia y especialidad.
+- **RAG con MongoDB Vector Search:** Búsqueda semántica sobre miles de registros de establecimientos de salud (CLUES) para encontrar la mejor opción médica basada en especialidad, seguros y presupuesto.
+- **Geolocalización y Ruteo Real:** Integración profunda con **Google Maps Platform** para calcular tiempos reales de traslado (Distance Matrix) y visualización interactiva.
+- **Chat Médico en Tiempo Real:** Comunicación directa entre doctor y paciente vía **WebSockets** y **Redis Pub/Sub**, permitiendo una atención inmediata tras el triaje.
+- **Sincronización de Calendarios:** Gestión de citas integrada con Google Calendar, Outlook y Apple (CalDAV) para doctores en red.
+
+## Arquitectura de Agentes
+
+El sistema utiliza un flujo de trabajo orquestado donde cada agente tiene una responsabilidad única:
+
+1.  **Agente de Triaje (Gemini 2.0 Pro):** Clasifica la urgencia y genera un perfil clínico estructurado.
+2.  **Agente de Ruteo (RAG + Distance Matrix):** Filtra y rankea opciones médicas viables por cercanía, costo y seguro.
+3.  **Agente de Recomendación (Gemini 2.0 Pro):** Genera recomendaciones empáticas y personalizadas para el paciente.
 
 ## Stack Tecnológico
 
-- **Backend:** FastAPI (Python 3.11), LangGraph, PyPDF2.
-- **IA:** IBM watsonx.ai (Llama-3.2-11b-vision-instruct).
-- **Frontend:** Deck.gl, MapLibre GL, Turf.js.
-- **Geospacial:** GeoPandas, Shapely.
-- **Geodata API:** Consumo directo de SIIMP (ArcGIS) via [Geodata Documentation](backend/services/GEODATA_API.md).
+### Backend
+
+- **Core:** FastAPI (Python 3.12), Pydantic v2.
+- **IA:** Google Gemini 2.0 Pro/Flash, Gemini Embeddings.
+- **Base de Datos:** MongoDB Atlas + Vector Search.
+- **Mensajería/Caché:** Redis (Caché de sesiones, Pub/Sub para chat).
+- **APIs Externas:** Google Maps Platform, Google/Microsoft/Apple Calendar APIs.
+
+### Frontend
+
+- **Framework:** Vanilla HTML5, CSS3 (Modern Glassmorphism), JavaScript (ES6+).
+- **Mapas:** Google Maps JavaScript API.
+- **Comunicación:** WebSockets nativos para chat doctor-paciente.
+
+## Estructura del Proyecto
+
+```text
+├── backend/
+│   ├── agents/          # Lógica de los agentes (Triaje, Ruteo, Recomendación)
+│   ├── services/        # Clientes de Gemini, MongoDB, Maps, Redis
+│   ├── routers/         # Endpoints de API (Patient, Doctor, Chat, Appointments)
+│   ├── schemas/         # Modelos Pydantic para validación
+│   ├── wiki/            # Conocimiento estático inyectado a los agentes
+│   └── main.py          # Punto de entrada FastAPI
+├── frontend/
+│   ├── index.html       # Interfaz principal
+│   ├── style.css        # Estilos modernos y glassmorphism
+│   └── app.js           # Lógica del cliente y mapas
+└── docker-compose.yml   # Orquestación de servicios (Backend + Redis)
+```
 
 ## Instalación y Configuración
 
-1. **Clonar el repositorio:**
+1.  **Clonar el repositorio:**
 
-   ```bash
-   git clone https://github.com/tu-usuario/Lineal.git
-   cd Lineal
-   ```
+    ```bash
+    git clone https://github.com/tu-usuario/TROYANO.git
+    cd TROYANO
+    ```
 
-2. **Configurar entorno virtual:**
+2.  **Configurar Backend:**
 
-   ```bash
-   python -m venv .venv
-   source .venv/Scripts/activate  # En Windows: .venv\Scripts\activate
-   pip install -r backend/requirements.txt
-   ```
+    ```bash
+    cd backend
+    python -m venv .venv
+    source .venv/bin/activate  # En Linux/macOS
+    pip install -r requirements.txt
+    ```
 
-3. **Variables de Entorno:**
-   Configura el archivo .env con tus credenciales de IBM watsonx.
+3.  **Variables de Entorno:**
+    Crea un archivo `.env` en la carpeta `backend/` basándote en la documentación de arquitectura.
 
-4. **Ejecutar la aplicación:**
-   ```bash
-   cd backend
-   uvicorn main:app --reload --port 8000
-   ```
-   Accede a la interfaz en: `http://127.0.0.1:8000/ui/`
+4.  **Ejecutar con Docker (Recomendado):**
+    ```bash
+    docker-compose up --build
+    ```
 
 ## Licencia
 
-Este proyecto es parte del Hackathon de IBM y está bajo la licencia MIT.
+Este proyecto está bajo la licencia MIT.

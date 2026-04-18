@@ -1,0 +1,814 @@
+Sistema de triaje de manchester en
+emergencia HOSPITAL GENERAL DE
+CHONE
+
+Hospital
+Julio 2015
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 2 de 19
+
+SISTEMA DE TRIAJE DE
+MANCHESTER PARA MEJORAR EL
+NIVEL DE RESPUESTA PARA
+URGENCIAS Y EMERGENCIAS
+HOSPITAL GENERAL DE CHONE
+CRÉDITOS
+
+Elaborado por:
+
+Director Asistencial
+
+Firma
+
+Validado por:
+
+Director Asistencial
+
+Firma
+
+Revisado por:
+
+Unidad de Calidad
+
+Firma
+
+Aprobado por:
+
+Gerencia Hospitalaria
+
+Firma
+
+Controlada
+
+No controlada
+
+Tipo de Copia:
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 2
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 3 de 19
+
+Contenido
+CRÉDITOS............................................................................................................................................. 2
+PRESENTACION.................................................................................................................................... 4
+ANTECEDENTES ................................................................................................................................... 5
+JUSTIFICACION .................................................................................................................................... 6
+ALCANCE.............................................................................................................................................. 7
+OBJETIVOS PARA LA APLICACIÓN DEL SISTEMA DE TRIAJE ................................................................. 7
+• GENERAL:...................................................................................................................................... 8
+• ESPECÍFICOS ................................................................................................................................. 8
+LINEAMIENTOS E IMPLEMENTACION DEL SISTEMA DE TRIAJE DE MANCHESTER.............................. 8
+ORGANIZACIÓN DEL SERVICIO DE EMERGENCIA HOSPITAL GENERAL DE CHONE ACORDE A LA
+NORMATIVA TRIAJE DE MANCHESTER.............................................................................................. 10
+PROCESOS DE SISTEMA DE APOYO A LAS ATENCIONES DEL SERVICIO DE EMERGENCIA ................ 11
+FLUJO DE TRABAJO PARA LA DERIVACIÓN ........................................................................................ 11
+LISTADO A. LISTA DE CONDICION DE SALUD SEGÚN PRIORIDAD ..................................................... 12
+PRIORIDAD I................................................................................................................................... 12
+LISTADO B. LISTA DE CONDICIÓN DE SALUD SEGÚN PRIORIDAD ..................................................... 14
+PRIORIDAD II.................................................................................................................................. 14
+LISTADO C. LISTA DE CONDICIÒN DE SALUD SEGÚN PRIORIDAD ..................................................... 17
+PRIORIDAD III................................................................................................................................. 17
+LISTADO D. LISTA DE CONDICIÓN DE SALUD SEGÚN PRIORIDAD ..................................................... 18
+PRIORIDAD IV ................................................................................................................................ 18
+LISTADO E. LISTA DE CONDICIÒN DE SALUD SEGÚN PRIORIDAD...................................................... 18
+PRIORIDAD V ................................................................................................................................. 18
+LINEAMIENTO PARA REFERENCIA O DERIVACION DE PACIENTES HOSPITALIZADOS ...................... 19
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 3
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 4 de 19
+
+PRESENTACION
+El presente Manual del Sistema de Triaje de Manchester para implementarse en el Servicio de
+Emergencias del Hospital General de Chone se elaboró para clasificar los pacientes según su
+gravedad es una herramienta valiosa para todo el personal que labora en el servicio de
+emergencias y aquellos que acuden por cualquier necesidad a valorar a los pacientes en el servicio
+Dentro del marco de la calidad y la seguridad para la atención de pacientes el Sistema de Triaje de
+Manchester esta diseñado para optimizar los tres tiempos de la atención del servicio de
+emergencias como son:
+1. Recepcion según prioridad
+2. Estabilización en el área adecuada según su patología
+3. Destino Final optimo del paciente al servicio , hospital o centro de salud que requiera para
+su complementariedad en el Diagnóstico y tratamiento según la patología.
+
+Dr. L. Marco Guerrero Salazar
+DIRECTOR ASISTENCIAL
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 4
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 5 de 19
+
+ANTECEDENTES
+Cada día, las salas de emergencias/urgencias de los establecimientos de salud: Centros de Salud y
+Hospitales, reciben un gran número de usuarios con distintas necesidades de atención en salud. El
+flujo y volumen de trabajo varía cada día y todo el tiempo, dependiendo del nivel de complejidad
+que requiera la necesidad de atención del usuario. Por esto, es indispensable que exista un
+sistema de ordenamiento, que asegure la atención a los usuarios en función de una priorización
+clínica y no solamente por orden de llegada, para lo cual se usa el triaje.
+Triaje es un término francés utilizado para seleccionar, escoger o priorizar; es una escala de
+gravedad, que permite establecer un proceso de clasificación preliminar a los pacientes, antes de
+la valoración, diagnóstico y terapéutica completa en el servicio de urgencias, contribuye a que la
+atención otorgada al paciente sea eficaz, oportuna y adecuada, procurando con ello, limitar el
+daño y las secuelas, y en una situación de saturación del servicio o de disminución de recursos, los
+pacientes más urgentes sean tratados en primer lugar. El triaje se basa en la evaluación de signos
+vitales, condiciones de vida, intervenciones terapéuticas y evaluación dinámica.
+Existen múltiples sistemas de triaje; sin embargo, por la difusión amplia, la facilidad y versatilidad
+en su uso, se ha tomado como referente el sistema del grupo español de triaje ―Sistema de Triage
+Manchester MTS® modificadoǁ‖, que también fue tomado como base para el Manual de Triage
+Iberoamericano (OPS, 2010).
+El triaje que se utilizará es el siguiente:
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 5
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 6 de 19
+
+Uno de los elementos centrales para organizar el servicio de emergencia y para el trabajo en red,
+es la implementación del triaje en estos servicios y la consecuente complementaridad de recursos
+según sus exigencias.
+
+JUSTIFICACION
+Las salas de Emergencias de los Hospitales son estamentos muy concurridos por los usuarios
+quienes acuden por cualquier urgencia que ellos crean tener.
+Una vez que los pacientes toman la decisión de acudir a cualquier hospital, su puerta de entrada
+en la atención es la sala de emergencia
+Todo paciente que acude al servicio de emergencia cree que su urgencia debe ser atendida
+inmediatamente sin oportunidad a la espera muchas veces colapsando el servicio.
+Un sistema desordenado de atención de pacientes que no priorice la atención según la gravedad
+no brinda calidad en la atención ya que al ocuparse de pacientes que no ameritan atención
+inmediata frente a otros que realmente si lo necesitan se pierde tiempo valioso que puede ser la
+diferencia entre la vida y la muerte
+Se justifica un sistema que priorice la gravedad de la atención de los pacientes para brindar
+atención con calidad y seguridad
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 6
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 7 de 19
+
+ALCANCE
+El triaje o clasificación de los pacientes que necesitan una atención por el servicio de emergencias
+del Hospital General de Chone se lo implementara para el total de pacientes sin excepción, se lo
+realizara durante las 24 horas del día , los 7 días a la semana
+El triaje deberán hacerlo personal capacitado y calificado, en ningún momento lo hará un medico
+Con el triaje se inicia la atención en el servicio de emergencias de hospitalización y se lo
+implementara en el 100 por ciento de los casos
+
+OBJETIVOS PARA LA APLICACIÓN DEL SISTEMA DE TRIAJE
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 7
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 8 de 19
+
+• GENERAL:
+Mejorar la atención de los pacientes y disminuir el tiempo de espera para su atención y
+secundariamente disminuir la saturación del servicio de Urgencias y/o Emergencias del Hospital
+General de Chone.
+
+• ESPECÍFICOS
+1. Categorizar la atención del paciente en una urgencia/emergencia calificada.
+2. Identificar los factores de riesgo para categorizar la urgencia calificada.
+3. Priorizar al paciente para asignar el área correspondiente del servicio de emergencia
+hospitalario para su atención: box/ sala de reanimación, box / sala de observación o
+primer contacto (consultorios), etc.
+
+LINEAMIENTOS E IMPLEMENTACION DEL SISTEMA DE TRIAJE DE
+MANCHESTER
+
+El proceso de asignación de la prioridad cuenta con las siguientes acciones que no deben llevar
+más de 5 minutos.
+
+• Primero: Realizar una evaluación rápida de vía aérea, ventilación y circulación.
+• Segundo: Motivo de la urgencia. Debe ser una anamnesis dirigida, específica que identifique de
+manera oportuna e inmediata la causa principal de solicitud de consulta. Conforme a lo referido
+por el paciente y los hallazgos clínicos en el primer contacto, se asigna la prioridad del paciente.
+• Tercero: Evaluar los signos vitales del paciente.
+• Cuarto: Asignación del área/box/sala de tratamiento dentro del servicio de urgencias de acuerdo
+a la prioridad del paciente. Y /o consultorio en caso de no ser urgencia/emergencia
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 8
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 9 de 19
+
+El personal de enfermería, o el paramédico (especialista en manejo de triaje) o un personal
+capacitado y preparado para el efecto es el personal indicado para realizar el triaje. Es necesario,
+que se vigile y capacite permanentemente en la especialización de las prioridades de triaje que les
+corresponde como es Atención de emergencias tipo 3 y referencias del resto al tercer nivel
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 9
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 10 de 19
+
+ORGANIZACIÓN DEL SERVICIO DE EMERGENCIA HOSPITAL GENERAL
+DE CHONE ACORDE A LA NORMATIVA TRIAJE DE MANCHESTER
+• El Jefe de Guardia a partir de 5 pm de la tarde y feriados, será la autoridad máxima del hospital,
+en la modalidad de turnos, que se organizarán, de acuerdo a las características propias de la
+guardia
+• El servicio de emergencia y Unidad de Cuidados Intensivos deberán estructurarse en conjunto
+como Servicio de Área Crítica.
+• El servicio de emergencias no podrán rechazar a ningún paciente, se clasificará, según el Sistema
+de Triage Manchester, se estabilizará y se lo trasladará, ya sea a la hospitalización de nuestro
+hospital, si hay disponibilidad de camas, según su capacidad resolutiva, o se lo derivará a otro
+hospital, a través del equipo de gestión de red zonal.
+• El Servicio de emergencia tendrá un teléfono directo exclusivo para este servicio.
+• El Servicio de Emergencia deberá contar con un área (box) de triaje, que permita la atención
+según prioridad (según sistema de Triage Manchester)
+• El Servicio de Emergencia debe contar con área de urgencias, de emergencias, de críticos y
+observación según su capacidad resolutiva.
+La estancia en los boxes de Urgencias/Emergencias, (box naranja) debe ser de máximo 4 horas,
+• Salas de observación, o (box amarillo) es el área donde el paciente permanecerá máximo 12
+horas, con un máximo de menos de 23 horas.
+• El servicio de emergencia debe contar con apoyo de Laboratorio y de Diagnóstico por Imágenes,
+durante las 24 HORAS
+• Cada servicio de emergencia tendrá una plantilla estándar de recursos humanos, materiales,
+equipos y lencería de acuerdo a su capacidad resolutiva normada.
+• El Servicio de Emergencia debe tener permanentemente el apoyo y la presencia de un
+representante de Seguridad (que puede ser una agente de la Policía Nacional del Ecuador y/o de
+vigilancia)
+• Cuando un paciente ingresa al Servicio de Emergencias, a través de Atención Pre hospitalaria
+(SIS- ECU 911- Transporte primario), o referido de otra unidad se debe firmar la recepción del
+paciente en el formulario HCU- F002 o =53 respectivamente
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 10
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 11 de 19
+
+PROCESOS DE SISTEMA DE APOYO A LAS ATENCIONES DEL SERVICIO
+DE EMERGENCIA
+Derivación interhospitalaria, a través del equipo de Gestión de Red Zonal
+Cuando un paciente que se ha estabilizado y no hay disponibilidad de camas o requiere una
+capacidad resolutiva de mayor complejidad se realizará lo siguiente:
+-
+
+-
+
+-
+
+El jefe de Guardia o el responsable de Gestión del Hospital llamará al Gestor de Red Zonal
+de turno para notificar la necesidad de derivación
+Se debe notificar el caso con diagnóstico, el procedimiento que requiere con detalle de
+signos vitales y medición de Glasgow. Además debe indicar la causa, por lo que requiere la
+derivación.
+El gestor de Red Zonal indicará el establecimiento de la RPIS o de la Red complementaria a
+cual derivará.
+El jefe de guardia dispone al Jefe de Emergencia que proceda al llenado de la hoja de
+referencia HCU-F053, elegirá e indicará el tipo de transporte secundario adecuado para la
+misma. Se utilizará el HCU-F002 para la entrega-recepción del paciente.
+Para facilitar este proceso se ha elaborado un flujograma de trabajo, que permita facilitar
+la derivación.
+
+FLUJO DE TRABAJO PARA LA DERIVACIÓN
+Para facilitar y visibilizar el flujo de trabajo en el servicio de emergencias se debe observar el
+listado de emergencias para prioridades
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 11
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 12 de 19
+
+LISTADO A. LISTA DE CONDICION DE SALUD SEGÚN PRIORIDAD
+PRIORIDAD I
+Pacientes con alteración súbita y crítica del estado de salud, en riesgo inminente de muerte, y que
+requieren atención inmediata en la Sala de Reanimación – Shock Trauma. con Signos vitales
+anormales:
+1. Paro Cardiorespiratorio.
+2. Dolor Torácico Precordial de posible origen cardiogénico con o sin hipotensión.
+3. Dificultad respiratoria (evidenciada por polipnea, taquipnea, tiraje, sibilantes, estridor, cianosis)
+4. Shock (Hemorrágico, cardiogénico, distributivo, obstructivo)
+5. Arritmia con compromiso hemodinámico de posible origen cardiogénico con o sin hipotensión.
+6. Hemorragia profusa.
+7. Obstrucción de vía respiratoria alta.
+8. Inestabilidad Hemodinámica (hipotensión / shock / crisis hipertensiva).
+9. Paciente inconsciente que no responde a estímulos.
+10. Paciente con trauma severo como:
+• Víctima de accidente de tránsito.
+• Quemaduras con extensión mayor del 20%.
+• Precipitación.
+• Dos o más fracturas de huesos largos proximales.
+•Injurias en extremidades con compromiso neurovascular.
+• Herida de bala o arma blanca.
+• Sospecha de traumatismo vertebro medular.
+• Evisceración.
+• Amputación con sangrado no controlado.
+• Traumatismo encéfalo craneano.
+11. Status Convulsivo.
+12. Sobredosis de drogas o alcohol más depresión respiratoria.
+13. Ingesta de órgano fosforados, ácidos, álcalis, otras intoxicaciones o envenenamientos.
+14. Signos y síntomas de abdomen agudo con descompensación hemodinámica.
+15. Signos y síntomas de embarazo ectópico roto. Adulto
+• Frecuencia Cardiaca < 50 x min.
+• Frecuencia Cardiaca > 150 x min.
+• Presión Arterial Sistólica < 90 mmHg.
+• Presión Arterial Sistólica > 220 mmHg.
+• Presión Arterial Diastólica > 110 mmHg ó 30 mmHg por encima de su basal.
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 12
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 13 de 19
+
+• Frecuencia Respiratoria > 35 x min.
+• Frecuencia Respiratoria < 10 x min. Pediátrico – Lactante
+• Frecuencia Cardiaca ≤ 60 x min.
+• Frecuencia Cardiaca ≥ 200 x min.
+• Presión Arterial Sistólica < 60 mmHg.
+• Frecuencia Respiratoria ≥ a 60 x min. (hasta los 2 meses).
+• Frecuencia Respiratoria ≥ a 50 x min (desde los 2 meses al año)
+• Saturación de oxigeno ≤ a 85%.
+Pediátrico - Pre Escolar
+• Frecuencia Cardiaca ≤ 60 x min.
+• Frecuencia Cardiaca ≥ 180 x min.
+• Presión Arterial Sistólica < 80 mmHg.
+• Frecuencia Respiratoria > a 40 x min. (sin fiebre).
+• Saturación de oxigeno ≤ a 85%.
+17. Suicidio frustrado.
+18. Intento suicida.
+19. Crisis de agitación psicomotora con conducta heteroagresiva.
+20. Problemas específicos en pacientes pediátricos.
+21. Intoxicaciones por ingesta o contacto.
+22. Períodos de apnea.
+23. Cambios en el estado mental: letargia, delirio, alucinaciones, llanto débil.
+24. Deshidratación con Shock: Llenado capilar mayor de tres segundos.
+25. Sangrado: Hematemesis, sangrado rectal, vaginal, epistaxis severa.
+26. Quemaduras en cara o más del 10% de área corporal.
+27. Quemaduras por fuego en ambiente cerrado.
+28. Acontecimiento de aspiración u obstrucción con cuerpo extraño.
+29. Status convulsivo.
+30. Status asmático.
+31. Hipertermia maligna.
+32. Trastornos de sensorio.
+33. Politraumatismo.
+34. Herida por arma de fuego.
+35. Cualquier otro caso que amerite atención inmediata en la Sala de Reanimación.
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 13
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 14 de 19
+
+LISTADO B. LISTA DE CONDICIÓN DE SALUD SEGÚN PRIORIDAD
+PRIORIDAD II
+Pacientes portadores de cuadro súbito, agudo con riesgo de muerte o complicaciones serias, cuya
+atención debe realizar en un tiempo de espera no mayor o igual de 10 minutos desde su ingreso,
+serán atendidos en box de Emergencia naranja
+1. Frecuencia respiratoria ≥ de 24 por minuto.
+1. Crisis asmática con broncoespasmo moderado.
+2. Diabetes Mellitus Descompensada.
+3. Hemoptisis.
+4. Signos y síntomas de Abdomen Agudo.
+5. Convulsión reciente en paciente consciente.
+6. Dolor torácico no cardiogénico, sin compromiso hemodinámico.
+7. Arritmias, sin compromiso hemodinámico.
+8. Sangrado gastrointestinal, con signos vitales estables.
+9. Paciente con trastornos en el sensorio.
+10. Hipotonía, flacidez muscular aguda y de evolución progresiva.
+11. Descompensación Hepática.
+12. Hernia umbilical o inguinal incarcerada.
+13. Signos y síntomas de descompensación tiroidea.
+14. Contusiones o traumatismos con sospecha de fractura o luxación.
+15. Herida cortante que requiere sutura.
+16. Injuria en ojos perforación, laceración, avulsión.
+17. 1Desprendimiento de retina.
+18. Fiebre y signos inflamatorios en articulaciones.
+19. Síntomas y signos de cólera.
+20. Deshidratación Aguda sin descompensación hemodinámica.
+21. Hematuria macroscópica.
+22. Reacción alérgica, sin compromiso respiratorio.
+23. Síndrome febril o Infección en paciente Inmunosuprimido (Ejemplo: Paciente diabético
+con infección urinaria).
+24. Pacientes Post-Operados de Cirugía altamente Especializada o pacientes en programa de
+Hemodiálisis, con síntomas y signos agudos.
+25. Coagulopatía sin descompensación hemodinámica.
+26. Sobredosis de drogas y alcohol sin depresión respiratoria.
+27. Cefalea con antecedentes de trauma craneal.
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 14
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 15 de 19
+
+28. Síndrome Meníngeo.
+29. Síntomas y signos de enfermedades vasculares agudas.
+30. Cólico renal sin respuesta a la analgesia mayor de 06 horas.
+31. Retención urinaria.
+32. Síndrome de abstinencia de drogas y alcohol.
+33. Cuerpos extraños en orificios corporales.
+34. Cuerpos extraños en esófago y estómago.
+35. Pacientes con ideación suicida.
+36. Pacientes con crisis de ansiedad.
+37. Pacientes con reagudización de su cuadro sicótico sin conducta suicida ni agitación
+psicomotora fuera de control.
+38. Cuadro de demencia con conducta psicótica.
+39. Esguinces.
+40. Contusiones o traumatismos leves sin signos o síntomas de fractura o luxación.
+41. Enfermedad Inflamatoria de la pelvis.
+42. Coagulopatía.
+43. Flebitis o Tromboflebitis.
+44. Herpes Zoster ocular.
+45. Enfermedad eruptiva aguda complicada.
+46. Cefalea mayor de 12 horas.
+47. Problemas específicos en pacientes Obstétricas: Area de Obstetricia
+a. Hemorragia de cualquier trimestre del embarazo.
+b. Aborto provocado no terapéutico o intento fallido de aborto.
+c. Amenaza de parto prematuro.
+d. Gestante de 2º y 3º trimestre que reporta ausencia de movimientos fetales.
+e. Sangrado post-parto.
+f. Hipertensión que complica el embarazo.
+g. Signos y síntomas de toxemia severa.
+h. Bradicardia (menor de 120 x min.) y taquicardia (> de 160 x min.) Fetal.
+i. Traumatismo Abdominal.
+j. Deshidratación por hiperémesis.
+k. Cefalea.
+l. Epigastralgia.
+m. Edema Generalizado.
+48. Problemas Específicos en pacientes Pediátricos.
+n. Prematurez/Bajo peso, Sepsis
+o. Cualquier enfermedad en niños menores de 3 meses.
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 15
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 16 de 19
+
+p. Dolor Abdominal.
+q. Trauma craneano sin cambios en el estado mental o fracturas obvias.
+r. Niños con fiebre y petequias o púrpura.
+s. Niños menores de 3 meses con T° ≥ que 38° C.
+t. Niños menores de 2 años con T° ≥ que 39° C.
+u. Niños con síntomas de infección urinaria.
+v. Convulsiones recientes, sincope o mareos.
+w. Cefalea / epistaxis no controlada.
+x. Quemaduras en menos del 10% de área corporal.
+y. Trauma ocular no penetrante.
+z. Laceración que requiere sutura con sangrado activo.
+aa. Niños que han sufrido agresión física.
+bb. Odontalgia.
+cc. Otalgia.
+2. Cualquier otro caso que a criterio del Médico tratante considere necesario la atención en
+este box de Emergencia.
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 16
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 17 de 19
+
+LISTADO C. LISTA DE CONDICIÒN DE SALUD SEGÚN PRIORIDAD
+PRIORIDAD III
+Paciente que no presenta riesgo de muerte, ni secuelas invalidantes. Amerita atención en el box
+de Emergencia III o color amarillo , teniendo prioridad la atención de casos I y II.
+1. Dolor abdominal leve con náuseas, vómitos, diarrea, signos vitales estables.
+2. Herida que no requiere sutura.
+3. Intoxicación alimentaria.
+4. Trastornos de músculos y ligamentos.
+5. Otitis Media Aguda.
+6. Deshidratación Hidro electrólitica leve.
+7. Osteocondropatia aguda.
+8. Sinusitis aguda.
+9. Hiperémesis gravídica sin compromiso metabólico.
+10. Urticaria.
+11. Fiebre > de 39º sin síntomas asociados.
+12. Síndrome vertiginoso y trastorno vascular.
+13. Celulitis o absceso con fiebre.
+14. Funcionamiento defectuoso de colostomía, ureterostomía, talla vesical u otros similares.
+15. Lumbalgia aguda.
+16. Broncoespasmo leve.
+17. Hipertensión arterial leve no controlada.
+18. Signos y síntomas de Depresión.
+19. Crisis de Ansiedad o Disociativas.
+20. Signos y síntomas de infección urinaria alta.
+21. Pacientes con neurosis de ansiedad.
+22. Pacientes Sicóticos con reagudización de sus síntomas pero aún sin conducta psicótica.
+
+Cualquier otro caso, que el Médico tratante considere que la atención puede ser postergada sólo
+con relación a las anteriores prioridades de atención.
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 17
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 18 de 19
+
+LISTADO D. LISTA DE CONDICIÓN DE SALUD SEGÚN PRIORIDAD
+PRIORIDAD IV
+Pacientes sin compromiso de funciones vitales, ni riesgo de complicación inmediata, se tratan
+síntomas y se refieren para ser atendido en Consulta Externa de Primer nivel o especializada en el
+mismo Hospital de acuerdo al caso.
+1. Faringitis aguda.
+2. Amigdalitis aguda.
+3. Enfermedades diarreica aguda sin deshidratación o vómitos.
+4. Absceso sin fiebre.
+5. Sangrado vaginal leve en no gestante, con funciones vitales estables.
+6. Enfermedades crónicas, no descompensadas
+
+LISTADO E. LISTA DE CONDICIÒN DE SALUD SEGÚN PRIORIDAD
+PRIORIDAD V
+Pacientes sin compromiso de funciones vitales ni riesgo de complicación inmediata y que deben
+ser atendidos en consulta externa de primer nivel. Sólo tratamiento sintomático hasta que Asista a
+cita.
+1. Fiebre sin síntomas asociados.
+2. Resfrío común.
+3. Dolor de oído leve.
+4. Dolor de garganta sin disfagia.
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 18
+
+HOSPITAL GENERAL NAPOLEON DAVILA
+CORDOVA
+
+CODIGO
+HGNDC-GC-PEM
+
+MANUAL DE NORMAS Y PROCEDIMIENTOS
+
+Versión :1
+Revisión :1
+
+PROCESO AGREGADOR DE VALOR/SUBPROCESO DE
+ESPECIALIDAD CLINICO-QUIRÚRGICA: EMERGENCIA
+
+PÁGINAS: 19 de 19
+
+LINEAMIENTO PARA REFERENCIA O DERIVACION DE PACIENTES
+HOSPITALIZADOS
+Para la referencia o derivación de casos clínicos para hospitalización, se deben enviar con la
+siguiente documentación que sirve para activar la red y efectuar reclamos de pago:
+• Formulario de solicitud de ingreso debidamente validado por el Médico Tratante y el
+Responsable del establecimiento de salud o su delegado.
+• Hoja 053 en la cual especificarán el motivo clínico de referencia
+• Copia de la Cédula de Ciudadanía del paciente.
+• Copia de la epicrisis (si el procedimiento/examen lo amerita) debe contener mínimo:
+- Firma y sello del médico tratante y del responsable del servicio.
+- Datos generales del paciente
+- Número de la historia clínica
+- Diagnóstico codificado, según CIE – 10
+- Procedimientos realizados
+- Detalles importantes, resultados de imagen y de laboratorio de existir.
+- Plan de tratamiento
+• Comunicación con Establecimiento al que se refiere para garantizar la atención fecha y hora.
+• En el caso que el paciente beneficiario de otros subsistemas sean hospitalizados en cualquier
+establecimiento de salud será evaluado y de acuerdo a la prescripción se enviará obligatoriamente
+la epicrisis para la realización del procedimiento y/o examen, este documento también sirve como
+habilitante para el pago.
+
+Tomado de lineamientos operativos para la implementación del MAIS y RPIS acuerdo ministerial 5169 (15
+Sep 2014 pag 220 - 231)
+Página 19
+
+

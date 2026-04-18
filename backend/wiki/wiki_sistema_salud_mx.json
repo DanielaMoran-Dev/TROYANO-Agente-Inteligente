@@ -1,0 +1,114 @@
+{
+  "titulo": "Sistema Nacional de Salud de México — Guía de Referencia para Ruteo",
+  "instituciones": [
+    {
+      "clave": "imss",
+      "nombre": "IMSS",
+      "nombre_completo": "Instituto Mexicano del Seguro Social",
+      "poblacion": "Trabajadores formales y familias (~40% población)",
+      "niveles": [
+        "UMF — 1er nivel",
+        "HGZ — 2º nivel",
+        "UMAE — 3er nivel"
+      ]
+    },
+    {
+      "clave": "issste",
+      "nombre": "ISSSTE",
+      "nombre_completo": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+      "poblacion": "Trabajadores del gobierno federal (~7%)",
+      "niveles": [
+        "Clínica de medicina familiar — 1er nivel",
+        "Hospital general — 2º nivel",
+        "Hospital de especialidades — 3er nivel"
+      ]
+    },
+    {
+      "clave": "imss_bienestar",
+      "nombre": "IMSS Bienestar",
+      "nombre_completo": "IMSS Bienestar (antes INSABI / Seguro Popular)",
+      "poblacion": "Población sin seguridad social, zonas rurales (~30%)",
+      "niveles": [
+        "Casa de salud / Centro de salud rural — 1er nivel",
+        "Hospital integral comunitario — 2º nivel",
+        "Hospital regional — 3er nivel"
+      ]
+    },
+    {
+      "clave": "seguro_popular",
+      "nombre": "Servicios Estatales de Salud / SSA",
+      "nombre_completo": "Secretaría de Salud / Servicios de Salud Estatales",
+      "poblacion": "Población abierta sin derechohabiencia",
+      "niveles": [
+        "Centro de salud urbano — 1er nivel",
+        "Hospital general estatal — 2º nivel",
+        "Hospital de alta especialidad — 3er nivel"
+      ]
+    },
+    {
+      "clave": "privado",
+      "nombre": "Sector Privado",
+      "poblacion": "Cualquier persona con capacidad de pago o seguro privado",
+      "niveles": [
+        "Consultorio / Clínica privada — 1er nivel",
+        "Hospital privado — 2º/3er nivel"
+      ]
+    }
+  ],
+  "niveles_atencion": [
+    {
+      "nivel": 1,
+      "nombre": "Primer nivel",
+      "descripcion": "Puerta de entrada. Atención preventiva, crónicas no complicadas, padecimientos frecuentes.",
+      "unidades": [
+        "Consultorio",
+        "Centro de salud",
+        "UMF",
+        "UNEMES"
+      ],
+      "condiciones": [
+        "Diabetes no complicada",
+        "HTA controlada",
+        "IVRA leve",
+        "Control prenatal bajo riesgo",
+        "Vacunación"
+      ]
+    },
+    {
+      "nivel": 2,
+      "nombre": "Segundo nivel",
+      "descripcion": "Hospitalización general y especialidades básicas. Requiere referencia del primer nivel.",
+      "unidades": [
+        "Hospital General de Zona",
+        "Hospital General Estatal",
+        "Hospital Integral Comunitario"
+      ],
+      "especialidades": [
+        "Medicina interna",
+        "Cirugía general",
+        "Ginecología y obstetricia",
+        "Pediatría",
+        "Ortopedia",
+        "Urgencias generales"
+      ]
+    },
+    {
+      "nivel": 3,
+      "nombre": "Tercer nivel / Alta especialidad",
+      "descripcion": "Enfermedades complejas. Requiere referencia del segundo nivel.",
+      "unidades": [
+        "UMAE",
+        "Instituto Nacional de Salud",
+        "Hospital de Alta Especialidad"
+      ],
+      "especialidades": [
+        "Cardiología intervencionista",
+        "Neurología",
+        "Oncología",
+        "Trasplantes",
+        "Neurocirugía"
+      ]
+    }
+  ],
+  "urgencias": "Las urgencias genuinas se atienden en cualquier nivel sin referencia. En primer nivel se estabiliza y refiere."
+}
