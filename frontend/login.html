@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedConnect — Acceso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1" />
+  <style>
+    /* ── LOGIN PAGE ── */
+    html, body { height: 100%; overflow: hidden; }
+
+    .login-bg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      position: relative;
+    }
+    .login-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 40%, rgba(26,115,232,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 80% 70%, rgba(120,217,236,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .login-card {
+      width: 420px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-header {
+      padding: 2rem 2rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .login-logo {
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 6px;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .login-sub {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+
+    /* Role selector tabs */
+    .role-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+    }
+    .role-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .role-tab .material-symbols-outlined { font-size: 18px; }
+    .role-tab:hover { color: var(--text-2); background: var(--surface-2); }
+    .role-tab.active { color: var(--blue); border-bottom-color: var(--blue); background: rgba(138,180,248,0.05); }
+
+    .login-body { padding: 1.5rem 2rem 2rem; }
+
+    /* Patient panel */
+    #panel-patient { display: flex; flex-direction: column; gap: 1rem; }
+    .patient-welcome {
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .patient-welcome .material-symbols-outlined {
+      font-size: 48px !important;
+      color: var(--blue);
+      opacity: 0.7;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .patient-welcome p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Doctor panel */
+    #panel-doctor { display: none; flex-direction: column; gap: 0.9rem; }
+
+    .login-field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .login-field label {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .login-field input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      padding: 0.6rem 0.8rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .login-field input:focus { border-color: var(--blue); }
+    .login-field input::placeholder { color: var(--disabled); }
+
+    .btn-login {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--blue-btn);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.12s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+    .btn-login:hover { background: var(--blue-btn-h); }
+    .btn-login .material-symbols-outlined { font-size: 18px; }
+
+    .login-error {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--red);
+      text-align: center;
+      min-height: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .login-hint {
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--disabled);
+      letter-spacing: 0.5px;
+      margin-top: 0.5rem;
+    }
+
+    .login-footer {
+      padding: 0.8rem 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--disabled);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+<div class="login-bg">
+  <div class="login-card">
+
+    <!-- Header -->
+    <div class="login-header">
+      <div class="login-logo">MEDCONNECT</div>
+      <div class="login-sub">PLATAFORMA MÉDICA INTELIGENTE</div>
+    </div>
+
+    <!-- Role tabs -->
+    <div class="role-tabs">
+      <button class="role-tab active" id="tab-patient" onclick="switchRole('patient')">
+        <span class="material-symbols-outlined">person</span>
+        PACIENTE
+      </button>
+      <button class="role-tab" id="tab-doctor" onclick="switchRole('doctor')">
+        <span class="material-symbols-outlined">stethoscope</span>
+        MÉDICO
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="login-body">
+
+      <!-- Patient panel -->
+      <div id="panel-patient">
+        <div class="patient-welcome">
+          <span class="material-symbols-outlined">health_and_safety</span>
+          <p>Describe tus síntomas y nuestra IA te ayudará a encontrar el médico adecuado más cercano a ti.</p>
+          <button class="btn-login" onclick="enterAsPatient()">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            ENTRAR COMO PACIENTE
+          </button>
+        </div>
+      </div>
+
+      <!-- Doctor panel -->
+      <div id="panel-doctor">
+        <div class="login-field">
+          <label>Correo electrónico</label>
+          <input type="email" id="doctor-email" placeholder="doctor@medconnect.mx" autocomplete="email" />
+        </div>
+        <div class="login-field">
+          <label>Contraseña</label>
+          <input type="password" id="doctor-password" placeholder="••••••••" autocomplete="current-password"
+            onkeydown="if(event.key==='Enter') loginDoctor()" />
+        </div>
+        <div class="login-error" id="login-error"></div>
+        <button class="btn-login" onclick="loginDoctor()">
+          <span class="material-symbols-outlined">login</span>
+          INICIAR SESIÓN
+        </button>
+        <div class="login-hint">Demo: dr.vega@medconnect.mx / 1234</div>
+      </div>
+
+    </div>
+
+    <div class="login-footer">IA + Gemini 2.5 Flash · Google Maps · MongoDB</div>
+  </div>
+</div>
+
+<script>
+  // ── Mock doctor accounts (replace with DB auth later) ──────────────
+  const MOCK_DOCTORS = [
+    {
+      id: "doc_001",
+      email: "dr.vega@medconnect.mx",
+      password: "1234",
+      name: "Dr. Alejandro Vega",
+      specialty: "Cardiología",
+      license: "12345678",
+    },
+    {
+      id: "doc_002",
+      email: "dra.luna@medconnect.mx",
+      password: "1234",
+      name: "Dra. María Luna",
+      specialty: "Medicina General",
+      license: "87654321",
+    },
+    {
+      id: "doc_003",
+      email: "dr.reyes@medconnect.mx",
+      password: "1234",
+      name: "Dr. Carlos Reyes",
+      specialty: "Urgencias",
+      license: "11223344",
+    },
+  ];
+
+  function switchRole(role) {
+    document.getElementById("tab-patient").classList.toggle("active", role === "patient");
+    document.getElementById("tab-doctor").classList.toggle("active", role === "doctor");
+    document.getElementById("panel-patient").style.display = role === "patient" ? "flex" : "none";
+    document.getElementById("panel-doctor").style.display  = role === "doctor"  ? "flex" : "none";
+    document.getElementById("login-error").textContent = "";
+  }
+
+  function enterAsPatient() {
+    sessionStorage.removeItem("medconnect_doctor");
+    window.location.href = "index.html";
+  }
+
+  function loginDoctor() {
+    const email    = document.getElementById("doctor-email").value.trim().toLowerCase();
+    const password = document.getElementById("doctor-password").value;
+    const errorEl  = document.getElementById("login-error");
+
+    const doctor = MOCK_DOCTORS.find(d => d.email === email && d.password === password);
+    if (!doctor) {
+      errorEl.textContent = "Credenciales incorrectas. Intenta de nuevo.";
+      return;
+    }
+
+    sessionStorage.setItem("medconnect_doctor", JSON.stringify(doctor));
+    window.location.href = "doctor.html";
+  }
+</script>
+</body>
+</html>

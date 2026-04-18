@@ -10,6 +10,7 @@ from contextlib import asynccontextmanager
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 # Always load from services/.env (user's location), then allow cwd/.env to override
@@ -102,3 +103,9 @@ async def health_check():
         "service": "MedConnect",
         "version": "2.0.0",
     }
+
+
+@app.get("/ui", include_in_schema=False)
+@app.get("/ui/", include_in_schema=False)
+async def ui_root():
+    return RedirectResponse(url="/ui/login.html")

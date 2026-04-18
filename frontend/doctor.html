@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedConnect — Panel Médico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1" />
+  <style>
+    /* ── DOCTOR DASHBOARD ── */
+    html, body { height: 100%; overflow: hidden; }
+
+    /* Stats bar */
+    .stats-bar {
+      height: 52px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: stretch;
+      flex-shrink: 0;
+    }
+    .stat-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0 1rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-icon .material-symbols-outlined { font-size: 18px; color: var(--blue); }
+    .stat-content { display: flex; flex-direction: column; }
+    .stat-value {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      color: var(--disabled);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .stat-item.stat-critical .stat-value { color: var(--red); }
+    .stat-item.stat-ok .stat-value { color: #34a853; }
+
+    /* Doctor workspace */
+    .doc-workspace {
+      display: flex;
+      height: calc(100vh - var(--header-h) - 52px);
+    }
+
+    /* ── LEFT: Patient queue ── */
+    .queue-panel {
+      width: 300px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-2);
+      flex-shrink: 0;
+    }
+    .panel-header-title {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      flex: 1;
+    }
+    .panel-header .material-symbols-outlined { font-size: 18px; color: var(--blue); }
+    .panel-count {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .queue-list {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .queue-item {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--border-sub);
+      cursor: pointer;
+      transition: background 0.12s;
+      border-left: 3px solid transparent;
+    }
+    .queue-item:hover { background: var(--surface-2); }
+    .queue-item.active { background: rgba(138,180,248,0.06); border-left-color: var(--blue); }
+    .queue-item.urgency-critical { border-left-color: var(--red) !important; }
+    .queue-item.urgency-medium   { border-left-color: var(--yellow) !important; }
+    .queue-item.urgency-low      { border-left-color: #34a853 !important; }
+
+    .queue-item-top {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .urgency-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-critical { background: var(--red); box-shadow: 0 0 5px var(--red); animation: pulse-dot 1.4s infinite; }
+    .dot-medium   { background: var(--yellow); }
+    .dot-low      { background: #34a853; }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; } 50% { opacity: 0.4; }
+    }
+
+    .queue-patient-id {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--text);
+      font-weight: 600;
+      flex: 1;
+    }
+    .queue-time {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--disabled);
+    }
+    .queue-summary {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 0.4rem;
+    }
+    .queue-badges {
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+    .q-badge {
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      padding: 2px 5px;
+      border-radius: 2px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .q-badge-critical { background: rgba(242,139,130,0.15); color: var(--red); border: 1px solid rgba(242,139,130,0.3); }
+    .q-badge-medium   { background: rgba(253,214,99,0.12); color: var(--yellow); border: 1px solid rgba(253,214,99,0.3); }
+    .q-badge-low      { background: rgba(52,168,83,0.12); color: #34a853; border: 1px solid rgba(52,168,83,0.3); }
+    .q-badge-specialty { background: rgba(138,180,248,0.08); color: var(--blue); border: 1px solid rgba(138,180,248,0.2); }
+
+    .queue-empty {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--disabled);
+      letter-spacing: 0.5px;
+    }
+    .queue-empty .material-symbols-outlined { font-size: 32px !important; opacity: 0.3; }
+
+    /* ── CENTER: Active chat ── */
+    .chat-center {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+    }
+    .chat-no-patient {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--disabled);
+      letter-spacing: 1px;
+    }
+    .chat-no-patient .material-symbols-outlined { font-size: 40px !important; opacity: 0.25; }
+
+    /* Patient clinical brief (above chat) */
+    .clinical-brief {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.7rem 1rem;
+      flex-shrink: 0;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .brief-col { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
+    .brief-col:first-child { flex: 1; }
+    .brief-label {
+      font-family: var(--mono);
+      font-size: 0.52rem;
+      color: var(--disabled);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .brief-value { font-size: 0.8rem; color: var(--text); line-height: 1.4; }
+    .brief-value.mono { font-family: var(--mono); font-size: 0.72rem; }
+    .urgency-pill {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+    .pill-critical { background: rgba(242,139,130,0.18); color: var(--red); border: 1px solid rgba(242,139,130,0.4); }
+    .pill-medium   { background: rgba(253,214,99,0.12); color: var(--yellow); border: 1px solid rgba(253,214,99,0.3); }
+    .pill-low      { background: rgba(52,168,83,0.12); color: #34a853; border: 1px solid rgba(52,168,83,0.3); }
+
+    /* ── RIGHT: Appointments + Profile ── */
+    .right-panel {
+      width: 280px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .appointment-item {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--border-sub);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .appt-top {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .appt-time {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text);
+      flex: 1;
+    }
+    .appt-status {
+      font-family: var(--mono);
+      font-size: 0.52rem;
+      padding: 2px 5px;
+      border-radius: 2px;
+      font-weight: 700;
+    }
+    .appt-pending   { background: rgba(253,214,99,0.12); color: var(--yellow); border: 1px solid rgba(253,214,99,0.25); }
+    .appt-confirmed { background: rgba(52,168,83,0.12); color: #34a853; border: 1px solid rgba(52,168,83,0.25); }
+    .appt-patient {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .appt-specialty {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      color: var(--blue);
+    }
+    .appt-actions { display: flex; gap: 0.4rem; }
+    .appt-btn {
+      flex: 1;
+      padding: 0.25rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      cursor: pointer;
+      transition: all 0.12s;
+      text-align: center;
+    }
+    .appt-btn:hover { background: var(--surface-2); color: var(--text); }
+    .appt-btn.confirm { border-color: rgba(52,168,83,0.4); color: #34a853; }
+    .appt-btn.confirm:hover { background: rgba(52,168,83,0.1); }
+    .appt-btn.cancel { border-color: rgba(242,139,130,0.3); color: var(--red); }
+    .appt-btn.cancel:hover { background: rgba(242,139,130,0.08); }
+
+    /* Profile section */
+    .profile-section {
+      padding: 0.85rem;
+      border-bottom: 1px solid var(--border-sub);
+    }
+    .profile-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--blue-btn);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.6rem;
+    }
+    .profile-name {
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.1rem;
+    }
+    .profile-specialty {
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--blue);
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+    }
+
+    /* Online toggle */
+    .online-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.7rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .toggle-label-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-2);
+      letter-spacing: 0.5px;
+    }
+    .online-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--disabled);
+      transition: background 0.2s;
+    }
+    .online-dot.online { background: #34a853; box-shadow: 0 0 5px #34a853; }
+
+    /* Switch */
+    .switch {
+      position: relative;
+      width: 36px; height: 20px;
+      flex-shrink: 0;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .switch-track {
+      position: absolute;
+      inset: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .switch-track::after {
+      content: "";
+      position: absolute;
+      width: 14px; height: 14px;
+      left: 2px; top: 2px;
+      background: var(--disabled);
+      border-radius: 50%;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .switch input:checked + .switch-track {
+      background: rgba(52,168,83,0.2);
+      border-color: #34a853;
+    }
+    .switch input:checked + .switch-track::after {
+      transform: translateX(16px);
+      background: #34a853;
+    }
+
+    /* Header online indicator */
+    .header-online-status {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+    .header-online-status.is-online {
+      color: #34a853;
+      border-color: rgba(52,168,83,0.35);
+      background: rgba(52,168,83,0.06);
+    }
+    .header-online-status.is-offline { color: var(--disabled); }
+    .header-online-status .material-symbols-outlined { font-size: 10px; }
+
+    /* ── CALENDAR OVERLAY ── */
+    .cal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.65);
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      padding: 1.5rem;
+    }
+
+    .cal-modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      flex: 1;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 12px 60px rgba(0,0,0,0.6);
+    }
+
+    .cal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-2);
+      flex-shrink: 0;
+    }
+    .cal-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      padding: 0 0.4rem;
+    }
+
+    .cal-body {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+
+    /* Grid: 1 time col + 7 day cols */
+    .cal-grid {
+      display: grid;
+      grid-template-columns: 52px repeat(7, 1fr);
+      min-width: 640px;
+    }
+
+    /* Day header cells */
+    .cal-day-hdr {
+      border-left: 1px solid var(--border-sub);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 0.4rem;
+      text-align: center;
+      background: var(--surface-2);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .cal-day-hdr.today { background: rgba(138,180,248,0.08); }
+    .cal-day-name {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .cal-day-num {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .cal-day-hdr.today .cal-day-num {
+      color: var(--blue);
+    }
+    /* Corner blank */
+    .cal-corner {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-2);
+      position: sticky;
+      top: 0;
+      z-index: 3;
+    }
+
+    /* Time label cells */
+    .cal-time-label {
+      font-family: var(--mono);
+      font-size: 0.52rem;
+      color: var(--disabled);
+      text-align: right;
+      padding: 0 6px 0 0;
+      line-height: 1;
+      /* aligned to top of its row */
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding-top: 2px;
+    }
+
+    /* Slot cells */
+    .cal-slot {
+      border-left: 1px solid var(--border-sub);
+      border-bottom: 1px dashed rgba(255,255,255,0.04);
+      min-height: 30px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .cal-slot:nth-child(even) { border-bottom: 1px solid var(--border-sub); } /* full hour line */
+    .cal-slot:hover { background: rgba(138,180,248,0.05); }
+
+    /* Appointment event block */
+    .cal-event {
+      position: absolute;
+      left: 3px;
+      right: 3px;
+      border-radius: 4px;
+      padding: 3px 5px;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+      transition: filter 0.12s;
+      border-left: 3px solid transparent;
+    }
+    .cal-event:hover { filter: brightness(1.15); }
+    .cal-event.ev-pending {
+      background: rgba(253,214,99,0.15);
+      border-left-color: var(--yellow);
+    }
+    .cal-event.ev-confirmed {
+      background: rgba(52,168,83,0.15);
+      border-left-color: #34a853;
+    }
+    .cal-event-title {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cal-event-sub {
+      font-size: 0.55rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Now line */
+    .cal-now-line {
+      position: absolute;
+      left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .cal-now-line::before {
+      content: "";
+      position: absolute;
+      left: -4px; top: -3px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    /* ── NEW APPOINTMENT FORM ── */
+    .appt-form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      width: 400px;
+      max-width: 95vw;
+      align-self: center;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+    .appt-form-body {
+      padding: 1.2rem 1.4rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    /* reuse .login-field from login.html inlined here */
+    .appt-form-body .login-field { display: flex; flex-direction: column; gap: 0.25rem; }
+    .appt-form-body .login-field label {
+      font-family: var(--mono);
+      font-size: 0.56rem;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .appt-form-body .login-field input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      padding: 0.5rem 0.7rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .appt-form-body .login-field input:focus { border-color: var(--blue); }
+    .appt-form-body .btn-login {
+      width: 100%;
+      padding: 0.65rem;
+      background: var(--blue-btn);
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: background 0.12s;
+    }
+    .appt-form-body .btn-login:hover { background: var(--blue-btn-h); }
+    .appt-form-body .login-error {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--red);
+      min-height: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-left">
+      <span class="logo">MedConnect</span>
+      <span class="nav-sep">//</span>
+      <span class="header-breadcrumb" id="doc-breadcrumb">PANEL MÉDICO</span>
+    </div>
+    <div class="header-right">
+      <span class="header-tag">Gemini 2.5</span>
+      <div class="header-online-status is-offline" id="hdr-online-status">
+        <span class="material-symbols-outlined">fiber_manual_record</span>
+        <span id="hdr-online-text">OFFLINE</span>
+      </div>
+      <button class="header-action-btn" onclick="openCalendar()" id="cal-btn">
+        <span class="material-symbols-outlined">calendar_month</span>
+        Calendario
+      </button>
+      <div class="user-chip" id="doc-avatar-chip">M</div>
+      <button class="icon-btn" onclick="logout()" title="Cerrar sesión" style="margin-left:0.2rem">
+        <span class="material-symbols-outlined">logout</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── STATS BAR ──────────────────────────────────────────────── -->
+  <div class="stats-bar">
+    <div class="stat-item stat-critical">
+      <div class="stat-icon"><span class="material-symbols-outlined">emergency</span></div>
+      <div class="stat-content">
+        <span class="stat-value" id="stat-critical">0</span>
+        <span class="stat-label">Críticos</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><span class="material-symbols-outlined">schedule</span></div>
+      <div class="stat-content">
+        <span class="stat-value" id="stat-pending">0</span>
+        <span class="stat-label">En espera</span>
+      </div>
+    </div>
+    <div class="stat-item stat-ok">
+      <div class="stat-icon"><span class="material-symbols-outlined">check_circle</span></div>
+      <div class="stat-content">
+        <span class="stat-value" id="stat-completed">0</span>
+        <span class="stat-label">Atendidos hoy</span>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><span class="material-symbols-outlined">calendar_today</span></div>
+      <div class="stat-content">
+        <span class="stat-value" id="stat-appointments">0</span>
+        <span class="stat-label">Citas pendientes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WORKSPACE ─────────────────────────────────────────────── -->
+  <div class="doc-workspace">
+
+    <!-- LEFT — Queue -->
+    <div class="queue-panel">
+      <div class="panel-header">
+        <span class="material-symbols-outlined">queue</span>
+        <span class="panel-header-title">COLA DE PACIENTES</span>
+        <span class="panel-count" id="queue-count">0</span>
+      </div>
+      <div class="queue-list" id="queue-list">
+        <div class="queue-empty" id="queue-empty">
+          <span class="material-symbols-outlined">inbox</span>
+          <span>Sin pacientes en espera</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER — Chat -->
+    <div class="chat-center" id="chat-center">
+      <div class="chat-no-patient" id="no-patient-msg">
+        <span class="material-symbols-outlined">chat_bubble</span>
+        <span>Selecciona un paciente para chatear</span>
+      </div>
+
+      <!-- Clinical brief (hidden until patient selected) -->
+      <div class="clinical-brief hidden" id="clinical-brief">
+        <div class="brief-col">
+          <span class="brief-label">Resumen clínico</span>
+          <span class="brief-value" id="brief-summary">—</span>
+        </div>
+        <div class="brief-col" style="min-width:90px">
+          <span class="brief-label">Especialidad</span>
+          <span class="brief-value mono" id="brief-specialty">—</span>
+        </div>
+        <div class="brief-col">
+          <span class="urgency-pill pill-medium" id="brief-urgency">MEDIUM</span>
+        </div>
+      </div>
+
+      <!-- Chat area (hidden until patient selected) -->
+      <div class="chat-messages hidden" id="doc-chat-messages"></div>
+      <div class="chat-input-row hidden" id="doc-chat-input-row">
+        <input type="text" class="chat-input" id="doc-chat-input"
+          placeholder="Escribe al paciente..." autocomplete="off" />
+        <button class="chat-send-btn" id="doc-send-btn">
+          <span class="material-symbols-outlined">send</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT — Appointments + Profile -->
+    <div class="right-panel">
+
+      <!-- Profile -->
+      <div class="profile-section">
+        <div class="profile-avatar" id="profile-avatar">M</div>
+        <div class="profile-name" id="profile-name">Dr. Médico</div>
+        <div class="profile-specialty" id="profile-specialty">Especialidad</div>
+
+        <label class="online-toggle" onclick="toggleOnline()">
+          <div class="toggle-label-row">
+            <div class="online-dot" id="online-dot"></div>
+            <span id="online-label">OFFLINE</span>
+          </div>
+          <div class="switch">
+            <input type="checkbox" id="online-switch" />
+            <span class="switch-track"></span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Appointments -->
+      <div class="panel-header" style="border-top: 1px solid var(--border)">
+        <span class="material-symbols-outlined">calendar_month</span>
+        <span class="panel-header-title">PRÓXIMAS CITAS</span>
+        <span class="panel-count" id="appt-count">0</span>
+      </div>
+      <div id="appointments-list"></div>
+
+    </div>
+
+  </div><!-- /doc-workspace -->
+
+  <!-- ── CALENDAR OVERLAY ──────────────────────────────────────── -->
+  <div id="cal-overlay" class="cal-overlay hidden">
+    <div class="cal-modal">
+
+      <!-- Cal header -->
+      <div class="cal-header">
+        <button class="icon-btn" onclick="calPrevWeek()">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <span class="cal-title" id="cal-title">Semana</span>
+        <button class="icon-btn" onclick="calNextWeek()">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <button class="icon-btn" onclick="calGoToday()" title="Hoy" style="margin-left:0.3rem">
+          <span class="material-symbols-outlined">today</span>
+        </button>
+        <div style="flex:1"></div>
+        <button class="header-action-btn" onclick="openNewApptForm(null, null)">
+          <span class="material-symbols-outlined">add</span>
+          Nueva cita
+        </button>
+        <button class="icon-btn" onclick="closeCalendar()" style="margin-left:0.5rem">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <!-- Grid wrapper (scrollable vertically) -->
+      <div class="cal-body">
+        <div class="cal-grid" id="cal-grid">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── NEW APPOINTMENT FORM ───────────────────────────────────── -->
+  <div id="appt-form-overlay" class="cal-overlay hidden" style="z-index:1100">
+    <div class="appt-form-card">
+      <div class="cal-header" style="border-radius:8px 8px 0 0">
+        <span class="material-symbols-outlined" style="color:var(--blue)">event_add</span>
+        <span style="font-family:var(--mono);font-size:0.75rem;font-weight:600;color:var(--text);flex:1">NUEVA CITA</span>
+        <button class="icon-btn" onclick="closeNewApptForm()">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="appt-form-body">
+        <div class="login-field">
+          <label>Paciente</label>
+          <input type="text" id="af-patient" placeholder="Nombre del paciente..." />
+        </div>
+        <div class="login-field">
+          <label>Especialidad / Motivo</label>
+          <input type="text" id="af-specialty" placeholder="Cardiología — primera vez..." />
+        </div>
+        <div style="display:flex;gap:0.6rem">
+          <div class="login-field" style="flex:1">
+            <label>Fecha</label>
+            <input type="date" id="af-date" />
+          </div>
+          <div class="login-field" style="flex:1">
+            <label>Hora</label>
+            <input type="time" id="af-time" step="1800" />
+          </div>
+        </div>
+        <div class="login-field">
+          <label>Duración</label>
+          <select id="af-duration" style="background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:var(--sans);font-size:0.82rem;padding:0.5rem 0.7rem">
+            <option value="30">30 minutos</option>
+            <option value="60" selected>1 hora</option>
+            <option value="90">1 hora 30 min</option>
+          </select>
+        </div>
+        <div class="login-field">
+          <label>Notas (opcional)</label>
+          <input type="text" id="af-notes" placeholder="Primera consulta, seguimiento..." />
+        </div>
+        <div class="login-error" id="af-error"></div>
+        <button class="btn-login" onclick="saveNewAppt()">
+          <span class="material-symbols-outlined">check</span>
+          GUARDAR CITA
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="doctor.js?v=1"></script>
+</body>
+</html>
