@@ -72,8 +72,9 @@
       "Bash(node --check D:/Hackaton/2026/Lineal-Troyano/TROYANO-Agente-Inteligente/frontend/doctor.js)",
       "Bash(.venv/Scripts/python.exe scripts/init_db.py)",
       "Bash(.venv/Scripts/python.exe -c \"from routers import clinic, doctor; print\\('OK'\\)\")",
-      "Bash(node --check frontend/app.js)"
-
+      "Bash(node --check frontend/app.js)",
+      "Bash(systemctl status *)",
+      "Bash(redis-server --version)"
     ]
   }
 }

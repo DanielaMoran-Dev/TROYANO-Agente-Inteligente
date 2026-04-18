@@ -4,12 +4,16 @@ Chat router — creación de conversaciones + WebSocket doctor↔paciente.
 Una conversación se crea a partir de una sesión de triaje (`gemini_sessions`)
 y sólo se permite si el doctor tiene is_network=True (modelo de negocio).
 El primer mensaje siempre es del `sender: system` con el perfil clínico.
+
+Broadcast uses an in-process registry (no Redis required). For multi-instance
+deployments replace _broadcast with a Redis pub/sub implementation.
 """
 
 import asyncio
 import json
 import logging
 import uuid
+from collections import defaultdict
 from datetime import datetime, timezone
 
 from bson import ObjectId
@@ -17,10 +21,27 @@ from bson.errors import InvalidId
 from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect
 
 from schemas.recommendation import ConversationCreate
-from services import mongo_service, redis_service
+from services import mongo_service
 
 router = APIRouter(tags=["chat"])
 logger = logging.getLogger(__name__)
+
+# ── In-process broadcast registry ──────────────────────────────────────────────
+# Maps conversation_id → set of connected WebSocket objects.
+_subscribers: dict[str, set[WebSocket]] = defaultdict(set)
+
+
+async def _broadcast(conversation_id: str, payload: str, skip: WebSocket | None = None):
+    """Send payload to every WebSocket subscribed to conversation_id."""
+    dead = set()
+    for ws in list(_subscribers[conversation_id]):
+        if ws is skip:
+            continue
+        try:
+            await ws.send_text(payload)
+        except Exception:
+            dead.add(ws)
+    _subscribers[conversation_id] -= dead
 
 
 # ────────────────────────────────────────────────────────────
@@ -60,6 +81,14 @@ async def create_conversation(body: ConversationCreate):
             status_code=403,
             detail="Sólo doctores en red pueden iniciar conversaciones.",
         )
+
+    # Idempotency: return existing active conversation for this patient+doctor pair
+    existing = await mongo_service.conversations().find_one(
+        {"user_id": user_obj_id, "doctor_id": doctor_obj_id, "status": "active"},
+        {"conversation_id": 1},
+    )
+    if existing:
+        return {"conversation_id": existing["conversation_id"], "status": "active"}
 
     # Obtener sesión de triaje + contexto del paciente
     session = await mongo_service.gemini_sessions().find_one(
@@ -210,6 +239,22 @@ async def list_conversations(user_id: str | None = None, doctor_id: str | None =
     return {"conversations": result}
 
 
+@router.get("/conversations/{conversation_id}/messages")
+async def get_conversation_messages(conversation_id: str):
+    """Historial de mensajes de cualquier conversación, sin importar su estado."""
+    doc = await mongo_service.conversations().find_one(
+        {"conversation_id": conversation_id},
+        {"messages": 1, "status": 1},
+    )
+    if not doc:
+        raise HTTPException(status_code=404, detail="Conversación no encontrada.")
+    return {
+        "conversation_id": conversation_id,
+        "status": doc.get("status"),
+        "messages": _jsonable(doc.get("messages", [])),
+    }
+
+
 @router.put("/conversations/{conversation_id}/close")
 async def close_conversation(conversation_id: str):
     result = await mongo_service.conversations().update_one(
@@ -255,18 +300,8 @@ async def chat_websocket(websocket: WebSocket, conversation_id: str):
     except Exception as e:
         logger.warning("No se pudo cargar historial: %s", e)
 
-    channel = f"chat:{conversation_id}"
-    pubsub = await redis_service.subscribe(channel)
-
-    async def _reader():
-        try:
-            async for msg in pubsub.listen():
-                if msg["type"] == "message":
-                    await websocket.send_text(msg["data"])
-        except Exception:
-            pass
-
-    reader_task = asyncio.create_task(_reader())
+    # Register this connection for broadcast
+    _subscribers[conversation_id].add(websocket)
 
     try:
         while True:
@@ -288,7 +323,7 @@ async def chat_websocket(websocket: WebSocket, conversation_id: str):
                 "timestamp": datetime.now(timezone.utc),
             }
 
-            # Persistir en Mongo
+            # Persist in Mongo
             await mongo_service.conversations().update_one(
                 {"conversation_id": conversation_id},
                 {
@@ -297,17 +332,15 @@ async def chat_websocket(websocket: WebSocket, conversation_id: str):
                 },
             )
 
-            # Broadcast vía Redis (el timestamp se serializa a ISO)
-            await redis_service.publish(channel, json.dumps(_jsonable(message_doc)))
+            # Broadcast to all other connected clients for this conversation
+            await _broadcast(conversation_id, json.dumps(_jsonable(message_doc)), skip=websocket)
+            # Echo back to sender so they see their own message
+            await websocket.send_text(json.dumps(_jsonable(message_doc)))
 
     except WebSocketDisconnect:
         logger.info("WS disconnect: conversation_id=%s", conversation_id)
     finally:
-        reader_task.cancel()
-        try:
-            await pubsub.unsubscribe(channel)
-        except Exception:
-            pass
+        _subscribers[conversation_id].discard(websocket)
 
 
 def _jsonable(obj):

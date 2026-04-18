@@ -154,15 +154,21 @@ function selectPatient(patient) {
 
 // ── WebSocket chat ─────────────────────────────────────────────────────────────
 function openChatWs(conversationId) {
-  if (activeWs) { activeWs.close(); activeWs = null; }
+  if (activeWs) {
+    const old = activeWs;
+    old._intentionalClose = true;
+    activeWs = null;
+    old.close();
+  }
 
   const msgs = document.getElementById("doc-chat-messages");
   msgs.innerHTML = "";
 
   const wsProto = location.protocol === "https:" ? "wss" : "ws";
-  activeWs = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
+  const ws = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
+  activeWs = ws;
 
-  activeWs.onmessage = evt => {
+  ws.onmessage = evt => {
     try {
       const msg = JSON.parse(evt.data);
       if (msg.type === "history") {
@@ -175,8 +181,11 @@ function openChatWs(conversationId) {
     }
   };
 
-  activeWs.onerror = () => appendDocMsg("sistema", "Error de conexión con el paciente.");
-  activeWs.onclose = () => appendDocMsg("sistema", "Chat desconectado.");
+  ws.onerror = () => appendDocMsg("sistema", "Error de conexión con el paciente.");
+  ws.onclose = () => {
+    if (activeWs === ws) activeWs = null;
+    if (!ws._intentionalClose) appendDocMsg("sistema", "Chat desconectado.");
+  };
 }
 
 function appendDocMsg(sender, text) {
@@ -201,9 +210,12 @@ function setupChatInput() {
 function sendDocMessage() {
   const input = document.getElementById("doc-chat-input");
   const text  = input.value.trim();
-  if (!text || !activeWs) return;
+  if (!text) return;
+  if (!activeWs || activeWs.readyState !== WebSocket.OPEN) {
+    appendDocMsg("sistema", "Reconectando...");
+    return;
+  }
   activeWs.send(JSON.stringify({ sender: "doctor", text }));
-  appendDocMsg("doctor", text);
   input.value = "";
 }
 

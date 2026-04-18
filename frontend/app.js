@@ -877,8 +877,14 @@ function setupModal() {
 }
 
 async function openDoctorChat(doctorId, clinicId) {
-  if (activeWs) activeWs.close();
+  if (activeWs) {
+    const old = activeWs;
+    old._intentionalClose = true;
+    activeWs = null;
+    old.close();
+  }
   modalMessages.innerHTML = "";
+  modalInput.setAttribute("disabled", "");
   modalDoctorName.textContent = "Conectando con el doctor...";
   chatModal.classList.remove("hidden");
 
@@ -886,31 +892,37 @@ async function openDoctorChat(doctorId, clinicId) {
   try {
     conversationId = await ensureConversation(doctorId, clinicId);
   } catch (e) {
-    appendModalMsg("sistema", `No se pudo iniciar el chat: ${e.message}`);
+    appendModalMsg("bot-info", `No se pudo iniciar el chat: ${e.message}`);
     return;
   }
 
   modalDoctorName.textContent = `Chat (${conversationId.slice(-8)})`;
 
   const wsProto = location.protocol === "https:" ? "wss" : "ws";
-  activeWs = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
+  const ws = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
+  activeWs = ws;
 
-  activeWs.onmessage = evt => {
+  ws.onopen = () => modalInput.removeAttribute("disabled");
+  ws.onmessage = evt => {
     try {
       const msg = JSON.parse(evt.data);
       if (msg.type === "history") {
         msg.messages.forEach(m => appendModalMsg(m.sender, m.text));
       } else if (msg.type === "error") {
-        appendModalMsg("sistema", msg.detail || "Error en el chat.");
+        appendModalMsg("bot-info", msg.detail || "Error en el chat.");
       } else {
         appendModalMsg(msg.sender, msg.text);
       }
     } catch {
-      appendModalMsg("sistema", evt.data);
+      appendModalMsg("bot-info", evt.data);
     }
   };
 
-  activeWs.onerror = () => appendModalMsg("sistema", "Error de conexión.");
+  ws.onerror = () => appendModalMsg("bot-info", "Error de conexión.");
+  ws.onclose = () => {
+    if (activeWs === ws) activeWs = null;
+    if (!ws._intentionalClose) appendModalMsg("bot-info", "Chat desconectado.");
+  };
 }
 
 // ── Appointment booking ────────────────────────────────────────────────────────
@@ -1005,21 +1017,36 @@ async function submitAppointment() {
 
 function closeDoctorChat() {
   chatModal.classList.add("hidden");
-  if (activeWs) { activeWs.close(); activeWs = null; }
+  if (activeWs) {
+    const old = activeWs;
+    old._intentionalClose = true;
+    activeWs = null;
+    old.close();
+  }
 }
 
 function sendModalMessage() {
   const text = modalInput.value.trim();
-  if (!text || !activeWs) return;
+  if (!text) return;
+  if (!activeWs || activeWs.readyState !== WebSocket.OPEN) {
+    appendModalMsg("bot-info", "Reconectando…");
+    return;
+  }
   activeWs.send(JSON.stringify({ sender: "patient", text }));
-  appendModalMsg("patient", text);
   modalInput.value = "";
 }
 
 function appendModalMsg(sender, text) {
+  if (sender === "system") return;   // clinical profile is doctor-facing only
   const div = document.createElement("div");
-  div.className = `chat-msg ${sender === "patient" ? "user" : "bot"}`;
-  div.innerHTML = `<div class="msg-bubble">${escapeHtml(text)}</div>`;
+  if (sender === "bot-info") {
+    div.className = "chat-modal-info";
+    div.textContent = text;
+  } else {
+    const isMe = sender === "patient" || sender === "user";
+    div.className = `chat-msg ${isMe ? "user" : "bot"}`;
+    div.innerHTML = `<div class="msg-bubble">${escapeHtml(text)}</div>`;
+  }
   modalMessages.appendChild(div);
   modalMessages.scrollTop = modalMessages.scrollHeight;
 }
@@ -1116,7 +1143,7 @@ async function loadConversations() {
     }
     body.innerHTML = conversations.map(c => `
       <div class="conv-item${c.status === "closed" ? " conv-closed" : ""}"
-           onclick="reopenConversation('${c.conversation_id}', '${escapeAttr(c.doctor_name || "Doctor")}')">
+           onclick="reopenConversation('${c.conversation_id}', '${escapeAttr(c.doctor_name || "Doctor")}', '${c.status}')">
         <div class="conv-item-header">
           <span class="conv-doctor">${escapeHtml(c.doctor_name || "Doctor")}</span>
           <span class="conv-specialty">${escapeHtml(c.doctor_specialty || "")}</span>
@@ -1133,25 +1160,55 @@ async function loadConversations() {
   }
 }
 
-function reopenConversation(conversationId, doctorName) {
+async function reopenConversation(conversationId, doctorName, status) {
   closeSidePanel();
   document.getElementById("modal-doctor-name").textContent = `Chat con ${doctorName}`;
   document.getElementById("modal-messages").innerHTML = "";
+  modalInput.setAttribute("disabled", "");
   document.getElementById("chat-modal").classList.remove("hidden");
+
+  if (status === "closed") {
+    // Read-only history via REST — WS rejects closed conversations
+    try {
+      const res = await fetch(`${API}/conversations/${conversationId}/messages`);
+      if (!res.ok) throw new Error();
+      const { messages } = await res.json();
+      messages.forEach(m => appendModalMsg(m.sender, m.text));
+      appendModalMsg("bot-info", "Esta conversación está cerrada.");
+    } catch {
+      appendModalMsg("bot-info", "No se pudo cargar el historial.");
+    }
+    return;
+  }
+
+  // Active conversation — live WebSocket
   const wsProto = location.protocol === "https:" ? "wss" : "ws";
-  if (activeWs) { activeWs.close(); activeWs = null; }
-  activeWs = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
-  activeWs.onmessage = evt => {
+  if (activeWs) {
+    const old = activeWs;
+    old._intentionalClose = true;
+    activeWs = null;
+    old.close();
+  }
+  const ws = new WebSocket(`${wsProto}://${location.host}/ws/chat/${conversationId}`);
+  activeWs = ws;
+  ws.onopen = () => modalInput.removeAttribute("disabled");
+  ws.onmessage = evt => {
     try {
       const msg = JSON.parse(evt.data);
       if (msg.type === "history") {
         msg.messages.forEach(m => appendModalMsg(m.sender, m.text));
-      } else if (msg.type !== "error") {
+      } else if (msg.type === "error") {
+        appendModalMsg("bot-info", msg.detail || "Error en el chat.");
+      } else {
         appendModalMsg(msg.sender, msg.text);
       }
     } catch { /* ignore */ }
   };
-  activeWs.onerror = () => appendModalMsg("system", "Error de conexión.");
+  ws.onerror = () => appendModalMsg("bot-info", "Error de conexión.");
+  ws.onclose = () => {
+    if (activeWs === ws) activeWs = null;
+    if (!ws._intentionalClose) appendModalMsg("bot-info", "Chat desconectado.");
+  };
 }
 
 async function loadPatientAppointments() {

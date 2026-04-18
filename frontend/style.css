@@ -1060,6 +1060,19 @@ header {
 .modal-header .material-symbols-outlined { color: var(--accent); }
 .modal-header span:nth-child(2) { flex: 1; }
 
+.chat-modal-info {
+  align-self: center;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--surface-3);
+  border-radius: 20px;
+  margin: 0.4rem auto;
+}
+
 .modal-messages {
   flex: 1;
   overflow-y: auto;
