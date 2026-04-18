@@ -61,10 +61,10 @@ async def create_conversation(body: ConversationCreate):
             detail="Sólo doctores en red pueden iniciar conversaciones.",
         )
 
-    # Obtener sesión de triaje para el perfil clínico
+    # Obtener sesión de triaje + contexto del paciente
     session = await mongo_service.gemini_sessions().find_one(
         {"session_id": body.session_id},
-        {"triage": 1},
+        {"triage": 1, "user_id": 1, "patient_context": 1},
     )
     if not session:
         raise HTTPException(status_code=404, detail="Sesión de triaje no encontrada.")
@@ -72,15 +72,36 @@ async def create_conversation(body: ConversationCreate):
     triage = session.get("triage") or {}
     clinical_summary = triage.get("clinical_summary", "")
     urgency_level = triage.get("urgency_level")
+    red_flags = triage.get("red_flags") or []
+
+    # Enrich with stored patient context (age, allergies, conditions, medications)
+    ctx = session.get("patient_context") or {}
+    profile_lines = [f"Urgencia: {urgency_level or 'desconocida'}"]
+    if ctx.get("age"):
+        profile_lines.append(f"Edad: {ctx['age']} años")
+    if ctx.get("conditions"):
+        profile_lines.append(f"Antecedentes: {', '.join(ctx['conditions'])}")
+    if ctx.get("allergies"):
+        profile_lines.append(f"⚠️ ALERGIAS: {', '.join(ctx['allergies'])}")
+    if ctx.get("medications"):
+        profile_lines.append(f"Medicamentos actuales: {', '.join(ctx['medications'])}")
+    if ctx.get("blood_type"):
+        profile_lines.append(f"Tipo sanguíneo: {ctx['blood_type']}")
+    if ctx.get("insurance"):
+        profile_lines.append(f"Seguro: {ctx['insurance']}")
+    if ctx.get("duration"):
+        profile_lines.append(f"Duración de síntomas: {ctx['duration']}")
+    if ctx.get("severity"):
+        profile_lines.append(f"Severidad: {ctx['severity']}")
+    if red_flags:
+        profile_lines.append(f"🚨 Señales de alarma: {', '.join(red_flags)}")
+    profile_lines.append(f"Resumen clínico: {clinical_summary}")
 
     now = datetime.now(timezone.utc)
     conversation_id = str(uuid.uuid4())
     system_message = {
         "sender": "system",
-        "text": (
-            f"PERFIL CLÍNICO — Urgencia: {urgency_level or 'desconocida'}. "
-            f"{clinical_summary}"
-        ),
+        "text": "PERFIL CLÍNICO\n" + "\n".join(profile_lines),
         "timestamp": now,
     }
 

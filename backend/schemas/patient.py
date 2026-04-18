@@ -65,6 +65,8 @@ class ConsultRequest(BaseModel):
     user_id: str
     session_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     symptoms: str = Field(..., min_length=5, max_length=2000)
+    duration: Optional[str] = None
+    severity: Optional[str] = None
     coords: Coords
     insurance: Insurance
     budget_level: BudgetLevel

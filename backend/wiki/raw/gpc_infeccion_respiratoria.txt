@@ -1,0 +1,3869 @@
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+GUÍA DE PRÁCTICA CLÍNICA
+
+GPC
+
+Actualización
+2016
+
+Diagnóstico y manejo de la
+INFECCIÓN AGUDA DE VÍAS
+AÉREAS SUPERIORES
+
+en pacientes mayores de 3 meses
+hasta 18 años de edad
+
+Evidencias y Recomendaciones
+Catálogo Maestro de Guías de Práctica Clínica: IMSS-062-08
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+DIRECCIÓN GENERAL
+MTRO. MIKEL ANDONI ARRIOLA PEÑALOSA
+DIRECCIÓN DE PRESTACIONES MÉDICAS
+DR. JOSÉ DE JESÚS ARRIAGA DÁVILA
+UNIDAD DE ATENCION MÉDICA
+
+COORDINACIÓN DE UNIDADES MÉDICAS DE ALTA ESPECIALIDAD
+DR. GILBERTO PÉREZ RODRÍGUEZ
+COORDINACION DE ATENCIÓN INTEGRAL EN SEGUNDO NIVEL
+DR. LUIS RAFAEL LÓPEZ OCAÑA
+COORDINACIÓN DE PLANEACIÓN DE INFRAESTRUCTURA MÉDICA
+
+COORDINACIÓN TÉCNICA DE EXCELENCIA CLÍNICA
+DR. ARTURO VINIEGRA OSORIO
+UNIDAD DE EDUCACIÓN, INVESTIGACIÓN Y POLÍTICAS EN SALUD
+DRA. ANA CAROLINA SEPULVEDA VILDOSOLA
+COORDINACIÓN DE POLÍTICAS DE SALUD
+DR. MARIO MADRAZO NAVARRO
+COORDINACIÓN DE EDUCACIÓN EN SALUD
+DR. JOSÉ FRANCISCO GONZÁLEZ MARTÍNEZ
+COORDINACIÓN DE INVESTIGACIÓN EN SALUD
+DR. FABIO ABDEL SALAMANCA GÓMEZ
+COORDINACIÓN DE PLANEACIÓN EN SALUD
+DRA. CAROLINA DEL CARMEN ORTEGA FRANCO
+UNIDAD DE ATENCIÓN PRIMARIA A LA SALUD
+DR. VICTOR HUGO BORJA ABURTO
+COORDINACIÓN DE ATENCIÓN INTEGRAL A LA SALUD EN EL PRIMER NIVEL
+DR. MANUEL CERVANTES OCAMPO
+COORDINACIÓN DE VIGILANCIA EPIDEMIOLÓGICA
+DR. ROMEO SERGIO RODRÍGUEZ SUÁREZ
+COORDINACIÓN DE SALUD EN EL TRABAJO
+DR. MANUEL DÍAZ VEGA
+COORDINACIÓN DE CONTROL TÉCNICO DE INSUMOS
+DR. RODOLFO ANTONIO DE MUCHA MACÍAS
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Durango 289- 1A Colonia Roma
+Delegación Cuauhtémoc, 06700 México, DF.
+Página Web: www.imss.gob.mx
+Publicado por Instituto Mexicano del Seguro Social
+© Copyright Instituto Mexicano del Seguro Social “Derechos Reservados”. Ley Federal de Derecho de Autor
+Editor General
+Coordinación Técnica de Excelencia Clínica
+Coordinación de Unidades Médicas de Alta Especialidad
+Esta guía de práctica clínica fue elaborada con la participación de las instituciones que conforman el Sistema Nacional de
+Salud, bajo la coordinación del Centro Nacional de Excelencia Tecnológica en Salud. El personal de salud que participó en
+su construcción han hecho un esfuerzo por asegurarse de que la información aquí contenida sea completa y actual; por
+lo que asumen la responsabilidad editorial por el contenido de esta guía, declaran que no tienen conflicto de intereses y
+en caso de haberlo lo han manifestado puntualmente, de tal manera que no se afecte su participación y la confiabilidad
+de las evidencias y recomendaciones.
+Las recomendaciones son de carácter general, por lo que no definen un curso único de conducta en un procedimiento o
+tratamiento. Las recomendaciones aquí establecidas, al ser aplicadas en la práctica, podrían tener variaciones justificadas
+con fundamento en el juicio clínico de quien las emplea como referencia, así como en las necesidades específicas y
+preferencias de cada paciente en particular, los recursos disponibles al momento de la atención y la normatividad
+establecida por cada Institución o área de práctica.
+En cumplimiento de los artículos 28 y 29 de la Ley General de Salud; 50 del Reglamento Interior de la Comisión
+Interinstitucional del Cuadro Básico y Catálogo de Insumos del Sector Salud y Primero del Acuerdo por el que se establece
+que las dependencias y entidades de la Administración Pública Federal que presten servicios de salud aplicarán, para el
+primer nivel de atención médica, el cuadro básico y, en el segundo y tercer niveles, el catálogo de insumos, las
+recomendaciones contenidas en las GPC con relación a la prescripción de fármacos y biotecnológicos deberán aplicarse
+con apego a los cuadros básicos de cada Institución.
+Este documento puede reproducirse libremente sin autorización escrita, con fines de enseñanza y actividades no
+lucrativas, dentro del Sistema Nacional de Salud. Queda prohibido todo acto por virtud del que cualquier persona pueda
+explotar o servirse comercialmente, directa o indirectamente, en su totalidad o parcialmente, o beneficiarse, directa o
+indirectamente, con lucro, de cualquiera de los contenidos, imágenes, formas, índices y demás expresiones formales que
+sean parte del mismo, incluyendo la modificación o inserción de textos o logotipos.
+Debe ser citado como: Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes
+mayores de 3 meses hasta 18 años de edad. México: Instituto Mexicano del Seguro Social; 03/11/2016.
+Actualización: parcial.
+Esta guía puede ser descargada de internet en:
+http://imss.gob.mx/profesionales-salud/gpc
+http://www.cenetec.salud.gob.mx/contenidos/gpc/catalogoMaestroGPC.html
+ISBN: 978-607-7790-99-0
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+CIE 10: J02 FARINGITIS AGUDA
+J03 AMIGDALITIS AGUDA
+GPC: DIAGNÓSTICO Y MANEJO DE LA INFECCIÓN AGUDA DE
+VÍAS AÉREAS SUPERIORES EN PACIENTES MAYORES DE 3
+MESES HASTA 18 AÑOS DE EDAD
+COORDINACIÓN, AUTORÍA Y VALIDACIÓN POR 2009
+COORDINACIÓN
+Dr. Aidé María
+Sandoval Mex
+
+Pediatría
+
+IMSS
+
+División de Excelencia Clínica, IMSS
+
+AUTORÍA
+Dr. Humberto Díaz
+Ponce
+Lic.
+Francisco
+García Gómez.
+
+Pediatría
+Infectología
+
+IMSS
+
+UMAE HP CM Siglo XXI, México, D.F.
+
+Bibliotecario
+
+IMSS
+
+Centro
+Nacional
+de
+Documental en Salud
+
+Dra. Sonia Patricia
+De
+Santillana
+Hernández.
+
+Medicina Familiar
+
+IMSS
+
+Unidad de Medicina Familiar No. 20,
+México, D.F., IMSS
+
+Dra. Silvia Sánchez
+Ambriz.
+
+Medicina Familiar
+
+IMSS
+
+Unidad de Medicina Familiar No. 5,
+México, D.F., IMSS
+
+Dra. Aidé María
+Sandoval Mex
+
+Medicina Familiar
+
+IMSS
+
+División de Excelencia Clínica. México D.F.
+
+Dr. Jesús Arturo
+Zavala Arenas
+
+Pediatría
+
+IMSS
+
+Centro de Investigación Educativa y
+Formación Docente del CM Siglo XXI,
+México, D.F., IMSS
+
+Investigación
+
+VALIDACIÓN INTERNA
+Dra. Alma Luisa
+Lagunas Espinosa
+Dra.
+María
+del
+Rocío
+Rábago
+Rodríguez
+
+Medicina Familiar
+
+IMSS
+
+Unidad de Medicina Familiar No. 52,
+Estado de México Oriente, IMSS
+
+Pediatría
+
+IMSS
+
+Hospital General de Zona No. 1 A,
+México, D.F., IMSS
+
+VALIDACIÓN EXTERNA
+Dr. Antonio Soda
+Merhy
+
+Otorrinolaringología
+
+Academia Nacional
+de Medicina de
+México
+
+División de Excelencia Clínica, México D.F.,
+IMSS
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+COORDINACIÓN, AUTORÍA Y VALIDACIÓN POR 2016
+COORDINACIÓN
+Dra. Aidé María
+Sandoval Mex
+
+Pediatría
+
+IMSS
+
+Coordinación Técnica de Excelencia
+Clínica, IMSS
+
+AUTORÍA
+Dra. Aidé María
+Sandoval Mex
+Dr. José Hernández
+Gutiérrez
+Dra.
+Talina
+Hernández Pérez
+Dra. María Esther
+Hernández Ramírez
+Dr.
+Gilberto
+Gutiérrez Espino
+Dr. Romero Álvarez
+Jorge.
+
+Pediatría
+
+IMSS
+
+Medicina Familiar
+
+IMSS
+
+Medicina Familiar
+
+IMSS
+
+Pediatría
+
+IMSS
+
+Medicina Familiar
+
+IMSS
+
+Medicina Familiar
+
+IMSS
+
+Coordinación Técnica de Excelencia
+Clínica, IMSS
+Hospital General de zona / UMF No. 21,
+Guanajuato, IMSS
+Unidad de Medicina Familiar No. 19,
+México, D.F., IMSS
+Hospital General de Zona No. 1, Colima,
+IMSS
+Unidad de Medicina Familiar No. 185,
+Estado de México Oriente, IMSS
+Unidad de Medicina Familiar No. 161,
+México, D.F., IMSS
+
+VALIDACIÓN INTERNA
+Dr. Humberto Díaz
+Ponce
+
+Pediatría
+Infectología
+
+IMSS
+
+UMAE HP CMN Siglo XXI, México, D.F.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Índice
+1.
+
+Clasificación ................................................................................................................................................... 7
+
+2.
+
+Preguntas a Responder ................................................................................................................................ 8
+
+3.
+3.1
+
+Aspectos Generales ...................................................................................................................................... 9
+Justificación .................................................................................................................................................................................. 9
+
+3.2
+
+Actualización del Año 2009 al 2016 ......................................................................................................... 10
+
+3.3.
+3.4
+
+Objetivo ........................................................................................................................................................ 11
+Definición .................................................................................................................................................................................... 12
+
+4.
+4.1
+4.2
+4.4
+4.5
+4.5.1
+4.6
+
+Evidencias y Recomendaciones................................................................................................................. 13
+Prevención primaria ................................................................................................................................................................ 14
+Diagnóstico Clínico.................................................................................................................................................................. 17
+Pruebas diagnósticas específicas para Faringitis estreptocócica como diagnóstico diferencial ........................ 22
+Tratamiento .......................................................................................................................................................................... 25
+Tratamiento no farmacológico ........................................................................................................................................... 25
+Tratamiento farmacológico ................................................................................................................................................. 28
+
+5.
+5.1
+5.1.1
+
+Anexos .......................................................................................................................................................... 40
+Protocolo de Búsqueda .......................................................................................................................................................... 40
+Estrategia de búsqueda.......................................................................................................................................................... 40
+
+5.1.1.1
+5.1.1.2
+
+Primera Etapa ........................................................................................................................................................................................................... 40
+Segunda Etapa ......................................................................................................................................................................................................... 41
+
+5.2
+5.3
+5.4
+5.5
+5.5.1
+5.6
+
+Escalas de Gradación .............................................................................................................................................................. 43
+Cuadros o figuras ..................................................................................................................................................................... 44
+Diagramas de Flujo .................................................................................................................................................................. 49
+Listado de Recursos ................................................................................................................................................................ 50
+Tabla de Medicamentos ..................................................................................................................................................... 50
+Cédula de Verificación de Apego a las Recomendaciones Clave de la Guía de Práctica Clínica ......................... 52
+
+6.
+
+Glosario ........................................................................................................................................................ 55
+
+7.
+
+Bibliografía .................................................................................................................................................. 57
+
+8.
+
+Agradecimientos ......................................................................................................................................... 59
+
+9.
+
+Comité Académico ...................................................................................................................................... 60
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+1. Clasificación
+CATÁLOGO MAESTRO: IMSS-062-08
+Profesionales
+de la salud
+Clasificación
+de la
+enfermedad
+Categoría de
+GPC
+Usuarios(as)
+potenciales
+Tipo de
+organización
+desarrolladora
+Población
+blanco
+Fuente de
+financiamiento
+/ Patrocinio
+Intervenciones
+y actividades
+consideradas
+Impacto
+esperado en
+salud
+Metodología1
+
+Método
+de integración
+
+Método
+de validación
+Conflicto
+de interés
+Registro
+Actualización
+
+1
+
+Médico General, Médico Familiar, Médico de Urgencias Médico-Quirúrgicas, Médico Pediatra Infectólogo, Médico
+Pediatra
+http://www.cenetec.salud.gob.mx/descargas/gpc/ANEXOS_METODOLOGIA_GPC.pdf)>.
+J02 Faringitis Aguda
+J03 Amigdalitis Aguda
+Primer y segundo nivel de atención
+Médico General, Médico Familiar, Médico de Urgencias Médico-Quirúrgicas, Médico Pediatra Infectólogo, Médico
+Pediatra
+Instituto Mexicano del Seguro Social
+
+Pacientes mayores de 3 meses hasta 18 años de edad, de cualquier género, sin enfermedad previa.
+Instituto Mexicano del Seguro Social
+
+J02 Faringitis Aguda
+J03 Amigdalitis Aguda.
+Congruencia diagnóstica terapéutica, prescripción adecuada del uso de antibióticos e identificación de riesgo de
+complicación potencial de ceguera, tratamiento oportuno y disminución de secuelas
+Adopción o elaboración de la Guía de Práctica Clínica: de las preguntas a responder y conversión a preguntas
+clínicas estructuradas, búsqueda y revisión sistemática de la literatura: recuperación de guías internacionales o
+meta análisis, o ensayos clínicos aleatorizados, o estudios observacionales publicados que den respuesta a las
+preguntas planteadas, de los cuales se seleccionarán las fuentes con mayor puntaje obtenido en la evaluación de su
+metodología y las de mayor nivel en cuanto a gradación de evidencias y recomendaciones de acuerdo con la escala.
+Métodos empleados para colectar y seleccionar evidencia
+Protocolo sistematizado de búsqueda: Algoritmo de búsqueda reproducible en bases de datos electrónicas, en
+centros elaboradores o compiladores de guías, de revisiones sistemáticas, meta análisis, en sitios Web
+especializados y búsqueda manual de la literatura.
+Número de fuentes documentales utilizadas: 27
+Guías seleccionadas: 6
+Revisiones sistemáticas: 12
+Ensayos clínicos aleatorizados: 0
+Estudios observacionales: 9
+Otras fuentes seleccionadas: 0
+Validación por pares clínicos
+Validación del protocolo de búsqueda: Instituto mexicano del Seguro Social
+Validación de la guía: Instituto mexicano del Seguro Social.
+Quienes participan en el grupo de trabajo han declarado la ausencia de conflictos de interés.
+IMSS-062-08
+Fecha de publicación: 03/11/2016. Esta guía será actualizada cuando exista evidencia que así lo determine o de
+manera programada, a los 3 a 5 años posteriores a la publicación.
+
+Para mayor información sobre los aspectos metodológicos empleados en la construcción de esta Guía, puede dirigir su correspondencia
+a la Coordinación Técnica de Excelencia Clínica, con domicilio en Durango No. 289 Piso 1ª, Col. Roma, México, D.F., C.P. 06700, teléfono
+55533589.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+2. Preguntas a Responder
+1. ¿Cuáles son los signos y síntomas de infección aguda de vías respiratorias superiores (IAVRS)
+en pacientes mayores de tres meses de edad hasta 18 años?
+2. ¿Cuáles son los signos y síntomas que orientan a que la IAVRS es de etiología viral?
+3. ¿Cuáles son los signos y síntomas de mayor utilidad para el diagnóstico de faringitis
+estreptocócica en pacientes pediátricos?
+4. ¿Cuáles son los signos de alarma en IAVRS en pacientes mayores de tres meses de edad
+hasta 18 años, que el médico y personal de salud o sus familiares deben reconocer para que
+con base en ello se tomen las mejores decisiones para el paciente?
+5. ¿Cuáles de las IAVRS en pacientes mayores de 3 meses de edad hasta 18 años se benefician
+con el uso de antibióticos?
+6. ¿Cuáles antibióticos son los recomendados en el tratamiento de faringitis estreptocócica en
+pacientes pediátricos?
+7. ¿Cuáles son las medidas no farmacológicas eficaces para el tratamiento de IAVRS en
+pacientes mayores de tres meses de edad hasta 18 años?
+8. ¿Qué información deben recibir el paciente y/o sus familiares para tengan apego con el
+tratamiento sugerido de la IAVRS?
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+3. Aspectos Generales
+3.1 Justificación
+Uno de los compromisos de los Objetivos de Desarrollo del Milenio (ODM) es reducir la mortalidad
+infantil a dos terceras partes hacia el 2015, la prevención diagnóstico y tratamiento de las
+infecciones respiratorias agudas (IRA) son intervenciones del Programa Nacional para la Reducción
+de la Mortalidad Infantil, esta estrategia de atención integrada busca la vigilancia oportuna y
+eficiente de las IRA que aunado a la vacunación universal evitara complicaciones y muerte en niños,
+mejorando su calidad de vida.
+Se estima que con las políticas de salud e intervenciones realizadas existirá un gran avance hacia el
+cumplimiento de los objetivos de desarrollo del milenio (ODM). Dirección General de Epidemiologia.
+Perfil epidemiológico de la Infancia en México 2010, México DF, Junio 2011. (ISBN 978-607-460237-1)
+La infección aguda de vías respiratorias superiores (IAVRS) es la primera causa de enfermedad, en
+México; igualmente es el primer motivo por el cual se busca atención médica. La enfermedad se
+presenta en todos los grupos etarios; sin embargo, dos terceras partes de los casos observados en
+la población general ocurren en pacientes pediátricos; aproximadamente una tercera parte suceden
+en menores a 4 años de edad.
+Los niños presentan entre 2 a 4 episodios de infección respiratoria, anualmente; sin embargo, no es
+raro que presenten 5 a 8 episodios de refriado común al año. En el 80 a 90% la etiología es viral
+(ENSANUD 2012); estos episodios de infección son generalmente benignos y se auto limitan en
+corto tiempo. En una proporción menor, entre 15 hasta 30% de los casos en niños y entre 5 hasta
+20% en adultos, la etiología es bacteriana: Streptococcus pyogenes (Estreptococo β hemolítico del
+grupo A EBHA), Streptococcus Pneumoniae, Mycoplasma pneumoniae, Neisseria meningitidis y
+Neisseria gonorrhoeae. Con base en lo expresado previamente, es posible afirmar que la mayoría
+de los pacientes con IAVRS solo requieren de tratamiento sintomático. El uso de antibióticos sólo
+está justificado en casos específicos de infección bacteriana. Snellman L 2013
+Además de las medidas generales, los clínicos deben enseñar a los familiares a reconocer los signos
+de alarma en pacientes con IAVRS, que permiten identificar oportunamente a los pacientes que
+requieren reevaluación médica o tratamiento hospitalario, por lo que el objetivo fundamental de
+esta GPC es ofrecer al médico los recursos de diagnóstico y tratamiento de IAVRS, con
+fundamento científico; y a los tutores de los pacientes que la solicitud de consulta sea en el
+momento apropiado y justificado; fomentando en pacientes y médicos el conocimiento con
+respecto al tratamiento ambulatorio seguro y eficaz de la sintomatología del resfriado común
+(catarro). Por otra parte, mediante el uso de un sistema basado en el cuadro clínico de pacientes
+con faringitis se tendrá impacto sobre el empleo excesivo de antibióticos, evitando complicaciones
+y efectos secundarios asociados al uso injusticados y reflejado en una reducción de costos.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+3.2 Actualización del Año 2009 al 2016
+La presente actualización refleja los cambios ocurridos alrededor del mundo y a través del tiempo
+respecto al abordaje del padecimiento o de los problemas relacionados con la salud tratados en
+esta guía.
+De esta manera, las guías pueden ser revisadas sin sufrir cambios, actualizarse parcial o
+totalmente, o ser descontinuadas.
+A continuación se describen las actualizaciones más relevantes:
+1. La actualización en Evidencias y Recomendaciones se realizó en: (Dejar el nombre del
+abordaje en que sufrió la actualización, eliminar donde no sufrió actualización):
+ Prevención
+ Tratamiento
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+3.3. Objetivo
+La Guía de Práctica Clínica Diagnóstico y Manejo de la Infección Aguda de Vías
+Respiratorias Superiores en Pacientes Mayores de 3 Meses Hasta 18 Años de Edad forma
+parte de las guías que integran el Catálogo Maestro de Guías de Práctica Clínica, el cual se
+instrumenta a través del Programa de Acción Específico: Desarrollo de Guías de Práctica Clínica, de
+acuerdo con las estrategias y líneas de acción que considera el Programa Nacional de Salud 20132018.
+La finalidad de este catálogo es establecer un referente nacional para orientar la toma de
+decisiones clínicas basadas en recomendaciones sustentadas en la mejor evidencia disponible.
+Esta guía pone a disposición del personal del primer y segundo nivel de atención las
+recomendaciones basadas en la mejor evidencia disponible con la intención de estandarizar las
+acciones nacionales acerca de:
+
+
+Diagnóstico presuntivo, manejo farmacológico y no farmacológico de las IAVRS
+
+
+
+Orientar al personal médico a diferenciar IAVRS versus enfermedades de mayor gravedad
+
+
+
+Fomentar el uso apropiado de antibióticos en IAVRS
+
+
+
+Asistir a los pacientes y familiares, por medio de intervenciones informativas y educativas, a
+sentirse seguros y confortables con el manejo ambulatorio de la IAVRS
+
+Lo anterior favorecerá la mejora en la efectividad, seguridad y calidad de la atención médica,
+contribuyendo de esta manera al bienestar de las personas y de las comunidades, que constituye el
+objetivo central y la razón de ser de los servicios de salud.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+3.4 Definición
+El término Infección aguda de las vías respiratorias superiores (IAVRS) se refiere a la enfermedad
+infecciosa, que afecta al aparato respiratorio desde la nariz hasta antes de la epiglotis, durante un
+periodo menor a 15 días, frecuentemente ocasionado por virus y ocasionalmente por bacterias.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+4. Evidencias y Recomendaciones
+Las recomendaciones señaladas en esta guía son producto del análisis de las fuentes de
+información obtenidas mediante el modelo de revisión sistemática de la literatura. La presentación
+de las Evidencias y Recomendaciones expresadas corresponde a la información disponible y
+organizada según criterios relacionados con las características cuantitativas, cualitativas, de diseño
+y tipo de resultados de los estudios que las originaron.
+Las Evidencias y Recomendaciones provenientes de las guías utilizadas como documento base se
+gradaron de acuerdo a la escala original utilizada por cada una. En caso de Evidencias y/o
+Recomendaciones desarrolladas a partir de otro tipo de estudios, se recomienda el uso de las
+escala(s): GRADE.
+Símbolos empleados en las tablas de Evidencias y Recomendaciones de esta guía:
+
+Evidencia
+
+E
+
+Recomendación
+
+R
+
+Punto de buena práctica
+
+
+
+En la columna correspondiente al nivel de Evidencia y Recomendación, el número o letra
+representan la calidad de la Evidencia o fuerza de la Recomendación, especificando debajo la escala
+de gradación empleada; el primer apellido e inicial del primer nombre del/la primer(a) autor(a) y el
+año de publicación identifica a la referencia bibliográfica de donde se obtuvo la información, como
+se observa en el ejemplo siguiente:
+
+EVIDENCIA / RECOMENDACIÓN
+La valoración del riesgo para el desarrollo de UPP a
+través de la escala de “BRADEN” tiene una capacidad
+predictiva superior al juicio clínico del personal de
+salud.
+
+NIVEL / GRADO
+Ia
+Shekelle
+Matheson S, 2007
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+4.1 Prevención primaria
+EVIDENCIA / RECOMENDACIÓN
+
+NIVEL / GRADO
+
+Aunque el resfriado común es una IAVRS, mediante
+estudios de investigación se ha encontrado que estas
+infecciones se propagan más por las manos y el contacto
+estrecho con las personas enfermas, que por gotas
+minúsculas de secreciones respiratorias suspendidas en el
+aire.
+
+Evidencia de Alta Calidad
+Evidencia de Moderada
+Calidad
+GRADE
+Snellman L 2013
+Guia Operativa para la
+Vigilancia Nacional
+Intensificada de Infección
+Respiratoria Aguda Grave
+2011
+
+La guía operativa para la vigilancia intensificada de
+infección respiratoria aguda grave postula que el contagio
+puede ser:
+ Por contacto directo de persona a persona,
+especialmente a través de gotas de secreciones
+respiratorias de aproximadamente 5 μm, que
+alcanzan hasta un metro de distancia y que se
+expulsan desde la persona-fuente, cuando ésta tose
+o estornuda.
+ En situaciones especiales, durante procedimientos
+generadores de aerosoles la transmisión puede
+ocurrir en distancias superiores a un metro.
+ Por contacto indirecto con objetos que han sido
+tocados por las manos de las personas enfermas.
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+Evidencia de Baja Calidad
+GRADE
+Guia Operativa para la
+Vigilancia Nacional
+Intensificada de Infección
+Respiratoria Aguda Grave
+2011
+
+La mayor contagiosidad es al inicio de la sintomatología y
+mientras el paciente se encuentra en el periodo febril.
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+El lavado de manos o el uso de alcohol gel es la estrategia
+más efectiva para prevenir la propagación del catarro.
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+El lavado de manos es la maniobra más efectiva para
+prevenir el contagio de catarro e IAVRS, por lo que es
+indispensable por parte del personal de salud educar a la
+familia sobre la técnica adecuada.
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Las medidas que se recomiendan para prevenir y disminuir
+el contagio de IAVRS en el trascurso de todo el año y con
+mayor énfasis antes y durante la temporada de las IAVRS,
+correspondiente entre el periodo de noviembre y abril,
+son:
+Lavado frecuente de manos con agua y jabón.
+Evitar que los niños con resfriado común compartan
+juguetes o chupones, así como lavar estos objetos con
+agua y jabón cuantas veces sea posible.
+Promover que todos los visitantes se laven las manos
+antes de entrar en contacto con los niños.
+Evitar el contacto con personas que están cursando con
+enfermedades respiratorias agudas o fiebre.
+
+La asistencia a guardería aumentan la frecuencia,
+gravedad y duración del resfriado común e incrementa el
+riesgo de infecciones respiratorias secundarias (altas o
+bajas)
+
+Informar a los padres de los niños con IAVRS sobre la
+recomendación que, en la medida de lo posible, no asistan
+a la guardería hasta que se hayan recuperado de la
+enfermedad.
+ Los padres de los niños deben considerar que la
+guardería cumpla con las medidas de control contra
+infecciones, específicamente sobre el lavado de
+manos.
+ Los padres del menor deben considerar en la medida
+de lo posible alternativas a la guardería, mientras el
+niño este enfermo, esto en busca de reducir la
+exposición a otros niños.
+
+El impulsar y reforzar que los niños continúen la
+alimentación con leche materna ofrece protección contra
+otitis recurrente y en la duración prolongada del resfriado
+común.
+
+Recomendación Fuerte
+Recomendación Débil
+GRADE
+Snellman L 2013
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Recomendación Débil
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+Guía de Práctica Clínica
+“Control y Seguimiento de la
+Nutrición el Crecimiento y
+Desarrollo del Niño Menor de
+5 años IMSS, 2008
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Promover la lactancia materna exclusiva durante los
+primeros seis meses de edad y continuar con la leche
+materna hasta los 24 meses de edad.
+
+Existe controversia en relación a los estudios que
+proponen que los probióticos pueden prevenir las
+infecciones respiratorias. Derivado de un metanalisis de
+ensayos clínicos controlados, se concluyó que los
+probióticos eran mejores que el placebo en relación a la
+prevención de número de episodios de infecciones
+respiratorias aguda, sin embargo algunos subgrupos
+tenían un alto grado de heterogeneidad y el nivel de
+evidencia de baja calidad.
+Por otra parte no existen publicaciones que sustenten con
+evidencia
+robusta
+sobre
+los efectos benéficos de los probióticos como parte del
+tratamiento de las infecciones agudas de las vías
+respiratorias superiores ni sobre los eventos adversos
+potenciales relacionados.
+
+Debido a la heterogeneidad y la baja calidad de los
+estudios y de sus resultados, no es posible recomendar el
+uso generalizado de los probióticos para la prevención y
+tratamiento de las infecciones respiratorias agudas con
+probióticos.
+Existen estudios que evalúan la eficacia de las
+intervenciones educativas dirigidas a paciente y padres,
+concluyendo que la educación del cuidado de la salud de
+los pacientes dan como resultado:
+ apropiado auto-cuidado para las IAVRS o en
+enfermedad en general
+ lo cual redunda en menor número de visitas al médico
+y costo de atención de la enfermedad
+ impacto en la disminución del tratamiento médico
+innecesario
+Se recomienda proporcionar información práctica acerca
+del curso clínico de la enfermedad, datos de alarma, así
+como de las medidas generales de cuidado y prevención
+de las IAVRS a familiares y pacientes.
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+Recomendación Débil
+GRADE
+Guía de Práctica Clínica
+“Control y Seguimiento de la
+Nutrición el Crecimiento y
+Desarrollo del Niño Menor de
+5 años IMSS, 2008
+Evidencia de Alta Calidad
+GRADE
+Hao Q, 2015
+Evidencia de Moderada
+Calidad
+GRADE
+Weichert S, 2012
+King J 2013
+Evidencia de Alta Calidad
+GRADE
+Hao Q, 2015
+Evidencia de Moderada
+Calidad
+GRADE
+Weichert S, 2012
+Kang J 2013
+Recomendación Fuerte
+GRADE
+Hao Q, 2015
+Recomendación Débil
+GRADE
+Weichert S, 2012
+Kang J 2013
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+4.2 Diagnóstico Clínico
+EVIDENCIA / RECOMENDACIÓN
+Las características clínicas sugestivas
+respiratoria aguda de etiología viral son:
+• Conjuntivitis
+• Coriza
+• Tos
+• Diarrea
+• Ronquera
+• Estomatitis ulcerativa leve
+• Exantema
+
+de
+
+NIVEL / GRADO
+infección
+
+El resfriado común es una enfermedad que se autolimita,
+típicamente dura entre 5 a 14 días y se caracteriza por
+combinación de algunos de los siguientes signos y síntomas:
+• Rinorrea
+• Tos
+• Fiebre
+• Odinofagia
+Otros síntomas, menos frecuentes, que pueden estar
+presentes son:
+• Malestar general
+• Disminución del apetito
+• Cefalea
+• Irritabilidad
+
+El médico de primer contacto debe reconocer que la principal
+causa de infección de vías aéreas altas son las de etiología
+viral y por lo tanto, el diagnóstico se basa en el cuadro clínico,
+ningún signo o síntoma por sí mismo es suficiente para
+realizar un diagnóstico de certeza solo de presunción, por lo
+tanto, se requiere investigar sobre los datos que orienten a
+faríngeo amigdalitis estreptocócica y signos de alarma para la
+toma de decisiones
+El personal de primer contacto debe identificar, que en la
+edad pediátrica las IAVRS se encuentra dentro de los
+primeros motivos de atención médica y el resfriado o catarro
+común constituye una de las causas más comunes, por lo que
+se debe pensar intencionadamente en etiología viral.
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+Shulman S 2012
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+Shulman S 2012
+
+Punto de Buena Práctica
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Es recomendable informar a los familiares que la descarga
+nasal o moco, en el catarro común inicialmente es clara y
+puede tornarse en amarrilla o verde hacia el final de la
+infección viral, esto sin significar necesariamente una
+reinfección y sin requerir visitas subsecuentes o el uso de
+antibióticos.
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+Recomendación Débil
+
+Se recomienda orientar a los padres en relación a la tos, la
+cual puede ser de predominio nocturno y se puede extender
+hasta 2 o tres semanas.
+Las características clínicas sugestivas de infección por
+Streptococcus pyogenes (Estreptococo β hemolítico del
+grupo A: EBHA) son:
+ Dolor faríngeo agudo
+ Fiebre
+ Cefalea
+ Náusea
+ Vómito
+ Inflamación amigdalina
+ Exudado amigdalino purulento
+ Petequias palatinas
+ Adenitis anterior cervical
+ Rash escalatiniforme
+ Dolor abdominal
+ Edad entre 5 y 15 años
+ Presentación en invierno o inicio de verano
+ Historia de exposición a faringitis estreptocócica
+La faringitis por EBHGA es infrecuente en niños < a tres años
+de edad y rara en menores de 18 meses de edad. Por lo que
+es más frecuente entre 3–14 años de edad.
+
+Se han desarrollado diversas escalas clínicas, una de ellas es el
+sistema de puntuación clínica de Centor, el cual puede ayudar
+a identificar a aquellos pacientes que tienen una mayor
+probabilidad de infección por estreptococo del grupo A. Sin
+embargo, fue validada solamente en adultos y no en niños,
+por lo que se ha señalado que su utilidad en los niños es más
+bajo en comparación con los adultos, esto debido a la
+diferente presentación clínica (epidemiología) del dolor
+garganta u odinofagia, en los primeros años de vida.
+
+GRADE
+Snellman L 2013
+
+Evidencia de Baja Calidad
+GRADE
+Shulman S 2012
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+Evidencia de Alta Calidad
+GRADE
+Pelucchi L 2012
+
+Evidencia de Alta Calidad
+GRADE
+Pelucchi L 2012
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Los cuatro signos o síntomas considerados en la puntuación
+de Centor fueron:
+ exudado faríngeo
+ nódulos cervicales anteriores dolorosos o inflamados
+ fiebre
+ ausencia de tos
+De acuerdo con está, el riesgo (porcentaje) de infección por
+eestreptococo del grupo A, depende del número de signos y
+síntomas presentes:
+Puntuación de acuerdo al
+número de signos y síntomas
+4
+3
+2
+1
+0
+
+(%) de riesgo de infección
+por eestreptococo del
+grupo A
+56
+32
+15
+6.5
+2.5
+
+Posteriormente la escala de puntuación de Centor fue
+modificada y validada en un estudio en Canadá, se realizó en
+600 adultos y niños, entre 3 a 15 años, a la escala se agregó
+el grupo etario y su probabilidad de padecer faringitis por
+estreptococo del grupo A de acuerdo a la edad, y se asigna
+una puntuación total relacionada con los hallazgos clínicos.
+Datos clínicos y epidemiológicos
+
+exudado faríngeo Inflamación amigdalina o
+exudado
+nódulos (adenopatía) cervicales anteriores
+dolorosos o inflamados
+fiebre mayor a 38°C
+ausencia de tos
+edad entre 3–14 años
+edad 15–44 años
+edad >44 años
+
+Puntuación
+de
+acuerdo al número
+de signos y síntomas
+1
+1
+1
+1
+1
+0
+1
+
+Por lo tanto los criterios o puntuación de Centor modificada
+auxilia al clínico en la predicción de infección estreptocócica,
+con base en:
+ alta probabilidad de infección por estreptococo con
+criterios Centor de 3-5, el médico pueden considerar el
+uso de la prueba rápida de detección de antígeno de
+EBHGA
+ baja probabilidad de infección por estreptococo con
+criterios de Centor entre 0-2, el uso de rutina de la
+prueba rápida de detección de antígeno de EBHGA no
+ofrece mayor certeza diagnóstica. (Cuadro I)
+
+Evidencia de Alta Calidad
+GRADE
+Pelucchi L 2012
+Evidencia de Baja Calidad
+Snellman L 2013
+
+Evidencia de Alta Calidad
+GRADE
+Pelucchi L 2012
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+Evidencia de Moderada
+Calidad
+GRADE
+Regoli M,2011
+
+Evidencia de baja calidad
+GRADE
+Snellman L 2013
+Evidencia de Alta Calidad
+GRADE
+Pelucchi L 2012
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Determinar la puntuación total en el paciente con dolor de
+garganta o faringitis por medio de la asignación de puntos de
+acuerdo a la presencia de signos y síntomas de los criterios
+señalados previamente.
+La guía NICE recomienda en pacientes con faringitis aguda
+con base a la evaluación clínica y gravedad del cuadro, en
+presencia de tres o más criterios modificados de Centor
+interpretar
+como
+alta
+probabilidad
+de
+infección
+estreptocócica y considerar la prescripción inmediata de
+antibiótico. De lo contrario si se cuenta con 2 criterios Centor
+y a pesar de no disponer de pruebas diagnósticas, no se
+recomienda el tratamiento con antibióticos. (Cuadro I)
+La escala modificada de Centor con puntuaciones de 3 o más,
+es una herramienta que para el personal de atención primaria
+en la identificación de posible infección por estreptococo del
+grupo A, limitando la necesidad de realizar cultivo de exudado
+faríngeo en todos los pacientes con dolor de faríngeo y por lo
+tanto, en la reducción en el uso innecesario de antibióticos.
+(Cuadro I)
+
+Recomendación débil
+GRADE
+Snellman L 2013
+
+Recomendación Débil
+GRADE
+Regoli M ,2011
+NICE 2013
+
+Recomendación débil
+GRADE
+Snellman L 2013
+
+De los diagnósticos diferenciales sospechar de rinosinusitis
+ante la persistencia de síntomas respiratorios de vías
+superiores, que persisten de 10 a 14 días.
+
+Evidencia de baja calidad
+GRADE
+Snellman L 2013
+
+La rinitis alérgica se caracteriza por síntomas como prurito en
+ojos, nariz, paladar y oídos; así como rinorrea acuosa,
+estornudos, congestión nasal, goteo o escurrimiento
+posnasal.
+
+Evidencia de baja calidad
+GRADE
+Snellman L 2013
+
+La mononucleosis infecciosa puede ser difícil de diferenciar de
+la faringitis estreptocócica, en términos clínicos, y algunos
+pacientes con mononucleosis infecciosa pueden tener un
+cultivo de garganta positivo para estreptococos beta del
+grupo A.
+Sospechar de mononucleosis infecciosa si el paciente
+presenta esplenomegalia o si los síntomas de faringitis
+persisten durante cinco a siete días.
+Es esencial reconocer los signos y síntomas de las entidades
+diferentes a IAVRS, considerando los posibles diagnósticos
+diferenciales para lograr una congruencia diagnóstica
+terapéutica. (Cuadro III)
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+4.3
+
+Signos de alarma
+
+EVIDENCIA / RECOMENDACIÓN
+
+Los síntomas respiratorios que indican enfermedad
+grave son:
+
+
+
+
+
+Cianosis
+Estridor
+Respiración superficial
+Dificultad respiratoria
+
+La presencia de síntomas neurológicos en un niño con
+enfermedad respiratoria, requiere atención inmediata.
+
+En un niño con IAVRS los siguientes signos son
+indicativos de enfermedad grave:
+ Vómito persistente
+ Oliguria
+ Exantema petequial o purpúrico
+
+Se recomienda informar a los padres de pacientes
+con IAVRS que deben acudir a nueva valoración
+médica si el niño presenta alguna de las siguientes
+condiciones:
+• Persistencia de la fiebre durante más de 3 días
+• Exacerbación de la sintomatología inicial o
+aparición de nuevos síntomas después de 3 a 5
+días de evolución de la enfermedad.
+• Falta de mejoría después de 7 a 10 días de
+iniciada la enfermedad
+
+NIVEL / GRADO
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Los pacientes con IAVRS que deben recibir atención
+inmediata en el servicio de urgencias del primer o
+segundo nivel de atención médica son aquellos con
+datos de alarma:
+• Síntomas neurológicos
+• Síntomas de obstrucción de vía aérea superior
+• Síntomas de obstrucción de vía aérea inferior
+• Alteración en el volumen urinario
+• Vomito persistente
+• Exantema
+Ante datos que indiquen complicación como falla al
+tratamiento, sobreinfección o inter recurrencia de
+otro proceso infeccioso. (Cuadro II y III)
+
+Se recomienda informar a los padres acerca de los
+datos de alarma de las enfermedades respiratorias
+para que el paciente reciba atención médica
+inmediata.
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+
+Punto de Buena Práctica
+
+4.4 Pruebas diagnósticas específicas para Faringitis
+estreptocócica como diagnóstico diferencial
+EVIDENCIA / RECOMENDACIÓN
+El diagnóstico de faringitis estreptocócica aguda se
+basa en datos clínicos y epidemiológicos, y en algunos
+casos se sustenta en pruebas de laboratorio
+El cultivo de exudado faríngeo se considera el
+estándar de oro para el aislamiento de Streptococcus
+pyogenes del grupo A (EBHGA).
+ Con cuadro clínico y de probabilidad, con una
+puntuación en la escala de CENTOR > 3, un
+resultado positivo confirma el diagnóstico de
+faringitis estreptocócica aguda. (Cuadro IV y V)
+El cultivo de exudado faríngeo en medio de agar
+sangre, posee una sensibilidad del 90 al 95% en la
+identificación de EBHGA.
+El cultivo de exudado faríngeo es un instrumento de
+utilidad
+para el clínico en el diagnóstico del
+aislamiento del estreptococos del grupo A, sin
+embargo, este no es necesario para el diagnóstico de
+rutina de faringitis estreptocócica aguda
+
+NIVEL / GRADO
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+University of Michigan Health
+System (UMHS) 2013
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+
+Evidencia de Alta Calidad
+Evidencia de Baja Calidad
+GRADE
+Pelucchi L 2012
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Si la sospecha es alta con una puntuación en la escala
+de CENTOR modificada >3 y no existe la
+disponibilidad de la prueba rápida de detección de
+antígeno de EBHGA y/o cultivo de exudado faríngeo o
+sí la obtención de resultados no es en forma expedita,
+se sugiere iniciar tratamiento empírico con
+antibióticos. (Cuadro I)
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+Pelucchi, L 2012
+
+La sensibilidad de las pruebas rápidas o prueba rápida
+de detección de antígeno de EBHGA es del 70 al 90%
+con una especificidad del 95%, comparada con el
+cultivo de exudado faríngeo en medio de agar sangre.
+
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+
+El valor diagnóstico, es decir el valor pre prueba, de la
+prueba rápida de detección de antígeno de EBHGA,
+aumenta cuando se realizan en pacientes con
+puntuaciones clínicas de 3 o más, lo que indica una
+mayor probabilidad de faringitis estreptocócica.
+(Cuadro IV y V)
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+Evidencia de Alta Calidad
+GRADE
+Pelucchi L 2012
+
+Un resultado positivo de la prueba de detección
+rápida o del cultivo de faringe proporcionan
+confirmación adecuada de la presencia de EBHGA en
+faringe. (Cuadro IV y V)
+
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+
+Se considera en adultos, que ante una prueba rápida
+de detección de antígeno de EBHGA negativa, no se
+debe realizar cultivo de exudado faríngeo
+Existe controversia y se sugiere por algunos autores
+que en niños y adolescentes una prueba de detección
+rápida negativa debe ser confirmada con cultivo de
+exudado faríngeo.
+Se recomienda utilizar la puntuación clínica, Centor
+modificado, en los pacientes con posibilidad de
+faringitis por estreptococos debido a la precisión
+diagnóstica, esto es, la probabilidad de faringitis
+estreptocócica aumenta hasta el 75% con su uso.
+Los sistemas de puntuación clínica, como la escala
+modificada de Centor y las pruebas de diagnóstico
+rápidas pueden ser auxiliares en la toma de decisiones
+y en la orientación de uso de antibióticos, sin
+embargo siempre es necesario individualizar cada
+caso. Es necesario que el clínico conozca las ventajas
+y desventajas del tratamiento de acuerdo a cultivo.
+(Cuadro I)
+
+Evidencia de Baja Calidad
+GRADE
+Pelucchi L 2012
+
+Recomendación Fuerte
+GRADE
+Shulman S 2012
+
+Recomendación Débil
+GRADE
+University of Michigan Health
+System (UMHS) 2013
+Recomendación Débil
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+Pelucchi L 2012
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Para la toma de decisión, en caso de contar con el
+recurso de la prueba rápida de detección de antígeno
+de EBHGA, es recomendable auxiliarse de la escala
+modificada de Centor:
+En pacientes con alta probabilidad de faringitis por
+estreptococos, con puntuación Centor modificada de
+3 y más, el clínico pueden considerar el uso de la
+prueba rápida de detección de antígeno de EBHGA.
+
+En los pacientes con baja probabilidad de infección
+por estreptococos, con puntuación entre 0-2 de
+acuerdo a los criterios modificados de Centor, no se
+sugiere utilizar de rutina la prueba rápida de detección
+de antígeno de EBHGA
+Una prueba de detección rápida de antígeno de
+EBHGA positiva, no requiere de realizar cultivo de
+exudado faríngeo por su alta especificidad.
+El proceso diagnóstico de faringitis estreptocócica
+aguda, se mejora y se facilita la toma de decisión del
+uso de antibióticos en los pacientes con dolor
+faríngeo si se consideran:
+ sistemas de puntuación clínicas
+ pruebas de diagnóstico rápidas
+No se requiere de cultivo de exudado faríngeo en los
+contactos asintomáticos de pacientes con faringitis
+EBHGA, excepto en aquellos que tienen un riesgo
+elevado para presentar infecciones frecuentes o
+enfermedad no supurativas
+
+No se recomienda realizar el cultivo de exudado
+faríngeo, de primera intención o seguimiento en:
+• Contactos asintomáticos de pacientes con
+faringitis estreptocócica del grupo A, sin riesgo
+elevado para infecciones frecuentes o secuelas
+no supurativas.
+
+En nuestra institución no se dispone de la prueba
+rápida de detección de antígeno de EBHGA.
+
+Recomendación débil
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+Pelucchi L 2012
+
+Recomendación débil
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+Pelucchi L 2012
+Recomendación Fuerte
+GRADE
+Shulman S 2012
+
+Recomendación Fuerte
+Recomendación Débil
+GRADE
+Pelucchi L 2012
+Evidencia de Moderada Calidad
+GRADE
+Shulman S 2012
+
+Recomendación Débil
+GRADE
+Alberta Clinical Practice Guideline
+2008
+Recomendación Fuerte
+GRADE
+Shulman S 2012
+
+Punto de Buena Práctica
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Los títulos de anticuerpos anti estreptocócicos
+manifiestan eventos inmunológicos pasados y no
+actuales, no agregan valor diagnóstico en la faringitis
+aguda. Por lo que su utilidad consiste en confirmar
+infecciones previas por estreptococo en pacientes
+con sospecha de fiebre reumática o glomerulonefritis
+post estreptocócica
+
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+
+Las publicaciones acerca de las pruebas adicionales o
+biomarcadores, por ejemplo cuantificación de la
+proteína C reactiva y procalcitonina, en la evaluación
+de la gravedad del cuadro de dolor faríngeo no
+proporcionaron información pronostica útil.
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+Pelucchi L 2012
+
+No se recomienda realizar de rutina la determinación
+de antiestreptolisinas en niños con faringitis
+estreptocócica aguda.
+
+Recomendación Fuerte
+GRADE
+Shulman S 2012
+
+No se considera que el uso rutinario de
+biomarcadores: proteína C reactiva y procalcitonina
+en la valoración de la faringitis aguda aporte
+información relevante sobre la gravedad y pronóstico
+de la faringitis.
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+Recomendación débil
+GRADE
+Pelucchi L 2012
+
+4.5 Tratamiento
+4.5.1
+
+Tratamiento no farmacológico
+EVIDENCIA / RECOMENDACIÓN
+Medidas como elevación de la cabecera de la cama y
+aspiración de secreción nasal con una perilla pueden
+promover bienestar en el niño con enfermedad
+respiratoria aguda
+
+El reposo que necesita el paciente depende
+directamente de cuan enfermo se siente; no hay
+contraindicación para la actividad física normal si el
+paciente está afebril y con buen estado general.
+
+NIVEL / GRADO
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Se recomienda indicar las siguientes medidas de
+bienestar para los pacientes que presentan
+enfermedades respiratorias:
+ Elevar la cabecera de la cama y aspirar
+gentilmente la secreción nasal con una perilla.
+ Reposo de acuerdo a las necesidades de cada
+paciente.
+Para algunas personas, la inhalación de vapor
+funciona como una medida efectiva de bienestar. Sin
+embargo existe riesgo potencial de quemaduras y de
+crecimiento
+de
+microorganismos
+en
+los
+vaporizadores.
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Los humidificadores suministran vapor y evitan el
+riesgo de quemaduras; sin embargo en igual forma
+existe el riesgo de crecimiento de microorganismos
+en el equipo.
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Los resultados de un meta-análisis sobre el uso de
+vapor de agua caliente en pacientes con resfriado
+común o voluntarios con inducción experimental del
+resfriado común no son concluyentes en relación a la
+mejoría de los síntomas.
+
+Evidencia de Moderada Calidad
+GRADE
+Singh M, 2011
+
+De acuerdo a la evidencia no es posible recomendar el
+uso generalizado de vaporizaciones, si se opta por
+esta alternativa, es recomendable que se realice en el
+baño mientras se tiene abierta la llave del agua
+caliente.
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+Singh M, 2011
+
+Los gargarismos con solución salina producen alivio
+del dolor faríngeo.
+
+Comer alimentos suaves, ingerir líquidos en
+abundancia y tomar bebidas calientes son medidas
+especialmente confortantes para la garganta irritada.
+
+Estudios
+observacionales
+comparativos
+no
+demostraron beneficio de un aporte extra de líquidos
+en pacientes con IAVRS
+No existe evidencia que sustente beneficio a mayor
+ingesta de líquidos en pacientes con IAVRS. Sin
+embargo es recomendable mantener una hidratación
+adecuada sobretodo en caso de incremento en las
+pérdidas como en el caso de fiebre y mal manejo de
+secreciones
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Evidencia de Moderada Calidad
+GRADE
+Guppy MP 2011
+
+Punto de Buena Práctica
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Es recomendable sugerir medidas no farmacológicas
+que disminuyan la odinofagia en los pacientes con
+IAVRS: se recomienda mantener la dieta habitual del
+paciente con incremento del aporte (volumen y
+frecuencia) y gargarismos que disminuyan la
+odinofagia en los pacientes con IAVRS.
+En un metanaIisis sobre la irrigación salina nasal para
+el alivio de los síntomas de IAVAS: secreción nasal y
+obstrucción de la respiración nasal se sugiere posible
+mejoría comparada con el placebo. Sin embargo, los
+ensayos incluidos fueron pequeños y con un alto
+riesgo de sesgo, reduciendo la confianza en los
+resultados que apoyan esto.
+Las irrigaciones salinas nasales pueden ser útiles en el
+tratamiento de los pacientes con una infección aguda
+del tracto superior. Aunque algunos pacientes
+reportaron molestias menores, no se identificaron
+eventos adversos con el tratamiento.
+
+El tratamiento con irrigaciones salinas nasales se
+asoció con una disminución del ausentismo escolar y
+una tendencia a la disminución del uso de antibióticos.
+
+La irrigación nasal con solución salina puede ser útil y
+segura en algunos pacientes, a pesar de que la
+evidencia actual es limitada para extender una
+recomendación como tratamiento estándar.
+
+Las gotas de solución salina ayuda a humidificar las
+secreciones, lo que facilita la limpieza de las fosas
+nasales. Puede realizar una solución casera a base de
+1/4 de cucharadita de sal disuelta en ocho onzas de
+agua tibia.
+
+En el cuadro básico del Instituto Mexicano del Seguro
+Social no cuenta con presentación de solución salina
+para irrigación nasal, sin embargo existe a
+consideración del paciente soluciones comerciales
+que puede utilizar.
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+Guppy MP 2011
+
+Evidencia de Alta Calidad
+GRADE
+King D, 2015
+
+Evidencia de Alta Calidad
+GRADE
+King D 2015
+
+Evidencia de Alta Calidad
+GRADE
+King D 2015
+Fashner J, 2012
+Recomendación Débil
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+King D, 2015
+Recomendación Débil
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+King D, 2015
+
+Punto de Buena Práctica
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+El tratamiento con miel de trigo sarraceno (alforfón),
+la frotación o masaje con ungüentos (que generan
+vapor) pueden disminuir los síntomas del resfriado en
+niños.
+El tratamiento con Umckaloabo, el cual es un
+extracto herbal de Pelargonium sidoides (geranio)
+para la IAVRS, se evaluó en una revisión sistemática
+que incluyo 819 niños provenientes de 3 ensayos
+clínicos (ECA), la cual reportó discreta mejoría en los
+síntomas de la sinusitis aguda y el resfriado común en
+niños, sin embargo con una calidad de la evidencia
+baja.
+La Echinacea purpurea se evaluó por medio de una
+Revisión Cochrane que incluyo 2 ensayos clínicos, sin
+reportar ninguna diferencia en la gravedad de los
+síntomas, número de días de fiebre o el informe de los
+padres de puntuación de gravedad, en comparación
+con el placebo.
+
+El Umckaloabo, la Echinacea purpurea, la miel de trigo
+sarraceno y los vapores inhalados por frotación de
+ungüentos pueden disminuir los síntomas del
+resfriado en niños, sin embargo por la calidad de la
+evidencia baja, no se recomiendan su uso en forma
+sistematizada.
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+Evidencia de Moderada Calidad
+GRADE
+Fashner J, 2012
+Timmer A, 2013
+
+Evidencia de Moderada Calidad
+GRADE
+Fashner J, 2012
+
+Recomendación Débil
+GRADE
+Timmer A, 2013
+Recomendación Fuerte
+GRADE
+Fashner J, 2012
+
+4.6 Tratamiento farmacológico
+EVIDENCIA / RECOMENDACIÓN
+
+NIVEL / GRADO
+
+La prescripción de ibuprofeno o acetaminofén
+(paracetamol) son recomendables para el alivio
+sintomático de la faringitis aguda.
+
+Evidencia de Alta Calidad
+Pelucchi, L 2012
+
+La etiología del resfriado común es viral y los
+antibióticos no modifican su evolución (historia
+natural de la enfermedad)
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Una revisión sistemática con 3,157 pacientes
+provenientes de 10 estudios, evaluaron la
+estrategia para la reducción del uso de antibiótico
+en las IAVAS, la cual consistió en comparar la
+prescripción de antibiótico con un inicio retrasado
+vs. el inicio inmediato vs. la no prescripción. Se
+proporcionó la receta del antibiótico en las dos
+primeras maniobras y se aconsejó al paciente o
+cuidador sobre el retraso si fuese el caso: en su
+inicio, en espera de que los síntomas se resolvieran
+primero. La heterogeneidad de los estudios y de sus
+resultados
+imposibilitó
+la
+realización
+del
+metanálisis.
+
+Evidencia de Alta Calidad
+GRADE
+Spurling GKP, 2013
+
+Spurling en esta revisión, no encontró diferencias
+significativas entre el inicio inmediato, retardado y
+sin prescripción de antibióticos, en los resultados
+clínicos relacionados con la tos nocturna y el
+resfriado común.
+No existieron diferencias en la frecuencia de
+reevaluaciones en la consulta para los diferentes
+grupos de inicio inmediato y diferido de antibiótico.
+
+Evidencia de Alta Calidad
+GRADE
+Spurling GKP, 2013
+
+La estrategia de prescripción de inicio de
+antibióticos retrasado y de no prescripción de
+antibióticos resultó en una reducción significativa
+en el uso de los mismo, en comparación con el
+grupo de inicio inmediato.
+
+Evidencia de Alta Calidad
+GRADE
+Spurling GKP, 2013
+
+Los antibióticos prescritos en forma inmediata
+favorecen una discreta diferencia en la satisfacción
+del paciente o el cuidador, comparado con el grupo
+de pacientes con prescripción retrasada (92%
+versus 87%). No hubo diferencia en la tasa de
+consulta (reevaluación) para los grupos de inicio
+inmediato y diferido. Ninguno de los estudios
+incluidos evaluaron la resistencia a los antibióticos.
+
+Evidencia de Alta Calidad
+GRADE
+Spurling GKP, 2013
+
+En la revisión referida previamente, se identificó a
+los pacientes con otitis media aguda (OMA) y dolor
+faríngeo con prescripción inmediata de antibióticos
+vs. el retraso en su inicio, como el grupo que podría
+mejorar con respecto a la fiebre, dolor y malestar.
+
+Evidencia de Alta Calidad
+GRADE
+Spurling GKP, 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Se sugiere que la modificación en la proporción de
+antibióticos prescritos, podría ser por cambio en el
+diagnóstico y manejo de
+las enfermedades
+infecciosa comunes, esto posiblemente al uso de la
+guias,
+a los estrictos criterios diagnósticos
+establecidos de la otitis media aguda, así como al
+uso de la vacuna conjugada antineumococcocica y
+la educación a los padres.
+En aquellos pacientes de bajo riesgo, considerados
+a los individuos sin antecedente de fiebre
+reumática, la faringitis aguda no deben ser tratada
+con antibióticos con el objetivo de prevenir fiebre
+reumática y glomerulonefritis aguda
+
+Evidencia de Alta Calidad
+GRADE
+Vaz, 2014
+
+Evidencia de Alta Calidad
+Pelucchi, L 2012
+
+La prevención de las complicaciones supurativas no
+es una indicación específica para la terapia
+antibiótica en faringitis aguda.
+
+Evidencia de Alta Calidad
+Pelucchi, L 2012
+
+Aconsejar a los padres o cuidadores el uso de
+paracetamol para el manejo de la fiebre y el dolor
+en el niño con faringitis aguda.
+
+Recomendación Fuerte
+GRADE
+Pelucchi, L 2012
+
+Recomendar el retraso en el inicio de los
+antibióticos en espera de la mejoría de los
+síntomas, esto de acuerdo a la evolución natural de
+la enfermedad. Cuantificar la probabilidad de
+prevención de complicaciones infecciosas, y evaluar
+beneficios en relación a los efectos adversos,
+costos y el riesgo del desarrollo de resistencia
+bacteriana por el uso/abuso de los antibióticos.
+
+El médico debe considerar no tratar los casos de
+faringitis aguda con antibióticos para evitar:
+ Amigdalitis aguda
+ otitis media aguda
+ linfadenitis cervical
+ mastoiditis
+ sinusitis aguda
+ fiebre reumática
+ glomerulonefritis aguda
+
+Recomendación Fuerte
+GRADE
+Spurling GKP, 2013
+
+Recomendación Fuerte
+GRADE
+Pelucchi, L 2012
+Vaz, 2014
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Es trascendente diseñar intervenciones que
+favorezca
+una
+prescripción
+apropiada.
+Primordialmente la educación a los padres sobre la
+etiología e historia natural de las infecciones
+respiratorias agudas y el uso de antibióticos.
+Aconsejar sobre los síntomas no resueltos, datos
+de alarma y la necesidad de reevaluación médica,
+favoreciendo la satisfacción del paciente y el
+retrasar los antibióticos si existe incertidumbre en
+su uso.
+En pacientes con infecciones respiratorias, el
+médico puede disminuir la incertidumbre al recurrir
+a las herramientas clínicas como la puntuación de
+Centor modificada y datos epidemiológicos para la
+toma de decisión.
+El valor diagnóstico de las pruebas rápidas prueba
+rápida de detección de antígeno de EBHGA
+aumenta cuando están se realizan en sujetos con
+puntuaciones clínicas para estreptococos del grupo
+A, es decir, escalas validadas que aumentan la
+probabilidad de una faringitis estreptocócica como
+la Centor score o puntuación de Centor modificada.
+
+Recomendación Fuerte
+GRADE
+Spurling GKP, 2013
+
+Recomendación Fuerte
+GRADE
+Spurling GKP, 2013
+Recomendación Débil
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+Pelucchi, L 2012
+Recomendación débil
+
+Por lo que en pacientes con alta probabilidad de
+infección por estreptococos (por ejemplo criterios
+Centor de 3 – 4) los médicos pueden considerar el
+uso de prueba rápida de detección de antígeno de
+EBHGA.
+
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+Pelucchi, L 2012
+Recomendación débil
+
+En pacientes con baja probabilidad de infección
+estreptocócicas (0 – 2 Centor criterios) no existe
+justificación para utilizar en forma rutinaria las
+prueba rápida de detección de antígeno de EBHGA
+
+No se recomienda el uso de antimicrobianos en los
+pacientes con resfriado común, el tratamiento de
+esta enfermedad debe ser conservador.
+
+GRADE
+Snellman L 2013
+Recomendación Fuerte
+GRADE
+Pelucchi, L 2012
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+NICE, 2008
+NICE, 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+De acuerdo a la evaluación clínica y de la gravedad
+de la enfermedad los pacientes que se consideran
+para ofrecer una estrategia de tratamiento
+antimicrobiano inmediato son:
+• faringoamigdalitis aguda estreptocócica.
+
+•
+
+Otitis media aguda bilateral en niños menores
+de 2 años.
+
+•
+
+Otitis media aguda en niños con otorrea
+
+Recomendación Fuerte
+GRADE
+NICE, 2008
+NICE, 2013
+
+Si el paciente reúne criterios de resfriado común y
+se encuentra en tratamiento antimicrobiano se
+recomienda suspenderlo
+
+Punto de Buena Práctica
+
+En un metanalisis incluyeron 3 ECA con 568 niños
+con tos con intervenciones y seguimiento nocturno.
+Los estudios compararon el uso de miel contra
+dextrometorfano o difenhidramina o 'ningún
+tratamiento' y placebo para el alivio sintomático de
+la tos.
+
+Moderada calidad de la evidencia
+GRADE
+Oduwole O, 2014
+
+Se observó que la miel puede ser mejor que 'ningún
+tratamiento', difenhidramina y placebo para el
+alivio sintomático de la tos y en la reducción de la
+frecuencia de tos, sin embargo, no es mejor que el
+dextrometorfano.
+No existen pruebas sólidas para recomendar o no el
+uso de la miel, en forma rutinaria.
+
+Diversos estudios han concluido que no existe
+evidencia a favor de la efectividad de los
+medicamentos antitusígenos en pacientes con
+resfriado común
+
+Recomendación débil
+GRADE
+Oduwole O, 2014
+
+Moderada calidad de la evidencia
+GRADE
+Smith S, 2012
+
+Evidencia de Alta Calidad
+No se ha demostrado que el empleo de
+descongestionantes acorte la duración o disminuya
+los síntomas del resfriado común
+
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Estudios en niños y adultos no han demostrado
+mejoría con monoterapia con antihistamínicos,
+respecto a la siguiente sintomatología:
+• congestión nasal
+
+•
+•
+
+rinorrea
+
+estornudo
+Por lo que se consideró que las combinaciones de
+antihistamínicos con descongestionantes no son
+efectivas en los niños pequeños.
+En niños mayores y adultos existen ensayos clínicos
+que consideran un efecto benéfico sobre el estado
+general y los síntomas nasales. Sin embargo, estos
+resultados no son concluyentes.
+
+Evidencia de Alta Calidad
+GRADE
+De Sutter, 2008
+
+Evidencia de alta calidad
+El costo beneficio del empleo de spray nasal de
+bromuro de ipratropio no representa mayor
+beneficio clínico por lo que no se justifica su uso en
+pacientes con resfriado común
+
+GRADE
+Snellman L 2013
+Evidencia de baja calidad
+
+No hay consistencia en la evidencia publicada en
+relación a la utilidad de la vitamina C en altas dosis
+para acortar la evolución del resfriado común.
+No existen estudios relacionados al uso de la
+vitamina C en infección de vías aéreas en niños.
+
+GRADE
+Snellman L 2013
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+Evidencia de baja calidad
+
+Los estudios que evalúan la utilidad del gluconato
+de zinc para acortar la duración y gravedad de los
+síntomas del resfriado común no son concluyentes.
+
+GRADE
+Snellman L 2013
+
+No se recomienda utilizar los siguientes
+medicamentos en el manejo del resfriado común:
+• Antitusígenos
+
+Evidencia de alta calidad
+Snellman L 2013
+Smith S, 2012
+
+•
+•
+•
+•
+•
+
+Descongestionantes
+antihistamínicos
+Spray nasal de bromuro de ipratropio.
+Vitamina C
+Gluconato de zinc
+
+Estudios clínicos que han comparado los efectos de
+antipiréticos en voluntarios infectados con virus
+del resfriado común concluyeron que se debe evitar
+el uso de ibuprofeno y de ácido acetilsalicílico en los
+siguientes casos:
+• Antecedente de enfermedad ácido-péptica,
+asma o insuficiencia renal
+
+•
+
+Niños con síndrome de Reye
+
+Evidencia de alta calidad
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Se recomienda el uso de paracetamol como
+medicamento de elección para el manejo de la
+fiebre en los pacientes con resfriado común.
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+
+En un metanálisis se incluyó 34 ensayos clínicos
+controlados en los cuales se evaluaron el uso de
+inmunoestimulantes vs. placebo con 3,877
+participantes. Se mostró una reducción, en 40%
+como promedio, del número total de infecciones
+respiratorias
+agudas
+con
+el
+uso
+de
+inmunoestimulantes comparado contra el placebo.
+
+Evidencia de Alta Calidad
+GRADE
+Navarro B, 2008
+
+Debido a que la calidad de los ensayos incluidos fue
+deficiente y la heterogeneidad estadística fue alta,
+no es posible generalizar la conclusión, a favor del
+uso de los inmunoestimulantes en busca de
+disminuir la incidencia de IAVAS en niños con
+historial de infecciones respiratorias agudas de
+repetición.
+
+Cochrane realizó una revisión que incluyo cuatro
+estudios que utilizaron antibióticos, no se
+observaron diferencias en la persistencia de los
+síntomas de la rinitis purulenta aguda o en el
+resfriado común o en comparación con el placebo
+
+Recomendación Fuerte
+GRADE
+Navarro B, 2008
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+Recomendación Fuerte
+A este respecto, los antibióticos no deben ser
+utilizados para el tratamiento de los síntomas del
+resfriado en niños.
+
+GRADE
+Fashner J, 2012
+
+Cochrane realizó una revisión que incluyo cuatro
+estudios que utilizaron antibióticos, no se
+observaron diferencias en la persistencia de los
+síntomas de la rinitis purulenta aguda o en el
+resfriado común o en comparación con el placebo
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+A este respecto, los antibióticos no deben ser
+utilizados para el tratamiento de los síntomas del
+resfriado en niños o adultos.
+
+Recomendación Fuerte
+GRADE
+Fashner J, 2012
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Esta revisión incluyó 11 estudios relacionados con
+el resfriado común, con hasta 1047 participantes.
+No existe evidencia del beneficio de los antibióticos
+para el resfriado común o rinitis purulenta aguda
+persistente en niños o adultos.
+Hay pruebas relacionadas a los antibióticos y sus
+efectos adversos en adultos, cuando se administra
+para el resfriado común y en rinitis purulenta
+aguda. No se recomienda su uso sistemático para
+estas condiciones.
+
+Evidencia de Alta Calidad
+GRADE
+Kenealy T, 2013
+
+En pacientes con infección de vías respiratoria
+donde los médicos no cuentan con la certeza
+diagnóstica y la prescripción de antibióticos
+inmediata, se aconseje acudir a reevaluación, si los
+síntomas no se resuelven o presenta datos de
+alarma.
+
+Fuerte Recomendación
+GRADE
+Fashner J, 2012
+Kenealy T, 2013
+
+Los medicamentos de venta libre para la tos y el
+resfriado no deben usarse en niños menores de
+cuatro años por la posibilidad de efectos
+secundarios y la falta de evidencia en beneficio.
+En relación a la carbocisteína, en una revisión
+Cochrane en la cual se incluyeron tres ensayos
+clínicos controlados, no se encontró diferencia
+significativa en la tos, disnea o mejoría del estado
+general en comparación con el placebo
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+En un estudio de cohorte que evaluó el uso del
+dextrometorfano, no se encontró beneficio entre el
+uso del placebo con respecto a la tos nocturna o en
+la calidad el sueño nocturno en el niño o los padres.
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+En un estudio de cohorte que evaluó el uso de la
+difenhidramina, no se encontró beneficio entre el
+uso del placebo con respecto a la tos nocturna o la
+calidad el sueño nocturno en el niño o los padres.
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+En una revisión Cochrane que incluyo 2 estudios
+que evaluaron el uso de antihistamínico con
+descongestionante (de venta libre) contra placebo
+para la tos. No existió diferencia entre el placebo y
+el antihistamínico con descongestionante para la
+mejoría de la tos.
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+En una revisión Cochrane que incluyo tres estudios
+que evaluaron el uso de broncodilatador y
+antitusivo contra placebo para la tos. No existió
+diferencia entre el placebo y el broncodilatador y
+antitusivo para la mejoría de la tos.
+
+Evidencia de Alta Calidad
+GRADE
+Fashner J, 2012
+
+En pacientes con infección de vías respiratoria
+donde los médicos no cuentan con la certeza en la
+prescripción de antibióticos inmediatamente, se
+aconseje acudir a reevaluación, si los síntomas no
+se resuelven o presenta datos de alarma.
+no es probable que resulte en el uso de antibióticos
+menos, mientras manteniendo similar satisfacción
+del paciente y los resultados clínicos a retrasa los
+antibióticos.
+
+Recomendación Fuerte
+GRADE
+Fashner J, 2012
+
+En pacientes con infección de vías respiratoria
+donde los médicos no cuentan con la certeza en la
+prescripción de antibióticos inmediatamente, se
+aconseje acudir a reevaluación, si los síntomas no
+se resuelven o presenta datos de alarma.
+no es probable que resulte en el uso de antibióticos
+menos, mientras manteniendo similar satisfacción
+del paciente y los resultados clínicos a retrasa los
+antibióticos.
+
+Recomendación Fuerte
+GRADE
+Recomendación Débil
+GRADE
+Fashner J, 2012
+
+4.7 Tratamiento Antimicrobiano de Faringitis estreptocócica
+EVIDENCIA / RECOMENDACIÓN
+
+NIVEL / GRADO
+
+La faringitis/amigdalitis por Streptococcus pyogenes
+requiere de tratamiento antimicrobiano apropiado
+para
+prevenir
+casos
+de
+fiebre
+reumática,
+complicaciones supurativas y minimizar el riesgo de
+casos secundarias. (Cuadro VII)
+
+Evidencia de Baja Calidad
+GRADE
+Alberta Clinical Practice Guideline,
+2008
+
+El antimicrobiano que ha demostrado que previene los
+ataques iniciales de fiebre reumática es la
+bencilpenicilina
+procaínica
+con
+bencilpenicilina
+cristalina (penicilina G procaínica) administrada por
+vía intramuscular
+
+Evidencia de Baja Calidad
+GRADE
+Regoli M, 2011
+
+Existe evidencia de la utilidad de la penicilina
+benzatinica en disminuir la ocurrencia de casos de
+fiebre reumática durante epidemias estreptocócicas
+en campos militares y en pacientes que han tenido un
+episodio previo de fiebre reumática
+
+Evidencia de Baja Calidad
+GRADE
+Regoli M, 2011
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+En México, se ha detectado que más del 16% de
+cepas de Streptococcus pyogenes son resistentes a
+macrólidos, por lo cual se recomienda utilizarlos con
+reserva y tener en cuenta la posibilidad de falla
+terapéutica por cepas resistentes a macrólidos.
+
+El tratamiento antimicrobiano que se recomienda
+para la faringitis estreptocócica es:
+ Niños < de 27 kg:
+Penicilina G benzatínica: 600,000UI IM dosis
+única.
+ Niños > de 27kg:
+Penicilina G benzatinica: 1,200,000UI IM dosis
+única:
+Como alternativa
+bencilpenicilina
+procaínica
+con
+bencilpenicilina
+cristalina (Penicilina procaínica) por 3 dosis (una cada
+24h) más una dosis de penicilina benzatinica de la
+siguiente manera:
+1.
+En niños < de 20kg:
+ bencilpenicilina procaínica con bencilpenicilina
+cristalina (Penicilina procaínica) 400,000UI
+intramuscular cada 24 horas por 3 días, más una
+dosis de penicilina benzatinica 600,000UI
+Intramuscular el cuarto día de tratamiento.
+2.
+En niños > de 20kg:
+bencilpenicilina
+procaínica
+con
+bencilpenicilina
+cristalina
+(Penicilina
+procaínica)
+800,000UI
+intramuscular cada 24horas por 3 días más una dosis
+de penicilina benzatinica 1,200,000UI Intramuscular
+el cuarto día de tratamiento
+o como alternativa:
+ Penicilina VK: 40mg/Kg./día vía oral dividida en 2
+o 3 dosis durante 10 días.
+Cabe mencionar que esta presentación no está
+incluida en el cuadro básico interinstitucional
+Las causas posibles de falla al tratamiento de la
+faringitis estreptocócica incluyen falta de apego al
+tratamiento, exposición repetida a los agentes,
+resistencia
+a
+antibióticos
+y
+existencia
+de
+copatógenos.
+Los pacientes crónicamente colonizados por
+Streptococcus pyogenes tienen bajo riesgo de
+complicarse con enfermedad supurativa o no
+supurativa y es poco probable que ocurra
+diseminación a contactos cercanos.
+
+Evidencia de Moderada Calidad
+GRADE
+Rodríguez, 2000
+
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+Evidencia de Baja Calidad
+GRADE
+Alberta Clinical Practice Guideline
+2008
+
+Evidencia de Alta Calidad
+GRADE
+Shulman S 2012
+Evidencia de Baja Calidad
+GRADE
+Alberta Clinical Practice Guideline
+2008
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Los pacientes crónicamente colonizados por
+Streptococcus pyogenes no obstante, tienen
+indicaciones precisas para ofrecer tratamiento
+antimicrobiano a portadores asintomáticos del
+germen.
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+
+4.8 Criterios de referencia y Seguimiento
+EVIDENCIA / RECOMENDACIÓN
+Los pacientes con IAVRS y comorbilidad tienen mayor
+probabilidad de descompensación cardiopulmonar,
+por lo que deben recibir atención médica y
+seguimiento de acuerdo a cada caso. (Cuadro VIII)
+Los pacientes con antecedentes de cardiopatía
+congénita, displasia bronco pulmonar y fibrosis
+quística tienen mayor riesgo de presentar dificultad
+respiratoria e insuficiencia cardiaca cuando cursan
+con IAVRS
+El
+médico debe considerar la posibilidad de
+mononucleosis infecciosa y otras causas virales de
+faringitis o falla al tratamiento ante la persistencia de
+dolor faríngeo o fiebre por más de 48 a 72 horas de
+iniciado el tratamiento
+
+Los pacientes con faringitis que persisten por cinco
+días son menos propensos al Streptococcus pyogenes
+del grupo A y deben ser re evaluados
+
+NIVEL / GRADO
+Evidencia De Alta Calidad
+GRADE
+Snellman L 2013
+Evidencia De Alta Calidad
+GRADE
+NICE 2008
+NICE, 2013
+Evidencia de Baja Calidad
+GRADE
+Snellman L 2013
+
+Evidencia de Alta Calidad
+GRADE
+Snellman L 2013
+
+Se recomienda que los pacientes con IAVRS y
+comorbilidad cardiopulmonar, inmunosupresión y
+diabetes mellitus sean referidos al servicio de
+urgencias de la unidad en donde se encuentre su
+servicio tratante.
+
+Recomendación Fuerte
+GRADE
+Snellman L 2013
+NICE 2008
+NICE, 2013
+
+Se recomienda informar a los padres de pacientes con
+IAVRS que deben acudir a nueva valoración médica si:
+ La fiebre persiste durante más de tres días
+ Si el paciente con IAVRS presenta datos de
+alarma enviar al servicio de urgencias del
+segundo nivel de atención
+
+Recomendación Débil
+GRADE
+Snellman L 2013
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Se recomienda enviar a la consulta externa de
+pediatría del segundo nivel de atención a pacientes
+con:
+ Faringitis estreptocócica y falla al tratamiento
+ en los casos que se considere indispensable y no
+sea posible realizar cultivo faríngeo en el primer
+nivel de atención
+
+Punto de Buena Práctica
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+5. Anexos
+5.1 Protocolo de Búsqueda
+La búsqueda sistemática de información se enfocó en documentos obtenidos acerca de la temática
+Diagnóstico y manejo de la infección Aguda de Vías Aéreas Superiores en Pacientes Mayores de 3
+meses hasta 18 años de edad en el primer nivel de atención. La búsqueda se realizó en PubMed y
+en el listado de sitios Web para la búsqueda de Guías de Práctica Clínica.
+Criterios de inclusión:
+
+
+
+
+Documentos escritos en español e inglés.
+Documentos publicados los últimos 5 años (rango recomendado) o, en caso de encontrarse
+escasa o nula información, documentos publicados los últimos 10 años (rango extendido).
+Documentos enfocados identificación de datos de alarma en enfermedad aguda grave en el niño,
+congruencia diagnóstica terapéutica en la infección aguda de vías aéreas superiores en edad
+pediátrica
+Criterios de exclusión:
+
+
+
+Documentos escritos en otro idioma que no sea español o inglés.
+
+5.1.1
+
+Estrategia de búsqueda
+
+5.1.1.1 Primera Etapa
+
+Esta primera etapa consistió en buscar documentos relacionados al tema Diagnóstico y manejo
+de la infección Aguda de Vías Aéreas Superiores en Pacientes Mayores de 3 meses hasta
+18 años de edad en el primer nivel de atención en PubMed. La búsqueda se limitó a seres
+humanos, documentos publicados durante los últimos 5 años, en idioma inglés y español, del tipo
+de documento de Guías de Práctica Clínica y se utilizaron términos validados del MeSh. Se utilizó el
+(los) término(s) infection) AND upper respiratory)) AND viral) AND acute) AND children)) AND
+guidelines AND diagnosis AND Treatment, MeSh utilizados en la búsqueda. Esta etapa de la
+estrategia de búsqueda dio 2906 resultados, de los cuales se utilizaron 28 documentos para la
+elaboración de la guía.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+BÚSQUEDA
+Search (((((((infection) AND upper respiratory)) AND viral) AND acute) AND children)) AND
+guidelines
+Search (((((infection) AND upper respiratory)) AND viral) AND acute) AND children
+Search (((("infection"[MeSH Terms] OR "infection"[All Fields]) AND (upper[All Fields] AND
+respiratory[All Fields])) AND acute[All Fields]) AND ("virology"[MeSH Terms] OR "virology"[All
+Fields] OR "viral"[All Fields])) AND ("child"[MeSH Terms] OR "child"[All Fields] OR "children"[All
+Fields])
+Search (((((infection) AND upper respiratory)) AND acute) AND viral) AND children
+Search ((((infection) AND upper respiratory)) AND viral) AND children
+Search ("infection"[MeSH Terms] OR "infection"[All Fields]) AND (upper[All Fields] AND
+respiratory[All Fields])
+Search (infection) AND upper respiratory
+Search infection upper
+Search infection
+
+RESULTADO
+2906
+9268
+9268
+
+9268
+11930
+61327
+61327
+187921
+779787
+
+Algoritmo de búsqueda:
+((Acute[All Fields] AND ("respiratory tract infections"[MeSH Terms] OR ("respiratory"[All Fields]
+AND "tract"[All Fields] AND "infections"[All Fields]) OR "respiratory tract infections"[All Fields] OR
+("respiratory"[All Fields] AND "tract"[All Fields] AND "infection"[All Fields]) OR "respiratory tract
+infection"[All Fields])) AND ("guideline"[All Fields] OR "guidelines as topic"[MeSH Terms] OR
+"guidelines"[All Fields])) AND (((((("infection"[MeSH Terms] OR "infection"[All Fields]) AND
+(upper[All Fields] AND respiratory[All Fields])) AND ("virology"[MeSH Terms] OR "virology"[All
+Fields] OR "viral"[All Fields])) AND acute[All Fields]) AND ("child"[MeSH Terms] OR "child"[All
+Fields] OR "children"[All Fields])) AND ("guideline"[All Fields] OR "guidelines as topic"[MeSH
+Terms] OR "guidelines"[All Fields]))
+Se argumenta extender la búsqueda a 10 años en caso de no encontrarse información o de ser
+ésta muy escasa y se indica cuántos resultados se obtuvieron y, de éstos, cuántos se utilizaron.
+
+5.1.1.2 Segunda Etapa
+
+En esta etapa se realizó la búsqueda en sitios Web en los que se buscaron Guías de Práctica Clínica
+con el término: infection AND upper respiratory)) AND viral) AND acute) AND children))
+AND guidelines.
+En resumen, 6 resultados fueron útiles para el desarrollo de esta guía:
+1. Alberta Clinical Practice Guidelines: Guideline for the Diagnosis and Treatment of Acute Pharyngitis
+2008
+2. NICE 2008. National institute for health and clinical excellence. Respiratory tract infections –
+antibiotic prescribing. Prescribing of antibiotics for self-limiting respiratory tract infections in adults
+and
+children
+in
+primary
+care.
+Julio
+2008.
+Disponible
+en
+:
+http://www.nice.org.uk/nicemedia/pdf/CG69FullGuideline.pdf
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+3. NICE 2013. National institute for health and care excellence. Self-limiting respiratory tract
+infections antibiotic prescribing overview. Updated febrero 2013. Disponible en :
+http://pathways.nice.org.uk/pathways/self-limiting-respiratory-tract-infections---antibioticprescribing
+4. Shulman S, Bisno A, Clegg H, et al. Clinical Practice Guideline for the Diagnosis and Management of
+Group A Streptococcal Pharyngitis: 2012 Update by the Infectious Diseases Society of America.
+Clin
+Infect
+Dis,
+2012;
+55(10):e86-102
+disponible
+en
+http://www.uphs.upenn.edu/bugdrug/antibiotic_manual/grpastrepidsa.pdf
+5. Snellman L, Adams W, Anderson G, et al. Institute for Clinical Systems Improvement. Diagnosis and
+Treatment of Respiratory Illness in Children and Adults. Updated January 2013.
+6. University of Michigan Health System (UMHS) 2013. University of Michigan Health System
+Michigan Quality Improvement Consortium. Pharyngitis Guidelines for clinical Practice. 2013.
+Disponible en:http://www.med.umich.edu/1info/fhp/practiceguides/pharyngitis/pharyn.pdf
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+5.2
+
+Escalas de Gradación
+
+CUADRO C. GRADOS DE EVIDENCIA ICSI
+Sistema ICSI GRADE
+Nivel de evidencia
+Alto, si no hay limitación
+Bajo
+Bajo
+Bajo
+*Bajo
+* Después de la revisión del estudio individual, puede ser elevado
+a moderado o alto según el diseño del estudio
+
+Bajo
+
+Meta-análisis
+-Revisión sistemática
+-Análisis de decisión
+-Análisis de costo-efectividad
+Bajo
+Bajo
+Bajo
+Guia
+
+Sistema ICSI Previo
+Grado de recomendación
+Clase A Ensayo clínico aleatorizado
+Clase B Estudio de Cohorte
+Clase C (observacional)
+Ensayo clínico no aleatorizado con controles históricos o
+concurrentes.
+Estudio de caso y control.
+Estudios con base poblacional
+Estudio sobre prueba diagnóstica
+Clase D (Observacional)
+Estudio transversal
+-Serie de casos
+-Reporte de casos
+Clase M
+Meta-análisis
+-Revisión sistemática
+-Análisis de decisión
+-Análisis de costo-efectividad
+Clase R
+Consenso de expertos
+Reporte de expertos
+-Revisiones narrativas
+
+Clase R
+Guía
+Clase X
+Bajo
+Opinión medica
+Modificado de: Snellman L, Adams W, Anderson G, et al. Institute for Clinical Systems Improvement. Diagnosis and
+Treatment of Respiratory Illness in Children and Adults. Updated January 2013.
+
+Definición de evidencia:
+Evidencia de Alta Calidad: La investigación adicional es muy poco probable que cambien nuestra confianza en la estimación
+del efecto.
+Evidencia de Moderada Calidad: La investigación adicional es probable que tenga un impacto importante sobre nuestra
+confianza en la estimación del efecto y puede cambiar la estimación.
+Evidencia de Baja Calidad: La investigación adicional es muy probable que tengan un impacto importante sobre nuestra
+confianza en la estimación del efecto y es probable que cambien la estimación o cálculo del efecto es muy incierto.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+5.3
+
+Cuadros o figuras
+CUADRO I. PUNTUACIÓN DE LOS CRITERIOS DE CENTOR
+
+CRITERIOS CLÍNICOS
+
+PUNTOS
+
+Ausencia de tos
+
+1
+
+Nódulos cervicales anteriores dolorosos
+
+1
+
+Temperatura> 38 ° C
+
+1
+
+Exudado o inflamación de amígdalas
+
+1
+
+3 años de edad hasta los 14 años
+
+1
+
+Edad 15 a 44 años
+
+0
+
+Edad 45 años o más
+
+-1
+
+Fuente: Regoli M, Chiappini E, Bonsignori F, et al. Update on the management of acute pharyngitis in children. Italian Journal of Pediatrics
+2011, 37:10
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+CUADRO II. ENFERMEDADES QUE DEBEN SER DIFERENCIADAS CON RESFRIADO COMÚN
+Diagnóstico
+
+Síntomas
+
+Otitis media
+
+Otalgia
+Otorrea
+Hipoacusia
+Abombamiento de membrana timpánica.
+Mareo
+
+Faringitis por Streptococcus
+pyogenes (grupo A beta
+hemolítico)
+
+Inicio súbito del dolor faríngeo
+Exudado en amígdalas
+Adenopatía cervical anterior dolorosa
+Fiebre
+Cefalea
+Dolor abdominal
+Ausencia de rinorrea, tos y disfonía.
+Vómito
+Astenia
+Anorexia
+Exantema o urticaria.
+
+Faringitis viral
+
+Tos, disfonía, congestión nasal y dolor faríngeo con duración mayor de 5 días.
+Presencia de vesículas, aftas, úlceras y pseudo membranas en orofaringe
+
+Antecedentes personales y familiares de atopia
+Prurito ocular, nasal, en paladar y oídos
+Rinorrea acuosa
+Estornudos
+Congestión nasal
+Escurrimiento nasal posterior
+Sensibilidad a alérgenos específicos como son ácaros, caspa de animales, polvo, polen y hongos
+filamentosos.
+Antecedente de sinusitis previa (confirmada)
+Sinusitis
+Cuadro clínico de vías respiratorias superiores que persisten por más de siete días.
+Dos o más de los siguientes síntomas presentes por más de siete días después del inicio de la
+sintomatología:
+Tos
+Sensación de aumento de presión en oídos
+Dolor facial que se intensifica con los cambios de posición o maniobra de Valsaba y a la exploración
+dolor en puntos de los senos paranasales
+Fatiga
+Fiebre
+Hiposmia /anosmia
+Bloqueo nasal conocido
+Congestión nasal
+Escurrimiento nasal anterior y/o posterior
+Dolor dental
+Pobre respuesta a descongestionantes
+Disfonía
+Epiglotitis
+Odinofagia severa
+Estridor
+Sialorrea
+Fuente: Snellman L, Adams W, Anderson G, et al. Institute for Clinical Systems Improvement. Diagnosis and Treatment of Respiratory
+Illness in Children and Adults. Updated January 2013.
+Rinitis alérgica
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+CUADRO III. SIGNOS Y SÍNTOMAS DE ENFERMEDAD GRAVE
+
+Dificultad respiratoria
+
+Menores de 3 meses
+
+3 meses a < de 4 años
+
+4 años hasta adolescencia
+
+Quejido
+
+Tiros
+
+Tiros
+
+Tiros
+
+Cianosis
+
+Cianosis
+
+Cianosis
+
+Disnea ostensible
+
+Disnea moderada a severa
+
+Estridor con síntomas de
+laringotraqueitis que no mejoran
+con medidas conservadoras.
+
+Taquipnea :> 50 por minuto en
+niños de 3 a 11 meses
+
+Taquipnea (> 40 por minuto
+en niños de 1 a 5 años)
+
+40 por minuto en niños de 1 a 5
+años
+
+Respiración superficial
+
+Taquipnea:> 60 por minuto
+
+Respiración superficial
+Dificultad para deglutir
+
+Respuesta a estímulos y
+actividad
+
+dificultad para deglutir
+Sibilancias a distancia
+Sialorrea
+
+Sibilancias a distancia
+
+Disfonía
+
+• estridor con síntomas de
+laringotraqueitis que no mejoran
+con medidas conservadoras
+
+Sensación de que se está
+cerrando la garganta.
+
+Flácido
+
+No reactivo
+
+Confuso
+
+letárgico
+
+Estado de alerta disminuido
+
+Estado de alerta disminuido
+
+No puede despertar o mantenerse
+despierto
+
+No puede despertar o mantenerse
+despierto
+
+Actividad ostensiblemente
+disminuida
+
+Llanto débil o succión débil
+
+Actividad ostensiblemente
+disminuida
+
+Rechaza comer
+
+Muy letárgico
+
+Somnolencia excesiva
+
+Inconsolable
+Rechazo al alimento
+
+•Somnolencia excesiva
+Inconsolable
+•Llanto débil o succión débil (si es
+lactante)
+
+Muy letárgico
+
+No puede despertar o
+mantenerse despierto
+No reactivo
+
+•Rechazo al alimento
+Deshidratación y vómito
+
+Escaso número de pañales
+húmedos en un periodo mayor a 8
+horas
+
+Signos meníngeos
+
+Sin micción en un periodo de 6 a 8
+h ( en < de 1 año de edad)
+
+Anuria por > 12 h
+
+• Sin micción en un periodo de 12
+( en > de 1 año de edad)
+Rigidez de nuca
+
+Rigidez de nuca
+
+Vómito persistente
+
+Vómito persistente
+• Cefalea intensa
+
+Otros
+
+Exantema petequial o purpúrico
+
+Exantema petequial o purpúrico
+
+Poliuria y baja ingesta de
+líquidos
+• Exantema petequial o
+purpúrico
+
+Fuente: Snellman L, Adams W, Anderson G, et al. Institute for Clinical Systems Improvement. Diagnosis and Treatment of Respiratory
+Illness in Children and Adults. Updated January 2013.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+CUADRO IV. PRUEBA DE DETECCIÓN RÁPIDA DE STREPTOCOCCUS PYOGENES
+Ventajas
+
+Desventajas
+
+Especificidad cercana al 100%.
+
+Costos elevados de auxiliares de diagnóstico.
+
+La rapidez en la obtención del resultado reduce
+tratamientos cortos innecesarios y la complejidad de
+estrategias en el tratamiento
+
+Con las pruebas actuales, ante un resultado negativo siempre se requiere de
+un cultivo de exudado faríngeo de respaldo. (Gerber, 1997; Schlager,
+1996).
+
+Potencialmente reduce la necesidad de otras consultas.
+
+Los resultados de estudios recientes con PCR de tiempo real, están a favor
+de su utilidad como reemplazo de las pruebas de detección rápida y cultivo
+de Strep. pyogenes (Uhl, 2003). Es improbable que esta prueba pueda ser
+empleada como una prueba rápida en la que el paciente espera para la toma
+de decisiones.
+
+Permite el inicio del tratamiento de manera oportuna,
+reduciendo la morbilidad aguda y casos secundarios.
+
+Requiere personal capacitado para el desarrollo de la pruebas.
+
+puede ser costo-efectiva por medio de la reducción de
+trabajo extra y un periodo breve de tiempo en la
+atención (Lieu, 1990).
+
+El costo de la prueba
+
+Alta satisfacción de los pacientes
+
+Esta prueba no está incluida en el cuadro básico
+Se necesita asignar a personal específico para el desarrollo de las pruebas y
+rediseño de consultorios
+Pueden detectarse falsos positivos aún en pacientes que han recibido 14
+días de tratamiento antibiótico apropiado.
+No diferencia entre enfermedad y estado de portador.
+
+Fuente: Shulman S, Bisno A, Clegg H, et al . Clinical Practice Guideline for the Diagnosis and Management of Group A Streptococcal
+Pharyngitis: 2012 Update by the Infectious Diseases Society of America. Clin Infect Dis ,2012;55(10):e86-102
+
+CUADRO V. CULTIVO DE EXUDADO FARÍNGEO
+Ventajas
+
+Desventajas
+
+A pesar que no es una prueba perfecta se considera el
+estándar de oro
+
+El tiempo de incubación retrasa el inicio de tratamiento definitivo,
+reduciendo la satisfacción del paciente
+
+Menor costo que las pruebas rápidas
+
+No diferencia entre enfermedad y portadores
+La sensibilidad depende de la técnica y experiencia técnica.
+
+Fuente: Alberta Clinical Practice Guidelines: Guideline for the Diagnosis and Treatment of Acute Pharyngitis.2008
+
+CUADRO VI. TRATAMIENTO CON BASE EN DATOS CLÍNICOS DE FARINGITIS ESTREPTOCÓCICA
+Ventajas
+
+Desventajas
+
+Reducir el tiempo del inicio de la terapia definitiva
+
+Sobre tratamiento ya la precisión diagnóstica es de 50-75% con
+los mejores sistemas clínicos de puntuación
+
+No se realizan pruebas diagnósticas redundantes
+
+Debido a sobre tratamiento, efectos secundarios: intolerancia,
+alergia hasta choque anafiláctico.
+
+Alta satisfacción del paciente por el inicio pronto de tratamiento
+previo a los resultados de la prueba.
+
+Refuerza falsas creencias acerca de la faringitis estreptocócica.
+
+Fuente: Snellman L, Adams W, Anderson G, et al. Institute for Clinical Systems Improvement. Diagnosis and Treatment of Respiratory
+Illness in Children and Adults. Updated January 2013.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+CUADRO VII. FACTORES PRESENTES QUE COMPLICAN LA IVRA
+Los pacientes con factores de complicación deben consultar con un médico. La directriz debe aplicarse con gran cuidado, incluyendo
+pacientes adultos o pediátricos con factores de complicación. Una lista de posibles complicaciones puede incluir
+Pacientes con enfermedad crónica (insuficiencia cardiaca congestiva) enfermedad pulmonar obstructiva crónica) afecciones sistémicas,
+enfermedades musculo esqueléticas.
+Virus de inmunodeficiencia positivo)inmunocompromiso o inmunosupresión
+Paciente con quimioterapia.
+Pacientes que iniciaron antibiótico previo al diagnóstico.
+Falla al tratamiento con recurrencia de los síntomas dentro de los 7 días de uso del antibiótico (administración incompleta del
+tratamiento, exposición repetida, resistencia al antibiótico, copatógeno)
+Dolor de garganta con más de 5 días de duración
+
+Fuente modificado de: Snellman L, Adams W, Anderson G, et al. Institute for Clinical Systems Improvement. Diagnosis and Treatment of
+Respiratory Illness in Children and Adults. Updated January 2013.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+5.4 Diagramas de Flujo
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años de edad
+
+5.5 Listado de Recursos
+5.5.1
+
+Tabla de Medicamentos
+
+Medicamentos mencionados en la guía e indicados en el tratamiento de La Infección De Vías Aéreas Superiores en el Cuadro
+Básico del Instituto Mexicano del Seguro Social:
+Cuadro Básico de Medicamentos
+Clave
+010.000.2129.00
+
+Principio activo
+Amoxicilina –
+ácido clavulánico
+
+Dosis recomendada
+20 a 40 mg/kg de
+peso corporal/día,
+dividir cada 8 horas
+
+010.000.1925.00
+
+Benzatina
+bencilpenicilina
+equivalente a 1
+200 000 UI de
+bencilpenicilina.
+
+600 000 UI/ kg en
+niños de menos de 27
+kg peso corporal.
+Dosis única.
+Niños de más de 27
+kg de peso 1 200
+000 UI peso corporal.
+Dosis única
+
+010.000.1923.00
+
+Bencilpenicilina
+procaínica
+equivalente a300
+000 UI de
+bencilpenicilina
+Bencilpenicilina
+cristalina
+equivalente a 100
+000 UI de
+bencilpenicilina
+
+400,000UI
+intramuscular cada
+24 horas por 3 días
+en niños de menos de
+27 kg peso corporal
+800,000UI
+intramuscular cada
+24horas por 3 días.
+en niños de más de
+27 kg peso corporal
+
+Presentación
+SUSPENSIÓN
+ORAL Envase con
+60 ml, cada 5 ml
+con 125 mg de
+amoxicilina y
+31.25 mg ácido
+clavulánico.
+Envase con un
+frasco ámpula y
+5 ml de diluye
+
+Tiempo
+10 días
+
+Efectos adversos
+Náusea, vómito,
+diarrea
+
+Interacciones
+Con probenecid y
+cimetidina aumenta su
+concentración
+plasmática
+
+Contraindicaciones
+Hipersensibilidad a
+penicilinas o
+cefalosporinas
+
+Dosis
+única
+
+Reacciones de
+hipersensibilidad que
+incluye choque
+anafiláctico, glositis,
+fiebre, dolor en el
+sitio de inyección.
+
+Hipersensibilidad al
+fármaco.
+
+Envase con un
+frasco ámpula y
+2 ml de
+diluyente.
+
+3 días
+
+Reacciones de
+hipersensibilidad que
+incluye choque
+anafiláctico, glositis,
+fiebre, dolor en el
+sitio de inyección
+
+Con probenecid
+aumenta la
+concentración
+plasmática de las
+penicilinas. Sensibilidad
+cruzada con
+cefalosporinas y otras
+penicilinas. Con
+analgésicos no
+esteroideos aumenta la
+vida media de las
+penicilinas.
+Con probenecid
+aumenta la
+concentración
+plasmática de las
+penicilinas. Sensibilidad
+cruzada con
+cefalosporinas y otras
+penicilinas. Con
+analgésicos no
+esteroideos aumenta la
+
+Hipersensibilidad al
+fármaco, nefritis
+intersticial, edema
+angioneurótico,
+enfermedad del suero.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años de edad
+
+010.000.1973.00
+
+clindamicina
+
+10 a 20 MG/kg/día
+dividida en 4 dosis,
+por 10 días
+
+Cada ampolleta
+contiene: Fosfato
+de clindamicina
+equivalente a
+300 mg de
+clindamicina.
+
+10 días
+
+Náusea, vómito,
+diarrea, colitis
+pseudomembranosa,
+hipersensibilidad.
+
+010.000.1972.00
+
+Estearato o
+etilsuccinato o
+estolato de
+eritromicina
+
+30-40 MG/Kg./día
+vía oral, dividido en
+tres dosis durante 10
+días
+
+SUSPENSIÓN
+ORAL Cada 5 ml
+contienen:
+Estearato o
+etilsuccinato o
+estolato de
+eritromicina
+equivalente a
+250 mg de
+eritromicina.
+
+10 días
+
+Vómito, diarrea,
+náusea, erupciones
+cutáneas, gastritis
+aguda, ictericia
+colestática.
+
+vida media de las
+penicilinas.
+Su efecto se
+antagoniza con el uso
+de cloranfenicol y
+eritromicina. Aumenta
+el efecto de los
+relajantes musculares.
+Con caolín disminuye
+su absorción.
+Puede incrementar el
+riesgo de efectos
+adversos con
+corticoesteroides,
+teofilina, alcaloides del
+cornezuelo de centeno,
+triazolam, valproato,
+warfarina, ciclosporina,
+bromocriptina,
+digoxina, disopiramida
+
+Hipersensibilidad al
+fármaco. Precauciones:
+Colitis ulcerosa e
+insuficiencia hepática.
+
+Hipersensibilidad al
+fármaco, colestasis,
+enfermedad hepática.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+5.6 Cédula de Verificación de Apego a las Recomendaciones
+Clave de la Guía de Práctica Clínica
+Diagnóstico(s) Clínico(s):
+CIE-9-MC / CIE-10
+Código del CMGPC:
+TÍTULO DE LA GPC
+Diagnóstico y Manejo de La Infección Aguda de Vías Aéreas Superiores en Pacientes Mayores de 3
+Meses Hasta 18 Años de Edad
+POBLACIÓN BLANCO
+Pacientes mayores de 3 meses
+hasta 18 años de edad, de
+cualquier género, con infección
+aguda de vías aéreas
+superiores, sin enfermedad
+previa.
+
+USUARIOS DE LA GUÍA
+Médico General, Médico Familiar,
+Médico de Urgencias MédicoQuirúrgicas, Médico Pediatra
+Infectólogo, Médico Pediatra
+
+Calificación de
+las
+recomendaciones
+
+NIVEL DE ATENCIÓN
+Primer y segundo nivel
+
+PREVENCIÓN PRIMARIA
+Evitar el contacto con personas que están cursando con enfermedades respiratorias agudas.
+Promover la lactancia materna exclusiva durante los primeros seis meses de edad y continuar con la leche
+materna hasta los 12 meses de edad.
+Evitar que los niños asistan a la guardería cuando presenten IAVAS
+DIAGNÓSTICO TEMPRANO
+Establecer la sospecha las siguientes entidades nosológicas y consignar en el expediente clínico con los siguientes
+datos clínicos, en:
+Faringoamigdalitis estreptocócica (criterios clínicos de Centor):
+• Fiebre
+• Exudado amigdalino, inflamación amigdalina o faringe hiperemica
+• Adenopatía anterior dolorosa o linfadenitis
+• Ausencia de tos
+Faringitis de etiología viral:
+• Tos
+• Disfonía
+• Congestión nasal
+• Dolor faríngeo de más de 5 días de duración
+• Vesículas o aftas en orofaringe orientan a faringitis de etiología viral
+Rinitis alérgica
+• Congestión nasal
+• Rinorrea
+• Estornudos y prurito nasal asociados frecuentemente a cambios estaciónales
+Sinusitis:
+• Cuadro clínico de vías respiratorias superiores que persiste por más de siete días.
+• Dolor facial que se intensifica con los cambios de posición y dolor en puntos de los senos paranasales
+• Congestión nasal
+• En los lactantes el diagnóstico de sinusitis puede basarse ante un cuadro de rinofaringitis con tos de más de 7
+días de evolución
+
+(Cumplida: SI=1,
+NO=0,
+No Aplica=NA)
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Resfriado común:
+• Congestión nasal.
+• Fiebre.
+• Odinofagia.
+• Tos.
+• Disfonía.
+• Irritabilidad.
+• Congestión conjuntival.
+Identificar como signos de alarma cuando el paciente presente:
+• Síntomas neurológicos.
+• Síntomas de obstrucción de vía aérea superior
+• Síntomas de obstrucción de vía aérea inferior
+• Alteración en el volumen urinario
+• Vómito persistente
+• Exantema petequial o purpúrico
+Pruebas Diagnósticas
+Realizar pruebas de detección rápida para Streptococcus pyogenes en pacientes con criterios clínicos de faringitis
+estreptocócica
+Realizar cultivo de exudado faríngeo en:
+• Pacientes con criterios clínicos de faringitis estreptocócica
+• Pacientes con faringoamigdalitis estreptocócica que presentan falla al tratamiento (su realización dependerá de
+la disposición del recurso: primer o segundo nivel de atención)
+El seguimiento con cultivos de control de exudado faríngeo se realiza sólo en los siguientes casos:
+• Pacientes con antecedente de fiebre reumática.
+• Pacientes con faringitis aguda en un brote de fiebre reumática
+• Pacientes con faringitis aguda durante un brote de glomérulo nefritis aguda post estreptocócica o de faringitis
+por estreptococo del grupo A en comunidades cerradas o parcialmente cerradas.
+• Contagio intrafamiliar de tipo “ping-pong” de Estreptococo del grupo A
+• Pacientes asintomáticos con tratamiento completo para faringitis estreptocócica aguda.
+• Contactos asintomáticos de pacientes con faringitis estreptocócica del grupo A, excepto aquellos con riesgo
+elevado para infecciones frecuentes o secuelas no supurativas
+No se recomienda realizar determinación de antiestreptolisinas en niños con faringoamigdalitis estreptocócica
+aguda.
+TRATAMIENTO FARMACOLÓGICO
+No usar para el manejo del resfriado común:
+• Antitusígenos.
+• Descongestionantes.
+• Spray nasal de bromuro de ipratropio.
+• Vitamina C.
+• Gluconato de Zinc
+Usar paracetamol como medicamento de elección para el manejo de la fiebre en los pacientes con resfriado
+común
+No se recomienda el uso de antimicrobianos en los pacientes con resfriado común, el tratamiento de esta
+enfermedad debe ser conservador
+Otorgar tratamiento antimicrobiano inmediato:
+• Faringoamigdalitis aguda estreptocócica.
+• Otitis media aguda bilateral en niños menores de 2 años.
+• Otitis media aguda en niños con otorrea.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+El tratamiento antimicrobiano que se recomienda para la faringitis estreptocócica es:
+Primera elección:
+Niños < de 20 kg:
+Penicilina G benzatínica: 600,000UI IM dosis única.
+Niños > de 20kg:
+Penicilina G benzatinica: 1,200,000UI IM dosis única:
+Alternativa:
+bencilpenicilina procaínica con bencilpenicilina cristalina (Penicilina procaínica) por 3 dosis (una cada 24h) más
+una dosis de penicilina benzatinica de la siguiente manera:
+• En niños < de 20kg:
+bencilpenicilina procaínica con bencilpenicilina cristalina (Penicilina procaínica) 400,000UI intramuscular cada 24
+horas por 3 días, más una dosis de penicilina benzatinica 600,000UI Intramuscular el cuarto día de tratamiento.
+1. En niños > de 20kg:
+bencilpenicilina procaínica con bencilpenicilina cristalina (Penicilina procaínica) 800,000UI intramuscular cada
+24horas por 3 días más una dosis de penicilina benzatinica 1, 200,000 UI Intramuscular el cuarto día de
+tratamiento
+Alternativa:
+• No está disponible en la institución la Penicilina VK: 40mg/Kg./día vía oral dividida en 2 o 3 dosis durante 10
+días.
+En faringoamigdalitis estreptocócica con falla al tratamiento de antimicrobianos, se utiliza:
+• Amoxicilina-ácido clavulánico: 20 a 40 MG/Kg./día vía oral, divididos cada 8hs, por 10 días.
+Alternativa:
+• Clindamicina: 10 a 20 MG/kg/día vía oral, dividida en 4 dosis, por 10 días
+En la faringitis estreptocócica recurrente probada por pruebas de detección rápida de estreptococo o por cultivo
+faríngeo se recomienda utilizar:
+• Clindamicina: 20 a 30mg/Kg./día, vía oral, dividido en 3 dosis durante 10 días
+o
+• Amoxicilina-ácido clavulánico: 20 a 40 MG/Kg./día vía oral, divididos cada 8hs, por 10 días.
+o
+• Penicilina benzatínica: 1, 200,000 U.I. dosis única, vía intramuscular.
+o
+• Penicilina benzatínica : 1,200,000 U.I. dosis única, vía intramuscular más rifampicina 20mg/kg/día, vía oral,
+dividida en 2 dosis, durante 4 días
+CRITERIOS DE REFERENCIA/SEGUIMIENTO
+Referir al servicio de urgencias de la unidad cuando el niño presente:
+• Descompensación de su patología de base.
+• Manifiesten datos de alarma.
+
+Enfatizar a los padres o tutores acudir a nueva valoración médica cuando el niño presente:
+• La fiebre persista durante más de 3 días.
+• Empeoren los síntomas o aparezcan nuevos después de 3 a 5 días de evolución.
+• No presente mejoría de los síntomas después de 7 a 10 días.
+EVALUACIÓN
+Total de recomendaciones cumplidas (1)
+
+0
+
+Total de recomendaciones no cumplidas (0)
+
+0
+
+Total de recomendaciones que no aplican al caso evaluado (NA)
+
+0
+
+Total de recomendaciones que aplican al caso evaluado
+
+0
+
+Porcentaje de cumplimiento de las recomendaciones evaluadas (%)
+Apego del expediente a la GPC (SI/NO)
+
+#¡DIV/0!
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+6. Glosario
+Antibiótico a la sustancia química que impide el desarrollo o multiplicación de ciertos microbios o los destruye.
+Atención integrada al conjunto de acciones que se proporcionan al menor de cinco años en la unidad de salud,
+independientemente del motivo de la consulta e incluyen: vigilancia de la vacunación, vigilancia de la nutrición, atención
+motivo de la consulta, capacitación de la madre y atención a la salud de la madre.
+Cianosis a la coloración azul de piel y mucosas.
+Comorbilidad La existencia o la presencia de cualquier entidad distinta adicional durante el curso clínico de un paciente
+que tiene una enfermedad indexada bajo estudio.
+Comunicación a la acción de informar la presencia de padecimientos o eventos, por parte de fuentes que pertenecen al
+Sistema Nacional de Salud.
+
+Educación para la salud al proceso de enseñanza-aprendizaje que permite mediante el intercambio y análisis de la
+información, desarrollar habilidades y cambiar actitudes, con el propósito de inducir comportamiento para cuidar la salud
+individual, familiar y colectiva.
+Estado de portador: Pacientes crónicamente colonizados por Streptococcus pyogenes.
+Estrategia al método para resolver o controlar un problema.
+Estridor al ruido áspero, de predominio inspiratorio, que ocurre cuando se estrecha la laringe.
+Falla al tratamiento se define como la recurrencia de los síntomas dentro de los siete días de completar el tratamiento
+con antibióticos
+Faringitis estreptocócica recurrente se define a toda faringitis cuya causa ha sido probada por cultivo es debida a
+Streptococcus pyogenes y recurre entre 7 a 30 días después de haber terminado el tratamiento específico
+Fiebre a la elevación anormal de la temperatura corporal, por encima de los límites normales citados, arriba de 38.0ºC.
+Inmunoestimulante extracto bacteriano inmunoactivo que evita algunas infecciones.
+Irrigación nasal es una terapia que baña la mucosa nasal con solución salina en aerosol o líquidos
+Lactancia materna exclusiva a la alimentación de los niños con leche materna, como único alimento, durante los
+primeros cuatro meses de vida.
+Líquidos caseros recomendados a las aguas preparadas de frutas, sopas, tés, atoles, y agua de coco verde.
+Otalgia al dolor de oído.
+Otitis media aguda a la inflamación del oído medio que incluye la cavidad del oído medio, la trompa de Eustaquio
+limitando la movilidad de la membrana timpánica. Su presentación puede ser muy diversa con sintomatología
+inespecífica, incluyendo otalgia, fiebre, sensación de oído ocupado, hipoacusia y otorrea.
+Otorrea a la supuración en el oído, salida de líquido, o pus, por el conducto auditivo externo.
+Taquipnea o respiración rápida al aumento de la frecuencia respiratoria arriba de 60 por minuto, en niños menores de
+2 meses de edad; arriba de 50 por minuto, en niños de 2 a 11 meses, y arriba de 40 por minuto, en niños de uno a cuatro
+años.
+Probiótico son microorganismos vivos que cuando se administran en dosis adecuadas, confieren un beneficio para la
+salud del huésped
+Promoción de la salud al proceso que permite fortalecer los conocimientos, aptitudes y actitudes de las personas para
+participar corresponsablemente en el cuidado de su salud y para optar por estilos de vida saludables, facilitando el logro y
+conservación de un adecuado estado de salud individual, familiar y colectivo mediante actividades de participación social,
+comunicación educativa y educación para la salud.
+Sibilancia a los ruidos respiratorios silbantes, de predominio espiratorio.
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+Somnolencia a la dificultad para mantener la vigilia.
+Tiro o tiraje al hundimiento del hueco supraesternal, de los espacios intercostales y del hueco epigástrico, durante la
+inspiración, como consecuencia de la obstrucción de las vías respiratorias, que, en su expresión de mayor gravedad, se
+manifiesta como disociación torácico-abdominal
+Símbolos y abreviaturas
+ºC: grado Celsius.
+cm.: centímetro.
+EBHGA: Estreptococo Beta Hemolítico Grupo A
+IRA: Infección respiratoria aguda.
+Kg: kilogramo.
+mLl: mililitro.
+MG: miligramo.
+U.l.: unidades internacionales.
+IE: inmunoestimulante
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+7. Bibliografía
+1.
+2.
+
+3.
+4.
+
+5.
+6.
+
+7.
+
+8.
+
+Alberta Clinical Practice Guidelines: Guideline for the Diagnosis and Treatment of Acute Pharyngitis.2008
+De Sutter AIM, Lemiengre M, Campbell H, Mackinnon HF. Antihistamínicos para el resfriado común (Revisión
+Cochrane traducida). En: La Biblioteca Cochrane Plus, número 3, 2008. Oxford, Update Software Ltd. Disponible
+en: http://www.update-software.com. (Traducida de The Cochrane Library, Issue. Chichester, UK: John Wiley &
+Sons, Ltd.).
+Dirección General de Epidemiologia. Perfil epidemiológico de la Infancia en México 2010, México DF, Junio 2011.
+(ISBN 978-607-460-237-1)
+ENSANUD 2012. Encuesta Nacional de Salud y nutrición 2012. Evidencia para la política pública en salud.
+Infecciones respiratorias agudas en niños: inmunizar a tiempo y educar la respuesta. Disponible en :
+http://ensanut.insp.mx/doctos/analiticos/IRA_ninos.pdf
+Fashner J, Ericson K, Werner S. Treatment of the Common Cold in Children and Adults. Am Fam Physician 2012;
+86(2):153-159
+Guppy MP, Mickan SM, Del Mar CB, Thorning S, Rack A. Advising patients to increase fluid intake for treating
+acute respiratory infections. Cochrane Database Syst Rev. 2011; (2):CD004419. Disponible en
+http://www.thecochranelibrary.com
+Guía operativa para la vigilancia nacional intensificada de infección respiratoria aguda grave 2011. Guia operativa
+para la vigilancia nacional intensificada de infección respiratoria aguda grave. Proyecto de Prevención y Control de
+Enfermedades Transmisibles Organización Panamericana de la Salud Washington D.C. Julio de 2011
+
+Guía de Práctica Clínica “Control y Seguimiento de la Nutrición el Crecimiento y Desarrollo del Niño
+Menor de 5 años”. IMSS 2008
+
+9.
+
+Hao Q, Dong BR, Wu T. Probiotics for preventing acute upper respiratory tract infections. Cochrane Database of
+Systematic Reviews 2015, Issue 2. Art. No.: CD006895. DOI: 10.1002/14651858.CD006895.pub3.
+10. Kang J, Kim Y, Hwang H, et al. The Effect of Probiotics on Prevention of Common Cold: A Meta-Analysis of
+Randomized Controlled Trial Studies. Korean J Fam Med. 2013 Jan; 34(1)
+11. Kenealy T, Arroll B. Antibiotics for the common cold and acute purulent rhinitis. Cochrane Database of Systematic
+Reviews 2013, Issue 6. Art. No.: CD000247. DOI: 10.1002/14651858.CD000247.pub3.
+12. King D, Mitchell B, Williams CP, Spurling GKP. Saline nasal irrigation for acute upper respiratory tract infections.
+Cochrane
+Database
+of
+Systematic
+Reviews
+2015,
+Issue
+4.
+Art.
+No.:
+CD006821.
+DOI:
+10.1002/14651858.CD006821.pub3.
+13. Navarro B, Espinosa F, Flenady V.et al. Inmunoestimulantes para la prevención de la infección respiratoria en niños
+(Revisión Cochrane traducida). En: La Biblioteca Cochrane Plus, 2008 Número 4. Oxford: Update Software Ltd.
+Disponible en: http://www.update-software.com. (Traducida de The Cochrane Library, 2008 Issue 3. Chichester,
+UK: John Wiley & Sons, Ltd.).
+14. NICE 2008. National institute for health and clinical excellence. Respiratory tract infections – antibiotic
+prescribing. Prescribing of antibiotics for self-limiting respiratory tract infections in adults and children in primary
+care. Julio 2008. Disponible en : http://www.nice.org.uk/nicemedia/pdf/CG69FullGuideline.pdf
+15. NICE 2013. National institute for health and care excellence. Self-limiting respiratory tract infections antibiotic
+prescribing overview. Updated febrero 2013. Disponible en : http://pathways.nice.org.uk/pathways/self-limitingrespiratory-tract-infections---antibiotic-prescribing
+16. Oduwole O, Meremikwu MM, Oyo-Ita A, Udoh EE. Honey for acute cough in children. Cochrane Database of
+Systematic Reviews 2014, Issue 12. Art. No.: CD007094. DOI: 10.1002/14651858.CD007094.pub4.
+17. Pelucchi L, Grigoryan C, Galeone S, Esposito P, Huovinen P, Verheij T. ESCMID Guideline for the Management of
+Acute Sore Throat Guideline for the management of acute sore throat. ESCMID Sore Throat Guideline Group C.
+Clin Microbiol Infect 2012; 18 (Suppl. 1): 1–27
+18. Regoli M, Chiappini E, Bonsignori F, et al. Update on the management of acute pharyngitis in children. Italian
+Journal of Pediatrics 2011, 37:10. Disponible en http://www.ijponline.net/content/pdf/1824-7288-37-10.pdf
+19. Rodríguez RS, Calderón-Jaimes E, Gómez-Barreto D, Espinosa-de los Monteros LE. Características de la resistencia
+antimicrobiana de una colección clínica de Streptococcus pyogenes. Salud Pública Méx 2000; 42(3):226-229
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+20. Shulman S, Bisno A, Clegg H, et al. Clinical Practice Guideline for the Diagnosis and Management of Group A
+Streptococcal Pharyngitis: 2012 Update by the Infectious Diseases Society of America. Clin Infect Dis, 2012;
+55(10):e86-102 disponibe en http://www.uphs.upenn.edu/bugdrug/antibiotic_manual/grpastrepidsa.pdf
+21. Singh M. Heated, humidified air for the common cold. Cochrane Database Syst Rev. 2011 ;( 5):CD001728.
+22. Smith S, Schroeder K, Fahey T. Over-the-counter (OTC) medications for acute cough in children and adults in
+ambulatory settings. Cochrane Database Syst Rev. 2012 Aug 15;8
+23. Snellman L, Adams W, Anderson G, et al. Institute for Clinical Systems Improvement. Diagnosis and Treatment of
+Respiratory Illness in Children and Adults. Updated January 2013.
+24. Spurling GKP, DelMar CB, Dooley L, Foxlee R, Farley R. Delayed antibiotics for respiratory infections. Cochrane
+Database of Systematic Reviews 2013, Issue 4. Art. No.: CD004417. DOI: 10.1002/14651858.CD004417.pub4
+25. Timmer A, 2013 Günther J, Motschall E, Rücker G, Antes G, Kern WV. Pelargonium sidoides extract for treating
+acute respiratory tract infections Cochrane database of Systematic Reviews 2013, Issue 10.Art.No.:CD006323
+26. University of Michigan Health System (UMHS) 2013. University of Michigan Health System Michigan Quality
+Improvement
+Consortium.
+Pharyngitis
+Guidelines
+for
+clinical
+Practice.
+2013.
+Disponible
+en:http://www.med.umich.edu/1info/fhp/practiceguides/pharyngitis/pharyn.pdf
+27. Vaz, Kleinman, Raebel, Nordin, Lakoma, Dutta-Linn, et al. Recent Trends in Outpatient Antibiotic Use in Children.
+Pediatrics 2014; 133, (3):375 www.pediatrics.org/cgi/doi/10.1542/peds.2013-2903. Downloaded from
+pediatrics.aappublications.org July 21, 2015
+28. Weichert S, Schroten H, Adam R. The role of prebiotics and probiotics in prevention and treatment of childhood
+infectious
+diseases.
+Pediatr
+Infect
+Dis
+J
+2012;
+31:
+859–862).Disponible
+en
+:
+http://journals.lww.com/pidj/Documents/Prebiotics_and_Probiotics%20ESPID%20Aug%2012.pdf
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+8. Agradecimientos
+Se agradece a las autoridades del Instituto Mexicano del Seguro Social las gestiones
+realizadas para que el personal adscrito al centro o grupo de trabajo que desarrolló la presente
+guía asistiera a los eventos de capacitación en Medicina Basada en la Evidencia y temas afines,
+coordinados por Instituto Mexicano del Seguro Social y el apoyo, en general, al trabajo de las y
+los autores.
+Instituto Mexicano de Seguro Social / IMSS
+Secretaria
+Srita. Luz María Manzanares Cruz
+
+Coordinación
+Técnica
+Coordinación de UMAE
+
+de
+
+Excelencia
+
+Clínica.
+
+de
+
+Excelencia
+
+Clínica.
+
+Mensajero
+Sr. Carlos Hernández Bautista
+
+Coordinación
+Técnica
+Coordinación de UMAE
+
+Diagnóstico y manejo de la infección aguda de vías aéreas superiores en pacientes mayores de 3 meses hasta 18 años
+de edad
+
+9. Comité Académico
+INSTITUTO MEXICANO DEL SEGURO SOCIAL
+COORDINACIÓN DE UNIDADES MÉDICAS DE ALTA ESPECIALIDAD
+COORDINACIÓN TÉCNICA DE EXCELENCIA CLÍNICA
+Dr. Gilberto Pérez Rodríguez
+
+Coordinador de Unidades Médicas de Alta Especialidad
+
+Dr. Arturo Viniegra Osorio
+
+Coordinador Técnico de Excelencia Clínica
+
+Dr. Antonio Barrera Cruz
+
+Jefe del Área del Desarrollo de Guías de Práctica Clínica
+
+Dra. Adriana Abigail Valenzuela Flores
+Dra. Rita Delia Díaz Ramos
+Dra. Judith Gutiérrez Aguilar
+
+Jefa del Área de Implantación y Evaluación de Guías de Práctica Clínica
+Jefa del Área de Proyectos y Programas Clínicos
+Jefa del Área de Innovación de Procesos
+
+Dra. Virginia Rosario Cortés Casimiro
+
+Coordinadora de Programas Médicos
+
+Dra. Aidé María Sandoval Mex
+
+Coordinadora de Programas Médicos
+
+Dra. Yuribia Karina Millán Gámez
+
+Coordinadora de Programas Médicos
+
+Dr. Juan Humberto Medina Chávez
+
+Coordinador de Programas Médicos
+
+Dra. Adolfina Bergés García
+
+Coordinadora de Programas Médicos
+
+Dra. Socorro Azarell Anzures Gutiérrez
+
+Coordinadora de Programas Médicos
+
+Dra. Brendha Rios Castillo
+
+Coordinadora de Programas Médicos
+
+Dr. Manuel Vázquez Parrodi
+
+Coordinador de Programas Médicos
+
+Lic. Ana Belem López Morales
+
+Coordinadora de Programas de Enfermería
+
+Lic. Héctor Dorantes Delgado
+
+Coordinador de Programas
+
+Lic. Abraham Ruiz López
+
+Analista Coordinador
+
+Lic. Ismael Lozada Camacho
+
+Analista Coordinador
+
+60
+
+

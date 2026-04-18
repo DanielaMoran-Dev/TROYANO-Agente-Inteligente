@@ -159,9 +159,7 @@ VALIDATORS = {
                 "clues_id": {"bsonType": "string"},
                 "name": {"bsonType": "string"},
                 "type": {"bsonType": ["string", "null"]},
-                "unit_type": {
-                    "enum": ["general", "especialidad", "urgencias", "hospital"],
-                },
+                "unit_type": {"bsonType": ["string", "null"]},
                 "specialty": {"bsonType": ["string", "null"]},
                 "services": {"bsonType": ["array", "null"]},
                 "insurances": {"bsonType": ["array", "null"]},
@@ -227,6 +225,21 @@ VALIDATORS = {
                 "status": {"enum": ["active", "closed"]},
                 "created_at": {"bsonType": ["date", "null"]},
                 "updated_at": {"bsonType": ["date", "null"]},
+            },
+        }
+    },
+
+    "wiki_chunks": {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "required": ["chunk_id", "source", "text"],
+            "properties": {
+                "chunk_id":  {"bsonType": "string"},
+                "source":    {"bsonType": "string"},
+                "condition": {"bsonType": ["string", "null"]},
+                "cie10":     {"bsonType": ["string", "null"]},
+                "text":      {"bsonType": "string"},
+                "embedding": {"bsonType": ["array", "null"]},
             },
         }
     },
@@ -306,6 +319,11 @@ INDEXES = {
         {"keys": [("scheduled_at", 1)]},
         {"keys": [("doctor_id", 1), ("scheduled_at", 1)]},
     ],
+    "wiki_chunks": [
+        {"keys": [("chunk_id", 1)], "unique": True},
+        {"keys": [("source", 1)]},
+        {"keys": [("cie10", 1)]},
+    ],
 }
 
 
@@ -381,17 +399,12 @@ async def main() -> None:
     logger.info("")
     logger.info("  Tipo: Vector Search")
     logger.info("  Nombre: clinics_vector_index")
-    logger.info("  JSON:")
-    logger.info("  {")
-    logger.info("    \"fields\": [")
-    logger.info("      {")
-    logger.info("        \"type\": \"vector\",")
-    logger.info("        \"path\": \"embedding\",")
-    logger.info("        \"numDimensions\": 768,")
-    logger.info("        \"similarity\": \"cosine\"")
-    logger.info("      }")
-    logger.info("    ]")
-    logger.info("  }")
+    logger.info('  JSON: {"fields":[{"type":"vector","path":"embedding","numDimensions":768,"similarity":"cosine"}]}')
+    logger.info("")
+    logger.info("  También crea el índice para wiki_chunks:")
+    logger.info("  Atlas UI → Database → healthapp → wiki_chunks → Atlas Search → Create Search Index")
+    logger.info("  Nombre: wiki_vector_index")
+    logger.info('  JSON: {"fields":[{"type":"vector","path":"embedding","numDimensions":768,"similarity":"cosine"}]}')
     logger.info("")
 
     client.close()

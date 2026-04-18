@@ -121,13 +121,29 @@ async def consult(body: ConsultRequest):
     except InvalidId:
         raise HTTPException(status_code=400, detail="user_id inválido.")
 
-    user_doc = await mongo_service.users().find_one({"_id": user_obj_id}, {"_id": 1})
+    user_doc = await mongo_service.users().find_one(
+        {"_id": user_obj_id},
+        {"_id": 1, "age": 1, "insurance": 1, "medical_history": 1},
+    )
     if not user_doc:
         raise HTTPException(status_code=404, detail="Usuario no registrado.")
 
+    # Build patient context from DB profile + chat-collected fields
+    mh = user_doc.get("medical_history") or {}
+    patient_context = {
+        "age": user_doc.get("age"),
+        "duration": body.duration,
+        "severity": body.severity,
+        "conditions": mh.get("conditions") or [],
+        "allergies": mh.get("allergies") or [],
+        "medications": mh.get("medications") or [],
+        "blood_type": mh.get("blood_type"),
+        "insurance": body.insurance,
+    }
+
     try:
-        # 1. Triaje
-        triage = triage_agent.run(body.symptoms)
+        # 1. Triaje — with full patient context + semantic wiki RAG
+        triage = await triage_agent.run(body.symptoms, patient_context=patient_context)
 
         # 2. Ruteo (Places nearby + vector search + filtros + travel times)
         routing = await routing_agent.run(
@@ -138,8 +154,12 @@ async def consult(body: ConsultRequest):
             radius_m=body.radius_m,
         )
 
-        # 3. Recomendación
-        recs = await recommendation_agent.run(routing=routing, triage=triage)
+        # 3. Recomendación — with patient context for personalized justifications
+        recs = await recommendation_agent.run(
+            routing=routing,
+            triage=triage,
+            patient_context=patient_context,
+        )
 
         # 4. Persistir en gemini_sessions (upsert por session_id)
         session_doc = {
@@ -147,6 +167,7 @@ async def consult(body: ConsultRequest):
             "user_id": user_obj_id,
             "symptoms": body.symptoms,
             "triage": triage,
+            "patient_context": patient_context,
             "messages": [],
             "created_at": datetime.now(timezone.utc),
         }
