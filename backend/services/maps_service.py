@@ -6,13 +6,19 @@ Provides geocoding (Places) and route calculation (Routes API) for URBANAI.
 - get_routes()    → wraps Routes API (accessibility analysis for parcels)
 """
 
+import hashlib
 import os
 import logging
 import requests
 
+from services import redis_service
+
 logger = logging.getLogger(__name__)
 
 GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY", "")
+
+PLACES_CACHE_TTL = 7 * 24 * 3600  # 7 days — private practitioners don't move often
+ROUTES_CACHE_TTL = 3600           # 1 hour — traffic-aware, stale quickly
 
 GEOCODING_URL   = "https://maps.googleapis.com/maps/api/geocode/json"
 ROUTES_URL      = "https://routes.googleapis.com/directions/v2:computeRoutes"
@@ -224,6 +230,50 @@ def search_nearby_health(
 
     results.sort(key=lambda r: r["distance_m"])
     return results
+
+
+async def search_nearby_health_cached(
+    lat: float,
+    lng: float,
+    radius_m: int = 5000,
+    keyword: str | None = None,
+    max_results: int = 20,
+) -> list[dict]:
+    """Redis-cached wrapper around search_nearby_health(). Falls through on miss."""
+    key = f"places:{lat:.3f}:{lng:.3f}:{radius_m}:{keyword or ''}:{max_results}"
+    hit = await redis_service.cache_get(key)
+    if hit is not None:
+        logger.debug("places cache hit: %s", key)
+        return hit
+
+    results = search_nearby_health(lat, lng, radius_m, keyword, max_results)
+    if results:
+        await redis_service.cache_set(key, results, PLACES_CACHE_TTL)
+    return results
+
+
+async def get_routes_cached(
+    origin_lat: float,
+    origin_lng: float,
+    destinations: list[dict],
+    travel_mode: str = "DRIVE",
+) -> dict:
+    """Redis-cached wrapper around get_routes(). Keyed by rounded origin + destination set."""
+    dest_sig = ";".join(
+        sorted(f"{d['lat']:.3f},{d['lng']:.3f}" for d in destinations if d.get("lat") is not None)
+    )
+    dest_hash = hashlib.sha1(dest_sig.encode()).hexdigest()[:12]
+    key = f"routes:{travel_mode}:{origin_lat:.3f}:{origin_lng:.3f}:{dest_hash}"
+
+    hit = await redis_service.cache_get(key)
+    if hit is not None:
+        logger.debug("routes cache hit: %s", key)
+        return hit
+
+    result = get_routes(origin_lat, origin_lng, destinations, travel_mode)
+    if result.get("routes"):
+        await redis_service.cache_set(key, result, ROUTES_CACHE_TTL)
+    return result
 
 
 def _haversine_m(lat1: float, lng1: float, lat2: float, lng2: float) -> float:

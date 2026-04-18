@@ -23,6 +23,26 @@ BUDGET_MAP: dict[str, list[int]] = {
     "$$$": [1, 2, 3],
 }
 
+# Tokens that mark a Mexican public healthcare institution. Matched against
+# the `institution` field (CLUES DB) or, as fallback, against the clinic name
+# (Places results don't carry an institution field).
+_PUBLIC_TOKENS: tuple[str, ...] = (
+    "IMSS", "ISSSTE", "SSA", "SECRETARIA DE SALUD", "SECRETARÍA DE SALUD",
+    "PEMEX", "SEDENA", "SEMAR", "BIENESTAR", "INSABI", "DIF",
+    "HOSPITAL GENERAL", "CENTRO DE SALUD", "UNIDAD DE MEDICINA FAMILIAR",
+    "CLINICA HOSPITAL", "HOSPITAL RURAL", "CRUZ ROJA",
+)
+
+
+def _is_public(clinic: dict) -> bool:
+    """True if a clinic belongs to a public/government health institution."""
+    inst = (clinic.get("institution") or "").upper()
+    if inst:
+        return any(tok in inst for tok in _PUBLIC_TOKENS)
+    # Places candidates have no institution — infer conservatively from name.
+    name = (clinic.get("name") or "").upper()
+    return any(tok in name for tok in _PUBLIC_TOKENS)
+
 
 async def run(
     triage: dict,
@@ -31,15 +51,18 @@ async def run(
     coords: dict,
     limit: int = 10,
     radius_m: int = 5000,
+    facility_type: str = "any",
 ) -> list[dict]:
     """
     Args:
-        triage:       Output del triage_agent.run()
-        insurance:    "imss" | "issste" | "seguro_popular" | "ninguno"
-        budget_level: "$" | "$$" | "$$$"
-        coords:       {"lat": float, "lng": float}
-        limit:        Máximo de resultados.
-        radius_m:     Perímetro de búsqueda en metros (default 5 km).
+        triage:        Output del triage_agent.run()
+        insurance:     "imss" | "issste" | "seguro_popular" | "ninguno"
+        budget_level:  "$" | "$$" | "$$$"
+        coords:        {"lat": float, "lng": float}
+        limit:         Máximo de resultados.
+        radius_m:      Perímetro de búsqueda en metros (default 5 km).
+        facility_type: "public" | "private" | "any" — filtra por tipo de
+                       institución (IMSS/ISSSTE/SSA vs privadas).
 
     Returns:
         Lista rankeada de clínicas enriquecidas con travel_time_min y distance_m.
@@ -55,7 +78,7 @@ async def run(
     places_candidates: list[dict] = []
     if maps_service.is_configured():
         try:
-            places_candidates = maps_service.search_nearby_health(
+            places_candidates = await maps_service.search_nearby_health_cached(
                 lat=origin_lat,
                 lng=origin_lng,
                 radius_m=radius_m,
@@ -97,7 +120,13 @@ async def run(
             ins_list = c.get("insurances") or []
             if c.get("source") == "db" and insurance not in ins_list:
                 return False
-        return c.get("price_level", 2) in allowed_prices
+        if c.get("price_level", 2) not in allowed_prices:
+            return False
+        if facility_type == "public" and not _is_public(c):
+            return False
+        if facility_type == "private" and _is_public(c):
+            return False
+        return True
 
     filtered = [c for c in merged if passes_filters(c)]
     if not filtered:
@@ -118,7 +147,7 @@ async def run(
     travel_map: dict[str, float] = {}
     if destinations and maps_service.is_configured():
         try:
-            routes_result = maps_service.get_routes(
+            routes_result = await maps_service.get_routes_cached(
                 origin_lat=origin_lat,
                 origin_lng=origin_lng,
                 destinations=destinations,

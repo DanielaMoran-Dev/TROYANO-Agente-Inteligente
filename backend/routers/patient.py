@@ -88,13 +88,53 @@ class ChatMessageRequest(BaseModel):
     session_id: str
     message: str = ""
     has_coords: bool = False
+    has_recommendations: bool = False
+    user_id: str | None = None
+    current_prefs: dict | None = None
+
+
+async def _load_known_profile(user_id: str | None) -> dict:
+    """Load the DB-side patient profile so the chat agent doesn't re-ask it."""
+    if not user_id:
+        return {}
+    try:
+        obj_id = ObjectId(user_id)
+    except InvalidId:
+        return {}
+
+    u = await mongo_service.users().find_one(
+        {"_id": obj_id},
+        {"age": 1, "insurance": 1, "medical_history": 1, "name": 1},
+    )
+    if not u:
+        return {}
+
+    mh = u.get("medical_history") or {}
+    profile = {
+        "name": u.get("name"),
+        "age": u.get("age"),
+        "insurance": u.get("insurance"),
+        "conditions": mh.get("conditions") or [],
+        "allergies": mh.get("allergies") or [],
+        "medications": mh.get("medications") or [],
+        "blood_type": mh.get("blood_type"),
+    }
+    return {k: v for k, v in profile.items() if v not in (None, "", [])}
 
 
 @router.post("/chat/message", tags=["chat"])
 async def chat_message(body: ChatMessageRequest):
-    """Un turno conversacional con el agente de recolección."""
+    """Un turno conversacional con el agente de recolección + refinamiento."""
     try:
-        return chat_agent.reply(body.session_id, body.message, has_coords=body.has_coords)
+        known_profile = await _load_known_profile(body.user_id)
+        return chat_agent.reply(
+            body.session_id,
+            body.message,
+            has_coords=body.has_coords,
+            has_recommendations=body.has_recommendations,
+            known_profile=known_profile or None,
+            current_prefs=body.current_prefs,
+        )
     except Exception as exc:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Chat error: {exc}") from exc
@@ -139,6 +179,9 @@ async def consult(body: ConsultRequest):
         "medications": mh.get("medications") or [],
         "blood_type": mh.get("blood_type"),
         "insurance": body.insurance,
+        "budget_level": body.budget_level,
+        "radius_m": body.radius_m,
+        "facility_type": body.facility_type,
     }
 
     try:
@@ -152,6 +195,7 @@ async def consult(body: ConsultRequest):
             budget_level=body.budget_level,
             coords=body.coords.model_dump(),
             radius_m=body.radius_m,
+            facility_type=body.facility_type,
         )
 
         # 3. Recomendación — with patient context for personalized justifications

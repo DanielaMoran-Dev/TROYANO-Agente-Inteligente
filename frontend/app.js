@@ -25,11 +25,14 @@ let radiusCircle = null;      // círculo del perímetro de búsqueda
 let activeWs = null;     // WebSocket for doctor chat
 let budgetLevel = "$$";
 let searchRadiusM = 5000;     // perímetro de búsqueda (metros)
+let facilityType = "any";     // "public" | "private" | "any"
 
-// Conversation state — the backend chat agent owns the dialogue;
-// frontend just relays messages and triggers /consult when agent says ready.
+// Conversation state — the backend chat agent owns the dialogue.
+// Frontend relays messages, applies preference updates, and re-runs /consult
+// when the agent emits action="consult" (first run) or "refine_consult" (after).
 let collectedData = {};   // last data snapshot from chat agent
 let consulting = false;
+let hasRecommendations = false;   // flips to true after the first /consult
 
 // ── DOM refs ───────────────────────────────────────────────────────────────────
 const chatMessages     = document.getElementById("chat-messages");
@@ -142,6 +145,14 @@ async function sendToChatAgent(message) {
         session_id: sessionId,
         message,
         has_coords: !!userCoords,
+        has_recommendations: hasRecommendations,
+        user_id: userSession?.user_id || null,
+        current_prefs: {
+          facility_type: facilityType,
+          insurance: document.getElementById("insurance-select")?.value || null,
+          budget_level: budgetLevel,
+          radius_m: searchRadiusM,
+        },
       }),
     });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
@@ -149,9 +160,11 @@ async function sendToChatAgent(message) {
 
     if (turn.reply) addBotMessage(turn.reply);
     collectedData = { ...collectedData, ...(turn.data || {}) };
+    if (turn.preferences) applyPreferenceUpdates(turn.preferences);
 
-    if (turn.ready) {
-      await triggerConsult(turn.emergency);
+    const action = turn.action || (turn.ready ? "consult" : "none");
+    if (action === "consult" || action === "refine_consult") {
+      await triggerConsult(turn.emergency, action === "refine_consult");
     }
   } catch (e) {
     addBotMessage(`No pude procesar tu mensaje: ${e.message}`);
@@ -161,9 +174,39 @@ async function sendToChatAgent(message) {
   }
 }
 
-async function triggerConsult(emergency) {
+// Merge preferences the chat agent has inferred/updated into the UI state.
+function applyPreferenceUpdates(prefs) {
+  if (prefs.facility_type) facilityType = prefs.facility_type;
+
+  if (prefs.insurance) {
+    const sel = document.getElementById("insurance-select");
+    if (sel) {
+      const opt = Array.from(sel.options).find(o => o.value === prefs.insurance);
+      if (opt) sel.value = prefs.insurance;
+    }
+  }
+
+  if (prefs.budget_level) {
+    budgetLevel = prefs.budget_level;
+    document.querySelectorAll(".budget-btn").forEach(b => {
+      b.classList.toggle("active", b.dataset.val === prefs.budget_level);
+    });
+  }
+
+  if (prefs.radius_m && prefs.radius_m !== searchRadiusM) {
+    searchRadiusM = Math.max(500, Math.min(50000, prefs.radius_m));
+    if (userCoords && typeof drawUserLocation === "function") {
+      drawUserLocation();   // redraws radiusCircle at the new radius
+    }
+  }
+}
+
+async function triggerConsult(emergency, isRefine = false) {
   if (consulting) return;
   consulting = true;
+  if (isRefine) {
+    addBotMessage("Ajustando las recomendaciones con tus nuevas preferencias...");
+  }
   try {
     // If coords are missing, geocode the location_text the agent collected.
     if (!userCoords && collectedData.location_text) {
@@ -251,6 +294,7 @@ async function runConsult(symptoms) {
         insurance,
         budget_level: budgetLevel,
         radius_m: searchRadiusM,
+        facility_type: facilityType,
       }),
     });
 
@@ -293,6 +337,7 @@ function handleConsultResponse(data) {
   addBotMessage("Encontré estas opciones para ti. Puedes ver las clínicas en el mapa.");
   showRecommendations(recommendations.recommendations);
   plotClinicsOnMap(recommendations.recommendations);
+  hasRecommendations = true;
 }
 
 // ── Recommendations panel ──────────────────────────────────────────────────────

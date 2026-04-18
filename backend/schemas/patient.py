@@ -11,6 +11,7 @@ import uuid
 Insurance = Literal["imss", "issste", "seguro_popular", "ninguno"]
 BudgetLevel = Literal["$", "$$", "$$$"]
 BloodType = Literal["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]
+FacilityType = Literal["public", "private", "any"]
 
 
 class Coords(BaseModel):
@@ -71,3 +72,4 @@ class ConsultRequest(BaseModel):
     insurance: Insurance
     budget_level: BudgetLevel
     radius_m: int = Field(5000, ge=500, le=50000)
+    facility_type: FacilityType = "any"
