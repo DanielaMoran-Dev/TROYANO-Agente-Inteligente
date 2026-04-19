@@ -69,10 +69,22 @@ El sistema utiliza un flujo de trabajo orquestado donde cada agente tiene una re
     pip install -r requirements.txt
     ```
 
-3.  **Variables de Entorno:**
+3.  **Credenciales de Google Cloud (Service Account):**
+
+    El archivo de credenciales de la cuenta de servicio **no está incluido en el repositorio por seguridad**.
+    Debes proporcionar el tuyo propio:
+
+    - Ve a [Google Cloud Console](https://console.cloud.google.com/) y crea o descarga un JSON de cuenta de servicio con permisos para **Vertex AI / Gemini API**.
+    - Coloca el archivo en `Gemini/nuvia-489723-654f73bcdd7a.json` (o el nombre que prefieras).
+    - Apunta la variable de entorno a tu archivo:
+      ```bash
+      export GOOGLE_APPLICATION_CREDENTIALS="Gemini/nuvia-489723-654f73bcdd7a.json"
+      ```
+
+4.  **Variables de Entorno:**
     Crea un archivo `.env` en la carpeta `backend/` basándote en la documentación de arquitectura.
 
-4.  **Ejecutar con Docker (Recomendado):**
+5.  **Ejecutar con Docker (Recomendado):**
     ```bash
     docker-compose up --build
     ```

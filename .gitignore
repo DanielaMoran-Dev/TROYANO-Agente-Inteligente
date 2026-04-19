@@ -28,6 +28,9 @@ backend/data/restricted_zones.geojson
 # Illustrator files
 *.ai
 
+# Credenciales de Google Cloud (service account JSON)
+Gemini/*.json
+
 *.ipynb
 
 cache/
